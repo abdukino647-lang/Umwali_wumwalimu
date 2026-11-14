@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/db';
 import { users } from '@/db/schema';
-import { eq } from 'drizzle-orm';
+import { eq, ilike } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { getDefaultTrialDays } from '@/lib/access';
 
@@ -9,7 +9,8 @@ export async function POST(req: Request) {
   try {
     const { name, email, password } = await req.json();
 
-    const existingUser = await db.select().from(users).where(eq(users.email, email));
+    const normalizedEmail = (email || '').trim().toLowerCase();
+    const existingUser = await db.select().from(users).where(ilike(users.email, normalizedEmail));
 
     if (existingUser.length > 0) {
       return NextResponse.json({ message: "User already exists" }, { status: 400 });
@@ -23,8 +24,8 @@ export async function POST(req: Request) {
     const accessExpiresAt = new Date(Date.now() + trialDays * 86_400_000);
 
     await db.insert(users).values({
-      name,
-      email,
+      name: (name || '').trim(),
+      email: normalizedEmail,
       passwordHash,
       role: 'student',
       isActive: true,

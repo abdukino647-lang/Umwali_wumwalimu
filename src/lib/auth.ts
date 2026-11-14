@@ -4,7 +4,7 @@ import Resend from 'next-auth/providers/resend';
 import Credentials from 'next-auth/providers/credentials';
 import { db } from '@/db';
 import { users } from '@/db/schema';
-import { eq } from 'drizzle-orm';
+import { eq, ilike } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
 import { authConfig } from './auth.config';
 
@@ -29,7 +29,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const userResult = await db.select().from(users).where(eq(users.email, credentials.email as string)).limit(1);
+        const email = (credentials.email as string).trim();
+        const userResult = await db.select().from(users).where(ilike(users.email, email)).limit(1);
         const user = userResult[0];
 
         if (!user || !user.passwordHash) return null;

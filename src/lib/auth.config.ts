@@ -7,6 +7,7 @@ import Google from 'next-auth/providers/google';
 // session cookie exactly the way auth.ts encoded it.
 export const authConfig = {
   secret: process.env.AUTH_SECRET,
+  trustHost: true,
   providers: [
     ...(process.env.GOOGLE_ID && process.env.GOOGLE_SECRET
       ? [
