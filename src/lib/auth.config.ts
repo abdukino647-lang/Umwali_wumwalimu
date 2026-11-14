@@ -5,15 +5,27 @@ import Google from 'next-auth/providers/google';
 // (Edge). It must NOT import the DB adapter, bcrypt, or any Node-only code —
 // those live in auth.ts. Sharing this config lets the middleware decode the
 // session cookie exactly the way auth.ts encoded it.
+const googleClientId =
+  process.env.GOOGLE_ID ||
+  process.env.AUTH_GOOGLE_ID ||
+  process.env.Client_ID ||
+  process.env.CLIENT_ID;
+
+const googleClientSecret =
+  process.env.GOOGLE_SECRET ||
+  process.env.AUTH_GOOGLE_SECRET ||
+  process.env.Client_secret ||
+  process.env.CLIENT_SECRET;
+
 export const authConfig = {
   secret: process.env.AUTH_SECRET,
   trustHost: true,
   providers: [
-    ...(process.env.GOOGLE_ID && process.env.GOOGLE_SECRET
+    ...(googleClientId && googleClientSecret
       ? [
           Google({
-            clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_SECRET,
+            clientId: googleClientId,
+            clientSecret: googleClientSecret,
           }),
         ]
       : []),

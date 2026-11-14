@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
   await db.insert(passwordResetTokens).values({ token, userId: user.id, expires });
 
-  const base = process.env.NEXT_PUBLIC_APP_URL || new URL(req.url).origin;
+  const base = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || new URL(req.url).origin;
   const link = `${base}/reset-password?token=${token}`;
 
   const key = process.env.RESEND_API_KEY;
