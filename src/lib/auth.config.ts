@@ -6,11 +6,16 @@ import Google from 'next-auth/providers/google';
 // those live in auth.ts. Sharing this config lets the middleware decode the
 // session cookie exactly the way auth.ts encoded it.
 export const authConfig = {
+  secret: process.env.AUTH_SECRET,
   providers: [
-    Google({
-      clientId: process.env.GOOGLE_ID || '',
-      clientSecret: process.env.GOOGLE_SECRET || '',
-    }),
+    ...(process.env.GOOGLE_ID && process.env.GOOGLE_SECRET
+      ? [
+          Google({
+            clientId: process.env.GOOGLE_ID,
+            clientSecret: process.env.GOOGLE_SECRET,
+          }),
+        ]
+      : []),
   ],
   session: { strategy: 'jwt' },
   pages: { signIn: '/login', error: '/login' },

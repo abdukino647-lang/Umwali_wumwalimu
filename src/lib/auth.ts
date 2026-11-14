@@ -13,10 +13,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: DrizzleAdapter(db) as any,
   providers: [
     ...authConfig.providers,
-    Resend({
-      apiKey: process.env.RESEND_API_KEY || 're_123',
-      from: 'noreply@amategeko.rw',
-    }),
+    ...(process.env.RESEND_API_KEY
+      ? [
+          Resend({
+            apiKey: process.env.RESEND_API_KEY,
+            from: process.env.RESEND_FROM || 'noreply@amategeko.rw',
+          }),
+        ]
+      : []),
     Credentials({
       credentials: {
         email: { label: "Email", type: "email" },
