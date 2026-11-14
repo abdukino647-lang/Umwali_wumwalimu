@@ -3,14 +3,34 @@ import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import Resend from 'next-auth/providers/resend';
 import Credentials from 'next-auth/providers/credentials';
 import { db } from '@/db';
-import { users } from '@/db/schema';
+import { users, accounts } from '@/db/schema';
 import { eq, ilike } from 'drizzle-orm';
 import bcrypt from 'bcryptjs';
+import { getDefaultTrialDays } from '@/lib/access';
 import { authConfig } from './auth.config';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   ...authConfig,
-  adapter: DrizzleAdapter(db) as any,
+  adapter: DrizzleAdapter(db, {
+    usersTable: users as any,
+    accountsTable: accounts as any,
+  }) as any,
+  events: {
+    async createUser({ user }) {
+      if (user.id) {
+        try {
+          const trialDays = await getDefaultTrialDays();
+          const accessExpiresAt = new Date(Date.now() + trialDays * 86_400_000);
+          await db
+            .update(users)
+            .set({ accessExpiresAt, role: 'student', isActive: true })
+            .where(eq(users.id, user.id));
+        } catch (e) {
+          console.error("Failed to set trial for new OAuth user:", e);
+        }
+      }
+    },
+  },
   providers: [
     ...authConfig.providers,
     ...(process.env.RESEND_API_KEY
