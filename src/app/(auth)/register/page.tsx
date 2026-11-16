@@ -48,22 +48,25 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10 text-cyan-50">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden text-cyan-50">
       <TechBackground variant="network" />
-      <header className="absolute left-0 top-0 z-10 flex h-16 w-full items-center px-5 lg:px-10">
-        <span className="text-lg font-bold tracking-tight text-white">Amategeko y&apos;Umuhanda</span>
-        <div className="ml-auto flex items-center gap-2">
-          <Link href="/login" className="rounded-lg px-3 py-1.5 text-sm text-cyan-100/80 hover:text-white">
-            Login / Register
+      <header className="relative z-20 flex h-16 w-full shrink-0 items-center justify-between gap-3 px-4 sm:px-6 lg:px-10">
+        <span className="truncate text-base font-bold tracking-tight text-white sm:text-lg">
+          Amategeko y&apos;Umuhanda
+        </span>
+        <div className="ml-auto flex shrink-0 items-center gap-2">
+          <Link href="/login" className="hidden rounded-lg px-3 py-1.5 text-sm text-cyan-100/80 hover:text-white sm:inline">
+            Injira
           </Link>
           <BackButton to="/" />
         </div>
       </header>
 
-      <div className="hud glass relative z-10 w-full max-w-4xl rounded-3xl p-6 md:p-8">
-        <div className="mx-auto -mt-10 mb-6 w-fit rounded-full glass-soft px-5 py-1.5 text-xs font-semibold tracking-wide text-cyan-200">
-          Advanced Profile and Training Portal
-        </div>
+      <main className="relative z-10 flex flex-1 items-center justify-center px-4 py-6 sm:py-10">
+        <div className="hud glass relative z-10 w-full max-w-4xl rounded-3xl p-6 md:p-8">
+          <div className="mx-auto mb-6 w-fit rounded-full glass-soft px-5 py-1.5 text-xs font-semibold tracking-wide text-cyan-200">
+            Advanced Profile and Training Portal
+          </div>
 
         <div className="mb-7 text-center">
           <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Kwiyandikisha (Register)</h1>
@@ -160,6 +163,7 @@ export default function RegisterPage() {
           <Link href="/login" className="font-medium text-cyan-300 hover:underline">Injira hano</Link>
         </p>
       </div>
-    </div>
-  );
+    </main>
+  </div>
+);
 }

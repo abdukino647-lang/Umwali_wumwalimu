@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
+import { BackButton } from "@/components/layout/BackButton";
 import { Eye, EyeOff, CheckCircle2 } from "lucide-react";
 
 function ResetForm() {
@@ -103,16 +104,21 @@ function ResetForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10 text-cyan-50">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden text-cyan-50">
       <TechBackground variant="network" />
-      <header className="absolute left-0 top-0 z-10 flex h-16 w-full items-center px-5 lg:px-10">
-        <span className="text-lg font-bold tracking-tight text-white">Amategeko y&apos;Umuhanda</span>
+      <header className="relative z-20 flex h-16 w-full shrink-0 items-center justify-between gap-3 px-4 sm:px-6 lg:px-10">
+        <span className="truncate text-base font-bold tracking-tight text-white sm:text-lg">
+          Amategeko y&apos;Umuhanda
+        </span>
+        <BackButton to="/login" label="Subira ku Kwinjira" className="shrink-0" />
       </header>
-      <div className="hud glass relative z-10 w-full max-w-md rounded-3xl p-7 md:p-9">
-        <Suspense fallback={<p className="text-center text-sm text-cyan-100/60">Tegereza...</p>}>
-          <ResetForm />
-        </Suspense>
-      </div>
+      <main className="relative z-10 flex flex-1 items-center justify-center px-4 py-6 sm:py-10">
+        <div className="hud glass relative z-10 w-full max-w-md rounded-3xl p-7 md:p-9">
+          <Suspense fallback={<p className="text-center text-sm text-cyan-100/60">Tegereza...</p>}>
+            <ResetForm />
+          </Suspense>
+        </div>
+      </main>
     </div>
   );
 }
