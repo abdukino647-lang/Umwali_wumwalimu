@@ -16,11 +16,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const found = allCourses.find((c) => c.category === (p.category as typeof c.category));
   const course = found ?? { id: "dummy", title: `Category: ${p.category}`, description: "Amasomo" };
 
-  let moduleList: { id: string; title: string; content: string | null }[] = found
-    ? allModules.filter((m) => m.courseId === found.id)
+  const newLawsModule = {
+    id: "amategeko-mashya",
+    title: "✨ Ibyapa Bishya n'Amategeko Mashya (2024)",
+    content: "Camera z'umuvuduko, 10% tolerance margin, BUS ONLY, Speed governors, n'ibyapa bishya",
+  };
+
+  const moduleList = found && allModules.filter((m) => m.courseId === found.id).length > 0
+    ? [...allModules.filter((m) => m.courseId === found.id), newLawsModule]
     : [
+        newLawsModule,
         { id: "ikizamini-cyose", title: "Ikizamini Rusange (All Questions)", content: "Gerageza ibibazo byose muri iyi category" },
-        { id: "ikizamini-gito", title: "Ikizamini Gito (Quick Test)", content: "Ibibazo 10 by'igerageza" },
+        { id: "ikizamini-gito", title: "Ikizamini Gito (Quick Test)", content: "Ibibazo 10 by'igerageza byihuse" },
       ];
 
   return (
@@ -32,27 +39,34 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       </div>
 
       <div className="grid gap-4">
-        {moduleList.map((mod, index) => (
-          <div
-            key={mod.id}
-            className="glass is-interactive flex flex-col gap-3 rounded-2xl p-5 transition-all sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div className="flex items-start gap-3">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg glass-soft text-sm font-bold text-cyan-300">
-                {index + 1}
-              </span>
-              <div>
-                <h3 className="font-semibold text-white">{mod.title}</h3>
-                <p className="mt-0.5 text-xs text-cyan-100/60">{mod.content}</p>
+        {moduleList.map((mod, index) => {
+          const isHighlight = mod.id === "amategeko-mashya";
+          return (
+            <div
+              key={mod.id}
+              className={`glass is-interactive flex flex-col gap-3 rounded-2xl p-5 transition-all sm:flex-row sm:items-center sm:justify-between ${
+                isHighlight ? "border-cyan-400/50 bg-cyan-950/20 ring-1 ring-cyan-400/30" : ""
+              }`}
+            >
+              <div className="flex items-start gap-3">
+                <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-lg text-sm font-bold ${
+                  isHighlight ? "bg-cyan-400/20 text-cyan-200" : "glass-soft text-cyan-300"
+                }`}>
+                  {isHighlight ? "★" : index + 1}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-white">{mod.title}</h3>
+                  <p className="mt-0.5 text-xs text-cyan-100/60">{mod.content}</p>
+                </div>
               </div>
+              <Link href={`/courses/${p.category}/${mod.id}/quiz`} className="shrink-0">
+                <Button className="glow-btn h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+                  Kora Ikizamini ⏵
+                </Button>
+              </Link>
             </div>
-            <Link href={`/courses/${p.category}/${mod.id}/quiz`} className="shrink-0">
-              <Button className="glow-btn h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-                Kora Ikizamini ⏵
-              </Button>
-            </Link>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

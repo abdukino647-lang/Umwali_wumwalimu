@@ -166,6 +166,28 @@ export default async function DashboardPage() {
         </div>
       </Link>
 
+      {/* Modern 2024 New Traffic Signs & Rules Featured Banner */}
+      <div className="relative overflow-hidden rounded-2xl border border-cyan-400/35 bg-gradient-to-r from-cyan-950/70 via-slate-900/80 to-sky-950/70 p-6 shadow-xl backdrop-blur-md">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-semibold text-cyan-200">
+              ✨ Amavugurura Mashya (2024)
+            </span>
+            <h2 className="mt-2 text-lg font-bold text-white sm:text-xl">
+              Ibyapa Bishya n&apos;Amategeko Mashya y&apos;Umuhanda mu Rwanda
+            </h2>
+            <p className="mt-1 text-xs leading-relaxed text-cyan-100/70 sm:text-sm">
+              Camera z&apos;umuvuduko n&apos;amatara (Speed enforcement cameras), margin ya 10% tolerance, BUS ONLY, Smart speed governors (60 km/h), n&apos;ibyapa bishya bikoreshwa mu kizamini cya Polisi.
+            </p>
+          </div>
+          <Link href="/courses/ibyapa/amategeko-mashya/quiz" className="shrink-0">
+            <Button className="glow-btn h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+              Iga Ibyapa Bishya ⏵
+            </Button>
+          </Link>
+        </div>
+      </div>
+
       <h2 className="text-xl font-bold text-white">Ibyiciro by&apos;Amasomo</h2>
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -1,11 +1,11 @@
 import { db } from "@/db";
 import { questions, examSeen } from "@/db/schema";
-import { eq, and, sql, isNotNull, notInArray, inArray } from "drizzle-orm";
+import { eq, and, or, sql, isNotNull, notInArray, inArray } from "drizzle-orm";
 
 type Q = typeof questions.$inferSelect;
 
 // Official police-exam composition: 20 questions = 5 from each group, in order.
-// The two picture groups (sign, roadpic) only pull questions that have an image.
+// The two picture groups (sign, roadpic) only pull questions that have an image or SVG.
 const GROUPS = [
   { key: "sign", n: 5, imageOnly: true }, // ibyapa: symbols/direction/prohibitory/warning
   { key: "number", n: 5, imageOnly: false }, // ibipimo / numeric
@@ -14,7 +14,10 @@ const GROUPS = [
 ] as const;
 
 const groupWhere = (key: string, imageOnly: boolean) =>
-  and(eq(questions.examGroup, key), imageOnly ? isNotNull(questions.signImageUrl) : undefined);
+  and(
+    eq(questions.examGroup, key),
+    imageOnly ? or(isNotNull(questions.signImageUrl), isNotNull(questions.signSvg)) : undefined
+  );
 
 /**
  * Build a 20-question exam (sign → number → analysis → roadpic) for a user,

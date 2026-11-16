@@ -3625,5 +3625,185 @@
     "lawTitle": "Ingingo ya 13: Uburenganzira bw'Abanyamaguru ku Nzira Yabo",
     "lawDetails": "Wegereye inzira y'abanyamaguru ugasanga bategereje kwambuka, ugomba KUGABANYA UMUVUDUKO WITEGURA GUHAGARARA kugira ngo ubareke bambuke mu mutekano. Igisubizo cy'ukuri ni B (Kugabanya umuvuduko witegura guhagarara).",
     "memoryTip": "Gabanya umuvuduko witeguye guhagarara ku nzira y'abanyamaguru."
+  },
+  {
+    "number": 434,
+    "matchText": "Iki cyapa cy'ubururu kigaragaza ifoto ya camera imurika kimenyesha iki mu muhanda?",
+    "correctKey": "b",
+    "correctText": "Ahegereye camera zigenzura umuvuduko n'amatara by'ibinyabiziga (Speed Enforcement Camera)",
+    "lawTitle": "Ibyapa Byerekana Camera Z'Umuvuduko (Speed Enforcement Cameras)",
+    "lawDetails": "Iki cyapa gishyirwa mu muhanda kugira ngo kiburire abayobozi b'ibinyabiziga ko hegereye camera z'ikoranabuhanga zigenzura umuvuduko w'ibinyabiziga n'iyubahirizwa ry'amatara yo mu muhanda. Iki cyapa gituma abashoferi bubahiriza umuvuduko ntarengwa wagenwe muri ako gace kugira ngo hirindwe impanuka.",
+    "memoryTip": "Icyapa cya camera = Ahegereye camera zigenzura umuvuduko w'ibinyabiziga."
+  },
+  {
+    "number": 435,
+    "matchText": "Mu Rwanda, camera zigenzura umuvuduko zitangira kwandikira amande umuyobozi w'ikinyabiziga igihe arenzeho ijanisha ringana gute ku muvuduko ugaragazwa n'icyapa?",
+    "correctKey": "b",
+    "correctText": "10%",
+    "lawTitle": "Amabwiriza ya Polisi y'u Rwanda ku Margin ya Camera (10% Tolerance)",
+    "lawDetails": "Polisi y'u Rwanda igena ko camera zigenzura umuvuduko zitanga amahirwe y'inyongera angana na 10% by'umuvuduko ntarengwa wanditswe ku cyapa mbere yo guhana. Urugero: aho icyapa kigena 60 km/h, camera itangira kwandikira amande uwageze kuri 66 km/h no hejuru yaho; aho kigena 40 km/h, itangira guhana kuva kuri 44 km/h.",
+    "memoryTip": "Margin ya camera z'umuvuduko mu Rwanda ni 10% hejuru y'umuvuduko w'icyapa."
+  },
+  {
+    "number": 436,
+    "matchText": "Camera zikoreshwa na Polisi y'u Rwanda mu kugenzura umutekano n'amategeko yo mu muhanda zirimo izi zikurikira:",
+    "correctKey": "d",
+    "correctText": "Ibisubizo byose nibyo",
+    "lawTitle": "Ikoranabuhanga rya Camera Zikoreshwa mu Gucunga Umutekano wo mu Muhanda",
+    "lawDetails": "Polisi y'u Rwanda ikoresha amoko atandukanye ya camera: (A) Camera zihoraho zishinze ku nkingi (Fixed cameras nka 'Sophia'); (B) Camera zimurwa zitwarwa n'abapolisi cyangwa ku binyabiziga bya Polisi; (C) Camera zigenzura iyubahirizwa ry'amatara atukura mu masangano n'inzira z'abanyamaguru. Kubera ko zose zikoreshwa, igisubizo cy'ukuri ni D.",
+    "memoryTip": "Camera z'umuhanda ziba izihoraho, izimurwa, n'izigenzura amatara atukura."
+  },
+  {
+    "number": 437,
+    "matchText": "Iyo umuyobozi wandikiwe amande yo mu muhanda na camera abimenyeshejwe kuri SMS, agomba kuyishyura mu gihe kitarenze:",
+    "correctKey": "c",
+    "correctText": "Iminsi 30",
+    "lawTitle": "Igihe Ntarengwa cyo Kwishyura Amande y'Umuhanda (Iminsi 30)",
+    "lawDetails": "Hakurikijwe amabwiriza agenga amande yo mu muhanda mu Rwanda, amande yose yanditswe na Polisi (harimo n'ayanditswe na camera akamenyeshwa nyir'ikinyabiziga kuri SMS) agomba kwishyurwa mu gihe kitarenze IMINSI MIRONGO ITATU (30). Iyo irenze, hiyongeraho amande y'ubukererwe (pénalités de retard).",
+    "memoryTip": "Amande y'umuhanda yishyurwa mu minsi 30 mbere yo kwishyuzwa ubukererwe."
+  },
+  {
+    "number": 438,
+    "matchText": "Icyapa cyangwa inyandiko mu muhanda igira iti 'BUS ONLY' cyangwa ikimenyetso cy'uruziga rw'ubururu kigaragaza bisi bisobanura iki?",
+    "correctKey": "b",
+    "correctText": "Igisate cy'umuhanda cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo",
+    "lawTitle": "Inzira Yihariye y'Amabisi (Dedicated Bus Lane - BUS ONLY)",
+    "lawDetails": "Icyapa cyangwa inyandiko y'umweru mu muhanda igira iti 'BUS ONLY' ivuga ko icyo gisate cy'umuhanda cyahariwe gusa ibinyabiziga bitwara abagenzi muri rusange (Public transport buses). Ibindi binyabiziga byose bibujijwe kukigenderamo, kugikoreramo imyitozo, cyangwa kugihagararamo akanya gato n'akanini.",
+    "memoryTip": "BUS ONLY = Igisate cyahariwe amabisi gusa; izindi modoka ntizemerewe kukigenderamo."
+  },
+  {
+    "number": 439,
+    "matchText": "Icyapa cy'uruziga rw'ubururu kirimo igishushanyo cy'igare cyera gisobanura iki?",
+    "correctKey": "c",
+    "correctText": "Inzira itegetswe abanyamagare (Piste cyclable obligatoire)",
+    "lawTitle": "Icyapa Gitegeka Inzira y'Amagare (Piste Cyclable Obligatoire)",
+    "lawDetails": "Iki cyapa cy'uruziga rw'ubururu kirimo igare cyera ni icyapa GITEGEKA. Gitegeka abayobozi b'amagare gukoresha iyo nzira yabagenewe (piste cyclable), kikanabuza ibindi binyabiziga bifite moteri kuyikoresha.",
+    "memoryTip": "Uruziga rw'ubururu kirimo igare = Inzira itegetswe abanyamagare."
+  },
+  {
+    "number": 440,
+    "matchText": "Ibinyabiziga bitwara abagenzi muri rusange n'ibitwara imizigo irenga toni 3.5 bitegetswe gushyirwamo akuma kagabanya umuvuduko (Speed Governor) gatuma bitarenza umuvuduko wa:",
+    "correctKey": "c",
+    "correctText": "60 km/h",
+    "lawTitle": "Iteka rya Minisitiri ku Twuma Tugabanya Umuvuduko (Speed Governors)",
+    "lawDetails": "Hakurikijwe amategeko agenga umutekano mu gutwara abantu n'ibintu mu Rwanda, ibinyabiziga byose bitwara abagenzi muri rusange (bisi, coaster, twegerane) n'ibitwara imizigo bifite uburemere burenga toni 3.5 bitegetswe kugira agakoresho kagabanya umuvuduko (Speed Governor) gatuma bidashobora kurenza KM 60 MU ISAHA (60 km/h) aho byaba bigenda hose mu gihugu.",
+    "memoryTip": "Speed Governor ku bagenzi n'amakamyo > 3.5t igena umuvuduko ntarengwa wa 60 km/h."
+  },
+  {
+    "number": 441,
+    "matchText": "Ku bijyanye n'umutekano wo gutwara moto mu Rwanda, ni iyihe ngingo muri izi ikurikira itubahirije amategeko?",
+    "correctKey": "c",
+    "correctText": "Biremewe gutwara umwana w'imyaka 7 ku ntebe y'inyuma ya moto nta nkomyi",
+    "lawTitle": "Amategeko y'Umutekano wo Gutwara Moto n'Abagenzi",
+    "lawDetails": "Mu Rwanda birabujijwe gutwara abana bari munsi y'imyaka 12 kuri moto kubera impamvu z'umutekano wabo. Bityo, igitekerezo kivuga ko 'biremewe gutwara umwana w'imyaka 7' nticyubahirije amategeko. Indi miburo (kwambara casque ifunze neza no kutarenza umugenzi umwe) yo ni amategeko agomba kubahirizwa.",
+    "memoryTip": "Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto."
+  },
+  {
+    "number": 442,
+    "matchText": "Ni ryari umuyobozi w'ikinyabiziga cyangwa ipikipiki yemerewe gukoresha telefoni igendanwa mu gihe ikinyabiziga kigenda mu muhanda?",
+    "correctKey": "c",
+    "correctText": "Igihe akoresha uburyo bwa Bluetooth / Hands-free budasaba gukora kuri telefoni mu ntoki",
+    "lawTitle": "Itegeko Rigenga Ikoreshwa rya Telefoni ku Muyobozi (Hands-Free Only)",
+    "lawDetails": "Amategeko y'umuhanda mu Rwanda abuza umuyobozi wese gufata cyangwa gukoresha telefoni igendanwa mu ntoki igihe atwaye ikinyabiziga. Kwitaba byemewe gusa mu gihe ikinyabiziga gifite uburyo bw'ikoranabuhanga bwa 'Hands-free' (nka Bluetooth yo mu modoka) butamusaba gufata telefoni mu ntoki cyangwa kuyangaza amaso ye ku muhanda.",
+    "memoryTip": "Telefoni mu ntoki irabujijwe burundu; byemewe gusa binyuze muri Bluetooth / Hands-free."
+  },
+  {
+    "number": 443,
+    "matchText": "Aho abanyamaguru bambukira (Zebra Crossing) hari amatara abiri y'umuhondo amurika asimburana (Feux clignotants jaunes), umuyobozi w'ikinyabiziga asabwa iki?",
+    "correctKey": "b",
+    "correctText": "Kugabanya umuvuduko akanahagarara agaha inzira umunyamaguru wese ugeze ku murongo cyangwa ugaragaje ubushake bwo kwambuka",
+    "lawTitle": "Uburenganzira bw'Abanyamaguru ku Mirongo Yera n'Amatara y'Umuhondo",
+    "lawDetails": "Amatara y'umuhondo amurika asimburana ku mirongo y'abanyamaguru amenyesha abashoferi kwitonda bidasanzwe, kugabanya umuvuduko, no guhagarara bagaha inzira yose abanyamaguru bari ku murongo wera cyangwa bateganya kwambuka.",
+    "memoryTip": "Ku murongo w'abanyamaguru, umunyamaguru afite uburenganzira bwo gutambuka mbere."
+  },
+  {
+    "number": 444,
+    "matchText": "Icyapa cy'ubururu kigaragaza imyambi yerekeza mu bisate bitandukanye mbere yo kwinjira mu masangano azunguruka (Rond-point) kigamije iki?",
+    "correctKey": "a",
+    "correctText": "Gutegeka umuyobozi kuguma mu gisate kijyanye n'icyerekezo aganamo mbere yo kwinjira muri rond-point",
+    "lawTitle": "Ibyapa Byerekana Ibyerekezo by'Ibisate by'Umuhanda (Lane Assignment Signs)",
+    "lawDetails": "Ibyapa by'imyambi mu bisate by'umuhanda bitegeka abayobozi gufata igisate gikwiye hakiri kare: igisate cy'iburyo ku bajya iburyo cyangwa imbere; igisate cy'ibumoso ku bajya ibumoso cyangwa abazenguruka bagaruka. Birabujijwe guhindura igisate mu buryo buteje akaga imbere muri rond-point.",
+    "memoryTip": "Ibyapa by'imyambi bitegeka gutoranya igisate kijyanye n'aho ugana mbere yo kwinjira mu masangano."
+  },
+  {
+    "number": 445,
+    "matchText": "Ku mihanda migari yo mu Mujyi wa Kigali (Boulevards / Dual Carriageway nk'umuhanda Sonatubes - Gahanga) ifite ibyapa bibyemerera, umuvuduko ntarengwa wemerewe imodoka nto ni:",
+    "correctKey": "c",
+    "correctText": "60 km/h",
+    "lawTitle": "Umuvuduko Ntarengwa ku Mihanda Migari yo mu Mujyi wa Kigali",
+    "lawDetails": "Mu Mujyi wa Kigali, n'ubwo umuvuduko rusange mu nsisiro ari 40 km/h, imihanda migari yagutse (Dual carriageways) ifite ibyapa byemera umuvuduko wa 60 KM MU ISAHA (60 km/h) ku binyabiziga bito, mu gihe ku mihanda y'igihugu isohoka mu mujyi ibyapa bishobora kwemerera kugeza kuri 80 km/h.",
+    "memoryTip": "Imihanda migari y'umujyi ifite ibyapa = 60 km/h; imihanda isanzwe yo mu nsisiro = 40 km/h."
+  },
+  {
+    "number": 446,
+    "matchText": "Kurenga ku tara ritukura ry'umuhanda (Feu rouge) cyangwa kutubahiriza ikimenyetso cy'umupolisi uyobora umuhanda bihanishwa amande angana na:",
+    "correctKey": "c",
+    "correctText": "25,000 Frw",
+    "lawTitle": "Ibihano by'Amande ku Kurenga ku Tara Ritukura",
+    "lawDetails": "Kurenga ku matara amurika yo mu muhanda (cyane cyane itara ritukura) cyangwa kutubahiriza amabwiriza y'umupolisi uyobora umuhanda ni ikosa rikomeye ry'amande angana n'amafaranga y'u Rwanda ibihumbi makumyabiri na bitanu (25,000 Frw) ndetse n'ibindi bihano bishobora gukurikiraho habaye impanuka.",
+    "memoryTip": "Kurenga ku tara ritukura = Amande ya 25,000 Frw."
+  },
+  {
+    "number": 447,
+    "matchText": "Umuyobozi w'ikinyabiziga afatwa ko yanyoye inzoga zitemewe mu gihe igipimo cy'inzoga mu maraso kirenze:",
+    "correctKey": "c",
+    "correctText": "0.8 g/l",
+    "lawTitle": "Igipimo cy'Inzoga mu Maraso n'Ibihano byo Gutwara Wasinze",
+    "lawDetails": "Mu Rwanda, igipimo ntarengwa cy'inzoga cyemewe mu maraso y'umuyobozi w'ikinyabiziga ni garama 0.8 ku litiro y'amaraso (0.8 g/l) cyangwa miligarama 0.4 kuri litiro y'umwuka (0.4 mg/l). Kurenza iki gipimo bihanishwa amande y'amafaranga 150,000 Frw, gufungwa iminsi 5, no gufatirwa ikinyabiziga.",
+    "memoryTip": "Inzoga ntarengwa: 0.8 g/l mu maraso cyangwa 0.4 mg/l mu mwuka. Amande ni 150,000 Frw."
+  },
+  {
+    "number": 448,
+    "matchText": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura gishushanyijeho umunyamaguru wambuka gitandukanye gute n'icyapa cy'ubururu cya kare gishushanyijeho umunyamaguru wambuka?",
+    "correctKey": "a",
+    "correctText": "Icyapa cya mpandeshatu kiburira ko imbere ahegereye inzira y'abanyamaguru, mu gihe icya kare cy'ubururu cyerekana ahantu nyirizina iyo nzira iherereye",
+    "lawTitle": "Itandukaniro ry'Icyapa Kiburira n'Icyapa Cyerekana Aho Abanyamaguru Bambukira",
+    "lawDetails": "Icyapa cya mpandeshatu (ishusho yo kuburira) kimenyesha umuyobozi ko ahegereye (metero 150-200 hanze y'insisiro cyangwa metero 50 mu nsisiro) aho abanyamaguru bambukira. Icyapa cy'urukiramende/kare cy'ubururu (ishusho yo kuyobora) gishingwa ako kanya ahari umurongo w'abanyamaguru (Zebra Crossing) kugira ngo kerekane aho yiteganye nyirizina.",
+    "memoryTip": "Mpandeshatu = Iburira ahegereye inzira; Kare y'ubururu = Yerekana aho inzira iherereye ako kanya."
+  },
+  {
+    "number": 449,
+    "matchText": "Icyapa cy'uruziga rufite umuzenguruko utukura kirimo ikamyo itukura ibumoso n'imodoka y'umukara iburyo gisobanura iki?",
+    "correctKey": "b",
+    "correctText": "Birabujijwe kunyuranaho ku binyabiziga byose bitwara imizigo bifite uburemere burenga toni 3.5",
+    "lawTitle": "Icyapa Kibuuza Amakamyo Kunyuranaho (Interdiction de Dépasser pour Poids Lourds)",
+    "lawDetails": "Icyapa cy'uruziga rutukura kirimo ikamyo itukura ibumoso n'imodoka y'umukara kibuza ibinyabiziga byose bikora ubwikorezi bw'imizigo bifite uburemere ntarengwa bwemewe burenga toni 3.5 (3,500 kg) kunyura ku bindi binyabiziga bigendeshwa na moteri.",
+    "memoryTip": "Ikamyo itukura mu ruziga rutukura = Kubuza amakamyo > 3.5t kunyuranaho."
+  },
+  {
+    "number": 450,
+    "matchText": "Mu rwego rwo gukumira impanuka z'abanyamaguru nijoro mu bukangurambaga bwa Gerayo Amahoro, abanyamaguru bagendera ku nkengero z'umuhanda badatandukanyijwe n'imodoka basabwa iki?",
+    "correctKey": "b",
+    "correctText": "Kugendera mu ruhande rw'ibumoso bateganye n'ibinyabiziga bibasanga, no kwambara imyenda ibona kure (ngarurarumuri)",
+    "lawTitle": "Amategeko y'Umutekano w'Abanyamaguru Nijoro (Gerayo Amahoro)",
+    "lawDetails": "Abanyamaguru bagenda ku muhanda udafite inzira y'abanyamaguru (trottoir) bategetswe kugendera ku ruhande rw'IBUMOSO bw'umuhanda kugira ngo babone ibinyabiziga bibasanga imbere, kandi biba byiza iyo bambaye imyenda ifite ibara rigaragara cyangwa ngarurarumuri (reflectors) nijoro.",
+    "memoryTip": "Abanyamaguru ku nkengero y'umuhanda bagendera ibumoso babona imodoka zibasanga."
+  },
+  {
+    "number": 451,
+    "matchText": "Hakurikijwe amategeko y'umuhanda mu Rwanda, ni ryari bishobora kwemerwa kunyuranaho uciye IBURYO ku kindi kinyabiziga?",
+    "correctKey": "b",
+    "correctText": "Igihe ikinyabiziga kigiye gukatira ibumoso kandi cyamaze kubigaragaza n'itara, cyangwa ku kinyabiziga kigendera ku njanji (tramway/gari ya moshi)",
+    "lawTitle": "Ingingo ya 28: Ibihe Byihariye Byemewe Kunyuranaho Iburyo",
+    "lawDetails": "Ihame rusange rivuga ko kunyuranaho bikorerwa ibumoso. Icyakora, kunyuranaho iburyo byemewe gusa mu bihe bibiri: (1) Iyo umuyobozi w'imbere yatanze ikimenyetso cy'uko agiye gukatira ibumoso kandi agafata igisate cy'ibumoso; (2) Ku kinyabiziga kigendera ku njanji (nk'imodoka y'ishyamba cyangwa tramway) kinyura hagati mu muhanda iyo hari umwanya uhagije iburyo bwayo.",
+    "memoryTip": "Kunyuranaho iburyo byemewe gusa: iyo uw'imbere agiye gukata ibumoso, cyangwa ku kinyabiziga cy'injanji hagati mu muhanda."
+  },
+  {
+    "number": 452,
+    "matchText": "Icyapa cy'urukiramende rw'ubururu kirimo inyuguti 'P' y'umweru gisobanura iki mu muhanda?",
+    "correctKey": "b",
+    "correctText": "Ahantu hemerewe guparika ibinyabiziga (Parking)",
+    "lawTitle": "Icyapa Cyerekana Aho Guparika (Signaux de Stationnement / Parking)",
+    "lawDetails": "Icyapa cy'urukiramende cyangwa kare y'ubururu kirimo inyuguti nkuru 'P' y'umweru ni icyapa kiyobora cyerekana ahantu hagenewe guparika ibinyabiziga mu buryo bwemewe n'amategeko (Parking).",
+    "memoryTip": "P mu rukiramende rw'ubururu = Parking yemewe."
+  },
+  {
+    "number": 453,
+    "matchText": "Icyapa cy'uruziga rutukura rwose kirimo umurongo wera ugororotse uhagaze hagati mu buryo bw'umutambiko (Sens Interdit) gisobanura iki?",
+    "correctKey": "b",
+    "correctText": "Birabujijwe kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo (Sens interdit)",
+    "lawTitle": "Icyapa Cy'Uruziga Rutukura n'Umurongo Wera (Sens Interdit)",
+    "lawDetails": "Icyapa cy'uruziga rutukura rufite umurongo wera uciye hagati (Sens Interdit / No Entry) kibuza burundu ikinyabiziga icyo ari cyo cyose kwinjira muri uwo muhanda giturutse muri icyo cyerekezo kuko uwo muhanda uba uva mu rundi ruhande (icyerekezo kimwe).",
+    "memoryTip": "Uruziga rutukura rurimo umurongo w'umweru utambitse = Sens interdit (Ntuhinjire)."
   }
 ]

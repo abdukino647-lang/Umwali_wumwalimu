@@ -2,41 +2,64 @@ import { questions } from "@/db/schema";
 import QuizEngine from "@/components/quiz/QuizEngine";
 import { BackButton } from "@/components/layout/BackButton";
 import { getModuleQuestions } from "@/lib/catalog";
+import questionsGroupedData from "@/data/questions_grouped.json";
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-export default async function QuizPage({ params }: { params: Promise<{ category: string, module: string }> }) {
+type QuestionRow = typeof questions.$inferSelect;
+
+export default async function QuizPage({ params }: { params: Promise<{ category: string; module: string }> }) {
   const p = await params;
 
-  // Cached per-module questions (moduleId is unique to a category, no DB hit on revisit).
-  let qList: (typeof questions.$inferSelect)[] = [];
+  // Cached per-module questions if valid UUID
+  let qList: QuestionRow[] = [];
   if (UUID_PATTERN.test(p.module)) {
     qList = await getModuleQuestions(p.module);
   }
-  
+
+  // Fallback or virtual modules: load authoritative questions from questions_grouped.json
   if (qList.length === 0) {
-    // Generate dummy questions
-    qList = Array.from({ length: 5 }).map((_, i) => ({
-      id: `q-${i}`,
-      number: i + 1,
-      category: p.category as any,
-      text: p.category === "numeric" ? `Umvuduko ntarengwa w'imodoka y'abagenzi ni 60 km/h? Ikibazo cya ${i+1}` : p.category === "ibyapa" ? `Iki cyapa kivuga iki? Ikibazo cya ${i+1}` : `Amategeko y'umuhanda arinda abantu. Ikibazo cya ${i+1}`,
+    const allQuestions = questionsGroupedData;
+    let pool: typeof allQuestions = [];
+
+    if (p.module === "amategeko-mashya") {
+      // Questions covering modern traffic laws & new signs (Q434 - Q453)
+      pool = allQuestions.filter((q) => q.number >= 434);
+    } else {
+      const byCat = allQuestions.filter((q) => q.category === p.category);
+      if (p.module === "ikizamini-gito") {
+        pool = byCat.slice(0, 10);
+      } else if (p.module.startsWith("module-")) {
+        const modIdx = parseInt(p.module.replace("module-", ""), 10) || 1;
+        const start = (modIdx - 1) * 20;
+        pool = byCat.slice(start, start + 20);
+      } else {
+        // Full category or fallback
+        pool = byCat.length > 0 ? byCat : allQuestions.slice(0, 20);
+      }
+    }
+
+    qList = pool.map((q) => ({
+      id: `q-${q.number}`,
+      number: q.number,
+      category: q.category as any,
+      text: q.text,
       textEn: null,
-      options: [
-        { key: "a", text: "Nibyo rwose" },
-        { key: "b", text: "Oya si byo" },
-        { key: "c", text: "Simbizi" },
-        { key: "d", text: "Ndumva bishoboka" }
-      ],
-      correctKey: "a",
-      explanation: "Igisubizo nyacyo ni A kubera...",
-      signImageUrl: null,
-      signSvg: p.category === "ibyapa" ? `<svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="red" stroke-width="10" fill="white" /><text x="50" y="55" font-size="30" text-anchor="middle" fill="black">50</text></svg>` : null,
+      options: q.options,
+      correctKey: q.correctKey,
+      explanation: q.explanation || "",
+      signImageUrl: (q as any).signImageUrl || (q as any).image || null,
+      signSvg: (q as any).signSvg || null,
       examGroup: null,
       moduleId: p.module,
       createdAt: new Date(),
     }));
   }
+
+  const isNewLaws = p.module === "amategeko-mashya";
+  const title = isNewLaws
+    ? "Ibyapa Bishya n'Amategeko Mashya (2024)"
+    : `Ikizamini: ${p.category.toUpperCase()}`;
 
   return (
     <div className="py-8">
@@ -44,8 +67,12 @@ export default async function QuizPage({ params }: { params: Promise<{ category:
         <BackButton label="Subira ku Amasomo" fallback={`/courses/${p.category}`} />
       </div>
       <div className="mb-8 text-center">
-        <h1 className="text-glow text-2xl font-bold text-white">Ikizamini: {p.category.toUpperCase()}</h1>
-        <p className="text-cyan-100/65">Ibibazo {qList.length} • Amanota fatizo 70%</p>
+        <h1 className="text-glow text-2xl font-bold text-white">{title}</h1>
+        <p className="text-cyan-100/65">
+          {isNewLaws
+            ? "Camera z'umuvuduko, 10% tolerance, BUS ONLY, Speed governors, n'ibyapa bishya • Ibibazo 20"
+            : `Ibibazo ${qList.length} • Amanota fatizo 70%`}
+        </p>
       </div>
       <QuizEngine questions={qList as any} moduleId={UUID_PATTERN.test(p.module) ? p.module : undefined} />
     </div>

@@ -10166,5 +10166,513 @@
     "correctKey": "b",
     "category": "text",
     "explanation": "Igisubizo ni B"
+  },
+  {
+    "number": 434,
+    "text": "Iki cyapa cy'ubururu kigaragaza ifoto ya camera imurika kimenyesha iki mu muhanda?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Aho camera ifotora ibinyabiziga bishaje gusa"
+      },
+      {
+        "key": "b",
+        "text": "Ahegereye camera zigenzura umuvuduko n'amatara by'ibinyabiziga (Speed Enforcement Camera)"
+      },
+      {
+        "key": "c",
+        "text": "Aho gufatira amafoto y'urwibutso mu muhanda"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'ubururu kigaragaza camera kimenyesha ko hegereye camera zigenzura umuvuduko n'iyubahirizwa ry'amatara yo mu muhanda.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"12\" fill=\"#0055b8\"/><rect x=\"25\" y=\"38\" width=\"50\" height=\"34\" rx=\"4\" fill=\"#ffffff\"/><path d=\"M38 38 L43 28 L57 28 L62 38 Z\" fill=\"#ffffff\"/><circle cx=\"50\" cy=\"55\" r=\"11\" fill=\"#0055b8\"/><circle cx=\"50\" cy=\"55\" r=\"7\" fill=\"#ffffff\"/><circle cx=\"68\" cy=\"44\" r=\"2.5\" fill=\"#ffd700\"/><path d=\"M18 22 L26 28 M14 34 L22 36 M18 46 L26 44\" stroke=\"#ffffff\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>"
+  },
+  {
+    "number": 435,
+    "text": "Mu Rwanda, camera zigenzura umuvuduko zitangira kwandikira amande umuyobozi w'ikinyabiziga igihe arenzeho ijanisha ringana gute ku muvuduko ugaragazwa n'icyapa?",
+    "options": [
+      {
+        "key": "a",
+        "text": "5%"
+      },
+      {
+        "key": "b",
+        "text": "10%"
+      },
+      {
+        "key": "c",
+        "text": "15%"
+      },
+      {
+        "key": "d",
+        "text": "20%"
+      }
+    ],
+    "correctKey": "b",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni B. Polisi y'u Rwanda igena ko camera zitanga amahirwe y'inyongera ya 10% ku muvuduko wanditswe ku cyapa mbere yo gutanga amande."
+  },
+  {
+    "number": 436,
+    "text": "Camera zikoreshwa na Polisi y'u Rwanda mu kugenzura umutekano n'amategeko yo mu muhanda zirimo izi zikurikira:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Camera zihoraho zishinze ku nkingi mu muhanda (Fixed/Static cameras)"
+      },
+      {
+        "key": "b",
+        "text": "Camera zimurwa cyangwa ziteretse ku modoka za Polisi (Mobile cameras)"
+      },
+      {
+        "key": "c",
+        "text": "Camera zigenzura abatambuka ku matara atukura n'inzira z'abanyamaguru mu masangano (Red light cameras)"
+      },
+      {
+        "key": "d",
+        "text": "Ibisubizo byose nibyo"
+      }
+    ],
+    "correctKey": "d",
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni D. Polisi y'u Rwanda ikoresha camera zihoraho, izimurwa, hamwe n'izigenzura amatara atukura."
+  },
+  {
+    "number": 437,
+    "text": "Iyo umuyobozi wandikiwe amande yo mu muhanda na camera abimenyeshejwe kuri SMS, agomba kuyishyura mu gihe kitarenze:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Iminsi 7"
+      },
+      {
+        "key": "b",
+        "text": "Iminsi 14"
+      },
+      {
+        "key": "c",
+        "text": "Iminsi 30"
+      },
+      {
+        "key": "d",
+        "text": "Amezi 2"
+      }
+    ],
+    "correctKey": "c",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni C. Amande yose yo mu muhanda yanditswe na Polisi agomba kwishyurwa mu gihe kitarenze iminsi mirongo itatu (30)."
+  },
+  {
+    "number": 438,
+    "text": "Icyapa cyangwa inyandiko mu muhanda igira iti 'BUS ONLY' cyangwa ikimenyetso cy'uruziga rw'ubururu kigaragaza bisi bisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Aho amabisi yose agomba guparika akanya kanini"
+      },
+      {
+        "key": "b",
+        "text": "Igisate cy'umuhanda cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo"
+      },
+      {
+        "key": "c",
+        "text": "Inzira yagenewe imodoka zose zifite abagenzi barenze batatu"
+      },
+      {
+        "key": "d",
+        "text": "Aho amabisi agomba kurenza umuvuduko wa 80 km/h"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. 'BUS ONLY' isobanura igisate cy'umuhanda cyahariwe amabisi y'abagenzi gusa; ibindi binyabiziga bibujijwe kukigenderamo.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#0055b8\" stroke=\"#ffffff\" stroke-width=\"2\"/><rect x=\"24\" y=\"28\" width=\"52\" height=\"36\" rx=\"6\" fill=\"#ffffff\"/><rect x=\"28\" y=\"34\" width=\"18\" height=\"14\" rx=\"2\" fill=\"#0055b8\"/><rect x=\"50\" y=\"34\" width=\"22\" height=\"14\" rx=\"2\" fill=\"#0055b8\"/><circle cx=\"32\" cy=\"56\" r=\"3\" fill=\"#ffd700\"/><circle cx=\"68\" cy=\"56\" r=\"3\" fill=\"#ffd700\"/><circle cx=\"34\" cy=\"66\" r=\"6\" fill=\"#222222\"/><circle cx=\"66\" cy=\"66\" r=\"6\" fill=\"#222222\"/><text x=\"50\" y=\"86\" font-family=\"sans-serif\" font-weight=\"900\" font-size=\"12\" fill=\"#ffffff\" text-anchor=\"middle\">BUS ONLY</text></svg>"
+  },
+  {
+    "number": 439,
+    "text": "Icyapa cy'uruziga rw'ubururu kirimo igishushanyo cy'igare cyera gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Aho amagare abujijwe kugenda"
+      },
+      {
+        "key": "b",
+        "text": "Aho bagurishiriza amagare"
+      },
+      {
+        "key": "c",
+        "text": "Inzira itegetswe abanyamagare (Piste cyclable obligatoire)"
+      },
+      {
+        "key": "d",
+        "text": "Aho amagare agomba kugendera mu muhanda rusange"
+      }
+    ],
+    "correctKey": "c",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni C. Icyapa cy'uruziga rw'ubururu kirimo igare gitegeka abanyamagare gukoresha iyo nzira yabagenewe.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#0055b8\" stroke=\"#ffffff\" stroke-width=\"2\"/><circle cx=\"30\" cy=\"60\" r=\"14\" stroke=\"#ffffff\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"70\" cy=\"60\" r=\"14\" stroke=\"#ffffff\" stroke-width=\"3\" fill=\"none\"/><path d=\"M30 60 L48 60 L62 46 L70 60 M48 60 L42 42 L34 42 M42 42 L62 46 M62 46 L65 38 L58 38 M65 38 L72 38\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M38 42 L46 42\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>"
+  },
+  {
+    "number": 440,
+    "text": "Ibinyabiziga bitwara abagenzi muri rusange n'ibitwara imizigo irenga toni 3.5 bitegetswe gushyirwamo akuma kagabanya umuvuduko (Speed Governor) gatuma bitarenza umuvuduko wa:",
+    "options": [
+      {
+        "key": "a",
+        "text": "40 km/h"
+      },
+      {
+        "key": "b",
+        "text": "50 km/h"
+      },
+      {
+        "key": "c",
+        "text": "60 km/h"
+      },
+      {
+        "key": "d",
+        "text": "80 km/h"
+      }
+    ],
+    "correctKey": "c",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni C. Ibinyabiziga bitwara abagenzi muri rusange n'ibitwara ibintu > 3.5t bitegetswe gukoresha Speed Governor ibuzanya kurenza 60 km/h."
+  },
+  {
+    "number": 441,
+    "text": "Ku bijyanye n'umutekano wo gutwara moto mu Rwanda, ni iyihe ngingo muri izi ikurikira itubahirije amategeko?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Umushoferi n'umugenzi bagomba kwambara ingofero yabugenewe (casque) ifunze neza mu kano"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe gutwara abagenzi barenze umwe kuri moto"
+      },
+      {
+        "key": "c",
+        "text": "Biremewe gutwara umwana w'imyaka 7 ku ntebe y'inyuma ya moto nta nkomyi"
+      },
+      {
+        "key": "d",
+        "text": "Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto"
+      }
+    ],
+    "correctKey": "c",
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni C. Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto mu Rwanda."
+  },
+  {
+    "number": 442,
+    "text": "Ni ryari umuyobozi w'ikinyabiziga cyangwa ipikipiki yemerewe gukoresha telefoni igendanwa mu gihe ikinyabiziga kigenda mu muhanda?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Igihe avugira kuri loud speaker ariko ayifashe mu ntoki"
+      },
+      {
+        "key": "b",
+        "text": "Igihe yandika ubutumwa bugufi (SMS) bwihutirwa"
+      },
+      {
+        "key": "c",
+        "text": "Igihe akoresha uburyo bwa Bluetooth / Hands-free budasaba gukora kuri telefoni mu ntoki"
+      },
+      {
+        "key": "d",
+        "text": "Igihe agendera ku muvuduko uri munsi ya 20 km/h"
+      }
+    ],
+    "correctKey": "c",
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni C. Gukoresha telefoni mu ntoki birabujijwe igihe cyose utwaye; byemewe gusa hifashishijwe uburyo bwa Hands-free / Bluetooth."
+  },
+  {
+    "number": 443,
+    "text": "Aho abanyamaguru bambukira (Zebra Crossing) hari amatara abiri y'umuhondo amurika asimburana (Feux clignotants jaunes), umuyobozi w'ikinyabiziga asabwa iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kuvugiriza ihoni abanyamaguru ngo bave mu nzira yihute"
+      },
+      {
+        "key": "b",
+        "text": "Kugabanya umuvuduko akanahagarara agaha inzira umunyamaguru wese ugeze ku murongo cyangwa ugaragaje ubushake bwo kwambuka"
+      },
+      {
+        "key": "c",
+        "text": "Kurenza umuvuduko kugira ngo atambuke mbere y'uko amatara ahinduka atukura"
+      },
+      {
+        "key": "d",
+        "text": "Gukomeza niba nta mupolisi uhari"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Amatara y'umuhondo amurika asimburana ategeka umuyobozi kugabanya umuvuduko no guhagarara agaha inzira abanyamaguru."
+  },
+  {
+    "number": 444,
+    "text": "Icyapa cy'ubururu kigaragaza imyambi yerekeza mu bisate bitandukanye mbere yo kwinjira mu masangano azunguruka (Rond-point) kigamije iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Gutegeka umuyobozi kuguma mu gisate kijyanye n'icyerekezo aganamo mbere yo kwinjira muri rond-point"
+      },
+      {
+        "key": "b",
+        "text": "Kubuza ibinyabiziga byose gukata ibumoso"
+      },
+      {
+        "key": "c",
+        "text": "Kumenyesha ko rond-point ifunze"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni A. Icyapa cy'imyambi gitegeka umuyobozi kwinjira mu gisate kijyanye n'icyerekezo ashaka kwerekezamo muri rond-point.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"10\" fill=\"#0055b8\"/><line x1=\"50\" y1=\"12\" x2=\"50\" y2=\"88\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/><path d=\"M26 80 L26 35 M26 35 L20 42 M26 35 L32 42\" stroke=\"#ffffff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M26 50 C26 40 18 36 12 36 M12 36 L17 31 M12 36 L17 41\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M74 80 L74 35 M74 35 L68 42 M74 35 L80 42\" stroke=\"#ffffff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M74 50 C74 40 82 36 88 36 M88 36 L83 31 M88 36 L83 41\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/></svg>"
+  },
+  {
+    "number": 445,
+    "text": "Ku mihanda migari yo mu Mujyi wa Kigali (Boulevards / Dual Carriageway nk'umuhanda Sonatubes - Gahanga) ifite ibyapa bibyemerera, umuvuduko ntarengwa wemerewe imodoka nto ni:",
+    "options": [
+      {
+        "key": "a",
+        "text": "40 km/h"
+      },
+      {
+        "key": "b",
+        "text": "50 km/h"
+      },
+      {
+        "key": "c",
+        "text": "60 km/h"
+      },
+      {
+        "key": "d",
+        "text": "100 km/h"
+      }
+    ],
+    "correctKey": "c",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni C. Ku mihanda migari y'Umujyi wa Kigali ifite ibyapa bibyemera, umuvuduko ntarengwa ni 60 km/h."
+  },
+  {
+    "number": 446,
+    "text": "Kurenga ku tara ritukura ry'umuhanda (Feu rouge) cyangwa kutubahiriza ikimenyetso cy'umupolisi uyobora umuhanda bihanishwa amande angana na:",
+    "options": [
+      {
+        "key": "a",
+        "text": "5,000 Frw"
+      },
+      {
+        "key": "b",
+        "text": "10,000 Frw"
+      },
+      {
+        "key": "c",
+        "text": "25,000 Frw"
+      },
+      {
+        "key": "d",
+        "text": "100,000 Frw"
+      }
+    ],
+    "correctKey": "c",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni C. Kurenga ku tara ritukura bihanishwa amande y'amafaranga y'u Rwanda ibihumbi makumyabiri na bitanu (25,000 Frw)."
+  },
+  {
+    "number": 447,
+    "text": "Umuyobozi w'ikinyabiziga afatwa ko yanyoye inzoga zitemewe mu gihe igipimo cy'inzoga mu maraso kirenze:",
+    "options": [
+      {
+        "key": "a",
+        "text": "0.2 g/l"
+      },
+      {
+        "key": "b",
+        "text": "0.5 g/l"
+      },
+      {
+        "key": "c",
+        "text": "0.8 g/l"
+      },
+      {
+        "key": "d",
+        "text": "1.5 g/l"
+      }
+    ],
+    "correctKey": "c",
+    "category": "numeric",
+    "explanation": "Igisubizo cy'ukuri ni C. Igipimo cy'inzoga ntarengwa cyemewe ni 0.8 g/l mu maraso cyangwa 0.4 mg/l mu mwuka."
+  },
+  {
+    "number": 448,
+    "text": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura gishushanyijeho umunyamaguru wambuka gitandukanye gute n'icyapa cy'ubururu cya kare gishushanyijeho umunyamaguru wambuka?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Icyapa cya mpandeshatu kiburira ko imbere ahegereye inzira y'abanyamaguru, mu gihe icya kare cy'ubururu cyerekana ahantu nyirizina iyo nzira iherereye"
+      },
+      {
+        "key": "b",
+        "text": "Byombi bisobanura ko abanyamaguru babujijwe kwambuka"
+      },
+      {
+        "key": "c",
+        "text": "Icyapa cya kare kibuza guhagarara, icya mpandeshatu kigategeka kwiruka"
+      },
+      {
+        "key": "d",
+        "text": "Nta tandukaniro riri hagati yabyo"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni A. Mpandeshatu iburira ko uhegereye aho abanyamaguru bambukira, naho kare y'ubururu yerekana aho inzira iherereye.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"10\" fill=\"#0055b8\"/><polygon points=\"50,15 88,85 12,85\" fill=\"#ffffff\"/><line x1=\"28\" y1=\"80\" x2=\"72\" y2=\"80\" stroke=\"#000000\" stroke-width=\"4\"/><line x1=\"32\" y1=\"74\" x2=\"68\" y2=\"74\" stroke=\"#000000\" stroke-width=\"3\"/><circle cx=\"52\" cy=\"40\" r=\"5\" fill=\"#000000\"/><path d=\"M50 46 L53 58 L59 56 M47 50 L42 58 M52 58 L46 72 M52 58 L58 70\" stroke=\"#000000\" stroke-width=\"3.5\" stroke-linecap=\"round\" fill=\"none\"/></svg>"
+  },
+  {
+    "number": 449,
+    "text": "Icyapa cy'uruziga rufite umuzenguruko utukura kirimo ikamyo itukura ibumoso n'imodoka y'umukara iburyo gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe kunyuranaho ku binyabiziga byose"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe kunyuranaho ku binyabiziga byose bitwara imizigo bifite uburemere burenga toni 3.5"
+      },
+      {
+        "key": "c",
+        "text": "Amakamyo agomba kunyuranaho iburyo"
+      },
+      {
+        "key": "d",
+        "text": "Inzira yagenewe amakamyo gusa"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa kibuza amakamyo n'ibinyabiziga bitwara imizigo > 3.5t kunyuranaho mu muhanda.",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#ffffff\" stroke=\"#d90429\" stroke-width=\"8\"/><rect x=\"22\" y=\"44\" width=\"22\" height=\"14\" fill=\"#d90429\"/><rect x=\"17\" y=\"49\" width=\"7\" height=\"9\" fill=\"#d90429\"/><circle cx=\"21\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><circle cx=\"31\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><circle cx=\"39\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><rect x=\"56\" y=\"48\" width=\"22\" height=\"10\" rx=\"2\" fill=\"#222222\"/><path d=\"M60 48 L64 43 L72 43 L76 48 Z\" fill=\"#222222\"/><circle cx=\"61\" cy=\"60\" r=\"3\" fill=\"#222222\"/><circle cx=\"73\" cy=\"60\" r=\"3\" fill=\"#222222\"/></svg>"
+  },
+  {
+    "number": 450,
+    "text": "Mu rwego rwo gukumira impanuka z'abanyamaguru nijoro mu bukangurambaga bwa Gerayo Amahoro, abanyamaguru bagendera ku nkengero z'umuhanda badatandukanyijwe n'imodoka basabwa iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Kugendera mu cyerekezo kimwe n'ikinyabiziga bagana mu mugongo wacyo"
+      },
+      {
+        "key": "b",
+        "text": "Kugendera mu ruhande rw'ibumoso bateganye n'ibinyabiziga bibasanga, no kwambara imyenda ibona kure (ngarurarumuri)"
+      },
+      {
+        "key": "c",
+        "text": "Kwirukanka igihe cyose babonye itara ry'ikinyabiziga"
+      },
+      {
+        "key": "d",
+        "text": "Kugendera hagati mu muhanda kuko nta modoka nyinshi ziba zihari"
+      }
+    ],
+    "correctKey": "b",
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. Abanyamaguru basabwa kugendera ibumoso bateganye n'ibinyabiziga bibasanga no kwambara imyenda ibona kure."
+  },
+  {
+    "number": 451,
+    "text": "Hakurikijwe amategeko y'umuhanda mu Rwanda, ni ryari bishobora kwemerwa kunyuranaho uciye IBURYO ku kindi kinyabiziga?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Igihe cyose unyura ku modoka igenda gahoro cyane"
+      },
+      {
+        "key": "b",
+        "text": "Igihe ikinyabiziga kigiye gukatira ibumoso kandi cyamaze kubigaragaza n'itara, cyangwa ku kinyabiziga kigendera ku njanji (tramway/gari ya moshi)"
+      },
+      {
+        "key": "c",
+        "text": "Igihe uri mu muhanda urombereje nta yindi modoka ihari"
+      },
+      {
+        "key": "d",
+        "text": "Kunyuranaho iburyo ntibyemewe na rimwe mu mategeko y'u Rwanda"
+      }
+    ],
+    "correctKey": "b",
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. Kunyuranaho iburyo byemewe gusa igihe uw'imbere agiye gukata ibumoso cyangwa kuri gari ya moshi/tramway."
+  },
+  {
+    "number": 452,
+    "text": "Icyapa cy'urukiramende rw'ubururu kirimo inyuguti 'P' y'umweru gisobanura iki mu muhanda?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe guhagarara no guparika"
+      },
+      {
+        "key": "b",
+        "text": "Ahantu hemerewe guparika ibinyabiziga (Parking)"
+      },
+      {
+        "key": "c",
+        "text": "Ahegereye ibitaro (Polyclinique)"
+      },
+      {
+        "key": "d",
+        "text": "Inzira ya Polisi y'Igihugu gusa"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. 'P' mu rukiramende rw'ubururu ni icyapa cyerekana ahantu hemerewe guparika (Parking).",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"12\" fill=\"#0055b8\"/><text x=\"50\" y=\"74\" font-family=\"sans-serif\" font-weight=\"900\" font-size=\"64\" fill=\"#ffffff\" text-anchor=\"middle\">P</text></svg>"
+  },
+  {
+    "number": 453,
+    "text": "Icyapa cy'uruziga rutukura rwose kirimo umurongo wera ugororotse uhagaze hagati mu buryo bw'umutambiko (Sens Interdit) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Umuhanda ufunze ku binyabiziga byose mu byerekezo byombi"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo (Sens interdit)"
+      },
+      {
+        "key": "c",
+        "text": "Umuhanda w'icyerekezo kimwe ushobora kwinjiramo"
+      },
+      {
+        "key": "d",
+        "text": "Aho guhagarara akanya gato biremewe"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire).",
+    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#d90429\" stroke=\"#ffffff\" stroke-width=\"2\"/><rect x=\"18\" y=\"42\" width=\"64\" height=\"16\" rx=\"2\" fill=\"#ffffff\"/></svg>"
   }
 ]

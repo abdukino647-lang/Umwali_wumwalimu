@@ -36,6 +36,19 @@ function categorize(q: SourceQuestion): Cat {
   return 'text';
 }
 
+function getExamGroup(q: SourceQuestion, cat: Cat): string {
+  if (q.signImageUrl || q.signSvg || q.image) {
+    const t = (q.text || '').toLowerCase();
+    if (t.includes('ifoto') || t.includes('shusho') || (t.includes('ikinyabiziga') && (t.includes('gitambuka') || t.includes('kinjira') || t.includes('kibanza')))) {
+      return 'roadpic';
+    }
+    return 'sign';
+  }
+  if (cat === 'numeric') return 'number';
+  if (cat === 'ibyapa') return 'sign';
+  return 'analysis';
+}
+
 function normalizeOptions(q: SourceQuestion): SourceOption[] {
   return q.options.map((option) => ({
     key: String(option.key).trim().toLowerCase(),
@@ -162,6 +175,7 @@ async function seed() {
         explanation: q.explanation || `Igisubizo ni ${String(q.correctKey).toUpperCase()}`,
         signImageUrl: q.signImageUrl || q.image || null,
         signSvg: q.signSvg || null,
+        examGroup: getExamGroup(q, q._category),
       })));
       inserted += chunk.length;
     }
