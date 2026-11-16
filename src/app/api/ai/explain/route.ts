@@ -1,17 +1,33 @@
-import { streamText } from 'ai';
-import { anthropic } from '@ai-sdk/anthropic';
+import { NextResponse } from 'next/server';
+import { getTrafficLawExplanation, ExplanationRequest } from '@/lib/traffic-law-explainer';
 
 export async function POST(req: Request) {
-  const { questionText, correctAnswer, category } = await req.json();
+  try {
+    const body = await req.json();
 
-  const result = await streamText({
-    model: anthropic('claude-3-opus-20240229'), // Updated to typical claude-3 model name
-    system: `You are a friendly Rwandan traffic law instructor.
-      Explain why the correct answer is right in simple Kinyarwanda
-      with an English translation. Keep it under 100 words. For ibyapa
-      (road signs), describe what the sign looks like and means.`,
-    prompt: `Question: ${questionText}\nCorrect answer: ${correctAnswer}`,
-  });
+    const requestData: ExplanationRequest = {
+      questionId: body.questionId,
+      questionNumber: body.questionNumber,
+      questionText: body.questionText || body.prompt || "",
+      category: body.category,
+      options: Array.isArray(body.options) ? body.options : [],
+      correctKey: body.correctKey || body.correctAnswer || "d",
+      correctText: body.correctText || body.correctAnswer || "",
+      userKey: body.userKey || null,
+      userText: body.userText || null,
+    };
 
-  return result.toDataStreamResponse();
+    const explanation = await getTrafficLawExplanation(requestData);
+
+    return NextResponse.json({ explanation });
+  } catch (error) {
+    console.error("Explain route error:", error);
+    return NextResponse.json(
+      {
+        explanation:
+          "### ⚠️ Ibisobanuro by'Itegeko\n\nNtabwo byashobotse kubona ubusobanuro muri aka kanya. Ongera ugerageze mukanya.",
+      },
+      { status: 200 }
+    );
+  }
 }

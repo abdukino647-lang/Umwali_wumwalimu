@@ -2,7 +2,68 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { QuizQuestion, calculateScore, getCorrectKey } from "@/lib/quiz-engine";
-import { useCompletion } from "@ai-sdk/react";
+
+function renderFormattedText(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
+function FormattedExplanation({ text }: { text: string }) {
+  const lines = text.split("\n");
+  return (
+    <div className="space-y-2 text-sm leading-relaxed text-cyan-50">
+      {lines.map((line, i) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={i} className="h-1" />;
+
+        if (trimmed.startsWith("### ")) {
+          return (
+            <h4 key={i} className="text-base font-bold text-amber-300">
+              {trimmed.replace("### ", "")}
+            </h4>
+          );
+        }
+        if (trimmed.startsWith("#### ")) {
+          return (
+            <h5 key={i} className="mt-2 text-sm font-semibold text-cyan-200">
+              {trimmed.replace("#### ", "")}
+            </h5>
+          );
+        }
+
+        if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+          return (
+            <div key={i} className="flex items-start gap-2 pl-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+              <div>{renderFormattedText(trimmed.slice(2))}</div>
+            </div>
+          );
+        }
+
+        const numMatch = trimmed.match(/^(\d+)\.\s+(.*)/);
+        if (numMatch) {
+          return (
+            <div key={i} className="flex items-start gap-2 pl-2">
+              <span className="font-semibold text-cyan-300">{numMatch[1]}.</span>
+              <div>{renderFormattedText(numMatch[2])}</div>
+            </div>
+          );
+        }
+
+        return <p key={i}>{renderFormattedText(trimmed)}</p>;
+      })}
+    </div>
+  );
+}
 
 export default function QuizEngine({
   questions,
@@ -19,10 +80,45 @@ export default function QuizEngine({
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
   const [scoreData, setScoreData] = useState<{ score: number; passed: boolean; correct: number; total: number } | null>(null);
-  const [aiExplanationIdx, setAiExplanationIdx] = useState<number | null>(null);
+  const [explanations, setExplanations] = useState<Record<string, string>>({});
+  const [openExplanationIds, setOpenExplanationIds] = useState<Record<string, boolean>>({});
+  const [loadingExplanationId, setLoadingExplanationId] = useState<string | null>(null);
   const [remaining, setRemaining] = useState(timeLimitSec ?? 0);
 
-  const { completion, complete, isLoading } = useCompletion({ api: "/api/ai/explain" });
+  const fetchExplanation = async (quizQ: QuizQuestion, correctAnswerKey: string, userAnswer?: string) => {
+    const qId = quizQ.id;
+    const willOpen = !openExplanationIds[qId];
+    setOpenExplanationIds((prev) => ({ ...prev, [qId]: willOpen }));
+
+    if (!willOpen || explanations[qId]) return;
+
+    setLoadingExplanationId(qId);
+    try {
+      const res = await fetch("/api/ai/explain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          questionId: quizQ.id,
+          questionNumber: quizQ.number,
+          questionText: quizQ.text,
+          category: quizQ.category,
+          options: quizQ.options,
+          correctKey: correctAnswerKey,
+          correctText: quizQ.options.find((o) => o.key === correctAnswerKey)?.text || "",
+          userKey: userAnswer || null,
+          userText: quizQ.options.find((o) => o.key === userAnswer)?.text || "",
+        }),
+      });
+      const data = await res.json();
+      if (data?.explanation) {
+        setExplanations((prev) => ({ ...prev, [qId]: data.explanation }));
+      }
+    } catch (e) {
+      console.error("Failed to load explanation:", e);
+    } finally {
+      setLoadingExplanationId(null);
+    }
+  };
 
   const q = questions[currentIdx];
 
@@ -131,7 +227,9 @@ export default function QuizEngine({
             const userAnswer = answers[quizQ.id];
             const correctAnswerKey = correctKeys[quizQ.id];
             const userCorrect = userAnswer === correctAnswerKey;
-            const isExplaining = aiExplanationIdx === idx;
+            const isOpened = Boolean(openExplanationIds[quizQ.id]);
+            const isThisLoading = loadingExplanationId === quizQ.id;
+            const explanationContent = explanations[quizQ.id];
 
             return (
               <div
@@ -172,30 +270,46 @@ export default function QuizEngine({
                   )}
                 </div>
 
-                {isExplaining && (
-                  <div className="mt-3 rounded-lg border border-cyan-400/25 bg-cyan-500/10 p-3 text-sm text-cyan-50">
-                    <strong className="mb-1 block text-cyan-200">Mwarimu (AI) 🤖</strong>
-                    <p>{completion || (isLoading ? "Nteganya ubusobanuro..." : "")}</p>
+                {isOpened && (
+                  <div className="mt-3 rounded-2xl border border-cyan-400/30 bg-slate-900/95 p-4 text-sm shadow-xl backdrop-blur-md">
+                    <div className="mb-3 flex items-center justify-between border-b border-cyan-400/20 pb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-base">🤖</span>
+                        <strong className="font-semibold text-cyan-200">Mwarimu w&apos;Amategeko (AI)</strong>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => fetchExplanation(quizQ, correctAnswerKey, userAnswer)}
+                        className="rounded px-2 py-0.5 text-xs text-cyan-300/70 hover:bg-white/10 hover:text-white"
+                      >
+                        ✕ Funga
+                      </button>
+                    </div>
+
+                    {isThisLoading ? (
+                      <div className="flex items-center gap-3 py-3 text-cyan-200">
+                        <svg className="h-5 w-5 animate-spin text-cyan-400" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                        </svg>
+                        <span className="text-xs">Mwarimu arimo gusesengura ikibazo n&apos;amategeko akigenga...</span>
+                      </div>
+                    ) : explanationContent ? (
+                      <FormattedExplanation text={explanationContent} />
+                    ) : (
+                      <p className="text-xs text-amber-200">Nta busobanuro bwabonetse. Gerageza nanone.</p>
+                    )}
                   </div>
                 )}
 
-                {!isExplaining && (
+                {!isOpened && (
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => {
-                      setAiExplanationIdx(idx);
-                      complete(
-                        JSON.stringify({
-                          questionText: quizQ.text,
-                          correctAnswer: quizQ.options.find((o) => o.key === correctAnswerKey)?.text,
-                          category: quizQ.category,
-                        })
-                      );
-                    }}
+                    onClick={() => fetchExplanation(quizQ, correctAnswerKey, userAnswer)}
                     className="mt-1 text-xs text-cyan-300 hover:bg-white/5 hover:text-cyan-100"
                   >
-                    💡 Soba ubusobanuro ku AI
+                    💡 Saba ubusobanuro bwa Mwarimu (AI)
                   </Button>
                 )}
               </div>
