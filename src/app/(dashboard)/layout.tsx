@@ -3,23 +3,53 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db";
 import { users } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, ilike } from "drizzle-orm";
 import { DashboardNav } from "@/components/layout/DashboardNav";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { accessActive, daysRemaining, SUPPORT_PHONE } from "@/lib/access";
-import { Clock, Phone, LogOut } from "lucide-react";
+import { Clock, Phone, LogOut, Shield } from "lucide-react";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
   if (!session) redirect("/login");
 
-  const userId = (session.user as { id?: string } | undefined)?.id;
-  const row = userId
-    ? (await db.select({ role: users.role, isActive: users.isActive, exp: users.accessExpiresAt }).from(users).where(eq(users.id, userId)).limit(1))[0]
-    : undefined;
-  const isAdmin = row?.role === "admin";
-  const active = accessActive({ role: row?.role, isActive: row?.isActive, accessExpiresAt: row?.exp });
+  const user = session.user as { id?: string; email?: string; role?: string } | undefined;
+  const userId = user?.id;
+  const userEmail = user?.email?.trim();
+
+  let row: { role: string | null; isActive: boolean | null; exp: Date | null } | undefined;
+  const isUuid = userId && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(userId);
+
+  if (isUuid) {
+    try {
+      const res = await db
+        .select({ role: users.role, isActive: users.isActive, exp: users.accessExpiresAt })
+        .from(users)
+        .where(eq(users.id, userId))
+        .limit(1);
+      row = res[0];
+    } catch {
+      // fallback to email
+    }
+  }
+
+  if (!row && userEmail) {
+    try {
+      const res = await db
+        .select({ role: users.role, isActive: users.isActive, exp: users.accessExpiresAt })
+        .from(users)
+        .where(ilike(users.email, userEmail))
+        .limit(1);
+      row = res[0];
+    } catch {
+      // ignore
+    }
+  }
+
+  const role = row?.role || user?.role || "student";
+  const isAdmin = role === "admin";
+  const active = isAdmin || accessActive({ role, isActive: row?.isActive ?? true, accessExpiresAt: row?.exp });
   const remaining = daysRemaining(row?.exp);
 
   const name = session.user?.name || "Mukunzi";
@@ -62,17 +92,24 @@ export default async function DashboardLayout({ children }: { children: React.Re
     <div className="relative flex min-h-screen flex-col overflow-hidden text-cyan-50">
       <TechBackground variant="network" />
       {/* Topbar */}
-      <header className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-cyan-400/15 bg-[#06121d]/70 px-5 backdrop-blur-md lg:px-8">
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <span className="font-bold tracking-tight text-white">Amategeko y&apos;Umuhanda</span>
-          <span className="hidden text-sm text-cyan-100/45 sm:inline">Advanced Platform</span>
+      <header className="sticky top-0 z-20 flex h-16 items-center gap-2 border-b border-cyan-400/15 bg-[#06121d]/70 px-4 backdrop-blur-md sm:px-6 lg:px-8">
+        <Link href="/dashboard" className="flex items-center gap-2 overflow-hidden">
+          <span className="truncate text-base font-bold tracking-tight text-white sm:text-lg">Amategeko y&apos;Umuhanda</span>
+          <span className="hidden text-sm text-cyan-100/45 md:inline">Advanced Platform</span>
         </Link>
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
           {isAdmin ? (
-            <span className="hidden rounded-full bg-amber-400/15 px-3 py-1 text-xs font-semibold text-amber-300 sm:inline">Admin</span>
+            <Link
+              href="/admin"
+              className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/15 px-2.5 py-1 text-xs font-semibold text-amber-300 transition-colors hover:bg-amber-400/25 sm:px-3"
+              title="Fungura Admin Dashboard"
+            >
+              <Shield className="h-3.5 w-3.5" />
+              <span>Admin</span>
+            </Link>
           ) : (
             <span
-              className={`hidden rounded-full px-3 py-1 text-xs font-semibold sm:inline ${
+              className={`rounded-full px-2.5 py-1 text-xs font-semibold sm:px-3 ${
                 remaining <= 1 ? "bg-amber-400/15 text-amber-300" : "bg-cyan-400/15 text-cyan-200"
               }`}
               title="Iminsi isigaye"
@@ -87,9 +124,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <form action={signOutAction}>
             <button
               type="submit"
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-cyan-400/25 bg-white/5 px-3 text-sm text-cyan-100/85 transition-colors hover:bg-white/10 hover:text-white"
+              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-cyan-400/25 bg-white/5 px-2.5 text-xs text-cyan-100/85 transition-colors hover:bg-white/10 hover:text-white sm:px-3 sm:text-sm"
             >
-              <LogOut className="h-4 w-4" /> Sohoka
+              <LogOut className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Sohoka</span>
             </button>
           </form>
         </div>
@@ -101,7 +139,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <DashboardNav isAdmin={isAdmin} />
         </aside>
 
-        <main className="flex-1 p-5 pb-24 md:p-8 lg:p-10 md:pb-8">{children}</main>
+        <main className="flex-1 p-4 pb-24 sm:p-6 sm:pb-24 md:p-8 md:pb-8 lg:p-10">{children}</main>
       </div>
 
       <MobileNav isAdmin={isAdmin} />

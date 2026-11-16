@@ -35,7 +35,6 @@ export const authConfig = {
                 name: profile.name || profile.given_name || profile.email?.split('@')[0] || 'Umunyeshuri',
                 email: profile.email,
                 image: profile.picture,
-                role: 'student',
               };
             },
           }),

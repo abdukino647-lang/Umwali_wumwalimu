@@ -16,6 +16,36 @@ const baseAdapter = DrizzleAdapter(db, {
 
 const safeAdapter: any = {
   ...baseAdapter,
+  async getUserByEmail(email: string) {
+    try {
+      if (!email) return null;
+      const res = await db
+        .select()
+        .from(users)
+        .where(ilike(users.email, email.trim()))
+        .limit(1);
+      return res[0] || null;
+    } catch (e) {
+      console.warn("getUserByEmail warning:", e);
+      return await baseAdapter.getUserByEmail(email);
+    }
+  },
+  async getUser(id: string) {
+    try {
+      if (id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+        const res = await db
+          .select()
+          .from(users)
+          .where(eq(users.id, id))
+          .limit(1);
+        if (res[0]) return res[0];
+      }
+      return null;
+    } catch (e) {
+      console.warn("getUser warning:", e);
+      return null;
+    }
+  },
   async getUserByAccount(account: any) {
     try {
       return await baseAdapter.getUserByAccount(account);
