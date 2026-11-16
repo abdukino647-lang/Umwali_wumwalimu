@@ -1,5 +1,6 @@
 import type { NextAuthConfig } from 'next-auth';
 import Google from 'next-auth/providers/google';
+import { isConfiguredAdminEmail } from '@/lib/admin-list';
 
 // Edge-safe config shared by the main auth instance (Node) and the middleware
 // (Edge). It must NOT import the DB adapter, bcrypt, or any Node-only code —
@@ -52,11 +53,15 @@ export const authConfig = {
         token.role = (user as any).role || token.role || 'student';
         token.id = user.id || token.sub || token.id;
       }
+      if (isConfiguredAdminEmail(token.email as string)) {
+        token.role = 'admin';
+      }
       return token;
     },
     session: async ({ session, token }) => {
       if (session?.user && token) {
-        (session.user as any).role = (token.role as string) || 'student';
+        const isAdmin = isConfiguredAdminEmail(session.user.email) || token.role === 'admin';
+        (session.user as any).role = isAdmin ? 'admin' : (token.role as string) || 'student';
         (session.user as any).id = (token.id as string) || (token.sub as string);
       }
       return session;

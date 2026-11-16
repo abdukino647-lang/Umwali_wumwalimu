@@ -8,6 +8,7 @@ import { DashboardNav } from "@/components/layout/DashboardNav";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { accessActive, daysRemaining, SUPPORT_PHONE } from "@/lib/access";
+import { isConfiguredAdminEmail } from "@/lib/admin-list";
 import { Clock, Phone, LogOut, Shield } from "lucide-react";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -47,7 +48,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
     }
   }
 
-  const role = row?.role || user?.role || "student";
+  const isConfigAdmin = isConfiguredAdminEmail(userEmail);
+  const role = isConfigAdmin ? "admin" : (row?.role || user?.role || "student");
   const isAdmin = role === "admin";
   const active = isAdmin || accessActive({ role, isActive: row?.isActive ?? true, accessExpiresAt: row?.exp });
   const remaining = daysRemaining(row?.exp);

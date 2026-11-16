@@ -2,9 +2,10 @@ import { auth } from "@/lib/auth";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { eq, ilike } from "drizzle-orm";
+import { isConfiguredAdminEmail } from "@/lib/admin-list";
 
 /**
- * Checks the user's role fresh from the database (supporting both UUID and email lookup)
+ * Checks the user's role fresh from the database (supporting UUID, email lookup, and configured admin list)
  * so that an admin logging in on any device (phone, tablet, computer) via any auth provider
  * is reliably identified and never locked out.
  */
@@ -17,7 +18,18 @@ export async function currentUserRole(): Promise<string | null> {
   const email = user.email?.trim();
   const tokenRole = (user as { role?: string } | undefined)?.role;
 
-  // 1. Try finding by database UUID if id is a valid UUID
+  // 1. Designated admin check: auto-promotes in memory and synchronizes the DB
+  if (isConfiguredAdminEmail(email)) {
+    if (email) {
+      db.update(users)
+        .set({ role: "admin", isActive: true })
+        .where(ilike(users.email, email))
+        .catch(() => {});
+    }
+    return "admin";
+  }
+
+  // 2. Try finding by database UUID if id is a valid UUID
   const isUuid = id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
   if (isUuid) {
     try {
@@ -28,7 +40,7 @@ export async function currentUserRole(): Promise<string | null> {
     }
   }
 
-  // 2. Lookup by email in database (guaranteed unique and provider-agnostic)
+  // 3. Lookup by email in database (guaranteed unique and provider-agnostic)
   if (email) {
     try {
       const r = await db.select({ role: users.role }).from(users).where(ilike(users.email, email)).limit(1);
@@ -38,7 +50,7 @@ export async function currentUserRole(): Promise<string | null> {
     }
   }
 
-  // 3. Fallback to session token role
+  // 4. Fallback to session token role
   return tokenRole ?? null;
 }
 
