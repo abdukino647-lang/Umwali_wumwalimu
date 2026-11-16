@@ -10169,19 +10169,19 @@
   },
   {
     "number": 434,
-    "text": "Iki cyapa cy'ubururu kigaragaza ifoto ya camera imurika kimenyesha iki mu muhanda?",
+    "text": "Mu Rwanda, ibyapa bimenyesha ko hegereye camera zigenzura umuvuduko n'amatara (Speed Enforcement Cameras) bishyirirwaho iki?",
     "options": [
       {
         "key": "a",
-        "text": "Aho camera ifotora ibinyabiziga bishaje gusa"
+        "text": "Kumenyesha abashoferi ko camera zigenzura ibinyabiziga bishaje gusa"
       },
       {
         "key": "b",
-        "text": "Ahegereye camera zigenzura umuvuduko n'amatara by'ibinyabiziga (Speed Enforcement Camera)"
+        "text": "Kuburira abayobozi b'ibinyabiziga kugendera ku muvuduko wagenwe no kubahiriza amatara yo mu muhanda"
       },
       {
         "key": "c",
-        "text": "Aho gufatira amafoto y'urwibutso mu muhanda"
+        "text": "Kumenyesha ahantu ho gufatira amafoto y'ubukerarugendo"
       },
       {
         "key": "d",
@@ -10189,9 +10189,8 @@
       }
     ],
     "correctKey": "b",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'ubururu kigaragaza camera kimenyesha ko hegereye camera zigenzura umuvuduko n'iyubahirizwa ry'amatara yo mu muhanda.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"12\" fill=\"#0055b8\"/><rect x=\"25\" y=\"38\" width=\"50\" height=\"34\" rx=\"4\" fill=\"#ffffff\"/><path d=\"M38 38 L43 28 L57 28 L62 38 Z\" fill=\"#ffffff\"/><circle cx=\"50\" cy=\"55\" r=\"11\" fill=\"#0055b8\"/><circle cx=\"50\" cy=\"55\" r=\"7\" fill=\"#ffffff\"/><circle cx=\"68\" cy=\"44\" r=\"2.5\" fill=\"#ffd700\"/><path d=\"M18 22 L26 28 M14 34 L22 36 M18 46 L26 44\" stroke=\"#ffffff\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. Ibyapa bya camera biburira abashoferi kubahiriza umuvuduko ntarengwa wagenwe n'amatara yo mu muhanda kugira ngo bakumire impanuka."
   },
   {
     "number": 435,
@@ -10270,7 +10269,7 @@
   },
   {
     "number": 438,
-    "text": "Icyapa cyangwa inyandiko mu muhanda igira iti 'BUS ONLY' cyangwa ikimenyetso cy'uruziga rw'ubururu kigaragaza bisi bisobanura iki?",
+    "text": "Mu muhanda, igisate cy'umuhanda cyanditswemo 'BUS ONLY' cyangwa cyashyiriweho ikimenyetso cy'amabisi kiba kigenewe iki?",
     "options": [
       {
         "key": "a",
@@ -10278,7 +10277,7 @@
       },
       {
         "key": "b",
-        "text": "Igisate cy'umuhanda cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo"
+        "text": "Igisate cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo"
       },
       {
         "key": "c",
@@ -10290,35 +10289,33 @@
       }
     ],
     "correctKey": "b",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni B. 'BUS ONLY' isobanura igisate cy'umuhanda cyahariwe amabisi y'abagenzi gusa; ibindi binyabiziga bibujijwe kukigenderamo.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#0055b8\" stroke=\"#ffffff\" stroke-width=\"2\"/><rect x=\"24\" y=\"28\" width=\"52\" height=\"36\" rx=\"6\" fill=\"#ffffff\"/><rect x=\"28\" y=\"34\" width=\"18\" height=\"14\" rx=\"2\" fill=\"#0055b8\"/><rect x=\"50\" y=\"34\" width=\"22\" height=\"14\" rx=\"2\" fill=\"#0055b8\"/><circle cx=\"32\" cy=\"56\" r=\"3\" fill=\"#ffd700\"/><circle cx=\"68\" cy=\"56\" r=\"3\" fill=\"#ffd700\"/><circle cx=\"34\" cy=\"66\" r=\"6\" fill=\"#222222\"/><circle cx=\"66\" cy=\"66\" r=\"6\" fill=\"#222222\"/><text x=\"50\" y=\"86\" font-family=\"sans-serif\" font-weight=\"900\" font-size=\"12\" fill=\"#ffffff\" text-anchor=\"middle\">BUS ONLY</text></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. 'BUS ONLY' isobanura igisate cy'umuhanda cyahariwe amabisi y'abagenzi gusa; ibindi binyabiziga bibujijwe kukigenderamo."
   },
   {
     "number": 439,
-    "text": "Icyapa cy'uruziga rw'ubururu kirimo igishushanyo cy'igare cyera gisobanura iki?",
+    "text": "Inzira y'umuhanda yashyiriweho icyapa kiyobora abanyamagare (Piste cyclable) igengwa n'ayahe mabwiriza?",
     "options": [
       {
         "key": "a",
-        "text": "Aho amagare abujijwe kugenda"
+        "text": "Aho amagare abujijwe kugenda mu masaha y'umunsi"
       },
       {
         "key": "b",
-        "text": "Aho bagurishiriza amagare"
+        "text": "Inzira yagenewe gusa abacuruza amagare"
       },
       {
         "key": "c",
-        "text": "Inzira itegetswe abanyamagare (Piste cyclable obligatoire)"
+        "text": "Inzira itegetswe abanyamagare, ibindi binyabiziga bifite moteri bibujijwe kuyikoresha"
       },
       {
         "key": "d",
-        "text": "Aho amagare agomba kugendera mu muhanda rusange"
+        "text": "Aho amagare agomba kugendera mu muhanda rusange gusa"
       }
     ],
     "correctKey": "c",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni C. Icyapa cy'uruziga rw'ubururu kirimo igare gitegeka abanyamagare gukoresha iyo nzira yabagenewe.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#0055b8\" stroke=\"#ffffff\" stroke-width=\"2\"/><circle cx=\"30\" cy=\"60\" r=\"14\" stroke=\"#ffffff\" stroke-width=\"3\" fill=\"none\"/><circle cx=\"70\" cy=\"60\" r=\"14\" stroke=\"#ffffff\" stroke-width=\"3\" fill=\"none\"/><path d=\"M30 60 L48 60 L62 46 L70 60 M48 60 L42 42 L34 42 M42 42 L62 46 M62 46 L65 38 L58 38 M65 38 L72 38\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M38 42 L46 42\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni C. Inzira y'amagare (piste cyclable) itegetswe abanyamagare, ibindi binyabiziga byose bifite moteri bibujijwe kuyikoresha."
   },
   {
     "number": 440,
@@ -10422,11 +10419,11 @@
   },
   {
     "number": 444,
-    "text": "Icyapa cy'ubururu kigaragaza imyambi yerekeza mu bisate bitandukanye mbere yo kwinjira mu masangano azunguruka (Rond-point) kigamije iki?",
+    "text": "Mbere yo kwinjira mu masangano azunguruka (Rond-point), abayobozi b'ibinyabiziga bagengwa bate n'ibyerekezo by'ibisate by'umuhanda?",
     "options": [
       {
         "key": "a",
-        "text": "Gutegeka umuyobozi kuguma mu gisate kijyanye n'icyerekezo aganamo mbere yo kwinjira muri rond-point"
+        "text": "Gufata igisate gikwiye hakiri kare hakurikijwe icyerekezo baganamo mbere yo kwinjira muri rond-point"
       },
       {
         "key": "b",
@@ -10442,9 +10439,8 @@
       }
     ],
     "correctKey": "a",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni A. Icyapa cy'imyambi gitegeka umuyobozi kwinjira mu gisate kijyanye n'icyerekezo ashaka kwerekezamo muri rond-point.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"10\" fill=\"#0055b8\"/><line x1=\"50\" y1=\"12\" x2=\"50\" y2=\"88\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/><path d=\"M26 80 L26 35 M26 35 L20 42 M26 35 L32 42\" stroke=\"#ffffff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M26 50 C26 40 18 36 12 36 M12 36 L17 31 M12 36 L17 41\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M74 80 L74 35 M74 35 L68 42 M74 35 L80 42\" stroke=\"#ffffff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M74 50 C74 40 82 36 88 36 M88 36 L83 31 M88 36 L83 41\" stroke=\"#ffffff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni A. Abayobozi basabwa gutoranya igisate gikwiye hakiri kare: igisate cy'iburyo ku bajya iburyo, igisate cy'ibumoso ku bajya ibumoso."
   },
   {
     "number": 445,
@@ -10523,7 +10519,7 @@
   },
   {
     "number": 448,
-    "text": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura gishushanyijeho umunyamaguru wambuka gitandukanye gute n'icyapa cy'ubururu cya kare gishushanyijeho umunyamaguru wambuka?",
+    "text": "Ku bijyanye n'aho abanyamaguru bambukira mu muhanda, itandukaniro ry'icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura n'icyapa cy'ubururu cya kare ni irihe?",
     "options": [
       {
         "key": "a",
@@ -10543,13 +10539,12 @@
       }
     ],
     "correctKey": "a",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni A. Mpandeshatu iburira ko uhegereye aho abanyamaguru bambukira, naho kare y'ubururu yerekana aho inzira iherereye.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"10\" fill=\"#0055b8\"/><polygon points=\"50,15 88,85 12,85\" fill=\"#ffffff\"/><line x1=\"28\" y1=\"80\" x2=\"72\" y2=\"80\" stroke=\"#000000\" stroke-width=\"4\"/><line x1=\"32\" y1=\"74\" x2=\"68\" y2=\"74\" stroke=\"#000000\" stroke-width=\"3\"/><circle cx=\"52\" cy=\"40\" r=\"5\" fill=\"#000000\"/><path d=\"M50 46 L53 58 L59 56 M47 50 L42 58 M52 58 L46 72 M52 58 L58 70\" stroke=\"#000000\" stroke-width=\"3.5\" stroke-linecap=\"round\" fill=\"none\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni A. Mpandeshatu iburira ko uhegereye aho abanyamaguru bambukira, naho kare y'ubururu yerekana aho inzira iherereye nyirizina."
   },
   {
     "number": 449,
-    "text": "Icyapa cy'uruziga rufite umuzenguruko utukura kirimo ikamyo itukura ibumoso n'imodoka y'umukara iburyo gisobanura iki?",
+    "text": "Icyapa kibuza ibinyabiziga bikora ubwikorezi bw'imizigo kunyuranaho mu muhanda kireba ibihe binyabiziga?",
     "options": [
       {
         "key": "a",
@@ -10569,9 +10564,8 @@
       }
     ],
     "correctKey": "b",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni B. Icyapa kibuza amakamyo n'ibinyabiziga bitwara imizigo > 3.5t kunyuranaho mu muhanda.",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#ffffff\" stroke=\"#d90429\" stroke-width=\"8\"/><rect x=\"22\" y=\"44\" width=\"22\" height=\"14\" fill=\"#d90429\"/><rect x=\"17\" y=\"49\" width=\"7\" height=\"9\" fill=\"#d90429\"/><circle cx=\"21\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><circle cx=\"31\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><circle cx=\"39\" cy=\"60\" r=\"3\" fill=\"#d90429\"/><rect x=\"56\" y=\"48\" width=\"22\" height=\"10\" rx=\"2\" fill=\"#222222\"/><path d=\"M60 48 L64 43 L72 43 L76 48 Z\" fill=\"#222222\"/><circle cx=\"61\" cy=\"60\" r=\"3\" fill=\"#222222\"/><circle cx=\"73\" cy=\"60\" r=\"3\" fill=\"#222222\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa kibuza amakamyo n'ibinyabiziga bitwara imizigo > 3.5t kunyuranaho mu muhanda."
   },
   {
     "number": 450,
@@ -10625,7 +10619,7 @@
   },
   {
     "number": 452,
-    "text": "Icyapa cy'urukiramende rw'ubururu kirimo inyuguti 'P' y'umweru gisobanura iki mu muhanda?",
+    "text": "Icyapa kigaragaza inyuguti 'P' mu muhanda kiba kimenyesha iki abagenzi n'abayobozi b'ibinyabiziga?",
     "options": [
       {
         "key": "a",
@@ -10645,13 +10639,12 @@
       }
     ],
     "correctKey": "b",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni B. 'P' mu rukiramende rw'ubururu ni icyapa cyerekana ahantu hemerewe guparika (Parking).",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"100\" rx=\"12\" fill=\"#0055b8\"/><text x=\"50\" y=\"74\" font-family=\"sans-serif\" font-weight=\"900\" font-size=\"64\" fill=\"#ffffff\" text-anchor=\"middle\">P</text></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. 'P' mu rukiramende rw'ubururu ni icyapa cyerekana ahantu hemerewe guparika (Parking)."
   },
   {
     "number": 453,
-    "text": "Icyapa cy'uruziga rutukura rwose kirimo umurongo wera ugororotse uhagaze hagati mu buryo bw'umutambiko (Sens Interdit) gisobanura iki?",
+    "text": "Icyapa kibuza kwinjira mu muhanda (Sens Interdit) gisobanura iki ku muyobozi w'ikinyabiziga?",
     "options": [
       {
         "key": "a",
@@ -10659,7 +10652,7 @@
       },
       {
         "key": "b",
-        "text": "Birabujijwe kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo (Sens interdit)"
+        "text": "Birabujijwe burundu kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo"
       },
       {
         "key": "c",
@@ -10671,8 +10664,7 @@
       }
     ],
     "correctKey": "b",
-    "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire).",
-    "signSvg": "<svg viewBox=\"0 0 100 100\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"#d90429\" stroke=\"#ffffff\" stroke-width=\"2\"/><rect x=\"18\" y=\"42\" width=\"64\" height=\"16\" rx=\"2\" fill=\"#ffffff\"/></svg>"
+    "category": "text",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire)."
   }
 ]

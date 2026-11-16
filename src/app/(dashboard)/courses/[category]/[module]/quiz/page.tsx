@@ -49,7 +49,7 @@ export default async function QuizPage({ params }: { params: Promise<{ category:
       correctKey: q.correctKey,
       explanation: q.explanation || "",
       signImageUrl: (q as any).signImageUrl || (q as any).image || null,
-      signSvg: (q as any).signSvg || null,
+      signSvg: null,
       examGroup: null,
       moduleId: p.module,
       createdAt: new Date(),

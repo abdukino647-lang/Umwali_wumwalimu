@@ -243,13 +243,9 @@ export default function QuizEngine({
                   <span className="shrink-0 text-lg">{userCorrect ? "✅" : "❌"}</span>
                 </div>
 
-                {(quizQ.signImageUrl || quizQ.signSvg) && (
+                {quizQ.signImageUrl && (
                   <div className="flex justify-start py-1">
-                    {quizQ.signImageUrl ? (
-                      <img src={quizQ.signImageUrl} alt="Road Sign" className="max-h-28 rounded-md border border-white/10 bg-white object-contain p-1" />
-                    ) : (
-                      <div className="rounded-md bg-white p-1" dangerouslySetInnerHTML={{ __html: quizQ.signSvg! }} />
-                    )}
+                    <img src={quizQ.signImageUrl} alt="Icyapa cy'Umuhanda" className="max-h-28 rounded-md border border-white/10 bg-white object-contain p-1" />
                   </div>
                 )}
 
@@ -350,13 +346,9 @@ export default function QuizEngine({
       </div>
 
       <div className="hud glass rounded-2xl p-6 md:p-8">
-        {(q.signImageUrl || q.signSvg) && (
+        {q.signImageUrl && (
           <div className="mb-6 flex w-full justify-center">
-            {q.signImageUrl ? (
-              <img src={q.signImageUrl} alt="Road Sign" className="max-h-64 rounded-lg border border-white/10 bg-white object-contain p-2" />
-            ) : (
-              <div className="rounded-lg bg-white p-2" dangerouslySetInnerHTML={{ __html: q.signSvg! }} />
-            )}
+            <img src={q.signImageUrl} alt="Icyapa cy'Umuhanda" className="max-h-64 rounded-lg border border-white/10 bg-white object-contain p-2" />
           </div>
         )}
 

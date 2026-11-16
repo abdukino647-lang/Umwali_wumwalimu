@@ -3628,12 +3628,12 @@
   },
   {
     "number": 434,
-    "matchText": "Iki cyapa cy'ubururu kigaragaza ifoto ya camera imurika kimenyesha iki mu muhanda?",
+    "matchText": "Mu Rwanda, ibyapa bimenyesha ko hegereye camera zigenzura umuvuduko n'amatara (Speed Enforcement Cameras) bishyirirwaho iki?",
     "correctKey": "b",
-    "correctText": "Ahegereye camera zigenzura umuvuduko n'amatara by'ibinyabiziga (Speed Enforcement Camera)",
+    "correctText": "Kuburira abayobozi b'ibinyabiziga kugendera ku muvuduko wagenwe no kubahiriza amatara yo mu muhanda",
     "lawTitle": "Ibyapa Byerekana Camera Z'Umuvuduko (Speed Enforcement Cameras)",
-    "lawDetails": "Iki cyapa gishyirwa mu muhanda kugira ngo kiburire abayobozi b'ibinyabiziga ko hegereye camera z'ikoranabuhanga zigenzura umuvuduko w'ibinyabiziga n'iyubahirizwa ry'amatara yo mu muhanda. Iki cyapa gituma abashoferi bubahiriza umuvuduko ntarengwa wagenwe muri ako gace kugira ngo hirindwe impanuka.",
-    "memoryTip": "Icyapa cya camera = Ahegereye camera zigenzura umuvuduko w'ibinyabiziga."
+    "lawDetails": "Ibyapa bya camera bishyirwa mu muhanda kugira ngo biburire abayobozi b'ibinyabiziga ko hegereye camera z'ikoranabuhanga zigenzura umuvuduko w'ibinyabiziga n'iyubahirizwa ry'amatara yo mu muhanda. Ibi bifasha abashoferi kubahiriza umuvuduko ntarengwa wagenwe muri ako gace kugira ngo birinde impanuka.",
+    "memoryTip": "Ibyapa bya camera biburira abashoferi kwitwararika ku muvuduko n'amatara."
   },
   {
     "number": 435,
@@ -3664,21 +3664,21 @@
   },
   {
     "number": 438,
-    "matchText": "Icyapa cyangwa inyandiko mu muhanda igira iti 'BUS ONLY' cyangwa ikimenyetso cy'uruziga rw'ubururu kigaragaza bisi bisobanura iki?",
+    "matchText": "Mu muhanda, igisate cy'umuhanda cyanditswemo 'BUS ONLY' cyangwa cyashyiriweho ikimenyetso cy'amabisi kiba kigenewe iki?",
     "correctKey": "b",
-    "correctText": "Igisate cy'umuhanda cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo",
+    "correctText": "Igisate cyahariwe gusa amabisi atwara abagenzi muri rusange, ibindi binyabiziga bibujijwe kukigenderamo",
     "lawTitle": "Inzira Yihariye y'Amabisi (Dedicated Bus Lane - BUS ONLY)",
     "lawDetails": "Icyapa cyangwa inyandiko y'umweru mu muhanda igira iti 'BUS ONLY' ivuga ko icyo gisate cy'umuhanda cyahariwe gusa ibinyabiziga bitwara abagenzi muri rusange (Public transport buses). Ibindi binyabiziga byose bibujijwe kukigenderamo, kugikoreramo imyitozo, cyangwa kugihagararamo akanya gato n'akanini.",
     "memoryTip": "BUS ONLY = Igisate cyahariwe amabisi gusa; izindi modoka ntizemerewe kukigenderamo."
   },
   {
     "number": 439,
-    "matchText": "Icyapa cy'uruziga rw'ubururu kirimo igishushanyo cy'igare cyera gisobanura iki?",
+    "matchText": "Inzira y'umuhanda yashyiriweho icyapa kiyobora abanyamagare (Piste cyclable) igengwa n'ayahe mabwiriza?",
     "correctKey": "c",
-    "correctText": "Inzira itegetswe abanyamagare (Piste cyclable obligatoire)",
-    "lawTitle": "Icyapa Gitegeka Inzira y'Amagare (Piste Cyclable Obligatoire)",
-    "lawDetails": "Iki cyapa cy'uruziga rw'ubururu kirimo igare cyera ni icyapa GITEGEKA. Gitegeka abayobozi b'amagare gukoresha iyo nzira yabagenewe (piste cyclable), kikanabuza ibindi binyabiziga bifite moteri kuyikoresha.",
-    "memoryTip": "Uruziga rw'ubururu kirimo igare = Inzira itegetswe abanyamagare."
+    "correctText": "Inzira itegetswe abanyamagare, ibindi binyabiziga bifite moteri bibujijwe kuyikoresha",
+    "lawTitle": "Itegeko Rigenga Inzira y'Amagare (Piste Cyclable)",
+    "lawDetails": "Inzira yagenewe abanyamagare (piste cyclable) igomba gukoreshwa n'amagare gusa. Ibindi binyabiziga byose bigendeshwa na moteri birabujijwe kuyigenderamo cyangwa kuyihagararamo kuko bibangamira umutekano w'abanyamagare.",
+    "memoryTip": "Piste cyclable = Inzira itegetswe abanyamagare; imodoka na moto ntibyemerewe kuyikoresha."
   },
   {
     "number": 440,
@@ -3718,9 +3718,9 @@
   },
   {
     "number": 444,
-    "matchText": "Icyapa cy'ubururu kigaragaza imyambi yerekeza mu bisate bitandukanye mbere yo kwinjira mu masangano azunguruka (Rond-point) kigamije iki?",
+    "matchText": "Mbere yo kwinjira mu masangano azunguruka (Rond-point), abayobozi b'ibinyabiziga bagengwa bate n'ibyerekezo by'ibisate by'umuhanda?",
     "correctKey": "a",
-    "correctText": "Gutegeka umuyobozi kuguma mu gisate kijyanye n'icyerekezo aganamo mbere yo kwinjira muri rond-point",
+    "correctText": "Gufata igisate gikwiye hakiri kare hakurikijwe icyerekezo baganamo mbere yo kwinjira muri rond-point",
     "lawTitle": "Ibyapa Byerekana Ibyerekezo by'Ibisate by'Umuhanda (Lane Assignment Signs)",
     "lawDetails": "Ibyapa by'imyambi mu bisate by'umuhanda bitegeka abayobozi gufata igisate gikwiye hakiri kare: igisate cy'iburyo ku bajya iburyo cyangwa imbere; igisate cy'ibumoso ku bajya ibumoso cyangwa abazenguruka bagaruka. Birabujijwe guhindura igisate mu buryo buteje akaga imbere muri rond-point.",
     "memoryTip": "Ibyapa by'imyambi bitegeka gutoranya igisate kijyanye n'aho ugana mbere yo kwinjira mu masangano."
@@ -3754,7 +3754,7 @@
   },
   {
     "number": 448,
-    "matchText": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura gishushanyijeho umunyamaguru wambuka gitandukanye gute n'icyapa cy'ubururu cya kare gishushanyijeho umunyamaguru wambuka?",
+    "matchText": "Ku bijyanye n'aho abanyamaguru bambukira mu muhanda, itandukaniro ry'icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura n'icyapa cy'ubururu cya kare ni irihe?",
     "correctKey": "a",
     "correctText": "Icyapa cya mpandeshatu kiburira ko imbere ahegereye inzira y'abanyamaguru, mu gihe icya kare cy'ubururu cyerekana ahantu nyirizina iyo nzira iherereye",
     "lawTitle": "Itandukaniro ry'Icyapa Kiburira n'Icyapa Cyerekana Aho Abanyamaguru Bambukira",
@@ -3763,7 +3763,7 @@
   },
   {
     "number": 449,
-    "matchText": "Icyapa cy'uruziga rufite umuzenguruko utukura kirimo ikamyo itukura ibumoso n'imodoka y'umukara iburyo gisobanura iki?",
+    "matchText": "Icyapa kibuza ibinyabiziga bikora ubwikorezi bw'imizigo kunyuranaho mu muhanda kireba ibihe binyabiziga?",
     "correctKey": "b",
     "correctText": "Birabujijwe kunyuranaho ku binyabiziga byose bitwara imizigo bifite uburemere burenga toni 3.5",
     "lawTitle": "Icyapa Kibuuza Amakamyo Kunyuranaho (Interdiction de Dépasser pour Poids Lourds)",
@@ -3790,7 +3790,7 @@
   },
   {
     "number": 452,
-    "matchText": "Icyapa cy'urukiramende rw'ubururu kirimo inyuguti 'P' y'umweru gisobanura iki mu muhanda?",
+    "matchText": "Icyapa kigaragaza inyuguti 'P' mu muhanda kiba kimenyesha iki abagenzi n'abayobozi b'ibinyabiziga?",
     "correctKey": "b",
     "correctText": "Ahantu hemerewe guparika ibinyabiziga (Parking)",
     "lawTitle": "Icyapa Cyerekana Aho Guparika (Signaux de Stationnement / Parking)",
@@ -3799,9 +3799,9 @@
   },
   {
     "number": 453,
-    "matchText": "Icyapa cy'uruziga rutukura rwose kirimo umurongo wera ugororotse uhagaze hagati mu buryo bw'umutambiko (Sens Interdit) gisobanura iki?",
+    "matchText": "Icyapa kibuza kwinjira mu muhanda (Sens Interdit) gisobanura iki ku muyobozi w'ikinyabiziga?",
     "correctKey": "b",
-    "correctText": "Birabujijwe kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo (Sens interdit)",
+    "correctText": "Birabujijwe burundu kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo",
     "lawTitle": "Icyapa Cy'Uruziga Rutukura n'Umurongo Wera (Sens Interdit)",
     "lawDetails": "Icyapa cy'uruziga rutukura rufite umurongo wera uciye hagati (Sens Interdit / No Entry) kibuza burundu ikinyabiziga icyo ari cyo cyose kwinjira muri uwo muhanda giturutse muri icyo cyerekezo kuko uwo muhanda uba uva mu rundi ruhande (icyerekezo kimwe).",
     "memoryTip": "Uruziga rutukura rurimo umurongo w'umweru utambitse = Sens interdit (Ntuhinjire)."

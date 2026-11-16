@@ -174,7 +174,7 @@ async function seed() {
         category: q._category,
         explanation: q.explanation || `Igisubizo ni ${String(q.correctKey).toUpperCase()}`,
         signImageUrl: q.signImageUrl || q.image || null,
-        signSvg: q.signSvg || null,
+        signSvg: null,
         examGroup: getExamGroup(q, q._category),
       })));
       inserted += chunk.length;

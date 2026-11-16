@@ -14,10 +14,7 @@ const GROUPS = [
 ] as const;
 
 const groupWhere = (key: string, imageOnly: boolean) =>
-  and(
-    eq(questions.examGroup, key),
-    imageOnly ? or(isNotNull(questions.signImageUrl), isNotNull(questions.signSvg)) : undefined
-  );
+  and(eq(questions.examGroup, key), imageOnly ? isNotNull(questions.signImageUrl) : undefined);
 
 /**
  * Build a 20-question exam (sign → number → analysis → roadpic) for a user,
