@@ -35,8 +35,34 @@ function buildExplanationFallback(req: ExplanationRequest): string {
   let lawDetails = "";
   let memoryTip = "";
 
+  const qNum = req.questionNumber;
+
+  // Specific high-frequency questions
+  if (qNum === 1 || lowerQ.startsWith("ikinyabiziga cyose cyangwa ibinyabiziga bigenda")) {
+    lawDetails = `**Ikinyabiziga cyose kigomba kugira UMUYOBOZI (Conducteur):**\n\n` +
+      `Mu mategeko y'umuhanda mu Rwanda (Ingingo ya 4), buri kinyabiziga kigenda mu nzira nyabagendwa kigomba kugira umuyobozi ufite imyaka n'ubushobozi bisabwa bwo kukiyobora. ` +
+      `Itegeko ntiritegeka kugira "umuherekeza" (convoyeur).`;
+    memoryTip = `Ikinyabiziga gikenera umuyobozi gusa (Option A), ntabwo gikenera umuherekeza.`;
+  } else if (qNum === 2 || lowerQ.includes("ijambo “akayira” bivuga")) {
+    lawDetails = `**Ibisobanuro by'ijambo "Akayira":**\n\n` +
+      `Hakurikijwe amategeko y'umuhanda mu Rwanda, akayira ni inzira nyabagendwa ifunganye yagenewe gusa **abanyamaguru** (Option A) hamwe n'**ibinyabiziga bigendera ku biziga bibiri** (Option B) nk'amagare na velomoteri. ` +
+      `Kubera ko A na B byose ari ukuri, igisubizo nyacyo ni **C (A na B ni ibisubizo by'ukuri)**.`;
+    memoryTip = `Akayira = Abanyamaguru + ibinyabiziga by'ibiziga bibiri (velosipede, velomoteri).`;
+  } else if (qNum === 13 || lowerQ.includes("birabujijwe gukora andi matara cyangwa utugarurarumuri")) {
+    lawDetails = `**Amatara n'utugarurarumuri by'ikinyabiziga:**\n\n` +
+      `Birabujijwe gushyira ku kinyabiziga andi matara atategetswe n'amategeko (nk'amatara atemewe hanze). ` +
+      `Icyakora, iri tegeko ntirireba **amatara ari imbere mu modoka** (amatara yo mu nzu / plafonnier) amurikira abari imbere igihe cyose atabangamiye kubona kw'umushoferi.`;
+    memoryTip = `Amatara yo hanze yose agengwa n'itegeko; amatara yo mu nda y'imodoka (Option B) niyo atarebwa n'iryo tegeko.`;
+  } else if (qNum === 15 || lowerQ.includes("feri idakora neza babwita")) {
+    lawDetails = `**Uburyo bukoreshwa kugira ngo ikinyabiziga kigende gahoro igihe feri idakora neza:**\n\n` +
+      `Mu kinyabiziga habamo ubwoko butatu bwa feri:\n` +
+      `1. **Feri y'urugendo:** Feri y'ikirenge ihagarika ikinyabiziga kigenda bisanzwe.\n` +
+      `2. **Feri yo gutabara (frein de secours):** Feri ikoreshwa mu gihe feri y'urugendo yanze cyangwa idakora neza, kugira ngo igabanye umuvuduko ikanahagarika ikinyabiziga mu mutekano.\n` +
+      `3. **Feri yo guhagarara akanya kanini (handbrake):** Ifata ikinyabiziga kidahari umushoferi.`;
+    memoryTip = `Iyo feri y'urugendo yanze, ukoresha **Feri yo gutabara** (Option C).`;
+  }
   // 1. Vehicle Technical Inspection (Isuzumwa ry'ibinyabiziga)
-  if (lowerQ.includes("isuzumwa") || lowerQ.includes("kugenzurwa") || lowerQ.includes("buri mwaka") || lowerQ.includes("mezi")) {
+  else if (lowerQ.includes("isuzumwa") || lowerQ.includes("kugenzurwa") || lowerQ.includes("buri mwaka") || lowerQ.includes("mezi")) {
     lawDetails = `**Amategeko y'Umuhanda mu Rwanda (Iteka rya Perezida No 85/01) agenga isuzumwa ry'ibinyabiziga agabanyijemo ibice bibiri by'ingenzi:**\n\n` +
       `1. **Ibinyabiziga bisuzumwa BURI MEZI ATANDATU (6) — kabiri mu mwaka:**\n` +
       `   - Ibinyabiziga bigenewe gutwara abagenzi muri rusange (amatagisi, bisi, n'ibindi).\n` +
@@ -97,9 +123,64 @@ function buildExplanationFallback(req: ExplanationRequest): string {
       `- **Amatara maremare (feux de route):** Agomba kumurika nibura muri **metero 100** imbere. Agomba kuzimwa hakakirizwa amagufi iyo uhuye n'undi muyobozi cyangwa umuhanda umurikiwe bihagije.\n` +
       `- **Amatara magufi (feux de croisement):** Agomba kumurika nibura muri **metero 40** imbere nta guhuma amaso abandi.\n` +
       `- **Amatara ndanga (feux de position):** Agomba kugaragarira muri **metero 100** nijoro mu kirere gikeye.\n` +
-      `- **Amatara yo guhagarara (feux stop):** Agomba kuba umutuku, amurika ako kanya ukandagiye feri.`;
+      `- **Amatara yo guhagarara (feux stop):** Agomba kuba umutuku, amurika ako kanya ukandagiye feri.\n` +
+      `- **Amatara ndangacyerekezo (clignotants):** Agomba kuba umuhondo (orange) amurika amanywa na nijoro.\n` +
+      `- **Amatara y'imbere mu modoka:** Ntabwo abuzwa keretse iyo abangamiye kureba hanze kw'umushoferi.`;
 
     memoryTip = `Amatara maremare amurika metero 100 ariko azimwa iyo hari abandi bayobozi mu muhanda kugira ngo batabahuma.`;
+  }
+  // 7. Dimensions, Weights & Loads (Ubugari, uburebure, imitwaro, romoruki)
+  else if (lowerQ.includes("ubugari") || lowerQ.includes("uburebure") || lowerQ.includes("romoruki") || lowerQ.includes("toni") || lowerQ.includes("umutambiko") || lowerQ.includes("uburemere")) {
+    lawDetails = `**Ibipimo n'uburemere ntarengwa mu Rwanda (Iteka rya Perezida):**\n\n` +
+      `- **Ubugari ntarengwa:** Ni **metero 2.50** muri rusange (cyangwa **metero 2.60** ku binyabiziga bikonjesha / frigorifiques).\n` +
+      `- **Ubugari bwa romoruki ikuruwe n'ikinyamitende itatu cyangwa amagare:** Ntibugomba kurenza **santimetero 125 (cm 125 / metero 1.25)**.\n` +
+      `- **Uburebure ntarengwa:**\n` +
+      `  - Ikinyabiziga gifite umutambiko umwe cyangwa ibiri: **metero 11**.\n` +
+      `  - Ikinyabiziga gifite imitambiko irenga ibiri: **metero 12**.\n` +
+      `  - Makuzungu (semi-remorque): **metero 17.40**.\n` +
+      `  - Ikinyabiziga gikuruye romoruki imwe cyangwa nyinshi: **metero 18**.\n` +
+      `- **Imitwaro irenze ikinyabiziga:** Inyuma ntigomba kurenga **metero 3**, imbere ntigomba kurenga **santimetero 50 (cm 50)**.`;
+
+    memoryTip = `Ubugari rusange: 2.50m (2.60m bikonjesha). Romoruki ya moto/igare: cm 125. Uburebure: 11m (imitambiko 1-2), 17.40m (makuzungu).`;
+  }
+  // 8. Road Definitions (Akayira, inzira nyabagendwa, umuhanda, inkengero)
+  else if (lowerQ.includes("akayira") || lowerQ.includes("inzira nyabagendwa") || lowerQ.includes("umuhanda") || lowerQ.includes("inkengero") || lowerQ.includes("igisate")) {
+    lawDetails = `**Ibisobanuro by'amategeko ku nzira n'imihanda:**\n\n` +
+      `- **Inzira nyabagendwa:** Ubutaka bwose, umuhanda, n'inkengero bigenewe cyangwa bifunguriwe urujya n'uruza rw'abantu n'ibinyabiziga muri rusange.\n` +
+      `- **Umuhanda (chaussée):** Igice cy'inzira nyabagendwa cyagenewe kugendwamo n'ibinyabiziga gusa.\n` +
+      `- **Akayira:** Inzira nyabagendwa ifunganye yagenewe **abanyamaguru n'ibinyabiziga bigendera ku biziga bibiri gusa**.\n` +
+      `- **Inkengero yegutse (trottoir):** Igice kiri hejuru y'umuhanda cyagenewe abanyamaguru.\n` +
+      `- **Igisate cy'umuhanda:** Igice kigabanyijwemo umuhanda kugira ngo ikinyabiziga kigenderemo ku murongo umwe.`;
+
+    memoryTip = `Akayira = Abanyamaguru + ibiziga bibiri (velosipede, velomoteri). Umuhanda = Ibinyabiziga. Trottoir = Abanyamaguru gusa.`;
+  }
+  // 9. Brakes & Emergency (Feri n'ubutabazi)
+  else if (lowerQ.includes("feri") || lowerQ.includes("guhagarika ikinyabiziga")) {
+    lawDetails = `**Amoko ya Feri n'inshingano zazo mu kinyabiziga:**\n\n` +
+      `- **Feri y'urugendo (frein de service):** Feri isanzwe ikoreshwa n'ikirenge igabanya umuvuduko ikanahagarika ikinyabiziga mu gihe cy'urugendo.\n` +
+      `- **Feri yo gutabara (frein de secours):** Feri ikoreshwa kugira ngo ikinyabiziga kigende gahoro cyangwa gihagarare igihe feri y'urugendo yagize ikibazo idakora neza.\n` +
+      `- **Feri yo guhagarara umwanya munini (frein de stationnement / handbrake):** Feri ikoreshwa n'ukuboko ifata ikinyabiziga kitari mu rugendo (kikaguma hamwe nta mushoferi urimo).`;
+
+    memoryTip = `Feri idakora neza -> Feri yo gutabara niyo ituma ikinyabiziga kigenda gahoro cyangwa gihagarara.`;
+  }
+  // 10. Intersections & Right of Way (Amasangano, gutambuka mbere, rond-point)
+  else if (lowerQ.includes("gutambuka") || lowerQ.includes("amasangano") || lowerQ.includes("uburenganzira") || lowerQ.includes("priorite") || lowerQ.includes("rond-point")) {
+    lawDetails = `**Ihame ryo gutambuka mbere mu masangano:**\n\n` +
+      `- **Ihame rusange (Priorité à droite):** Mu masangano adafite ibyapa cyangwa amatara, umuyobozi agomba guha inzira ikinyabiziga giturutse **iburyo bwe**.\n` +
+      `- **Mu masangano azunguruka (Rond-point):** Ibinyabiziga biri mu masangano azunguruka nibyo bifite uburenganzira bwo gutambuka mbere y'ibigiye kwinjiramo.\n` +
+      `- **Ibinyabiziga bitabara (Police, Ambulansi, Zimwe-zimwe):** Bitambuka mbere y'ibindi byose igihe bikoresha inzogera y'intabaza (sirène) n'itara rirabagirana ry'ubururu.`;
+
+    memoryTip = `Amasangano asanzwe: Iburyo niyo nzira. Rond-point: Uwujemo niyo nzira. Ubutabazi: Bitambuka mbere byose.`;
+  }
+  // 11. Horn, Helmets, Belts & Driver Responsibilities (Ihembe, umukandara, ingofero, inshingano)
+  else if (lowerQ.includes("ihembe") || lowerQ.includes("umukandara") || lowerQ.includes("ingofero") || lowerQ.includes("umuyobozi") || lowerQ.includes("inzoga")) {
+    lawDetails = `**Inshingano z'umutekano n'ibikoresho by'umuyobozi:**\n\n` +
+      `- **Umuyobozi w'ikinyabiziga:** Ikinyabiziga cyose kigenda mu muhanda kigomba kugira umuyobozi ufite ubushobozi bwo kucyobora.\n` +
+      `- **Ihembe (avertisseur sonore):** Ryemerewe gukoreshwa hanze y'insisiro gusa kugira ngo uburire abandi cyangwa wirinde impanuka. Birabujijwe kurikoresha nijoro mu nsisiro keretse mu gihe cy'akaga gakomeye.\n` +
+      `- **Umukandara w'ubwirinzi:** Utegetswe ku bayobozi n'abagenzi bicaye ku ntebe z'imbere n'iz'inyuma z'ikinyabiziga.\n` +
+      `- **Ingofero y'ubwirinzi (casque):** Itegetswe ku muyobozi n'umugenzi wa moto na velomoteri.`;
+
+    memoryTip = `Ikinyabiziga cyose kigomba kugira umuyobozi. Ihembe rikoreshwa gusa ku manywa hanze y'insisiro kwirinda impanuka.`;
   }
   // 7. General Fallback
   else {
