@@ -1,17 +1,28 @@
 import QuizEngine from "@/components/quiz/QuizEngine";
 import { BackButton } from "@/components/layout/BackButton";
-import { buildRotatingExam } from "@/lib/exam-builder";
+import { generateRotatingExam, ExamSeenState } from "@/lib/exam-builder";
 import { auth } from "@/lib/auth";
+import { cookies } from "next/headers";
 
 // Always render fresh so the rotating question set differs each visit.
 export const dynamic = "force-dynamic";
 
 export default async function ExamPage() {
-  // Police-exam layout: 5 ibyapa + 5 imibare + 5 isesengura + 5 amafoto,
-  // pulling only questions this user hasn't seen so attempts don't repeat.
+  // Police-exam layout: 5 Category A + 5 Category B + 5 Category C + 1 Category D + 4 Scenarios/Reactions = 20 questions
+  // pulling only questions this user hasn't seen in the current loop so attempts don't repeat.
   const session = await auth();
   const userId = (session?.user as { id?: string } | undefined)?.id;
-  const qList = await buildRotatingExam(userId);
+
+  const cookieStore = await cookies();
+  const rawCookie = cookieStore.get("exam_seen_state")?.value;
+  let seenState: Partial<ExamSeenState> | undefined;
+  if (rawCookie) {
+    try {
+      seenState = JSON.parse(decodeURIComponent(rawCookie));
+    } catch {}
+  }
+
+  const { questions: qList } = await generateRotatingExam(userId, seenState);
 
   return (
     <div className="py-8">
@@ -21,7 +32,7 @@ export default async function ExamPage() {
       <div className="mb-8 text-center">
         <h1 className="text-glow text-2xl font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h1>
         <p className="text-cyan-100/65">
-          Ibibazo {qList.length}: ibyapa 5 • imibare 5 • isesengura 5 • amafoto y&apos;umuhanda 5 • Iminota 20
+          Ibibazo 20 bivanze mu byiciro byose: A (5) • B (5) • C (5) • D (1) • Imyitwarire n&apos;Ibitego (4) • Iminota 20
         </p>
       </div>
       <QuizEngine

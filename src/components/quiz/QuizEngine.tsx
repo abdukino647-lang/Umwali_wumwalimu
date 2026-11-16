@@ -76,6 +76,7 @@ export default function QuizEngine({
   timeLimitSec?: number;
   examMode?: boolean;
 }) {
+  const [activeQuestions, setActiveQuestions] = useState<QuizQuestion[]>(questions);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
@@ -83,7 +84,13 @@ export default function QuizEngine({
   const [explanations, setExplanations] = useState<Record<string, string>>({});
   const [openExplanationIds, setOpenExplanationIds] = useState<Record<string, boolean>>({});
   const [loadingExplanationId, setLoadingExplanationId] = useState<string | null>(null);
+  const [loadingNextExam, setLoadingNextExam] = useState(false);
   const [remaining, setRemaining] = useState(timeLimitSec ?? 0);
+
+  useEffect(() => {
+    setActiveQuestions(questions);
+    setRemaining(timeLimitSec ?? 0);
+  }, [questions, timeLimitSec]);
 
   const fetchExplanation = async (quizQ: QuizQuestion, correctAnswerKey: string, userAnswer?: string) => {
     const qId = quizQ.id;
@@ -120,7 +127,7 @@ export default function QuizEngine({
     }
   };
 
-  const q = questions[currentIdx];
+  const q = activeQuestions[currentIdx];
 
   // Refs so the countdown's auto-submit always reads the latest answers / runs once.
   const answersRef = useRef(answers);
@@ -132,16 +139,36 @@ export default function QuizEngine({
     finishedRef.current = true;
     const current = answersRef.current;
     const correctKeys: Record<string, string> = {};
-    questions.forEach((question) => {
+    activeQuestions.forEach((question) => {
       correctKeys[question.id] = getCorrectKey(question);
     });
-    const result = calculateScore(current, questions, correctKeys);
+    const result = calculateScore(current, activeQuestions, correctKeys);
     setScoreData(result);
     setShowResult(true);
 
+    // Save seen questions into cookie for rotating exams to prevent repetition
+    if (examMode && typeof document !== "undefined") {
+      try {
+        const cookieMatch = document.cookie.match(/exam_seen_state=([^;]+)/);
+        let existingSeen: Record<string, number[]> = { a: [], b: [], c: [], d: [], s: [] };
+        if (cookieMatch) {
+          try {
+            existingSeen = { ...existingSeen, ...JSON.parse(decodeURIComponent(cookieMatch[1])) };
+          } catch {}
+        }
+        activeQuestions.forEach((qq) => {
+          const poolKey = ((qq as any).examGroup || (qq.number >= 434 ? "d" : qq.category === "numeric" ? "b" : qq.category === "ibyapa" ? "c" : "a")) as "a" | "b" | "c" | "d" | "s";
+          if (Array.isArray(existingSeen[poolKey]) && !existingSeen[poolKey].includes(qq.number)) {
+            existingSeen[poolKey].push(qq.number);
+          }
+        });
+        document.cookie = `exam_seen_state=${encodeURIComponent(JSON.stringify(existingSeen))}; path=/; max-age=2592000; samesite=lax`;
+      } catch {}
+    }
+
     // Persist the attempt so the dashboard reflects it (fire-and-forget).
     if (moduleId || examMode) {
-      const answersArr = questions.map((qq) => ({
+      const answersArr = activeQuestions.map((qq) => ({
         questionId: qq.id,
         selectedKey: current[qq.id] ?? null,
         correct: current[qq.id] === correctKeys[qq.id],
@@ -184,7 +211,7 @@ export default function QuizEngine({
   };
 
   const handleNext = () => {
-    if (currentIdx < questions.length - 1) {
+    if (currentIdx < activeQuestions.length - 1) {
       setCurrentIdx(currentIdx + 1);
     } else {
       finish();
@@ -203,7 +230,7 @@ export default function QuizEngine({
 
   if (showResult && scoreData) {
     const correctKeys: Record<string, string> = {};
-    questions.forEach((question) => {
+    activeQuestions.forEach((question) => {
       correctKeys[question.id] = getCorrectKey(question);
     });
 
@@ -223,7 +250,7 @@ export default function QuizEngine({
 
         <div className="mt-8 flex w-full flex-col gap-4 text-left">
           <h3 className="border-b border-cyan-400/20 pb-2 text-xl font-bold text-white">Ibisubizo N&apos;Ubusobanuro (Review)</h3>
-          {questions.map((quizQ, idx) => {
+          {activeQuestions.map((quizQ, idx) => {
             const userAnswer = answers[quizQ.id];
             const correctAnswerKey = correctKeys[quizQ.id];
             const userCorrect = userAnswer === correctAnswerKey;
@@ -313,12 +340,68 @@ export default function QuizEngine({
           })}
         </div>
 
-        <Button
-          onClick={() => window.location.reload()}
-          className="glow-btn mt-8 h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400"
-        >
-          Komeza Uwige
-        </Button>
+        {examMode ? (
+          <div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              onClick={async () => {
+                setLoadingNextExam(true);
+                try {
+                  const res = await fetch("/api/exam/next", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                  });
+                  const data = await res.json();
+                  if (data?.ok && Array.isArray(data.questions) && data.questions.length === 20) {
+                    setActiveQuestions(data.questions);
+                    setCurrentIdx(0);
+                    setAnswers({});
+                    setShowResult(false);
+                    setScoreData(null);
+                    setRemaining(timeLimitSec ?? 20 * 60);
+                    setExplanations({});
+                    setOpenExplanationIds({});
+                    finishedRef.current = false;
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    return;
+                  }
+                } catch (e) {
+                  console.error("Failed to fetch next rotating exam:", e);
+                } finally {
+                  setLoadingNextExam(false);
+                }
+                window.location.reload();
+              }}
+              disabled={loadingNextExam}
+              className="glow-btn h-12 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400 sm:w-auto"
+            >
+              {loadingNextExam ? "Birimo gutegurwa..." : "Komeza ku Bindi Bibazo 20 (Next) ⏱"}
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setCurrentIdx(0);
+                setAnswers({});
+                setShowResult(false);
+                setScoreData(null);
+                setRemaining(timeLimitSec ?? 20 * 60);
+                setExplanations({});
+                setOpenExplanationIds({});
+                finishedRef.current = false;
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="h-12 w-full rounded-xl border border-cyan-400/25 bg-white/5 px-6 font-semibold text-cyan-200 hover:bg-white/10 hover:text-white sm:w-auto"
+            >
+              Subiramo Ibi Bibazo (Retry) ↺
+            </Button>
+          </div>
+        ) : (
+          <Button
+            onClick={() => window.location.reload()}
+            className="glow-btn mt-8 h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400"
+          >
+            Komeza Uwige
+          </Button>
+        )}
       </div>
     );
   }
@@ -328,7 +411,7 @@ export default function QuizEngine({
   return (
     <div className="mx-auto max-w-2xl space-y-6 text-cyan-50">
       <div className="flex items-center justify-between text-sm font-medium text-cyan-100/65">
-        <span>Ikibazo {currentIdx + 1} kuri {questions.length}</span>
+        <span>Ikibazo {currentIdx + 1} kuri {activeQuestions.length}</span>
         {timeLimitSec ? (
           <span
             className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-semibold tabular-nums ${
@@ -342,7 +425,7 @@ export default function QuizEngine({
         )}
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
-        <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-all" style={{ width: `${(currentIdx / questions.length) * 100}%` }} />
+        <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-all" style={{ width: `${(currentIdx / activeQuestions.length) * 100}%` }} />
       </div>
 
       <div className="hud glass rounded-2xl p-6 md:p-8">

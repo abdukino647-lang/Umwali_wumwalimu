@@ -133,7 +133,7 @@ export default async function CoursesPage() {
             </div>
             <div>
               <h3 className="font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h3>
-              <p className="text-xs text-cyan-100/60">Ibibazo 20 bivanze muri A, B na C.</p>
+              <p className="text-xs text-cyan-100/60">Ibibazo 20 bivanze mu byiciro byose: A (5), B (5), C (5), D (1) n&apos;imyitwarire (4).</p>
             </div>
           </div>
           <span className="glow-btn inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white">
