@@ -8,17 +8,19 @@ import Google from 'next-auth/providers/google';
 const googleClientId =
   process.env.GOOGLE_ID ||
   process.env.AUTH_GOOGLE_ID ||
+  process.env.GOOGLE_CLIENT_ID ||
   process.env.Client_ID ||
   process.env.CLIENT_ID;
 
 const googleClientSecret =
   process.env.GOOGLE_SECRET ||
   process.env.AUTH_GOOGLE_SECRET ||
+  process.env.GOOGLE_CLIENT_SECRET ||
   process.env.Client_secret ||
   process.env.CLIENT_SECRET;
 
 export const authConfig = {
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
   trustHost: true,
   providers: [
     ...(googleClientId && googleClientSecret
@@ -26,6 +28,16 @@ export const authConfig = {
           Google({
             clientId: googleClientId,
             clientSecret: googleClientSecret,
+            allowDangerousEmailAccountLinking: true,
+            profile(profile) {
+              return {
+                id: profile.sub,
+                name: profile.name || profile.given_name || profile.email?.split('@')[0] || 'Umunyeshuri',
+                email: profile.email,
+                image: profile.picture,
+                role: 'student',
+              };
+            },
           }),
         ]
       : []),
@@ -33,17 +45,20 @@ export const authConfig = {
   session: { strategy: 'jwt' },
   pages: { signIn: '/login', error: '/login' },
   callbacks: {
+    signIn: async () => {
+      return true;
+    },
     jwt: async ({ token, user }) => {
       if (user) {
-        token.role = (user as any).role || 'student';
-        token.id = user.id;
+        token.role = (user as any).role || token.role || 'student';
+        token.id = user.id || token.sub || token.id;
       }
       return token;
     },
     session: async ({ session, token }) => {
       if (session?.user && token) {
-        (session.user as any).role = token.role as string;
-        (session.user as any).id = token.id as string;
+        (session.user as any).role = (token.role as string) || 'student';
+        (session.user as any).id = (token.id as string) || (token.sub as string);
       }
       return session;
     },

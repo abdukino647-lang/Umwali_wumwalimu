@@ -9,12 +9,58 @@ import bcrypt from 'bcryptjs';
 import { getDefaultTrialDays } from '@/lib/access';
 import { authConfig } from './auth.config';
 
+const baseAdapter = DrizzleAdapter(db, {
+  usersTable: users as any,
+  accountsTable: accounts as any,
+}) as any;
+
+const safeAdapter: any = {
+  ...baseAdapter,
+  async getUserByAccount(account: any) {
+    try {
+      return await baseAdapter.getUserByAccount(account);
+    } catch (e) {
+      console.warn("getUserByAccount warning (falling back):", e);
+      return null;
+    }
+  },
+  async linkAccount(account: any) {
+    try {
+      return await baseAdapter.linkAccount(account);
+    } catch (e) {
+      console.warn("linkAccount warning (continuing without link):", e);
+      return undefined;
+    }
+  },
+  async createUser(data: any) {
+    try {
+      const trialDays = await getDefaultTrialDays().catch(() => 2);
+      const accessExpiresAt = new Date(Date.now() + trialDays * 86_400_000);
+      const safeName = data.name || data.email?.split('@')[0] || 'Umunyeshuri';
+
+      const [newUser] = await db
+        .insert(users)
+        .values({
+          name: safeName,
+          email: data.email,
+          avatarUrl: data.image || null,
+          role: 'student',
+          isActive: true,
+          accessExpiresAt,
+        } as any)
+        .returning();
+
+      return newUser || (await baseAdapter.createUser(data));
+    } catch (e) {
+      console.error("createUser fallback warning:", e);
+      return await baseAdapter.createUser(data);
+    }
+  },
+};
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   ...authConfig,
-  adapter: DrizzleAdapter(db, {
-    usersTable: users as any,
-    accountsTable: accounts as any,
-  }) as any,
+  adapter: safeAdapter,
   events: {
     async createUser({ user }) {
       if (user.id) {
