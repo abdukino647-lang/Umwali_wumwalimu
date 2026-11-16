@@ -3,12 +3,13 @@ import { currentUserRole } from "@/lib/admin-guard";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { TechBackground } from "@/components/layout/TechBackground";
+import { Users, BookOpenCheck, HelpCircle, Award, LogOut } from "lucide-react";
 
 const navItems = [
-  { href: "/admin", label: "Abakoresha (Users)" },
-  { href: "/admin/exams", label: "Gutunganya Ibizamini" },
-  { href: "/admin/questions", label: "Ibibazo (Questions)" },
-  { href: "/admin/certificates", label: "Ibyemezo (Certificates)" },
+  { href: "/admin", label: "Abakoresha (Users)", icon: Users },
+  { href: "/admin/exams", label: "Gutunganya Ibizamini", icon: BookOpenCheck },
+  { href: "/admin/questions", label: "Ibibazo (Questions)", icon: HelpCircle },
+  { href: "/admin/certificates", label: "Ibyemezo (Certificates)", icon: Award },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -37,7 +38,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <span className="hidden text-sm font-medium text-cyan-100/85 sm:inline">{session.user?.name}</span>
           <form action={signOutAction}>
             <button type="submit" className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-cyan-400/25 bg-white/5 px-3 text-sm text-cyan-100/85 transition-colors hover:bg-white/10 hover:text-white">
-              Sohoka ⏻
+              <LogOut className="h-3.5 w-3.5" />
+              <span>Sohoka</span>
             </button>
           </form>
         </div>
@@ -46,11 +48,15 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <div className="relative z-10 flex flex-1">
         <aside className="hidden w-60 shrink-0 border-r border-cyan-400/12 p-4 md:block">
           <nav className="flex flex-col gap-1.5">
-            {navItems.map((it) => (
-              <Link key={it.href} href={it.href} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-cyan-100/70 transition-all hover:bg-white/5 hover:text-white">
-                {it.label}
-              </Link>
-            ))}
+            {navItems.map((it) => {
+              const Icon = it.icon;
+              return (
+                <Link key={it.href} href={it.href} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-cyan-100/70 transition-all hover:bg-white/5 hover:text-white">
+                  <Icon className="h-4 w-4 shrink-0 text-cyan-300" />
+                  <span>{it.label}</span>
+                </Link>
+              );
+            })}
           </nav>
         </aside>
         <main className="flex-1 p-5 md:p-8 lg:p-10">{children}</main>

@@ -26,10 +26,10 @@ export default function ForgotPasswordPage() {
         body: JSON.stringify({ email }),
       });
       const data = await res.json().catch(() => ({}));
-      setMessage(data.message || "Twakira ubusabe bwawe.");
+      setMessage(data.message || "Twakiriye ubusabe bwawe. Reba muri email yawe.");
       if (data.devResetLink) setDevLink(data.devResetLink);
     } catch {
-      setMessage("Seriveri ntiyitabye. Ongera ugerageze.");
+      setMessage("Seriveri ntiyitabye. Ongera ugerageze nyuma.");
     } finally {
       setLoading(false);
     }
@@ -40,14 +40,14 @@ export default function ForgotPasswordPage() {
       <TechBackground variant="network" />
       <header className="absolute left-0 top-0 z-10 flex h-16 w-full items-center px-5 lg:px-10">
         <span className="text-lg font-bold tracking-tight text-white">Amategeko y&apos;Umuhanda</span>
-        <BackButton to="/login" label="Subira ku Injira" className="ml-auto" />
+        <BackButton to="/login" label="Subira ku Kwinjira" className="ml-auto" />
       </header>
 
       <div className="hud glass relative z-10 w-full max-w-md rounded-3xl p-7 md:p-9">
         <div className="mb-6 text-center">
-          <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Wibagiwe ijambo banga?</h1>
+          <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Wibagiwe Ijambo ry&apos;Ibanga?</h1>
           <p className="mt-2 text-sm text-cyan-100/65">
-            Andika email yawe, tuzakohereza link yo gusubiramo ijambo ry&apos;ibanga.
+            Andika email yawe, tuzakohereza link yo guhindura ijambo ry&apos;ibanga.
           </p>
         </div>
 

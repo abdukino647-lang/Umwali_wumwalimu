@@ -2,6 +2,18 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { QuizQuestion, calculateScore, getCorrectKey } from "@/lib/quiz-engine";
+import {
+  CheckCircle2,
+  XCircle,
+  Bot,
+  Lightbulb,
+  X,
+  Trophy,
+  Timer,
+  RotateCcw,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
 
 function renderFormattedText(text: string) {
   const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -236,7 +248,16 @@ export default function QuizEngine({
 
     return (
       <div className="mx-auto flex max-w-2xl flex-col items-center space-y-4 p-4 md:p-8 text-cyan-50">
-        <h2 className="text-glow text-3xl font-extrabold text-white">{scoreData.passed ? "Watsinze! 🎉" : "Ongera Ugerageze"}</h2>
+        <h2 className="text-glow flex items-center justify-center gap-2 text-3xl font-extrabold text-white">
+          {scoreData.passed ? (
+            <>
+              <Trophy className="h-8 w-8 text-amber-300" />
+              <span>Watsinze!</span>
+            </>
+          ) : (
+            <span>Ongera Ugerageze</span>
+          )}
+        </h2>
         <div className={`text-6xl font-black ${scoreData.passed ? "text-emerald-300" : "text-red-300"}`}>
           {scoreData.correct} / {scoreData.total}
         </div>
@@ -267,7 +288,13 @@ export default function QuizEngine({
                   <p className="font-semibold text-white">
                     {idx + 1}. {quizQ.category === "numeric" ? highlightNumbers(quizQ.text) : quizQ.text}
                   </p>
-                  <span className="shrink-0 text-lg">{userCorrect ? "✅" : "❌"}</span>
+                  <span className="shrink-0 pt-0.5">
+                    {userCorrect ? (
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400" />
+                    ) : (
+                      <XCircle className="h-5 w-5 text-red-400" />
+                    )}
+                  </span>
                 </div>
 
                 {quizQ.signImageUrl && (
@@ -297,15 +324,16 @@ export default function QuizEngine({
                   <div className="mt-3 rounded-2xl border border-cyan-400/30 bg-slate-900/95 p-4 text-sm shadow-xl backdrop-blur-md">
                     <div className="mb-3 flex items-center justify-between border-b border-cyan-400/20 pb-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-base">🤖</span>
+                        <Bot className="h-4 w-4 text-cyan-300" />
                         <strong className="font-semibold text-cyan-200">Mwarimu w&apos;Amategeko (AI)</strong>
                       </div>
                       <button
                         type="button"
                         onClick={() => fetchExplanation(quizQ, correctAnswerKey, userAnswer)}
-                        className="rounded px-2 py-0.5 text-xs text-cyan-300/70 hover:bg-white/10 hover:text-white"
+                        className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs text-cyan-300/70 hover:bg-white/10 hover:text-white"
                       >
-                        ✕ Funga
+                        <X className="h-3.5 w-3.5" />
+                        <span>Funga</span>
                       </button>
                     </div>
 
@@ -330,9 +358,10 @@ export default function QuizEngine({
                     variant="ghost"
                     size="sm"
                     onClick={() => fetchExplanation(quizQ, correctAnswerKey, userAnswer)}
-                    className="mt-1 text-xs text-cyan-300 hover:bg-white/5 hover:text-cyan-100"
+                    className="mt-1 inline-flex items-center gap-1.5 text-xs text-cyan-300 hover:bg-white/5 hover:text-cyan-100"
                   >
-                    💡 Saba ubusobanuro bwa Mwarimu (AI)
+                    <Lightbulb className="h-3.5 w-3.5" />
+                    <span>Saba ubusobanuro bwa Mwarimu (AI)</span>
                   </Button>
                 )}
               </div>
@@ -372,9 +401,10 @@ export default function QuizEngine({
                 window.location.reload();
               }}
               disabled={loadingNextExam}
-              className="glow-btn h-12 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400 sm:w-auto"
+              className="glow-btn inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400 sm:w-auto"
             >
-              {loadingNextExam ? "Birimo gutegurwa..." : "Komeza ku Bindi Bibazo 20 (Next) ⏱"}
+              <span>{loadingNextExam ? "Birimo gutegurwa..." : "Komeza ku Bindi Bibazo 20 (Next)"}</span>
+              <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
               variant="ghost"
@@ -389,17 +419,19 @@ export default function QuizEngine({
                 finishedRef.current = false;
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="h-12 w-full rounded-xl border border-cyan-400/25 bg-white/5 px-6 font-semibold text-cyan-200 hover:bg-white/10 hover:text-white sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/25 bg-white/5 px-6 font-semibold text-cyan-200 hover:bg-white/10 hover:text-white sm:w-auto"
             >
-              Subiramo Ibi Bibazo (Retry) ↺
+              <span>Subiramo Ibi Bibazo (Retry)</span>
+              <RotateCcw className="h-4 w-4" />
             </Button>
           </div>
         ) : (
           <Button
             onClick={() => window.location.reload()}
-            className="glow-btn mt-8 h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400"
+            className="glow-btn mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-8 font-semibold text-white hover:from-cyan-400 hover:to-sky-400"
           >
-            Komeza Uwige
+            <span>Komeza Kwiga</span>
+            <ArrowRight className="h-4 w-4" />
           </Button>
         )}
       </div>
@@ -418,7 +450,8 @@ export default function QuizEngine({
               remaining <= 60 ? "bg-red-500/20 text-red-200 animate-pulse-glow" : "bg-cyan-400/15 text-cyan-200"
             }`}
           >
-            ⏱ {mmss(remaining)}
+            <Timer className="h-3.5 w-3.5" />
+            <span>{mmss(remaining)}</span>
           </span>
         ) : (
           <span>Amanota yawe y&apos;agateganyo</span>
@@ -474,17 +507,19 @@ export default function QuizEngine({
           variant="ghost"
           onClick={handlePrev}
           disabled={currentIdx === 0}
-          className="h-11 rounded-xl border border-cyan-400/25 bg-white/5 px-5 text-cyan-100/85 hover:bg-white/10 hover:text-white disabled:opacity-40"
+          className="inline-flex h-11 items-center gap-2 rounded-xl border border-cyan-400/25 bg-white/5 px-5 text-cyan-100/85 hover:bg-white/10 hover:text-white disabled:opacity-40"
         >
-          ← Subira inyuma
+          <ArrowLeft className="h-4 w-4" />
+          <span>Subira inyuma</span>
         </Button>
         <Button
           size="lg"
           onClick={handleNext}
           disabled={!answers[q.id]}
-          className="glow-btn h-11 min-w-[180px] rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400 disabled:opacity-50"
+          className="glow-btn inline-flex h-11 min-w-[180px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400 disabled:opacity-50"
         >
-          {currentIdx === questions.length - 1 ? "Ohereza" : "Komeza →"}
+          <span>{currentIdx === questions.length - 1 ? "Ohereza" : "Komeza"}</span>
+          <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
     </div>

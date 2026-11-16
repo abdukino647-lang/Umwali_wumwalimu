@@ -1,7 +1,8 @@
 import { db } from "@/db";
 import { certificates, users } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import { Award, ExternalLink } from "lucide-react";
 
 export default async function AdminCertificatesPage() {
   let certList: { user: typeof users.$inferSelect | null; id: string; userId: string; courseId: string; verifyCode: string; pdfUrl: string | null; issuedAt: Date | null }[] = [];
@@ -16,44 +17,64 @@ export default async function AdminCertificatesPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Ibyemezo (Certificates)</h1>
+    <div className="space-y-6 text-cyan-50">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Ibyemezo (Certificates)</h1>
+          <p className="mt-1 text-sm text-cyan-100/65">
+            Genzura ibyemezo byatanzwe ku banyeshuri batsinze ibizamini byose.
+          </p>
+        </div>
+        <div className="glass-soft flex items-center gap-2 rounded-xl px-4 py-2 text-sm text-amber-300">
+          <Award className="h-4 w-4" />
+          <span>Ibyemezo {certList.length}</span>
+        </div>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Ibyemezo Byatanzwe ({certList.length})</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {certList.length === 0 ? (
-            <p className="text-gray-500">Nta byemezo biratangwa cyangwa database ntiyacometse neza.</p>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3">Code Umwimerere (Verify Code)</th>
-                    <th className="px-6 py-3">Umunyeshuri</th>
-                    <th className="px-6 py-3">Italiki cyatangiweho</th>
+      <div className="glass overflow-hidden rounded-2xl">
+        <div className="border-b border-cyan-400/15 p-5">
+          <h2 className="text-lg font-bold text-white">Ibyemezo Byatanzwe ({certList.length})</h2>
+        </div>
+        {certList.length === 0 ? (
+          <div className="p-8 text-center text-sm text-cyan-100/50">
+            Nta byemezo biratangwa cyangwa database ntiyacometse neza.
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-white/5 text-xs uppercase text-cyan-100/60">
+                <tr>
+                  <th className="px-6 py-3.5">Code Umwimerere (Verify Code)</th>
+                  <th className="px-6 py-3.5">Umunyeshuri</th>
+                  <th className="px-6 py-3.5">Italiki Cyatangiweho</th>
+                  <th className="px-6 py-3.5">Kureba</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-cyan-400/10">
+                {certList.map((cert) => (
+                  <tr key={cert.id} className="transition-colors hover:bg-white/5">
+                    <td className="px-6 py-4 font-mono font-semibold text-cyan-300">{cert.verifyCode}</td>
+                    <td className="px-6 py-4 font-medium text-white">{cert.user?.name || "Unknown"}</td>
+                    <td className="px-6 py-4 text-cyan-100/70">
+                      {cert.issuedAt ? new Date(cert.issuedAt).toLocaleDateString("en-GB") : "N/A"}
+                    </td>
+                    <td className="px-6 py-4">
+                      <Link
+                        href={`/certificate/${cert.verifyCode}`}
+                        target="_blank"
+                        className="inline-flex items-center gap-1 rounded-lg border border-cyan-400/25 bg-white/5 px-2.5 py-1 text-xs text-cyan-200 transition-colors hover:bg-white/10 hover:text-white"
+                      >
+                        <span>Reba</span>
+                        <ExternalLink className="h-3 w-3" />
+                      </Link>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {certList.map((cert) => (
-                    <tr key={cert.id} className="bg-white border-b">
-                      <td className="px-6 py-4 font-mono">{cert.verifyCode}</td>
-                      <td className="px-6 py-4 font-medium text-gray-900">{cert.user?.name || 'Unknown'}</td>
-                      <td className="px-6 py-4">
-                        {cert.issuedAt ? new Date(cert.issuedAt).toLocaleDateString("rw-RW") : "N/A"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

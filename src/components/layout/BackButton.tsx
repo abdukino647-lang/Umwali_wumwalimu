@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 
 // Instant client-side "go back" (gusubira inyuma).
 // - `to` forces a fixed destination (always go there).
@@ -30,7 +31,7 @@ export function BackButton({
       }}
       className={`inline-flex items-center gap-1.5 rounded-lg border border-cyan-400/25 bg-white/5 px-3 py-1.5 text-sm text-cyan-100/85 transition-colors hover:bg-white/10 hover:text-white ${className}`}
     >
-      <span aria-hidden>←</span> {label}
+      <ArrowLeft className="h-4 w-4" /> {label}
     </button>
   );
 }

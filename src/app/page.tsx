@@ -1,16 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TechBackground } from "@/components/layout/TechBackground";
-
-function StepIcon({ d }: { d: React.ReactNode }) {
-  return (
-    <div className="relative flex h-14 w-14 items-center justify-center rounded-xl glass-soft text-cyan-300 animate-floaty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
-        {d}
-      </svg>
-    </div>
-  );
-}
+import { UserPlus, BookOpen, Award, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -23,11 +14,11 @@ export default function Home() {
         </Link>
         <nav className="ml-auto flex items-center gap-2 text-sm">
           <Link href="/login" className="rounded-lg px-3 py-1.5 text-cyan-100/80 transition-colors hover:text-white">
-            Login
+            Injira (Login)
           </Link>
           <span className="text-cyan-100/30">/</span>
           <Link href="/register" className="rounded-lg px-3 py-1.5 text-cyan-100/80 transition-colors hover:text-white">
-            Register
+            Iyandikishe (Register)
           </Link>
         </nav>
       </header>
@@ -43,14 +34,14 @@ export default function Home() {
             <h1 className="text-glow text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
               Uburyo Bwiza bwo Kwiga Amategeko y&apos;Umuhanda mu Rwanda
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-sm text-cyan-100/70 md:text-base">
-              Iga amategeko y&apos;umuhanda, kora imyitozo, kandi unutsinde ibizamini byo kubona
-              uruhushya rwo gutwara ibinyabiziga (Provisoire).
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-cyan-100/75 md:text-base">
+              Iga amategeko y&apos;umuhanda, kora imyitozo ihuye neza n&apos;ikizamini cya Polisi, kandi utsinde ibizamini byo kubona uruhushya rw&apos;agateganyo rwo gutwara ibinyabiziga (Provisoire).
             </p>
             <div className="mt-8 flex justify-center">
               <Link href="/register">
-                <Button className="glow-btn h-11 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-7 text-sm font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-                  Tangira Ubu →
+                <Button className="glow-btn flex h-11 items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-7 text-sm font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+                  <span>Tangira Kwiga Ubu</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -59,61 +50,52 @@ export default function Home() {
 
         {/* How it works */}
         <section className="mx-auto max-w-6xl px-4 pb-20 pt-6">
-          <h2 className="mb-10 text-center text-2xl font-bold text-white">Uko Bikora (How it works)</h2>
+          <h2 className="mb-10 text-center text-2xl font-bold text-white">Uko Bikora (How It Works)</h2>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
               {
-                title: "Kwiyandikisha",
-                desc: "Iremere konti kugira ngo uyavo utangire gukurikirana amasomo yawe.",
-                meta: "Registration: 98% complete",
-                icon: (
-                  <>
-                    <circle cx="8" cy="8" r="3" />
-                    <path d="M11 11l7 7m-2-5l2 2-2 2" />
-                  </>
-                ),
+                title: "Kwiyandikisha (Register)",
+                desc: "Fungura konti yawe mu buryo bworoshye kandi bwihuse kugira ngo utangire gukurikirana amasomo n'imyitozo yawe.",
+                meta: "Ubufasha bwa 24/7",
+                icon: UserPlus,
               },
               {
-                title: "Kwiga (Study)",
-                desc: "Soma ibika, reba ibyapa, reba imyitozo, kora kandi wige irana imategeko y'umuhanda zasobanuwe neza.",
-                meta: "Module Progress: 45%",
-                icon: (
-                  <>
-                    <path d="M4 5a2 2 0 012-2h6v16H6a2 2 0 00-2 2zM20 5a2 2 0 00-2-2h-6v16h6a2 2 0 012 2z" />
-                  </>
-                ),
+                title: "Kwiga no Kwitoza (Study)",
+                desc: "Wige amategeko rusange, ibyapa n'ibimenyetso by'umuhanda, hamwe n'ingero zifatika bisobanuwe mu Kinyarwanda cyumvikana neza.",
+                meta: "Ibibazo 400+ n'Amafoto Nyayo",
+                icon: BookOpen,
               },
               {
-                title: "Kwitwara Neza (Certify)",
-                desc: "Kora ibizamini, utsinde kuko kuri kure uri busatve kurc uri busatve amorota 70% kugera ubonye icyemezo.",
-                meta: "Test Accuracy: 91%",
-                icon: (
-                  <>
-                    <circle cx="12" cy="9" r="5" />
-                    <path d="M9 13l-1 7 4-2 4 2-1-7" />
-                  </>
-                ),
+                title: "Gutsinda Ikizamini (Certify)",
+                desc: "Kora ibizamini by'imyitozo by'iminota 20 bisubiramo ibibazo bya Polisi, utsinde ku kigero cya 70% cyangwa kurengaho kugira ngo witegure neza.",
+                meta: "Amanota Fatizo: 70%",
+                icon: Award,
               },
-            ].map((s) => (
-              <div key={s.title} className="hud glass is-interactive relative rounded-2xl p-6 transition-all">
-                <StepIcon d={s.icon} />
-                <h3 className="mt-5 text-lg font-bold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm text-cyan-100/65">{s.desc}</p>
-                <div className="mt-5 border-t border-cyan-400/15 pt-3 text-[11px] font-medium uppercase tracking-wide text-cyan-300/80">
-                  {s.meta}
+            ].map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.title} className="hud glass is-interactive relative rounded-2xl p-6 transition-all">
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-xl glass-soft text-cyan-300">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-bold text-white">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-cyan-100/65">{s.desc}</p>
+                  <div className="mt-5 border-t border-cyan-400/15 pt-3 text-[11px] font-semibold uppercase tracking-wide text-cyan-300/80">
+                    {s.meta}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="relative z-10 flex flex-col items-center gap-2 border-t border-cyan-400/10 px-6 py-5 sm:flex-row">
-        <p className="text-xs text-cyan-100/50">© 2026 Amategeko y&apos;Umuhanda. All rights reserved.</p>
+        <p className="text-xs text-cyan-100/50">© 2026 Amategeko y&apos;Umuhanda Platform. Uburenganzira bwose burabitswe.</p>
         <nav className="sm:ml-auto flex gap-5">
-          <Link href="#" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Ibijyanye n&apos;iyi paji</Link>
-          <Link href="#" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Ubufasha</Link>
+          <Link href="/login" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Kwinjira</Link>
+          <Link href="/register" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Kwiyandikisha</Link>
         </nav>
       </footer>
     </div>

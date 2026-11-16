@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
+import { Eye, EyeOff, CheckCircle2 } from "lucide-react";
 
 function ResetForm() {
   const router = useRouter();
@@ -21,8 +22,8 @@ function ResetForm() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (password.length < 6) return setError("Ijambo banga rigomba kuba nibura inyuguti 6.");
-    if (password !== confirm) return setError("Amagambo banga ntahuye.");
+    if (password.length < 6) return setError("Ijambo ry'ibanga rigomba kuba rifite nibura inyuguti 6.");
+    if (password !== confirm) return setError("Amagambo y'ibanga ntabwo ahuye.");
     setLoading(true);
     try {
       const res = await fetch("/api/auth/reset-password", {
@@ -48,7 +49,7 @@ function ResetForm() {
     return (
       <div className="text-center">
         <h1 className="text-glow text-2xl font-extrabold text-white">Link ntiyemewe</h1>
-        <p className="mt-2 text-sm text-cyan-100/65">Iyi link yo gusubiramo ijambo banga ntiyuzuye.</p>
+        <p className="mt-2 text-sm text-cyan-100/65">Iyi link yo gusubiramo ijambo ry&apos;ibanga ntiyuzuye.</p>
         <Link href="/forgot-password" className="mt-4 inline-block font-medium text-cyan-300 hover:underline">Ongera usabe</Link>
       </div>
     );
@@ -57,9 +58,11 @@ function ResetForm() {
   if (done) {
     return (
       <div className="text-center">
-        <div className="mx-auto mb-3 grid h-14 w-14 place-items-center rounded-full bg-emerald-400/15 text-2xl text-emerald-300">✓</div>
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <CheckCircle2 className="h-8 w-8" />
+        </div>
         <h1 className="text-glow text-2xl font-extrabold text-white">Byagenze neza!</h1>
-        <p className="mt-2 text-sm text-cyan-100/65">Ijambo banga ryahinduwe. Turagusubiza ku rupapuro rwo Kwinjira...</p>
+        <p className="mt-2 text-sm text-cyan-100/65">Ijambo ry&apos;ibanga ryahinduwe neza. Turagusubiza ku rupapuro rwo Kwinjira...</p>
         <Link href="/login" className="mt-4 inline-block font-medium text-cyan-300 hover:underline">Injira ubu</Link>
       </div>
     );
@@ -68,28 +71,30 @@ function ResetForm() {
   return (
     <>
       <div className="mb-6 text-center">
-        <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Shyiraho ijambo banga rishya</h1>
+        <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Shyiraho Ijambo ry&apos;Ibanga Rishya</h1>
         <p className="mt-2 text-sm text-cyan-100/65">Hitamo ijambo ry&apos;ibanga rishya kandi rikomeye.</p>
       </div>
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-1.5">
-          <Label htmlFor="password" className="text-cyan-100/80">Ijambo banga rishya</Label>
+          <Label htmlFor="password" className="text-cyan-100/80">Ijambo ry&apos;Ibanga Rishya</Label>
           <div className="relative">
             {fieldIcon("lock")}
-            <Input id="password" type={showPw ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Ijambo banga rishya" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" />
-            <button type="button" onClick={() => setShowPw((s) => !s)} className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-100/50 hover:text-cyan-200" aria-label="toggle password">{showPw ? "🙈" : "👁"}</button>
+            <Input id="password" type={showPw ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Ijambo ry'ibanga rishya" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" />
+            <button type="button" onClick={() => setShowPw((s) => !s)} className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-100/50 hover:text-cyan-200" aria-label="toggle password">
+              {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            </button>
           </div>
         </div>
         <div className="space-y-1.5">
-          <Label htmlFor="confirm" className="text-cyan-100/80">Subiramo ijambo banga</Label>
+          <Label htmlFor="confirm" className="text-cyan-100/80">Subiramo Ijambo ry&apos;Ibanga</Label>
           <div className="relative">
             {fieldIcon("lock")}
-            <Input id="confirm" type={showPw ? "text" : "password"} required value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="Subiramo ijambo banga" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" />
+            <Input id="confirm" type={showPw ? "text" : "password"} required value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="Subiramo ijambo ry'ibanga" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" />
           </div>
         </div>
         {error && <p className="rounded-md border border-red-500/30 bg-red-500/10 p-2.5 text-xs text-red-300">{error}</p>}
         <Button type="submit" disabled={loading} className="glow-btn h-11 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-          {loading ? "Tegereza..." : "Hindura ijambo banga"}
+          {loading ? "Tegereza..." : "Hindura Ijambo ry'Ibanga"}
         </Button>
       </form>
     </>

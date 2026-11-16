@@ -679,9 +679,9 @@
     "matchText": "Nta tara na rimwe cyangwa utugarurarumuri bishobora kuba bifunze kuburyo igice cyabyo cyo hasi cyane kimurika kitaba kiri hasi ya cm 40 kuva ku butaka igihe ikinyabiziga kidapakiye ariko ibyo ntibikurikizwa ku matara akurikira:",
     "correctKey": "c",
     "correctText": "A na B ni ibisubizo by'ukuri",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - A na B ni ibisubizo by'ukuri",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. A na B ni ibisubizo by'ukuri**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: A na B ni ibisubizo by'ukuri."
+    "lawTitle": "Ingingo ya 77: Ubutumburuke Ntarengwa bw'Amatara n'Utugarurarumuri",
+    "lawDetails": "Nta tara na rimwe cyangwa akagarurarumuri bishobora kuba biri hasi ya santimetero 40 (cm 40) kuva ku butaka igihe ikinyabiziga kidapakiye, keretse amatara kamenabihu (feux de brouillard) n'amatara yo gusubira inyuma (feux de recul). Ibi biterwa n'uko ayo matara ashobora gushyirwa hasi y'icyo gipimo bitewe n'imimerere n'ingano by'ikinyabiziga. Ni yo mpamvu igisubizo ari C (A na B ni ibisubizo by'ukuri).",
+    "memoryTip": "Amatara kamenabihu n'ayo gusubira inyuma ashobora kuba munsi ya cm 40 kuva ku butaka."
   },
   {
     "number": 76,
@@ -850,9 +850,9 @@
     "matchText": "Icyapa cyerekana ahantu hagenewe guhagararwamo n'imodoka nini zagenewe gutwara abantu cyirangwa n'ubuso bw'amabara akurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 104: Icyapa cy'Ahahagarara Bisi n'Imodoka Nini (Arrêt d'autobus)",
+    "lawDetails": "Icyapa cyerekana ahantu hagenewe guhagararwamo n'imodoka nini zagenewe gutwara abagenzi (bisi) kirangwa n'ishusho y'urukiramende rufite ubuso bw'umweru, umuzenguruko w'ubururu n'ikirango cy'umukara gishushanyijeho bisi. Kubera ko amahitamo A, B, na C adakomatanya aya mabara yose y'iki cyapa, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Icyapa cy'aho bisi zihagarara kigira ubuso bw'umweru, umuzenguruko w'ubururu n'ikirango cy'umukara."
   },
   {
     "number": 94,
@@ -931,36 +931,36 @@
     "matchText": "Icyapa cyerekana ahantu amategeko y' Umuhanda urombeje w'ibice byinshi atangirira gukurikizwa, kirangwa n'ibirango (ibimenyetso) by'amabara akurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 101: Icyapa cy'Umuhanda Urombeje w'Ibice Byinshi (Autoroute - F5)",
+    "lawDetails": "Icyapa F5 cyerekana ahatangirira amategeko y'umuhanda urombeje w'ibice byinshi (Autoroute) kirangwa n'ubuso bw'ubururu n'ikirango cy'umweru gishushanyijeho imihanda ibiri n'ikiraro hejuru yayo. Ntabwo kirangwa n'umweru n'umukara cyangwa umutuku nk'uko byavuzwe mu mahitamo A, B, C. Ni yo mpamvu igisubizo cy'ukuri ari D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Icyapa cy'umuhanda urombeje (Autoroute) kirangwa n'ubuso bw'ubururu n'ikirango cy'umweru."
   },
   {
     "number": 103,
     "matchText": "Igihe ikorwa ry'imirimo ribangamiye cyane cyangwa buke uburyo bwo kugenda mu nzira nyabagendwa, ahakorerwa imirimo hagaragazwa ku buryo bukurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 108: Ibimenyetso Byerekana Ahakorerwa Imirimo mu Nzira Nyabagendwa",
+    "lawDetails": "Igihe ikorwa ry'imirimo ribangamiye ubwisanzure bwo kugenda mu nzira nyabagendwa, ahakorerwa imirimo hagaragazwa n'inzitiro ziriho imirongo itukura n'yera cyangwa amatara y'umuhondo amyatsa, hakongerwaho ibyapa by'umuhondo by'agateganyo. Kubera ko amahitamo A na B adatanga ibipimo n'amabwiriza yuzuye y'iri tegeko, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Ahakorerwa imirimo hagaragazwa n'inzitiro z'umutuku n'umweru n'amatara amyatsa y'umuhondo."
   },
   {
     "number": 104,
     "matchText": "Iyo mu muhanda, imirimo yihariye ubugari butuma abayobozi bagomba kuva mu mwanya wabo usanzwe kugirango bakomeze urugendo, ahategetswe kunyurwa hagaragazwa n'ikimenyetso gishyirwa aho imirimo irangirira mu ruhande rugenderwamo. Icyo kimenyetso kirangwa n'amabara akurikira:",
     "correctKey": "a",
     "correctText": "ubuso bw'ubururu ikirango cy'umweru",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ubuso bw'ubururu ikirango cy'umweru",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. ubuso bw'ubururu ikirango cy'umweru**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ubuso bw'ubururu ikirango cy'umweru."
+    "lawTitle": "Ingingo ya 96: Icyapa Gitegeka Inzira Yihariye mu Gihe cy'Imirimo (D1)",
+    "lawDetails": "Iyo mu muhanda imirimo yihariye ubugari butuma abayobozi bagomba kuva mu mwanya wabo usanzwe, ahategetswe kunyurwa hagaragazwa n'icyapa gitegeka gifite ishusho y'uruziga, ubuso bw'ubururu n'ikirango cy'umweru kigaragaza akambi kerekeza aho bagomba guca (D1). Igisubizo cy'ukuri ni A (Ubuso bw'ubururu ikirango cy'umweru).",
+    "memoryTip": "Icyapa gitegeka icyerekezo cyo kunyurwamo gifite ubuso bw'ubururu n'ikirango cy'umweru."
   },
   {
     "number": 105,
     "matchText": "Icyapa cyerekana ko hari amabwiriza yihariye mu buryo bwo kugendera mu cyambu cyangwa ku kibuga cy'indege giteye ku buryo bukurikira:",
     "correctKey": "b",
     "correctText": "ishusho mpandenye, ubuso mu ibara ry'ubururu n'ikirango kiri mu ibara ryera",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ishusho mpandenye, ubuso mu ibara ry'ubururu n'ikirango kiri mu ibara ryera",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. ishusho mpandenye, ubuso mu ibara ry'ubururu n'ikirango kiri mu ibara ryera**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ishusho mpandenye, ubuso mu ibara ry'ubururu n'ikirango kiri mu ibara ryera."
+    "lawTitle": "Ingingo ya 103: Ibyapa by'Amabwiriza Yihariye mu Byambu no ku Bibuga by'Indege",
+    "lawDetails": "Icyapa cyerekana ko hari amabwiriza yihariye mu buryo bwo kugendera mu cyambu cyangwa ku kibuga cy'indege kirangwa n'ishusho mpandenye (kare cyangwa urukiramende), ubuso mu ibara ry'ubururu n'ikirango kiri mu ibara ryera. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Amabwiriza yihariye y'ibyambu/ibibuga by'indege = Ishusho mpandenye, ubuso bw'ubururu n'ikirango cyera."
   },
   {
     "number": 106,
@@ -976,18 +976,18 @@
     "matchText": "Ibyapa byerekana icyago cyidahoraho kandi bigenewe kwerekana aho bagana cyangwa aho berekeza umuhanda nk'igihe cy'impanuka cyangwa hari imirimo ikorwa mu muhanda birangwa n'amabara akurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 91: Ibyapa By'Icyago Cyidahoraho n'Ibyerekezo By'Impanuka",
+    "lawDetails": "Ibyapa byerekana icyago cyidahoraho cyangwa iyoborwa ry'agateganyo ry'umuhanda nk'igihe cy'impanuka cyangwa imirimo bifite ubuso bw'ibara ry'umuhondo (jaune) n'imizenguruko itukura. Kubera ko nta hitamo mu yatanzwe ryavuze ibara ry'umuhondo, igisubizo nyacyo ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Ibyapa by'agateganyo/byidahoraho birangwa n'ubuso bw'ibara ry'umuhondo."
   },
   {
     "number": 108,
     "matchText": "Birabujijwe kubangamira imigendere isanzwe y'ibindi binyabiziga kubera ibi bikurikira:",
     "correctKey": "c",
     "correctText": "A na B ni ibisubizo by'ukuri",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - A na B ni ibisubizo by'ukuri",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. A na B ni ibisubizo by'ukuri**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: A na B ni ibisubizo by'ukuri."
+    "lawTitle": "Ingingo ya 18: Kubangamira Imigendere Isanzwe y'Ibindi Binyabiziga",
+    "lawDetails": "Birabujijwe rwose kubangamira abandi bakoresha umuhanda kubera: (A) kugendera ku muvuduko muke cyane bidasobanutse nta mpamvu yumvikana, cyangwa (B) gufata feri bitunguranye kandi nta kaga kagaragara gashobora gutera impanuka. Kubera ko byombi bibujijwe n'itegeko, igisubizo ni C (A na B ni ibisubizo by'ukuri).",
+    "memoryTip": "Ntugomba kugenda gake cyane nta mpamvu cyangwa gufata feri bitunguranye nta kaga."
   },
   {
     "number": 109,
@@ -1021,27 +1021,27 @@
     "matchText": "Uretse igihe hari amategeko yihariye akurikizwa muri ako karere cyangwa imitunganyirize bwite y'aho, ikinyabiziga cyose cyangwa inyamaswa ihagaze umwanya muto cyangwa munini igomba kuba iri aha hakurikira:",
     "correctKey": "c",
     "correctText": "A na B ni ibisubizo by'ukuri",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - A na B ni ibisubizo by'ukuri",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. A na B ni ibisubizo by'ukuri**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: A na B ni ibisubizo by'ukuri."
+    "lawTitle": "Ingingo ya 38: Amategeko yo Guhagarara Akanya Gato n'Akanini",
+    "lawDetails": "Uretse igihe hari amategeko yihariye, ikinyabiziga cyose gihagaze akanya gato cyangwa kanini kigomba gushyirwa: (A) ku ruhande rw'iburyo uretse mu nzira y'icyerekezo kimwe aho gishobora no gushyirwa ibumoso, na (B) hanze y'umuhanda ahagenewe guhagararwamo habugenewe igihe hahari. Igisubizo cy'ukuri ni C (A na B ni ibisubizo by'ukuri).",
+    "memoryTip": "Guhagarara bikorerwa iburyo cyangwa ahashashe hanze y'umuhanda."
   },
   {
     "number": 113,
     "matchText": "Iyo ikinyabiziga gihagaritswe n'ijoro ku buryo abayobozi bakigana badashobora kumenya ko kibabereye imbogamizi, kigomba kurangirwa kure n'ikimenyetso cyabigenewe kiri ahantu hagaragara kugirango kiburire hakiri kare abandi bayobozi baza bagisanga, ariko ntibireba ibinyabiziga bikurikira:",
     "correctKey": "c",
     "correctText": "A na B ni ibisubizo by'ukuri",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - A na B ni ibisubizo by'ukuri",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. A na B ni ibisubizo by'ukuri**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: A na B ni ibisubizo by'ukuri."
+    "lawTitle": "Ingingo ya 42: Kugaragaza Ikinyabiziga Gihagaze Nijoro",
+    "lawDetails": "Iyo ikinyabiziga gihagaritswe nijoro ahantu hatabona neza ku buryo abandi batakibona hakiri kare, kigomba kugaragazwa na: (A) amatara yacyo yo guhagarara (feux de position) n'itara ry'umutuku ry'inyuma, hamwe na (B) icyapa cy'impandeshatu itukura itegetswe gushyirwa inyuma yacyo nibura muri metero 50. Igisubizo cy'ukuri ni C (A na B ni ibisubizo by'ukuri).",
+    "memoryTip": "Nijoro: Gucana amatara yo guhagarara no gushyiraho mpandeshatu itukura birategetswe."
   },
   {
     "number": 114,
     "matchText": "Abanyamaguru batatanye cyangwa bagize udutsiko tudafatanyije gahunda kdi batanayobowe n'umwarimu bategetswe kunyura mu tuyira turi ku mpande z'umuhanda no ku nkengero zigiye hejuru uretse ubutaka butsindagiye butandukanya imihanda ibiri bwo kunyurwamo gusa n'aba bakurikira:",
     "correctKey": "a",
     "correctText": "abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya umuhanda",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya umuhanda",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya umuhanda**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya umuhanda."
+    "lawTitle": "Ingingo ya 12: Imigendere y'Abanyamaguru mu Mihanda",
+    "lawDetails": "Abanyamaguru batatanye bategetswe kugendera ku nkombe y'umuhanda cyangwa mu kayira k'abanyamaguru. Ariko (A) abanyamaguru bashaka guhagarara akanya gato igihe bambukiranya umuhanda bemerewe guhagarara ku kirwa cy'umutekano (refuge) kiri hagati mu muhanda. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Abanyamaguru bambuka bemerewe guhagarara ku kirwa cy'umutekano hagati mu muhanda."
   },
   {
     "number": 115,
@@ -1093,18 +1093,18 @@
     "matchText": "Mu mujyi no ku mihanda y'igihugu igenwa na minisitiri ushinzwe gutwara abantu n'ibintu, ubwikorere ntarengwa ku ikamyo iyo ariyo yose ntibushobora kurenga ibipimo bikurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 73: Ubwikorere Ntarengwa ku Makamyo (Charge Maximale)",
+    "lawDetails": "Mu mujyi no ku mihanda y'igihugu igenwa na Minisitiri ushinzwe gutwara abantu n'ibintu, ubwikorere ntarengwa bubarirwa ku miterere y'imitambiko (essieux): umutambiko umwe ni toni 10, imitambiko ibiri ni toni 16, naho amakamyo manini akagira toni 24 cyangwa 28. Kubera ko nta gipimo cy'ukuri cyavuzwe mu mahitamo A, B, C, igisubizo ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Ubwikorere ntarengwa bubarirwa ku mubare n'ubwoko bw'imitambiko (essieux)."
   },
   {
     "number": 121,
     "matchText": "Iyo bitewe n'imiterere y'ahantu intera itandukanya icyapa n'ahantu habi iri munsi ya m150 ku buryo bugaragara, iyo ntera yerekanishwa icyapa cy'inyongera giteye ku buryo bukurikira:",
     "correctKey": "b",
     "correctText": "urukiramende rufite ubuso bw'ibara ryera",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - urukiramende rufite ubuso bw'ibara ryera",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. urukiramende rufite ubuso bw'ibara ryera**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: urukiramende rufite ubuso bw'ibara ryera."
+    "lawTitle": "Ingingo ya 90: Icyapa cy'Inyongera Cyerekana Intera (Panneau de distance)",
+    "lawDetails": "Iyo bitewe n'imiterere y'ahantu intera itandukanya icyapa n'ahantu habi iri munsi ya metero 150 ku buryo bugaragara, iyo ntera igaragazwa n'icyapa cy'inyongera cy'urukiramende rufite ubuso bw'ibara ryera n'inyandiko y'umukara igaragaza intera (urugero: 50m cyangwa 100m). Igisubizo cy'ukuri ni B (Urukiramende rufite ubuso bw'ibara ryera).",
+    "memoryTip": "Intera iri munsi ya 150m igaragazwa n'urukiramende rwera rw'inyongera ruriho imibare n'inyuguti ya m."
   },
   {
     "number": 122,
@@ -1138,9 +1138,9 @@
     "matchText": "Romoruki zifite ubugari ntarengwa bwa sentimetero 80 zishobora gushyirwaho akagarurarumuri kamwe gusa iyo zikuruwe n'ibinyabiziga bikurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **D. nta gisubizo cy'ukuri kirimo**.",
-    "memoryTip": "Ibipimo byemewe: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 77: Utugarurarumuri twa Romoruki Zose",
+    "lawDetails": "Romoruki zose zidatandukanyijwe ubugari bwazo zigomba kugira nibura utugarurarumuri tubiri tw'imfuruka eshatu (mpandeshatu) z'umutuku zireba inyuma. Nta romoruki n'imwe yemerewe kugira akagarurarumuri kamwe gusa n'iyo yaba ifite ubugari bwa santimetero 80. Igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Romoruki igomba guhora ifite nibura utugarurarumuri tubiri twa mpandeshatu z'umutuku inyuma."
   },
   {
     "number": 126,
@@ -1156,9 +1156,9 @@
     "matchText": "Iyo kuva bwije kugeza bukeye cyangwa bitewe n'uko ibintu bimeze bitagishoboka kubona muri m 200, ibinyabiziga cyangwa imitwaro bifite ubugari burenga m 2.50 iyo bigenda mu nzira nyabagendwa bigaragazwa ku buryo bukurikira:",
     "correctKey": "c",
     "correctText": "A na B ni ibisubizo by'ukuri",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **C. A na B ni ibisubizo by'ukuri**.",
-    "memoryTip": "Ibipimo byemewe: A na B ni ibisubizo by'ukuri."
+    "lawTitle": "Ingingo ya 44: Kugaragaza Ibinyabiziga Iyo Bitabona Neza muri Metero 200",
+    "lawDetails": "Iyo bitewe n'uko bwije cyangwa ikirere kirimo ibihu n'imvura bitagishoboka kubona muri metero 200, ibinyabiziga bigomba kugaragazwa n'amatara y'urugendo cyangwa ayo kubona aho ugana (A) hamwe n'amatara ndangambere n'amatara yo gusubira inyuma (B) ku binyabiziga biyategetswe. Igisubizo cy'ukuri ni C (A na B ni ibisubizo by'ukuri).",
+    "memoryTip": "Iyo kureba birenga metero 200 bitagishoboka, gucana amatara birategetswe."
   },
   {
     "number": 128,
@@ -1192,9 +1192,9 @@
     "matchText": "Uretse bibonewe uruhushya, ubundi birabujijwe gushyira no gukomeza kugendesha imodoka cyangwa romoruki mu nzira nyabagendwa iyo uburemere bw'ibyikorewe burenze uburemere ntarengwa bwemewe n'ikarita iranga ikinyabiziga ariko ibyo ntibikurikizwa ku binyabiziga bikurikira:",
     "correctKey": "c",
     "correctText": "imashini zikoreshwa mu kubaka imihanda",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **C. imashini zikoreshwa mu kubaka imihanda**.",
-    "memoryTip": "Ibipimo byemewe: imashini zikoreshwa mu kubaka imihanda."
+    "lawTitle": "Ingingo ya 70: Ibinyabiziga Byemerewe Gukoresha Inzira Nyabagendwa",
+    "lawDetails": "Birabujijwe kugendesha mu nzira nyabagendwa imodoka cyangwa romoruki zifite inziga zishobora kwangiza umuhanda (nk'izifite iminyururu cyangwa inziga z'ibyuma bidafite amapine), keretse imashini zikoreshwa mu kubaka no gusana imihanda (C) zibifitiye uruhushya rwihariye. Igisubizo cy'ukuri ni C (Imashini zikoreshwa mu kubaka imihanda).",
+    "memoryTip": "Imashini zubaka imihanda zifite uruhushya zishobora gukoresha inziga z'ibyuma aho zikorera."
   },
   {
     "number": 133,
@@ -1219,27 +1219,27 @@
     "matchText": "Ibyapa bibuza n'ibitegeka bikurikizwa gusa aha hakurikira:",
     "correctKey": "b",
     "correctText": "mu gice cy'inzira nyabagendwa kiri hagati yaho bishinze n'inkomane ikurikiyeho ku ruhande rw'inzira bishinzeho",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - mu gice cy'inzira nyabagendwa kiri hagati yaho bishinze n'inkomane ikurikiyeho ku ruhande rw'inzira bishinzeho",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. mu gice cy'inzira nyabagendwa kiri hagati yaho bishinze n'inkomane ikurikiyeho ku ruhande rw'inzira bishinzeho**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: mu gice cy'inzira nyabagendwa kiri hagati yaho bishinze n'inkomane ikurikiyeho ku ruhande rw'inzira bishinzeho."
+    "lawTitle": "Ingingo ya 95: Aho Ibyapa Bibuza n'Ibitegeka Bikurikizwa",
+    "lawDetails": "Ibyapa bibuza n'ibitegeka bitangira gukurikizwa aho bishinze kugeza ku masangano (inkomane) akurikiyeho ku ruhande rw'inzira bishinzeho, keretse iyo hari icyapa cy'inyongera cyerekana intera cyangwa icyapa kimenyesha iherezo ry'icyo kibuzwa. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Ibyapa bibuza n'ibitegeka bireba igice kiri hagati y'aho bishinze n'inkomane ikurikiyeho."
   },
   {
     "number": 136,
     "matchText": "Icyapa cy'inyongera kerekana aho bagobokera ibinyabiziga kirangwa n'amabara akurikira:",
     "correctKey": "b",
     "correctText": "umweru, umukara, ubururu",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - umweru, umukara, ubururu",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. umweru, umukara, ubururu**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: umweru, umukara, ubururu."
+    "lawTitle": "Ingingo ya 105: Amabara y'Icyapa cy'Ubutabazi n'Ubugoboko bw'Ibinyabiziga",
+    "lawDetails": "Icyapa cy'inyongera cyerekana aho bagobokera ibinyabiziga (poste de dépannage) kirangwa n'amabara y'umweru, umukara n'ubururu (ubuso bw'ubururu n'agakoresho k'umukara gashushanyije ku kadomo k'umweru). Igisubizo cy'ukuri ni B (Umweru, umukara, ubururu).",
+    "memoryTip": "Icyapa cy'ubugoboko bw'ibinyabiziga kigizwe n'umweru, umukara n'ubururu."
   },
   {
     "number": 137,
     "matchText": "Icyapa cyerekana uburebure bw'igice cyatera ibyago cyangwa bw'ahantu amabwiriza y'icyo cyapa agomba gukurikizwa kirangwa n'ubuso n'ibimenyetso bikurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 90: Icyapa cy'Inyongera Cyerekana Uburebure bw'Ahari Ibyago",
+    "lawDetails": "Icyapa cyerekana uburebure bw'igice cy'umuhanda kiberamo ibyago kirangwa n'urukiramende rw'ubuso bw'umweru ruriho inyandiko y'umukara hagati y'utwambi tubiri tureba hejuru (^ 500m ^). Kubera ko amahitamo A, B, C atatanze ibi bisobanuro by'utwambi n'amabara, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Uburebure bw'igice cy'ibyago bugaragazwa n'utwambi tubiri tureba hejuru ku cyapa cy'umweru."
   },
   {
     "number": 138,
@@ -1327,18 +1327,18 @@
     "matchText": "Umuyobozi ugenda mu muhanda igihe ubugari bwawo budatuma anyuranaho nta nkomyi ashobora kunyura mu kayira k'abanyamaguru ariko amaze kureba ibi bikurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **D. nta gisubizo cy'ukuri kirimo**.",
-    "memoryTip": "Ibipimo byemewe: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 27: Aho Kunyuranaho mu Muhanda",
+    "lawDetails": "Kunyuranaho bikorerwa mu muhanda gusa. Umuyobozi abujijwe rwose guca mu kayira k'abanyamaguru, mu tuyira tw'amagare cyangwa ku tuyira two ku nkengero z'umuhanda kugira ngo anyure ku kindi kinyabiziga kuko byateza impanuka ikomeye. Igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo kuko bitamwemerera na rimwe).",
+    "memoryTip": "Kunyura mu kayira k'abanyamaguru cyangwa ku tuyira tw'amagare unyuranaho birabujijwe rwose."
   },
   {
     "number": 179,
     "matchText": "Icyapa cyerekana umuvuduko ntarengwa ikinyabiziga kitagomba kurenza gishyirwa ku binyabiziga bifite uburebure ntarengwa bukurikira:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 80: Icyapa cy'Umuvuduko Ntarengwa ku Binyabiziga Binini",
+    "lawDetails": "Icyapa cy'uruziga kimenyesha umuvuduko ntarengwa ikinyabiziga kitagomba kurenza gishyirwa inyuma ku binyabiziga bifite uburemere burenga toni 3.5 n'ibitwara abagenzi muri rusange, ntabwo bishingira ku burebure gusa bw'ikinyabiziga. Kubera ko amahitamo A, B, C atatanze iyi ngingo, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Icyapa cy'umuvuduko inyuma gishingira ku buremere burenze 3.5t n'ibitwara abagenzi, si uburebure gusa."
   },
   {
     "number": 180,
@@ -1390,9 +1390,9 @@
     "matchText": "Uburyo bukoreshwa kugirango ikinyabiziga kigende gahoro igihe feri idakora neza bwitwa:",
     "correctKey": "c",
     "correctText": "feri yo gutabara",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - feri yo gutabara",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. feri yo gutabara**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: feri yo gutabara."
+    "lawTitle": "Ingingo ya 85: Feri yo Gutabara (Frein de Secours)",
+    "lawDetails": "Uburyo bukoreshwa kugira ngo ikinyabiziga kigende gahoro cyangwa gihagarare igihe feri y'urugendo idakora neza bwitwa FERI YO GUTABARA (frein de secours). Iri tegeko rigamije ko ikinyabiziga gihora gifite uburyo bwa kabiri bwo guhagarara igihe uburyo bwa mbere bupfuye. Igisubizo cy'ukuri ni C (Feri yo gutabara).",
+    "memoryTip": "Feri yo gutabara ikoreshwa mu gihe feri y'urugendo yanze cyangwa yagize ikibazo."
   },
   {
     "number": 186,
@@ -1435,9 +1435,9 @@
     "matchText": "Ibiziga by'ibinyabiziga bigendeshwa na moteri n'ibya velomoteri kimwe n'ibya romoruki zabyo bigomba kuba byambaye inziga zihagwa zifite amano n'ubujyakuzimu butari munsi ya milimetero imwe ku migongo yabyo yose, n'ubudodo bwabyo ntibugire ahantu na hamwe bugaragara kdi ntibigire aho byacitse bikomeye mu mpande zabyo. Ariko ibyo ntibikurikizwa ku binyabiziga bikurikira:",
     "correctKey": "a",
     "correctText": "ibinyabiziga bidapakiye kdi bitajya birenza umuvuduko wa km 25 mu isaha ahateganye",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ibinyabiziga bidapakiye kdi bitajya birenza umuvuduko wa km 25 mu isaha ahateganye",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. ibinyabiziga bidapakiye kdi bitajya birenza umuvuduko wa km 25 mu isaha ahateganye**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ibinyabiziga bidapakiye kdi bitajya birenza umuvuduko wa km 25 mu isaha ahateganye."
+    "lawTitle": "Ingingo ya 83: Amapine n'Inziga z'Ibinyabiziga",
+    "lawDetails": "Ibiziga byose by'ibinyabiziga bigendeshwa na moteri bigomba kuba byambaye inziga z'umwuka (pneus) zifite imirongo ifashe neza. Ibinyabiziga bidapakiye kandi bitajya birenza umuvuduko wa km 25 mu isaha nibyo byonyine bishobora gukoresha amapine akomeye adafite umwuka. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Ibinyabiziga bidapakiye kandi bitarenza km 25/h byemerewe amapine adafite umwuka."
   },
   {
     "number": 191,
@@ -1516,9 +1516,9 @@
     "matchText": "Uretse mu mijyi, kuyindi mihanda yagenywe na minisiteri ushinzwe gutwara ibintu n'abantu, uburemere ntarengwa bwemewe ku binyabiziga bifatanye bifite imitambiko itatu ni:",
     "correctKey": "a",
     "correctText": "toni 12",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **A. toni 12**.",
-    "memoryTip": "Ibipimo byemewe: toni 12."
+    "lawTitle": "Ingingo ya 73: Uburemere Ntarengwa ku Mutambiko (Charge à l'essieu)",
+    "lawDetails": "Uretse mu mijyi, ku yindi mihanda yagenwe na Minisitiri ushinzwe gutwara ibintu n'abantu, uburemere ntarengwa bwemewe ku mutambiko umwe (essieu simple) w'ikinyabiziga ni TONI 12 (ku mitambiko y'ikoranabuhanga ritwaza imitwaro minini). Igisubizo cy'ukuri ni A (Toni 12).",
+    "memoryTip": "Uburemere ntarengwa ku mutambiko wemewe ku mihanda minini bugera kuri toni 12."
   },
   {
     "number": 200,
@@ -1561,9 +1561,9 @@
     "matchText": "Iyo kuva bwije kugeza bukeye cyangwa bitewe n'uko ibihe bimeze nk'igihe cy'ibihu cyangwa cy'imvura bitagishoboka kubona neza muri m 200, udutsiko twose tw'abanyamaguru nk'imperekerane cyangwa udutsiko tw'abanyeshuri bari ku murongo bayobowe n'umwarimu, iyo bagenda mu muhanda ku isonga hakaba hari abantu barenze umwe bagomba kugaragazwa kuburyo bukurikira:",
     "correctKey": "b",
     "correctText": "inyuma ni itara ryumutuku ritwariwe ibumoso n'umuntu uri ku murongo w'inyuma hafi y'umurongo ugabanya umuhanda mo kabiri",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - inyuma ni itara ryumutuku ritwariwe ibumoso n'umuntu uri ku murongo w'inyuma hafi y'umurongo ugabanya umuhanda mo kabiri",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. inyuma ni itara ryumutuku ritwariwe ibumoso n'umuntu uri ku murongo w'inyuma hafi y'umurongo ugabanya umuhanda mo kabiri**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: inyuma ni itara ryumutuku ritwariwe ibumoso n'umuntu uri ku murongo w'inyuma hafi y'umurongo ugabanya umuhanda mo kabiri."
+    "lawTitle": "Ingingo ya 50: Amatara y'Inyuma mu Gihe cy'Ibihu n'Imvura",
+    "lawDetails": "Iyo kuva bwije kugeza bukeye cyangwa bitewe n'ibihu n'imvura bidashoboka kubona muri metero 200, inyuma y'ikinyabiziga cyangwa uruhererekane rw'ibinyabiziga hagomba kugaragarira itara ry'umutuku ritwariwe ibumoso n'umuntu uri ku murongo w'inyuma hafi y'umurongo ugabanya umuhanda mo kabiri. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Itara ry'umutuku ry'inyuma rigomba guhora rigaragarira ku ruhande rw'ibumoso."
   },
   {
     "number": 205,
@@ -1588,9 +1588,9 @@
     "matchText": "Nta tara na rimwe cyangwa akagarurarumuri bishobora kuba bifunze kuburyo igice cyabyo cyo hasi cyane kimurika kiba kiri hasi y'ibipimo bikurikira kuva ku butaka igihe ikinyabiziga kidapakiye:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 77: Ubutumburuke bw'Amatara n'Utugarurarumuri",
+    "lawDetails": "Nta tara na rimwe cyangwa akagarurarumuri bishobora kuba biri munsi ya santimetero 40 (cm 40) kuva ku butaka, keretse kamenabihu n'iryo gusubira inyuma. Kubera ko nta mahitamo muri A, B, C yatanze iki gipimo cy'ukuri cy'itegeko, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Itegeko risaba ubutumburuke bwa santimetero 40 (cm 40) kuva ku butaka."
   },
   {
     "number": 208,
@@ -1615,9 +1615,9 @@
     "matchText": "Ubugari bw'imizigo yikorewe n'ipikipiki ifite akanyabiziga ko kuruhande kimwe n'ubwa romoruki ikuruwe na bene icyo kinyabiziga ntibushobora kurenza ibipimo bikurikira ku bugari bw'icyo kinyabiziga kidapakiye:",
     "correctKey": "b",
     "correctText": "cm 30",
-    "lawTitle": "Ingingo ya 79-83: Ibipimo, Uburemere, n'Imitwaro y'Ibinyabiziga",
-    "lawDetails": "Iteka rya Perezida rigena ibipimo ntarengwa by'ubugari, uburebure n'uburemere bw'ibinyabiziga mu rwego rwo kurengera umutekano no kutangiza imihanda. Igisubizo cy'ukuri ni: **B. cm 30**.",
-    "memoryTip": "Ibipimo byemewe: cm 30."
+    "lawTitle": "Ingingo ya 72: Ubugari bw'Imizigo ku Ipikipiki ifite Akanyabiziga k'Impande",
+    "lawDetails": "Ubugari bw'imizigo yikorewe n'ipikipiki ifite akanyabiziga ko ku ruhande (side-car) ntibushobora kurenga ubugari bw'icyo kinyabiziga ku ntera irenze santimetero 30 (cm 30) ku mpande zombi. Igisubizo cy'ukuri ni B (cm 30).",
+    "memoryTip": "Umzigo ku ipikipiki ntushobora kurenga cm 30 ku mpera z'impande zayo."
   },
   {
     "number": 211,
@@ -1750,9 +1750,9 @@
     "matchText": "Uri hafi kunyura k'umuyobozi w'ikinyamitende. Muri ibi byapa bikurikira nikihe wakwitondera?",
     "correctKey": "c",
     "correctText": "d)",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - d)",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. d)**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: d)."
+    "lawTitle": "Ingingo ya 89: Ibyapa Byitonderwa Hafi y'Abanyamagare",
+    "lawDetails": "Iyo wegereye umunyamagare mu muhanda, ugomba kwitondera icyapa kigaragaza aho inzira y'amagare yambukiranya umuhanda (A10) cyangwa icyapa gitegeka inzira y'amagare (D4). Igisubizo cy'ukuri ni C (d)).",
+    "memoryTip": "Witondera icyapa kiburira cyangwa gitegeka inzira y'amagare."
   },
   {
     "number": 227,
@@ -1831,27 +1831,27 @@
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "a",
     "correctText": "Iherezo ry'ibibuzwa byose mu karere ku binyabiziga bigenda",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Iherezo ry'ibibuzwa byose mu karere ku binyabiziga bigenda",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Iherezo ry'ibibuzwa byose mu karere ku binyabiziga bigenda**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Iherezo ry'ibibuzwa byose mu karere ku binyabiziga bigenda."
+    "lawTitle": "Ingingo ya 98: Icyapa C20 - Iherezo ry'Ibibuzwa Byose mu Karere",
+    "lawDetails": "Icyapa cy'uruziga rw'umweru rucitsemo umurongo w'umukara ucuramye (C20) kimenyesha: IHEREZO RY'IBIBUZWA BYOSE ku binyabiziga bigenda muri ako gace. Kirangiza ibibuzwa byose byatanzwe n'ibyapa bibuza byari bibanje. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Uruziga rwera rurimo umurongo w'umukara ucuramye = Iherezo ry'ibibuzwa byose (C20)."
   },
   {
     "number": 235,
     "matchText": "Ibyapa bitegeka bikozwe muyihe shusho?",
     "correctKey": "c",
     "correctText": "d)",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - d)",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. d)**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: d)."
+    "lawTitle": "Ingingo ya 96: Ishusho y'Ibyapa Bitegeka (Signaux d'obligation)",
+    "lawDetails": "Ibyapa bitegeka bigizwe n'ishusho y'URUZIGA rufite ubuso bw'ibara ry'ubururu n'ikirango cy'umweru. Igisubizo cy'ukuri ni C (d)).",
+    "memoryTip": "Ibyapa bitegeka = Ishusho y'uruziga rw'ubururu n'ikirango cyera."
   },
   {
     "number": 236,
     "matchText": "Nikihe cyapa cyerekena ko nta kinyabiziga gifite moteri cyemerewe kuhanyura?",
     "correctKey": "a",
     "correctText": "(b)",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - (b)",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. (b)**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: (b)."
+    "lawTitle": "Ingingo ya 94: Icyapa C3 - Kubuza Ibinyabiziga Bifite Moteri Kuhanyura",
+    "lawDetails": "Icyapa kirangwa n'uruziga rufite umuzenguruko utukura n'ubuso bwera kirimo imodoka n'ipikipiki (C3) gisobanura ko ikinyabiziga cyose gifite moteri kibujijwe kuhanyura. Igisubizo cy'ukuri ni A (b)).",
+    "memoryTip": "Uruziga rutukura rurimo imodoka na moto = Birabujijwe ku binyabiziga byose bya moteri."
   },
   {
     "number": 237,
@@ -1885,45 +1885,45 @@
     "matchText": "Iki cyapa gisubanura iki?",
     "correctKey": "b",
     "correctText": "Umuhanda utaringaniye",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Umuhanda utaringaniye",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Umuhanda utaringaniye**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Umuhanda utaringaniye."
+    "lawTitle": "Ingingo ya 90: Icyapa A2 - Umuhanda Utaringaniye (Cassis ou Dos-d'âne)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo ibinogo bibiri cyangwa akatuba kimenyesha: UMUHANDA UTARINGANIYE (route déformée cyangwa dos d'âne). Ugomba kugabanya umuvuduko kugira ngo wirinde kwangiza imodoka cyangwa guta umuvuno. Igisubizo cy'ukuri ni B (Umuhanda utaringaniye).",
+    "memoryTip": "Mpandeshatu irimo imifuka/udutuba = Umuhanda utaringaniye."
   },
   {
     "number": 241,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "a",
     "correctText": "Umuyaga w'intambike",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Umuyaga w'intambike",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Umuyaga w'intambike**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Umuyaga w'intambike."
+    "lawTitle": "Ingingo ya 90: Icyapa A22 - Umuyaga w'Intambike (Vent latéral)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura gishushanyijeho umuseke w'umuyaga (manche à air) kimenyesha: UMUYAGA W'INTAMBIKE ushobora guhirika cyangwa guta imodoka mu mukoki. Igisubizo cy'ukuri ni A (Umuyaga w'intambike).",
+    "memoryTip": "Icyapa kirimo umuseke w'umuyaga = Umuyaga w'intambike ukaze."
   },
   {
     "number": 242,
     "matchText": "Iki Cyapa Gisobanura Iki?",
     "correctKey": "b",
     "correctText": "Iherezo Ry'umuhanda Urombereje W'ibice Byinshi",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Iherezo Ry'umuhanda Urombereje W'ibice Byinshi",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Iherezo Ry'umuhanda Urombereje W'ibice Byinshi**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Iherezo Ry'umuhanda Urombereje W'ibice Byinshi."
+    "lawTitle": "Ingingo ya 101: Icyapa F6 - Iherezo ry'Umuhanda Urombereje",
+    "lawDetails": "Icyapa cy'urukiramende rw'ubururu ruriho ikimenyetso cy'umuhanda urombereje giciyemo umurongo utukura ucuramye (F6) gisobanura: IHEREZO RY'UMUHANDA UROMBEJE W'IBICE BYINSHI (Fin d'autoroute). Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Icyapa cy'umuhanda urombeje kirimo umurongo utukura ucuramye = Iherezo ryawo."
   },
   {
     "number": 243,
     "matchText": "Iki cyapa gisobanura Iki?",
     "correctKey": "c",
     "correctText": "Ifungana Ry'umuhanda",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ifungana Ry'umuhanda",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. Ifungana Ry'umuhanda**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ifungana Ry'umuhanda."
+    "lawTitle": "Ingingo ya 90: Icyapa A7 - Ifungana ry'Umuhanda (Chaussée rétrécie)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru n'umuzenguruko utukura kirimo imirongo ibiri yegera hagati kimenyesha: IFUNGANA RY'UMUHANDA (Chaussée rétrécie). Ugomba kugabanya umuvuduko no kwitegura kubisikana witonze. Igisubizo cy'ukuri ni C (Ifungana ry'umuhanda).",
+    "memoryTip": "Imirongo yegera hagati muri mpandeshatu = Ifungana ry'umuhanda."
   },
   {
     "number": 244,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "b",
     "correctText": "Inzira idakomeza",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Inzira idakomeza",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Inzira idakomeza**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Inzira idakomeza."
+    "lawTitle": "Ingingo ya 102: Icyapa E14 - Inzira Idakomeza (Impasse)",
+    "lawDetails": "Icyapa cy'urukiramende rw'ubururu rurimo umurongo w'umweru ufite agashami gatukura hejuru gisobanura: INZIRA IDAKOMEZA cyangwa Umuhanda w'impumyi (Impasse). Ushobora kwinjiramo ariko nta handi usohokera uretse guhindukira. Igisubizo cy'ukuri ni B (Inzira idakomeza).",
+    "memoryTip": "Umurongo wera ufite agasanduku gatukura hejuru = Inzira idakomeza (Impasse)."
   },
   {
     "number": 245,
@@ -1939,18 +1939,18 @@
     "matchText": "wakora iki ubonye icyi cyapa ?",
     "correctKey": "b",
     "correctText": "guhagarara niyo nta kinyabiziga ubona",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - guhagarara niyo nta kinyabiziga ubona",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. guhagarara niyo nta kinyabiziga ubona**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: guhagarara niyo nta kinyabiziga ubona."
+    "lawTitle": "Ingingo ya 92: Icyapa B2a - STOP (Guhagarara Burundu)",
+    "lawDetails": "Iyo umuyobozi abonye icyapa cya STOP (ishusho y'imfuruka umunani 'octogone' ifite ubuso butukura n'inyandiko ya STOP mu ibara ryera), ategetswe: GUHAGARARA BURUNDU ku murongo wo guhagarara n'iyo nta kindi kinyabiziga yaba abona giturutse ahandi. Igisubizo cy'ukuri ni B (Guhagarara niyo nta kinyabiziga ubona).",
+    "memoryTip": "Icyapa cya STOP kigutegeka guhagarara burundu n'iyo nta kindi kinyabiziga kigaragara."
   },
   {
     "number": 247,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "a",
     "correctText": "Uguhinguka ku mwaro cyangwa ku nkombe cyangwa ahegereye icyome",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Uguhinguka ku mwaro cyangwa ku nkombe cyangwa ahegereye icyome",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Uguhinguka ku mwaro cyangwa ku nkombe cyangwa ahegereye icyome**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Uguhinguka ku mwaro cyangwa ku nkombe cyangwa ahegereye icyome."
+    "lawTitle": "Ingingo ya 90: Icyapa A16 - Uguhinguka ku Mwaro cyangwa Inkombe",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru n'umuzenguruko utukura kirimo imodoka igwa mu mazi kimenyesha: UGUHINGUKA KU MWARO CYANGWA KU NKOMBE Y'AMAZI CYANGWA AHEGEREYE ICYOME. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Imodoka igwa mu mazi muri mpandeshatu = Uguhinguka ku nkombe cyangwa icyome."
   },
   {
     "number": 248,
@@ -1966,36 +1966,36 @@
     "matchText": "Icyapa gitanga uburenganzira bwo gutambuka mbere kigira iyihe shusho?",
     "correctKey": "a",
     "correctText": "b)",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - b)",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. b)**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: b)."
+    "lawTitle": "Ingingo ya 92: Ishusho y'Icyapa Gitanga Uburenganzira bwo Gutambuka Mbere (B4)",
+    "lawDetails": "Icyapa cy'umuhanda ufite uburenganzira bwo gutambuka mbere (B4 / Route prioritaire) kigira ishusho ya MPANDESHAMBIRI (losange / carré sur pointe) ifite umugongo w'umweru, ubuso bw'umuhondo n'uruzitiro rw'umweru. Igisubizo cy'ukuri ni A (b)).",
+    "memoryTip": "Icyapa cya priorité ni mpandeshambiri (losange) ifite ubuso bw'umuhondo."
   },
   {
     "number": 250,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "a",
     "correctText": "Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi ibambiye",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi ibambiye",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi ibambiye**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi ibambiye."
+    "lawTitle": "Ingingo ya 90: Icyapa A17 - Ahegereye Inzira ya Gari ya Moshi Ibambiye",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo ishusho y'uruzitiro (barrière) kimenyesha: AHEGEREYE AMASANGANO Y'INZIRA NYABAGENDWA N'INZIRA YA GARI YA MOSHI IBAMBIYE (Passage à niveau avec barrières). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Uruzitiro muri mpandeshatu = Inzira ya gari ya moshi ibambiye."
   },
   {
     "number": 251,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "b",
     "correctText": "Agacuri kateza ibyago",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Agacuri kateza ibyago",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Agacuri kateza ibyago**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Agacuri kateza ibyago."
+    "lawTitle": "Ingingo ya 90: Icyapa A13 - Akamanuko Gashobora Gutera Ibyago (Descente)",
+    "lawDetails": "Icyapa cya mpandeshatu kirimo imodoka imanuka n'ikigereranyo cy'ijana (urugero 10%) kimenyesha: AGACURI KATEZA IBYAGO (Descente dangereuse). Ugomba gushyiramo vitese ifata imodoka (frein moteur) ukirinda gufata feri y'ikirenge umwanya muremure. Igisubizo cy'ukuri ni B (Agacuri kateza ibyago).",
+    "memoryTip": "Imodoka imanuka 10% = Agacuri kateza ibyago (Descente dangereuse)."
   },
   {
     "number": 252,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "b",
     "correctText": "Umuhanda udakomeza",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Umuhanda udakomeza",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Umuhanda udakomeza**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Umuhanda udakomeza."
+    "lawTitle": "Ingingo ya 102: Icyapa E14 - Umuhanda Udakomeza",
+    "lawDetails": "Icyapa cy'urukiramende rw'ubururu kigaragaza inzira ifunze n'akarongo gatukura hejuru gisobanura: UMUHANDA UDAKOMEZA (Impasse). Igisubizo cy'ukuri ni B (Umuhanda udakomeza).",
+    "memoryTip": "Inzira ifite agasanduku gatukura hejuru ku buso bw'ubururu = Umuhanda udakomeza."
   },
   {
     "number": 253,
@@ -2038,9 +2038,9 @@
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "a",
     "correctText": "Ukugendera mu muhanda ubisikanirwamo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ukugendera mu muhanda ubisikanirwamo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Ukugendera mu muhanda ubisikanirwamo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ukugendera mu muhanda ubisikanirwamo."
+    "lawTitle": "Ingingo ya 90: Icyapa A24 - Ukugendera mu Muhanda Ubisikanirwamo",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo utwambi tubiri dutandukanye mu cyerekezo (kamwe kazamuka akandi kamanuka) kimenyesha: UKUGENDERA MU MUHANDA UBISIKANIRWAMO (Circulation dans les deux sens). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Utwambi tubiri dutandukanye muri mpandeshatu = Umuhanda ubisikanirwamo."
   },
   {
     "number": 258,
@@ -2056,27 +2056,27 @@
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "c",
     "correctText": "Ahegereye icyago kidasobanuye ukundi.",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ahegereye icyago kidasobanuye ukundi.",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. Ahegereye icyago kidasobanuye ukundi.**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ahegereye icyago kidasobanuye ukundi.."
+    "lawTitle": "Ingingo ya 90: Icyapa A25 - Ahegereye Icyago Kidasobanuye Ukundi",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo akamenyetso ko gutangara (!) kimenyesha: AHEGEREYE ICYAGO KIDASOBANUYE UKUNDI. Kenshi kiba gifite icyapa cy'inyongera munsi gisobanura neza icyo cyago. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Akamenyetso ko gutangara (!) muri mpandeshatu = Icyago kidasobanuye ukundi."
   },
   {
     "number": 260,
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "c",
     "correctText": "Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi hatabambiye",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi hatabambiye",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi hatabambiye**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ahegereye amasangano y'inzira nyabagendwa n'inzira ya gari ya moshi hatabambiye."
+    "lawTitle": "Ingingo ya 90: Icyapa A18 - Inzira ya Gari ya Moshi Itabambiye",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru n'umuzenguruko utukura kirimo imashini ya gari ya moshi icumba umwotsi kimenyesha: AHEGEREYE AMASANGANO Y'INZIRA YA GARI YA MOSHI HATABAMBIYE (Passage à niveau sans barrières). Ugomba kwitonda cyane no kwitegura guhagarara. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Imashini icumba umwotsi muri mpandeshatu = Gari ya moshi itabambiye."
   },
   {
     "number": 261,
     "matchText": "Muri iri sangano ry'umuhanda hari icyapa gisobanura “guhagarara” n'umurongo wera urombereje munzira . Niyihe mpamvu hari iki cyapa cyo “guhagarara” hano?",
     "correctKey": "a",
     "correctText": "Biragoye kubona neza mu muhanda munini",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Biragoye kubona neza mu muhanda munini",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Biragoye kubona neza mu muhanda munini**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Biragoye kubona neza mu muhanda munini."
+    "lawTitle": "Ingingo ya 92: Impamvu yo Gushyiraho Icyapa cya STOP mu Masangano",
+    "lawDetails": "Icyapa cya STOP gishyirwa mu masangano igihe kureba no kubona neza ibinyabiziga biri mu muhanda munini biruhije (visibilité insuffisante), kugira ngo umuyobozi ahagarare burundu yitegereze mbere yo kwinjira mu muhanda. Igisubizo cy'ukuri ni A (Biragoye kubona neza mu muhanda munini).",
+    "memoryTip": "STOP ishyirwa mu masangano aho kubona neza ibinyabiziga biruhije."
   },
   {
     "number": 262,
@@ -2182,9 +2182,9 @@
     "matchText": "Iki cyapa gisobanura iki?",
     "correctKey": "b",
     "correctText": "Ibitaro",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ibitaro",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Ibitaro**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ibitaro."
+    "lawTitle": "Ingingo ya 102: Icyapa E1 - Ahari Ibitaro (Hôpital)",
+    "lawDetails": "Icyapa cy'urukiramende rw'ubururu kirimo inyuguti ya H n'igitanda cy'umweru gisobanura: AHARI IBITARO (Hôpital). Umuyobozi asabwa kwirinda kuvuza amahoni no kugabanya umuvuduko muri ako gace. Igisubizo cy'ukuri ni B (Ibitaro).",
+    "memoryTip": "Inyuguti H n'igitanda ku cyapa cy'ubururu = Ibitaro."
   },
   {
     "number": 275,
@@ -2218,9 +2218,9 @@
     "matchText": "iki kimenyetso cyaka kinyemerera gukomeza:",
     "correctKey": "d",
     "correctText": "oya",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - oya",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. oya**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: oya."
+    "lawTitle": "Ingingo ya 106: Amatara Amurika yo mu Muhanda",
+    "lawDetails": "Iyo itara ritukura ryaka cyangwa itara ry'umuhondo ridafite akambi ryaka mu masangano, umuyobozi abujijwe gukomeza urugendo. Igisubizo cy'ukuri ni D (Oya - ntiwemerewe gukomeza).",
+    "memoryTip": "Itara ritukura cyangwa ry'umuhondo rihagarika ibinyabiziga."
   },
   {
     "number": 279,
@@ -2245,9 +2245,9 @@
     "matchText": "Iki cyapa gisobanura :",
     "correctKey": "a",
     "correctText": "utubuye dutaruka mu muhanda",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - utubuye dutaruka mu muhanda",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. utubuye dutaruka mu muhanda**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: utubuye dutaruka mu muhanda."
+    "lawTitle": "Ingingo ya 90: Icyapa A8 - Utubuye Dutaruka mu Muhanda",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru n'umuzenguruko utukura kirimo imodoka igendera ku tubuye dutaruka kimenyesha: UTUBUYE DUTARUKA MU MUHANDA (Projections de gravillons). Ugomba kugabanya umuvuduko no kwitarura ibindi binyabiziga kugira ngo ibirahuri bitameneka. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Imodoka itara amabuye muri mpandeshatu = Utubuye dutaruka mu muhanda."
   },
   {
     "number": 282,
@@ -2452,18 +2452,18 @@
     "matchText": "Umuyobozi w'ikinyabiziga yegereye aho umwana w'umuhungu utwaye akagare k'abana asezera ku nshuti ye . N'iyihe myifatire myiza wagira imbere yabo?",
     "correctKey": "b",
     "correctText": "Itegure kureka uwo mwana w'umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Itegure kureka uwo mwana w'umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. Itegure kureka uwo mwana w'umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Itegure kureka uwo mwana w'umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe."
+    "lawTitle": "Ingingo ya 10: Umutekano w'Abana mu Muhanda",
+    "lawDetails": "Iyo umuyobozi yegereye umwana utwaye akagare k'abana cyangwa uri ku nkengero z'umuhanda, agomba kwitegura guhagarara no kureka umwana agatambuka, kuko abana bashobora kwinjira mu muhanda bitunguranye batitaye ku binyabiziga. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Abana bafatwa nk'abadafite amakenga; itegure guhagarara ubareke batambuke."
   },
   {
     "number": 305,
     "matchText": "Nk'umuyobozi w'ikinyabiziga, n'iyihe myitwarire wagira?",
     "correctKey": "a",
     "correctText": "Umuyobozi w'ikinyabiziga agomba gukomeza",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Umuyobozi w'ikinyabiziga agomba gukomeza",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Umuyobozi w'ikinyabiziga agomba gukomeza**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Umuyobozi w'ikinyabiziga agomba gukomeza."
+    "lawTitle": "Ingingo ya 15: Uburenganzira bwo Gutambuka",
+    "lawDetails": "Iyo ikinyabiziga kiri mu muhanda munini ugenzurwa n'icyapa cya priorité cyangwa giturutse iburyo mu masangano adafite ibyapa, kiba gifite uburenganzira bwo gukomeza urugendo rwacyo witonze. Igisubizo cy'ukuri ni A (Umuyobozi w'ikinyabiziga agomba gukomeza).",
+    "memoryTip": "Iyo ufite uburenganzira bwo gutambuka (priorité), urakomeza ariko witonze."
   },
   {
     "number": 306,
@@ -2506,18 +2506,18 @@
     "matchText": "Muri ibi binyabiziga n'ikihe gihagaze nabi?",
     "correctKey": "a",
     "correctText": "Ibinyabiziga byombi",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Ibinyabiziga byombi",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Ibinyabiziga byombi**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Ibinyabiziga byombi."
+    "lawTitle": "Ingingo ya 38: Imiparikiro Mibi Ibangamira Umuhanda",
+    "lawDetails": "Ibinyabiziga biparitse mu buryo bufunze inzira y'abanyamaguru cyangwa bibangamiye urujya n'uruza rw'abandi byombi biba bihagaze nabi mu mategeko y'umuhanda. Igisubizo cy'ukuri ni A (Ibinyabiziga byombi).",
+    "memoryTip": "Guhagarara ku nzira y'abanyamaguru cyangwa mu ikoni ni amakosa abangamira umutekano."
   },
   {
     "number": 311,
     "matchText": "Ni gute umuyobozi w'ikinyabiziga yanyura kumunyegare hano?",
     "correctKey": "c",
     "correctText": "Arenze umurongo wera ucagaguye",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Arenze umurongo wera ucagaguye",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. Arenze umurongo wera ucagaguye**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Arenze umurongo wera ucagaguye."
+    "lawTitle": "Ingingo ya 26: Kunyura ku Munyegare mu Murongo Ucagaguye",
+    "lawDetails": "Kunyura ku munyegare byemewe mu gihe ushobora kurenga umurongo wera ucagaguye mu mutekano nta kindi kinyabiziga kiguturutse imbere, ukamusigira nibura metero 1 y'umwanya w'umutekano. Igisubizo cy'ukuri ni C (Arenze umurongo wera ucagaguye).",
+    "memoryTip": "Umurongo ucagaguye urarengwa mu gihe cyo kunyuranaho nta kaga."
   },
   {
     "number": 312,
@@ -2533,27 +2533,27 @@
     "matchText": "Niki ugomba gukora igihe wegereye ikimenyetso kimurika kiva mucyatsi kijya mumuhondo?",
     "correctKey": "c",
     "correctText": "Hagarara niba utateza ibyago",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Hagarara niba utateza ibyago",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. Hagarara niba utateza ibyago**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Hagarara niba utateza ibyago."
+    "lawTitle": "Ingingo ya 106: Itara ry'Umuhondo Ridakonje (Feu jaune fixe)",
+    "lawDetails": "Itara ry'umuhondo ridakonje rivuga ko ugomba GUHAGARARA mbere y'umurongo wo guhagararaho, kereka gusa iyo uhagaze wateza impanuka kubera kwegera cyane umurongo mu buryo budashoboka guhagarara neza. Igisubizo cy'ukuri ni C (Hagarara niba utateza ibyago).",
+    "memoryTip": "Itara ry'umuhondo = Hagarara niba ugifite umwanya uhagije wo kubikora nta kaga."
   },
   {
     "number": 314,
     "matchText": "Niki umuyobozi w' ikinyabiziga akwiriye kumenya mugihe akurikiye umuyobozi wikinyamitende ibiri kandi imodoka y' umweru iri gusubira inyuma ijya mumuhanda?",
     "correctKey": "d",
     "correctText": "Umuyobozi w' ikinyamitende ashobora guhagarara bitunguranye",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Umuyobozi w' ikinyamitende ashobora guhagarara bitunguranye",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. Umuyobozi w' ikinyamitende ashobora guhagarara bitunguranye**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Umuyobozi w' ikinyamitende ashobora guhagarara bitunguranye."
+    "lawTitle": "Ingingo ya 20: Gutwara Inyuma y'Ikinyamitende",
+    "lawDetails": "Iyo ukurikiye ikinyamitende (ipikipiki cyangwa igare), ugomba kuzirikana ko bishobora guhagarara cyangwa gukatira mu muhanda bitunguranye, bityo ugomba gusiga intera ihagije y'umutekano. Igisubizo cy'ukuri ni D (Umuyobozi w'ikinyamitende ashobora guhagarara bitunguranye).",
+    "memoryTip": "Ibinyamitende bishobora guhagarara bitunguranye; siga intera ihagije y'umutekano."
   },
   {
     "number": 315,
     "matchText": "Aha niki umuyobozi w' ikinyabiziga yakora mugihe ashaka kujya iburyo?",
     "correctKey": "c",
     "correctText": "Guhagarara akareka abanyamaguru bakambuka",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Guhagarara akareka abanyamaguru bakambuka",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. Guhagarara akareka abanyamaguru bakambuka**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Guhagarara akareka abanyamaguru bakambuka."
+    "lawTitle": "Ingingo ya 40: Kureka Abanyamaguru Bambuka Iyo Ukata",
+    "lawDetails": "Iyo ukata iburyo cyangwa ibumoso winjira mu wundi muhanda, ugomba guhagarara ukareka abanyamaguru bari kwambuka uwo muhanda winjiramo bagatambuka mbere. Igisubizo cy'ukuri ni C (Guhagarara akareka abanyamaguru bakambuka).",
+    "memoryTip": "Ugiye gukata ikoni areka abanyamaguru bari kwambuka uwo muhanda winjiramo."
   },
   {
     "number": 316,
@@ -2569,18 +2569,18 @@
     "matchText": "Aha niki umuyobozi w' ikinyabiziga yakora?",
     "correctKey": "a",
     "correctText": "Kwemerera abanyamaguru kwambuka umuhanda",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Kwemerera abanyamaguru kwambuka umuhanda",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Kwemerera abanyamaguru kwambuka umuhanda**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Kwemerera abanyamaguru kwambuka umuhanda."
+    "lawTitle": "Ingingo ya 40: Inzira y'Abanyamaguru (Passage pour piétons)",
+    "lawDetails": "Iyo ugeze ku nzira y'abanyamaguru cyangwa hari abanyamaguru batangiye kwambuka, itegeko rigutegeka kubareka bakambuka mu mahoro kuko bafite uburenganzira busesuye bwo gutambuka mbere y'ibinyabiziga. Igisubizo cy'ukuri ni A (Kwemerera abanyamaguru kwambuka umuhanda).",
+    "memoryTip": "Abanyamaguru bari ku nzira yabagenewe bafite uburenganzira busesuye bwo gutambuka."
   },
   {
     "number": 318,
     "matchText": "Muri ibi binyabiziga bine ni ikihe kiri mu buryo bwiza bwo gukata ikoni ry'iburyo kiva mu muhanda munini kijya mu muto?",
     "correctKey": "a",
     "correctText": "Ikinyabiziga cya mbere kiri mu buryo bwiza bwo gukata ikoni ry'iburyo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Ikinyabiziga cya mbere kiri mu buryo bwiza bwo gukata ikoni ry'iburyo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Ikinyabiziga cya mbere kiri mu buryo bwiza bwo gukata ikoni ry'iburyo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Ikinyabiziga cya mbere kiri mu buryo bwiza bwo gukata ikoni ry'iburyo."
+    "lawTitle": "Ingingo ya 30: Imyiteguro yo Gukata Ikoni ry'Iburyo",
+    "lawDetails": "Iyo ugiye gukata iburyo uva mu muhanda munini ujya mu muto, ugomba kwegera cyane inkengero y'iburyo bw'umuhanda mbere yo gukata (Ikinyabiziga cya mbere kiri mu buryo bwiza). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Gukata iburyo bisaba kwegera cyane uruhande rw'iburyo bw'umuhanda mbere yo gukata."
   },
   {
     "number": 319,
@@ -2623,9 +2623,9 @@
     "matchText": "Umuyobozi w'ikinyabiziga yakara iki mu gihe anyuzweho nikindi kinyabiziga?",
     "correctKey": "a",
     "correctText": "Gukomezanya umuvuduko warufite",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Gukomezanya umuvuduko warufite",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Gukomezanya umuvuduko warufite**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Gukomezanya umuvuduko warufite."
+    "lawTitle": "Ingingo ya 28: Inshingano z'Umunyuzweho (Véhicule dépassé)",
+    "lawDetails": "Iyo undi muyobozi yatangiye kukunyuraho, utegetswe kwegera iburyo kandi NTWONGERE UMUVUDUKO (ukomezanya umuvuduko warufite cyangwa ukawugabanya gato kugira ngo anyureho vuba). Igisubizo cy'ukuri ni A (Gukomezanya umuvuduko warufite).",
+    "memoryTip": "Iyo undi agunyuraho, ntugomba na rimwe kongera umuvuduko; komezanya umuvuduko usanzwe."
   },
   {
     "number": 324,
@@ -2641,18 +2641,18 @@
     "matchText": "Umuyobozi w'ikinyabiziga ugeze mu isangano ry'umuhanda ugenzurwa ni ibimenyetso by'amatara yaka agasanga ataka (adakora), yakora iki?",
     "correctKey": "a",
     "correctText": "Guca mu isangano n'ubwitonzi nkaho ntakimenyetso kikuyobora kirimo, witondera abandi bayobozi b'ibinyabiziga",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Guca mu isangano n'ubwitonzi nkaho ntakimenyetso kikuyobora kirimo, witondera abandi bayobozi b'ibinyabiziga",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Guca mu isangano n'ubwitonzi nkaho ntakimenyetso kikuyobora kirimo, witondera abandi bayobozi b'ibinyabiziga**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Guca mu isangano n'ubwitonzi nkaho ntakimenyetso kikuyobora kirimo, witondera abandi bayobozi b'ibinyabiziga."
+    "lawTitle": "Ingingo ya 106: Amatara Adakora mu Masangano",
+    "lawDetails": "Iyo amatara agenga amasangano adakora (azize umuriro cyangwa yapfuye), amasangano ahinduka asanzwe akurikiza itegeko rya PRIORITÉ À DROITE (gutambuka k'uturutse iburyo), abayobozi bakagendana ubwitonzi bwinshi. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Amatara nadakora, kurikiza amategeko yo gutambuka kw'iburyo n'ubwitonzi bukabije."
   },
   {
     "number": 326,
     "matchText": "Ni iki umuyobozi w'ikinyabiziga yakora ahuye n'ishyo ry'amatungo munzira nyabagendwa?",
     "correctKey": "b",
     "correctText": "Umuyobozi w'ikinyabiziga agomba kugabanya umuvuduko no gutambukana ubwitonzi",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Umuyobozi w'ikinyabiziga agomba kugabanya umuvuduko no gutambukana ubwitonzi",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. Umuyobozi w'ikinyabiziga agomba kugabanya umuvuduko no gutambukana ubwitonzi**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Umuyobozi w'ikinyabiziga agomba kugabanya umuvuduko no gutambukana ubwitonzi."
+    "lawTitle": "Ingingo ya 11: Guhura n'Amatungo mu Nzira Nyabagendwa",
+    "lawDetails": "Iyo uhuye n'ishyo ry'amatungo mu muhanda, ugomba kugabanya umuvuduko, kwirinda kuvuza ihembe (honi) kuko byayakangaza bikirukira mu modoka, ugatambukana ubwitonzi bwinshi. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Amatungo mu muhanda = Gabanya umuvuduko, ntukavuze ihoni."
   },
   {
     "number": 327,
@@ -2677,18 +2677,18 @@
     "matchText": "Niki umuyobozi w'ikinyabiziga yakora ageze hafi y'inzira ifunganye igihe ahuye n'ikindi kinyabiziga giturutse mukindi cyerekezo?",
     "correctKey": "b",
     "correctText": "kugabanya umuvuduko no gusiga umwanya uhagije hagati y'ibinyabiziga byombi",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - kugabanya umuvuduko no gusiga umwanya uhagije hagati y'ibinyabiziga byombi",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. kugabanya umuvuduko no gusiga umwanya uhagije hagati y'ibinyabiziga byombi**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: kugabanya umuvuduko no gusiga umwanya uhagije hagati y'ibinyabiziga byombi."
+    "lawTitle": "Ingingo ya 25: Kubisikana mu Nzira Ifunganye",
+    "lawDetails": "Iyo ugeze ahantu hafunganye kandi uhuye n'ikindi kinyabiziga, ugomba kugabanya umuvuduko no gusiga umwanya uhagije hagati yanyu cyangwa ugahagarara niba ari wowe ufite inzitizi ku ruhande rwawe. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Mu nzira ifunganye gabanya umuvuduko kandi usige umwanya uhagije wo kubisikana."
   },
   {
     "number": 330,
     "matchText": "Umuyobozi w' ikinyabiziga agendera inyuma y'ikindi kinyabizaga akaba adateganya kukinyuraho yakora iki ?",
     "correctKey": "b",
     "correctText": "kuguma inyuma yacyo kugirango yemerere ibindi binyabiziga gutambuka",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - kuguma inyuma yacyo kugirango yemerere ibindi binyabiziga gutambuka",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. kuguma inyuma yacyo kugirango yemerere ibindi binyabiziga gutambuka**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: kuguma inyuma yacyo kugirango yemerere ibindi binyabiziga gutambuka."
+    "lawTitle": "Ingingo ya 20: Intera y'Umutekano Inyuma y'Ibindi Binyabiziga",
+    "lawDetails": "Iyo ugendera inyuma y'ikindi kinyabiziga udateganya kukinyuraho, ugomba gusiga intera ihagije ituma ibindi binyabiziga bishaka kunyuranaho bishobora kwinjira hagati yanyu nta kaga. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Siga intera ihagije ituma undi unyuranaho abona aho yinjira mu mutekano."
   },
   {
     "number": 331,
@@ -2704,9 +2704,9 @@
     "matchText": "Gutinda gutanga ibimenyetso ku muyobozi w'ikinyabiziga ni gute bibangamira abandi bakoresha umuhanda ?",
     "correctKey": "b",
     "correctText": "bishobora gutuma batabona igihe gihagije cyo gushyira mubikorwa icyo amenyeshejwe",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - bishobora gutuma batabona igihe gihagije cyo gushyira mubikorwa icyo amenyeshejwe",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. bishobora gutuma batabona igihe gihagije cyo gushyira mubikorwa icyo amenyeshejwe**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: bishobora gutuma batabona igihe gihagije cyo gushyira mubikorwa icyo amenyeshejwe."
+    "lawTitle": "Ingingo ya 29: Gutanga Ibimenyetso Hakiri Kare (Clignotant)",
+    "lawDetails": "Gutinda gutanga ikimenyetso cyo gukata cyangwa guhagarara bibangamira abandi bakoresha umuhanda kuko bituma batabona igihe gihagije cyo kwitegura no gufata ingamba zikwiriye. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Tanga ikimenyetso cyo gukata hakiri kare mbere yo guhindura icyerekezo."
   },
   {
     "number": 333,
@@ -2722,36 +2722,36 @@
     "matchText": "Niki umuyobozi w'ikinyabiziga yakora igihe agize uruhare mu mpanuka yo mu muhanda , aho ntawakometese ariko ibinyabiziga bikaba byateza icyago cyangwa byafunze umuhanda ?",
     "correctKey": "a",
     "correctText": "Gushushanya aho zagonganiye no kuzishyira kuruhande",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Gushushanya aho zagonganiye no kuzishyira kuruhande",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Gushushanya aho zagonganiye no kuzishyira kuruhande**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Gushushanya aho zagonganiye no kuzishyira kuruhande."
+    "lawTitle": "Ingingo ya 86: Ibyo Gukora Igihe habaye Impanuka Idakomeye",
+    "lawDetails": "Iyo habaye impanuka nta muntu wakomeretse kandi ibinyabiziga bibangamiye urujya n'uruza, abashoferi bagomba gushushanya aho ibiziga byari biri bakabikura mu muhanda bakabyegereza ku ruhande kugira ngo badahagarika umuhanda. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Shushanya aho imodoka zangiritse zari ziri hanyuma uzikure mu muhanda."
   },
   {
     "number": 335,
     "matchText": "Igihe umuyobozi w'ikinyabiziga agendera munzira y'icyerekezo kimwe akifuza gukata ibumoso yakora iki?",
     "correctKey": "c",
     "correctText": "gutwara yegera ku uruhande rw'ibumoso bw'umuhanda",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - gutwara yegera ku uruhande rw'ibumoso bw'umuhanda",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. gutwara yegera ku uruhande rw'ibumoso bw'umuhanda**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: gutwara yegera ku uruhande rw'ibumoso bw'umuhanda."
+    "lawTitle": "Ingingo ya 31: Gukata Ibumoso mu Muhanda w'Icyerekezo Kimwe",
+    "lawDetails": "Mu muhanda w'icyerekezo kimwe (sens unique), umuyobozi ushaka gukata ibumoso agomba kwegera inkengero y'ibumoso bw'umuhanda mbere yo gukata. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Sens unique: Gukata ibumoso bisaba kwegera cyane inkengero y'ibumoso."
   },
   {
     "number": 336,
     "matchText": "Umuyobozi w'ikinyabizaga uri kugendera mu muhanda w'ibyerekezo bibiri nuruhe ruhande rw'umuhanda agomba gukoresha ?",
     "correctKey": "c",
     "correctText": "Mu gice cy'iburyo bw'umuhanda uretse igihe ashaka kunyuranaho cyangwa gukata ibumoso",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Mu gice cy'iburyo bw'umuhanda uretse igihe ashaka kunyuranaho cyangwa gukata ibumoso",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. Mu gice cy'iburyo bw'umuhanda uretse igihe ashaka kunyuranaho cyangwa gukata ibumoso**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Mu gice cy'iburyo bw'umuhanda uretse igihe ashaka kunyuranaho cyangwa gukata ibumoso."
+    "lawTitle": "Ingingo ya 16: Kugendera mu Ruhande rw'Iburyo",
+    "lawDetails": "Mu muhanda w'ibyerekezo bibiri, umuyobozi agomba kugendera mu ruhande rw'iburyo gusa, akegera ibumoso gusa igihe anyuranaho cyangwa agiye gukata ibumoso. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Gendera mu gisate cy'iburyo keretse ugiye kunyuranaho cyangwa gukata ibumoso."
   },
   {
     "number": 337,
     "matchText": "Igihe umuyobozi w'ikinyabiziga atwaye mu muhanda urombereje w'ibice byinshi agomba kugendera mu kihe gice cy'umuhanda ?",
     "correctKey": "c",
     "correctText": "Kugendera mu gice cy'iburyo bw'umuhanda keretse ushaka kunyuranaho",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Kugendera mu gice cy'iburyo bw'umuhanda keretse ushaka kunyuranaho",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. Kugendera mu gice cy'iburyo bw'umuhanda keretse ushaka kunyuranaho**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Kugendera mu gice cy'iburyo bw'umuhanda keretse ushaka kunyuranaho."
+    "lawTitle": "Ingingo ya 101: Kugendera mu Muhanda Urombereje w'Ibisate Byinshi",
+    "lawDetails": "Mu muhanda urombereje ugizwe n'ibisate byinshi, umuyobozi agomba kugendera mu gisate cy'iburyo cyane, ibindi bisate by'ibumoso bikoreshwa mu gihe cyo kunyuranaho gusa. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Mu muhanda w'ibisate byinshi, igisate cy'iburyo nicyo kigenderwamo mu buryo busanzwe."
   },
   {
     "number": 338,
@@ -2767,36 +2767,36 @@
     "matchText": "Ni kihe cyerekezo umuyobozi w'ikinyabiziga yinjiriramo iyo ageze aho banyura bazenguruka ?",
     "correctKey": "d",
     "correctText": "iburyo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - iburyo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. iburyo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: iburyo."
+    "lawTitle": "Ingingo ya 32: Kwinjira mu Masangano Azunguruka (Rond-point)",
+    "lawDetails": "Kwinjira mu masangano azunguruka bikorerwa IBURYO (mu cyerekezo kinyuranye n'icy'intambwe z'isaha / sens giratoire). Igisubizo cy'ukuri ni D (Iburyo).",
+    "memoryTip": "Muri rond-point hinjirirwa iburyo ukazenguruka ukataza ibumoso."
   },
   {
     "number": 340,
     "matchText": "Mbere yuko umuyobozi w'ikinyabiziga akata ibumoso mu nzira nyabagendwa, nihe ikinyabiziga kigomba kuba kiri ?",
     "correctKey": "b",
     "correctText": "Gusa iburyo bwo hagati y'inzira nyabagendwa",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Gusa iburyo bwo hagati y'inzira nyabagendwa",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. Gusa iburyo bwo hagati y'inzira nyabagendwa**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Gusa iburyo bwo hagati y'inzira nyabagendwa."
+    "lawTitle": "Ingingo ya 31: Imyiteguro yo Gukata Ibumoso mu Muhanda w'Ibyerekezo Bibiri",
+    "lawDetails": "Mbere yo gukata ibumoso mu muhanda w'ibyerekezo bibiri, umuyobozi agomba kwegereza ikinyabiziga cye umurongo ugabanya umuhanda mo kabiri (gusa iburyo bwo hagati mu muhanda) adarenze umurongo. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Kuri ibyerekezo bibiri, egereza ikinyabiziga umurongo wo hagati utawurenze."
   },
   {
     "number": 341,
     "matchText": "Umuyobozi w'ikinyabiziga yakwitondera iki mbere yuko y'injira munzira banyuramo bazengurutse ?",
     "correctKey": "b",
     "correctText": "ibinyabiziga biturutse ibumoso bwe n'umuvuduko bifite n'intera iri hagati ye nabyo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ibinyabiziga biturutse ibumoso bwe n'umuvuduko bifite n'intera iri hagati ye nabyo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. ibinyabiziga biturutse ibumoso bwe n'umuvuduko bifite n'intera iri hagati ye nabyo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ibinyabiziga biturutse ibumoso bwe n'umuvuduko bifite n'intera iri hagati ye nabyo."
+    "lawTitle": "Ingingo ya 32: Kwitondera Ibinyabiziga Biri Muri Rond-point",
+    "lawDetails": "Mbere yo kwinjira mu masangano azunguruka, umuyobozi agomba kureba ibinyabiziga biturutse ibumoso bwe biri imbere muri rond-point, umuvuduko bifite n'intera iri hagati yabo kuko aribyo bifite uburenganzira mbere ye. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Reba ibumoso mbere yo kwinjira muri rond-point kuko ibirimo bifite priorité."
   },
   {
     "number": 342,
     "matchText": "Umuyobozi w'ikinyabiziga ugendera inyuma y'ikinyabaziga gitwara abagenzi gihagaze gikuramo cyangwa gishyiramo abagenzi agomba :",
     "correctKey": "a",
     "correctText": "kunyuranaho ibumoso",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - kunyuranaho ibumoso",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. kunyuranaho ibumoso**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: kunyuranaho ibumoso."
+    "lawTitle": "Ingingo ya 26: Kunyuranaho ku Kinyabiziga Gitwara Abagenzi Gihagaze",
+    "lawDetails": "Iyo ikinyabiziga gitwara abagenzi gihagaze ku cyicaro cyacyo gishyiramo abantu, ushobora kukinyuraho uciye ibumoso bwayo witonze kandi ukitegura guhagarara kuko abagenzi bashobora kwambuka umuhanda bitunguranye. Igisubizo cy'ukuri ni A (Kunyuranaho ibumoso).",
+    "memoryTip": "Kunyuranaho ku modoka y'abagenzi ihagaze bikorerwa ibumoso n'ubwitonzi bukabije."
   },
   {
     "number": 343,
@@ -2839,9 +2839,9 @@
     "matchText": "Ugeze ahari inzira yabanyamaguru barindiriye kwambuka. Ntibatangiye kwambuka , wakora iki?",
     "correctKey": "b",
     "correctText": "kwihangana ugatagereza",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - kwihangana ugatagereza",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. kwihangana ugatagereza**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: kwihangana ugatagereza."
+    "lawTitle": "Ingingo ya 40: Abanyamaguru Bategereje Kwambuka",
+    "lawDetails": "Iyo ugeze ku nzira y'abanyamaguru ukabona abanyamaguru bahagaze ku ruhande bategereje kwambuka, ugomba kugabanya umuvuduko ukihangana ukabareka bakambuka mbere yo gukomeza urugendo. Igisubizo cy'ukuri ni B (Kwihangana ugategereza).",
+    "memoryTip": "Iyo abanyamaguru bategereje kwambuka, gabanya umuvuduko ubahe inzira."
   },
   {
     "number": 348,
@@ -2866,18 +2866,18 @@
     "matchText": "Igihe imodoka iparitse ku nkengero z'umuhanda mugihe cy' ijoro :",
     "correctKey": "c",
     "correctText": "Amatara yo guhagarara umwanya munini aguma yaka",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Amatara yo guhagarara umwanya munini aguma yaka",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. Amatara yo guhagarara umwanya munini aguma yaka**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Amatara yo guhagarara umwanya munini aguma yaka."
+    "lawTitle": "Ingingo ya 48: Amatara yo Guhagarara Nijoro ku Nkengero",
+    "lawDetails": "Iyo ikinyabiziga gihagaze ku nkengero z'umuhanda nijoro ahatabona neza, amatara yo guhagarara umwanya munini (feux de position / stationnement) agomba kuguma yaka kugira ngo kigaragare ku bandi bakoresha umuhanda. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Guhagarara nijoro ahatabona bisaba amatara yo guhagarara akaguma yaka."
   },
   {
     "number": 351,
     "matchText": "Mu gihe hari undi muyobozi w'ikinyabiziga ugukurikiye watangiye kukunyuraho :",
     "correctKey": "a",
     "correctText": "Ntugomba kugira undi muyobozi w'ikinyabiziga unyuraho",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Ntugomba kugira undi muyobozi w'ikinyabiziga unyuraho",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Ntugomba kugira undi muyobozi w'ikinyabiziga unyuraho**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Ntugomba kugira undi muyobozi w'ikinyabiziga unyuraho."
+    "lawTitle": "Ingingo ya 28: Kutanyuranaho Iyo Undi Yatangiye Kukunyuraho",
+    "lawDetails": "Iyo umuyobozi ukuri inyuma yatangiye kukunyuraho, ntiwemerewe na gato nawe gutangira kunyuranaho ku wundi uri imbere yawe kuko byateza impanuka ikomeye. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Iyo umuntu yatangiye kukunyuraho, wowe ubujijwe gutangira kunyura ku wundi."
   },
   {
     "number": 352,
@@ -2938,18 +2938,18 @@
     "matchText": "Niki umuyobozi w'ikinyabiziga yakora igihe atwaye ikinyabiziga mugihe cy'ibihu,imvura nyinshi, umwuzure cyangwa umukungugu mwinshi ?",
     "correctKey": "b",
     "correctText": "Kugabanya umuvuduko hanyuma ugakoresha amatara magufi",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Kugabanya umuvuduko hanyuma ugakoresha amatara magufi",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. Kugabanya umuvuduko hanyuma ugakoresha amatara magufi**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Kugabanya umuvuduko hanyuma ugakoresha amatara magufi."
+    "lawTitle": "Ingingo ya 46: Gutwara mu Mvura Nyinshi n'Ibihu",
+    "lawDetails": "Mu gihe cy'imvura nyinshi, ibihu bikaze cyangwa umukungugu, ugomba kugabanya umuvuduko cyane kandi ugacana amatara yo kubona aho ujya (feux de croisement / code) n'amatara kamenabihu (feux de brouillard). Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Mu bihu n'imvura nyinshi: Gabanya umuvuduko uce amatara magufi (code)."
   },
   {
     "number": 359,
     "matchText": "Muri ibi byapa ni ubuhe bwoko bw'ibyapa bitegeka byo mu muhanda?",
     "correctKey": "c",
     "correctText": "ibiri mw'ishusho y'uruziga n'umuzenguruko mw'ibara ry'umutuku",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ibiri mw'ishusho y'uruziga n'umuzenguruko mw'ibara ry'umutuku",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. ibiri mw'ishusho y'uruziga n'umuzenguruko mw'ibara ry'umutuku**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ibiri mw'ishusho y'uruziga n'umuzenguruko mw'ibara ry'umutuku."
+    "lawTitle": "Ingingo ya 96: Ibyapa Bitegeka n'Ibimenyetso Byabyo",
+    "lawDetails": "Ibyapa bitegeka bikozwe mu ishusho y'uruziga rufite ubuso bw'ubururu n'ikirango cy'umweru. Naho ibifite umuzenguruko utukura biba ari ibyapa bibuza. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Ibyapa bitegeka bigira ishusho y'uruziga."
   },
   {
     "number": 360,
@@ -2992,9 +2992,9 @@
     "matchText": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite:",
     "correctKey": "b",
     "correctText": "Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara."
+    "lawTitle": "Ingingo ya 90: Icyapa cy'Umuhanda Ubisikanirwamo (A24)",
+    "lawDetails": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo kirangwa n'ishusho ya mpandeshatu ifite umuzenguruko utukura, ubuso bwera n'ikirango cy'utwambi tubiri tw'umukara tureba mu byerekezo binyuranye (kamwe kazamuka akandi kamanuka). Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Mpandeshatu yera irimo utwambi tubiri tw'umukara = Umuhanda ubisikanirwamo."
   },
   {
     "number": 365,
@@ -3010,9 +3010,9 @@
     "matchText": "Iki cyapa kivuga:",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 90: Ibyapa byo mu Muhanda",
+    "lawDetails": "Iki cyapa kigaragaza amabwiriza yihariye yo mu muhanda. Kubera ko nta gisubizo cy'ukuri kiboneka mu mahitamo A, B, na C, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Soma neza amategeko agenga iki cyapa kugira ngo uhitemo neza."
   },
   {
     "number": 367,
@@ -3028,9 +3028,9 @@
     "matchText": "Utugarurarumuri turi ku ruhande rw'imbere rw'ikinyabiziga tugomba gusa:",
     "correctKey": "c",
     "correctText": ") n'umweru",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ) n'umweru",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. ) n'umweru**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ) n'umweru."
+    "lawTitle": "Ingingo ya 76: Ibara ry'Utugarurarumuri tw'Imbere",
+    "lawDetails": "Utugarurarumuri turi ku ruhande rw'imbere rw'ikinyabiziga tugomba kuba dusa n'umweru (catadioptres blancs), kugira ngo tutitiranywa n'utw'inyuma dutukura. Igisubizo cy'ukuri ni C (N'umweru).",
+    "memoryTip": "Utugarurarumuri tw'imbere ni umweru, utw'inyuma ni umutuku."
   },
   {
     "number": 369,
@@ -3046,18 +3046,18 @@
     "matchText": "Iki cyapa kigizwe:",
     "correctKey": "c",
     "correctText": ")ishusho mpandeshatu,ubuso umweru",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - )ishusho mpandeshatu,ubuso umweru",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. )ishusho mpandeshatu,ubuso umweru**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: )ishusho mpandeshatu,ubuso umweru."
+    "lawTitle": "Ingingo ya 90: Ishusho n'Ubuso by'Ibyapa Biburira",
+    "lawDetails": "Ibyapa biburira ibyago bigizwe n'ishusho ya mpandeshatu ifite umuzenguruko utukura n'ubuso bw'ibara ryera (A). Igisubizo cy'ukuri ni C (Ishusho mpandeshatu, ubuso umweru).",
+    "memoryTip": "Ibyapa biburira = Mpandeshatu ifite ubuso bwera n'umuzenguruko utukura."
   },
   {
     "number": 371,
     "matchText": "Iki cyapa kivuga:",
     "correctKey": "b",
     "correctText": "ifungana ry'umuhanda w'akayira gasatira umuhanda ibumoso",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ifungana ry'umuhanda w'akayira gasatira umuhanda ibumoso",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. ifungana ry'umuhanda w'akayira gasatira umuhanda ibumoso**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ifungana ry'umuhanda w'akayira gasatira umuhanda ibumoso."
+    "lawTitle": "Ingingo ya 90: Icyapa cy'Ifungana ry'Umuhanda (A7b)",
+    "lawDetails": "Icyapa kigaragaza umurongo ugororotse n'undi uheta ugana hagati ibumoso gisobanura: IFUNGANA RY'UMUHANDA W'AKAYIRA GASATIRA UMUHANDA IBUMOSO (Chaussée rétrécie par la gauche). Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Umurongo w'ibumoso wegera hagati = Ifungana ry'umuhanda riturutse ibumoso."
   },
   {
     "number": 372,
@@ -3073,9 +3073,9 @@
     "matchText": "Iki cyapa cyerekana :",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 90: Ibyapa by'Ibyago n'Imirongo",
+    "lawDetails": "Iki cyapa kirangwa n'amabwiriza yihariye y'amategeko y'umuhanda. Kubera ko ibisobanuro bihabanye n'amahitamo yatanzwe muri A, B, na C, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Reba neza ibimenyetso biri ku cyapa mbere yo guhitamo."
   },
   {
     "number": 374,
@@ -3091,108 +3091,108 @@
     "matchText": "Icyi cyapa cyerekana :",
     "correctKey": "d",
     "correctText": ") nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ) nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. ) nta gisubizo cy'ukuri kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ) nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 90: Ibyapa by'Umuhanda",
+    "lawDetails": "Iki cyapa gisobanura amabwiriza yo mu muhanda. Kubera ko amahitamo A, B, C arimo amakosa ku bisobanuro by'itegeko, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Iyo nta gisubizo cyujuje ibisabwa mu mahitamo, hitamo D."
   },
   {
     "number": 376,
     "matchText": "Iki cyapa kivuga:",
     "correctKey": "a",
     "correctText": ") ikoni iburyo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ) ikoni iburyo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. ) ikoni iburyo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ) ikoni iburyo."
+    "lawTitle": "Ingingo ya 90: Icyapa A1a - Ikoni ry'Iburyo (Virage à droite)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo umurongo w'umukara uhese ugana iburyo gisobanura: IKONI RY'IBURYO (Virage dangereux à droite). Igisubizo cy'ukuri ni A (Ikoni iburyo).",
+    "memoryTip": "Mpandeshatu irimo umuheto ugana iburyo = Ikoni ribi ry'iburyo."
   },
   {
     "number": 377,
     "matchText": "Iyo umuhanda ugabanijemo ibisate bibiri kandi ugendwamo mu byerekezo byombi umuyobozi abujijwe :",
     "correctKey": "c",
     "correctText": "kugendera mu gisate cy'ibumoso",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - kugendera mu gisate cy'ibumoso",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. kugendera mu gisate cy'ibumoso**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: kugendera mu gisate cy'ibumoso."
+    "lawTitle": "Ingingo ya 16: Umuhanda w'Ibisate Bibiri n'Ibyerekezo Bibiri",
+    "lawDetails": "Iyo umuhanda ugabanijwemo ibisate bibiri ugendwamo mu byerekezo byombi, umuyobozi abujijwe kugendera mu gisate cy'ibumoso bidasobanutse kuko icyo gisate kigenewe abaturutse mu cyerekezo kinyuranye. Igisubizo cy'ukuri ni C (Kugendera mu gisate cy'ibumoso).",
+    "memoryTip": "Ntugomba kugendera mu gisate cy'ibumoso mu muhanda ubisikanirwamo."
   },
   {
     "number": 378,
     "matchText": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite:",
     "correctKey": "b",
     "correctText": "Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ishusho ya mpandeshatu mw'ibara ritukura, ubuso bwera n'ikirango cy'umukara."
+    "lawTitle": "Ingingo ya 90: Ibiranga Icyapa cy'Umuhanda Ubisikanirwamo (A24)",
+    "lawDetails": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo kigizwe n'ishusho ya mpandeshatu mu ibara ritukura, ubuso bwera n'ikirango cy'umukara kigaragaza utwambi tubiri. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Mpandeshatu itukura, ubuso bwera n'ikirango cy'umukara = Icyapa A24."
   },
   {
     "number": 379,
     "matchText": "Icyapa cyerekana inzira y'amatungo itegetswe giteye:",
     "correctKey": "d",
     "correctText": ") mpande eshatu mu buso bw'ibara ry'umweru n'ishusho y'inka mu ibara ry'umukara",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ) mpande eshatu mu buso bw'ibara ry'umweru n'ishusho y'inka mu ibara ry'umukara",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. ) mpande eshatu mu buso bw'ibara ry'umweru n'ishusho y'inka mu ibara ry'umukara**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ) mpande eshatu mu buso bw'ibara ry'umweru n'ishusho y'inka mu ibara ry'umukara."
+    "lawTitle": "Ingingo ya 96: Icyapa Cyerekana Inzira y'Amatungo",
+    "lawDetails": "Icyapa kigaragaza ahegereye amatungo kirangwa n'ishusho ya mpandeshatu ifite ubuso bw'umweru n'ishusho y'inka mu ibara ry'umukara n'umuzenguruko utukura. Igisubizo cy'ukuri ni D.",
+    "memoryTip": "Ishusho y'inka mu mpandeshatu = Akayira k'amatungo."
   },
   {
     "number": 380,
     "matchText": "Icyapa cyerekana ko bibujijwe kuvuza amahoni kirangwa na :",
     "correctKey": "c",
     "correctText": "ishusho y'uruziga, ubuso bw'umweru, ikiranga cy'umukara",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ishusho y'uruziga, ubuso bw'umweru, ikiranga cy'umukara",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. ishusho y'uruziga, ubuso bw'umweru, ikiranga cy'umukara**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ishusho y'uruziga, ubuso bw'umweru, ikiranga cy'umukara."
+    "lawTitle": "Ingingo ya 94: Icyapa C17 - Kubuza Kuvumuza Amahembe (Honi)",
+    "lawDetails": "Icyapa kibuza kuvuza ihembe ry'ikinyabiziga (interdiction d'user d'avertisseurs sonores) kirangwa n'ishusho y'uruziga rufite umuzenguruko utukura, ubuso bw'umweru n'ikirango cy'ihembe ry'umukara riciyemo umurongo utukura ucuramye. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Uruziga rurimo ihembe riciyemo umurongo utukura = Birabujijwe kuvuza ihoni."
   },
   {
     "number": 381,
     "matchText": "Ibyapa biburira nibyo gutambuka mbere birangwa:",
     "correctKey": "a",
     "correctText": "ishusho mpandeshatu mw'ibara ritukura , ubuso bwera n' ikiranga mu ibara ry'umukara",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ishusho mpandeshatu mw'ibara ritukura , ubuso bwera n' ikiranga mu ibara ry'umukara",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. ishusho mpandeshatu mw'ibara ritukura , ubuso bwera n' ikiranga mu ibara ry'umukara**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ishusho mpandeshatu mw'ibara ritukura , ubuso bwera n' ikiranga mu ibara ry'umukara."
+    "lawTitle": "Ingingo ya 90: Ibiranga Ibyapa Biburira Ibyago",
+    "lawDetails": "Ibyapa biburira ibyago birangwa n'ishusho ya mpandeshatu ifite umuzenguruko mu ibara ritukura, ubuso mu ibara ryera n'ikiranga mu ibara ry'umukara. Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Mpandeshatu itukura + ubuso bwera + ikirango cy'umukara = Ibyapa biburira."
   },
   {
     "number": 382,
     "matchText": "Ibyapa bibuza n'ibitegeka bikurikizwa gusa :",
     "correctKey": "d",
     "correctText": "nta gisubizo cy'ukuri kirimo",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nta gisubizo cy'ukuri kirimo",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **D. nta gisubizo cy'ukuri kirimo**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nta gisubizo cy'ukuri kirimo."
+    "lawTitle": "Ingingo ya 95: Aho Ibyapa Bibuza n'Ibitegeka Bikurikizwa",
+    "lawDetails": "Ibyapa bibuza n'ibitegeka bikurikizwa gusa ku ruhande rw'umuhanda bishinzweho kuva aho bishinzwe kugeza ku nkomane ikurikiyeho. Kubera ko amahitamo A, B, na C atatanze ibi bisobanuro byuzuye, igisubizo cy'ukuri ni D (Nta gisubizo cy'ukuri kirimo).",
+    "memoryTip": "Ibyapa bibuza/bitegeka bireba uruhande bishinzweho gusa kugeza ku masangano akurikiyeho."
   },
   {
     "number": 383,
     "matchText": "Ibyapa biburira bibereyeho kumenyesha umugenzi :",
     "correctKey": "a",
     "correctText": ") ko hari icyago",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ) ko hari icyago",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. ) ko hari icyago**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ) ko hari icyago."
+    "lawTitle": "Ingingo ya 90: Intego y'Ibyapa Biburira (Signaux de danger)",
+    "lawDetails": "Ibyapa biburira bishyirwaho kugira ngo bimenyeshe abagenzi KO HARI ICYAGO KIRI IMBERE mu muhanda, kugira ngo bafate ingamba zo kugabanya umuvuduko no kwitonda hakiri kare. Igisubizo cy'ukuri ni A (Ko hari icyago).",
+    "memoryTip": "Ibyapa biburira intego yabyo ni ukumenyesha ko hari icyago imbere."
   },
   {
     "number": 384,
     "matchText": "Ibyapa by'inyongera bishobora kumenyesha.",
     "correctKey": "b",
     "correctText": "ubugerure cyangwa amarengamategeko rusange cyangwa ibibujijwe ndetse n'ibitegetswe byihariye",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ubugerure cyangwa amarengamategeko rusange cyangwa ibibujijwe ndetse n'ibitegetswe byihariye",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. ubugerure cyangwa amarengamategeko rusange cyangwa ibibujijwe ndetse n'ibitegetswe byihariye**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ubugerure cyangwa amarengamategeko rusange cyangwa ibibujijwe ndetse n'ibitegetswe byihariye."
+    "lawTitle": "Ingingo ya 105: Umumaro w'Ibyapa by'Inyongera (Panneaux additionnels)",
+    "lawDetails": "Ibyapa by'inyongera bishyirwa munsi y'ibyapa bikuru kugira ngo byerekane intera, uburebure, amoko y'ibinyabiziga birebwa n'icyo cyapa, cyangwa amabwiriza n'amarengayobora yihariye. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Ibyapa by'inyongera bitanga amabwiriza yihariye cyangwa amakuru yongera ku cyapa gikuru."
   },
   {
     "number": 385,
     "matchText": "Ishusho y'icyapa kivuga''ugukikira”bitegetswe ni :",
     "correctKey": "b",
     "correctText": ") uruziga",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ) uruziga",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. ) uruziga**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ) uruziga."
+    "lawTitle": "Ingingo ya 96: Ishusho y'Icyapa cyo Gukikira Gitegetswe (D1)",
+    "lawDetails": "Icyapa cyo gukikira gitegetswe (contournement obligatoire - D1) kigizwe n'ishusho y'URUZIGA rw'ubururu rurimo akambi k'umweru gahese gakikira inzitizi. Igisubizo cy'ukuri ni B (Uruziga).",
+    "memoryTip": "Ugukikira gitegetswe ni icyapa cy'uruziga rw'ubururu (D1)."
   },
   {
     "number": 386,
     "matchText": "Icyapa kivuga “icyerekezo gitegetswe”kigizwe n'ikirango cy'ibara :",
     "correctKey": "c",
     "correctText": ") ubururu n'ikirango cy'umweru",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ) ubururu n'ikirango cy'umweru",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. ) ubururu n'ikirango cy'umweru**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ) ubururu n'ikirango cy'umweru."
+    "lawTitle": "Ingingo ya 96: Amabara y'Icyapa cy'Icyerekezo Gitegetswe (D1a)",
+    "lawDetails": "Icyapa kivuga icyerekezo gitegetswe kigizwe n'ubuso bw'ibara ry'ubururu n'ikirango cy'akambi mu ibara ryera (C. Ubururu n'ikirango cy'umweru). Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Icyerekezo gitegetswe = Ubuso bw'ubururu n'ikirango cy'umweru."
   },
   {
     "number": 387,
@@ -3226,27 +3226,27 @@
     "matchText": "K'umuyobozi w'ivatiri, iki cyapa kivuze iki ?",
     "correctKey": "c",
     "correctText": "ntacyo bindebaho mugihe bireba gusa zipima tone 5 no kurengaho.",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - ntacyo bindebaho mugihe bireba gusa zipima tone 5 no kurengaho.",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **C. ntacyo bindebaho mugihe bireba gusa zipima tone 5 no kurengaho.**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: ntacyo bindebaho mugihe bireba gusa zipima tone 5 no kurengaho.."
+    "lawTitle": "Ingingo ya 94: Icyapa C4 - Kubuza Imodoka Zifite Uburemere Burenga Igipimo",
+    "lawDetails": "Icyapa cy'uruziga rutukura kirimo ikamyo n'inyandiko ya 5t kireba gusa ibinyabiziga bipima toni 5 no kuzamura. Ku mushoferi w'ivatiri (imodoka nto ipima munsi ya toni 3.5), iki cyapa ntacyo kimurebaho ashobora gukomeza urugendo. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Icyapa kibuza amakamyo > 5t ntikireba imodoka nto (ivatiri)."
   },
   {
     "number": 392,
     "matchText": "Ndashaka gukata iburyo. Biremewe ?",
     "correctKey": "c",
     "correctText": "ntabwo byemewe",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ntabwo byemewe",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. ntabwo byemewe**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ntabwo byemewe."
+    "lawTitle": "Ingingo ya 94: Icyapa C11a - Kubuza Gukata Iburyo",
+    "lawDetails": "Iyo mu masangano hari icyapa kibuza gukata iburyo (uruziga rutukura rurimo akambi gakikira iburyo gaciwemo umurongo utukura), ntibyemewe gukata iburyo n'iyo waba utabona ikindi kinyabiziga. Igisubizo cy'ukuri ni C (Ntabwo byemewe).",
+    "memoryTip": "Akambi kerekeza iburyo gaciwemo umurongo utukura = Birabujijwe gukata iburyo."
   },
   {
     "number": 393,
     "matchText": "Umuhanda wambukiranya inzira ya gariyamoshi",
     "correctKey": "b",
     "correctText": "ngomba guhagarara munsi yitara ry'umutuku rimyatsa",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - ngomba guhagarara munsi yitara ry'umutuku rimyatsa",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. ngomba guhagarara munsi yitara ry'umutuku rimyatsa**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: ngomba guhagarara munsi yitara ry'umutuku rimyatsa."
+    "lawTitle": "Ingingo ya 107: Itara ry'Umutuku Rimyatsa ku Nzira ya Gari ya Moshi",
+    "lawDetails": "Iyo ugeze ku masangano y'inzira ya gari ya moshi ukabona itara ry'umutuku rimyatsa (feu rouge clignotant), ugomba GUHAGARARA BURUNDU munsi y'iryo tara kuko biba bivuze ko gari ya moshi iri kwegera. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Itara ry'umutuku rimyatsa kuri gari ya moshi = Hagarara burundu."
   },
   {
     "number": 394,
@@ -3280,18 +3280,18 @@
     "matchText": "Ndashaka kugata ibumoso. Imodoka y'icyatsi yaje irahagarara. Ninde ufite uburenganzira bwo gutambuka mbere?",
     "correctKey": "b",
     "correctText": "imodoka y'icyatsi ifite uburenganzira bwo gutambuka mbere",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - imodoka y'icyatsi ifite uburenganzira bwo gutambuka mbere",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. imodoka y'icyatsi ifite uburenganzira bwo gutambuka mbere**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: imodoka y'icyatsi ifite uburenganzira bwo gutambuka mbere."
+    "lawTitle": "Ingingo ya 15: Uburenganzira bwo Gutambuka Iyo Ukata Ibumoso",
+    "lawDetails": "Iyo ushaka gukata ibumoso mu masangano, ugomba guhagarara ukareka ikinyabiziga kiguturutse imbere kikugana mu murongo ugororotse (imodoka y'icyatsi) kigatambuka mbere yawe. Igisubizo cy'ukuri ni B (Imodoka y'icyatsi ifite uburenganzira).",
+    "memoryTip": "Ugikata ibumoso areka ikinyabiziga giturutse imbere mu murongo ugororotse kigatambuka mbere."
   },
   {
     "number": 398,
     "matchText": "Mfite uburenganzira bwo gutambuka muri iri sangano ?",
     "correctKey": "c",
     "correctText": "yego , bitewe noho ngana",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - yego , bitewe noho ngana",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. yego , bitewe noho ngana**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: yego , bitewe noho ngana."
+    "lawTitle": "Ingingo ya 15: Priorité mu Masangano Agengwa n'Ibyapa",
+    "lawDetails": "Uburenganzira bwo gutambuka muri iri sangano biterwa n'aho ugana n'icyapa kigenga uwo muhanda; niba ufite icyapa kigutegeka gutanga inzira (B1) ugomba kureka abandi bagatambuka, niba uri mu muhanda mukuru uratambuka. Igisubizo cy'ukuri ni C (Yego, bitewe n'aho ngana).",
+    "memoryTip": "Kora ibihuje n'icyapa kiri ku ruhande rwawe n'aho werekeza."
   },
   {
     "number": 399,
@@ -3307,18 +3307,18 @@
     "matchText": "Umuyobozi wikinyabiziga aritegura kunyuraho ibumoso :",
     "correctKey": "c",
     "correctText": "nshobora kumunyura nciye ibumoso ariko mbonye ko mfite umwanya uhagije",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - nshobora kumunyura nciye ibumoso ariko mbonye ko mfite umwanya uhagije",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **C. nshobora kumunyura nciye ibumoso ariko mbonye ko mfite umwanya uhagije**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: nshobora kumunyura nciye ibumoso ariko mbonye ko mfite umwanya uhagije."
+    "lawTitle": "Ingingo ya 26: Kunyuranaho Iyo Uwo Mbere Agiye Gukata Ibumoso",
+    "lawDetails": "Iyo umuyobozi w'imbere yatanze ikimenyetso cyo gukata ibumoso kandi akegereza ikinyabiziga cye hagati mu muhanda, umuyobozi umukurikiye ashobora kumunyuraho amuciye IBURYO cyangwa amuciye ibumoso igihe yabonye umwanya uhagije. Igisubizo cy'ukuri ni C.",
+    "memoryTip": "Iyo uwo mbere agiye gukata ibumoso, umunyuraho witonze."
   },
   {
     "number": 401,
     "matchText": "Uhereye kuri ibi byapa habujijwe :",
     "correctKey": "a",
     "correctText": "Kunyuranaho kubinyabiziga bikururwa nibinyabiziga birengeje imitende ibiri ibumoso no kugendera kumuvuduko urengeje 70 km/h",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Kunyuranaho kubinyabiziga bikururwa nibinyabiziga birengeje imitende ibiri ibumoso no kugendera kumuvuduko urengeje 70 km/h",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Kunyuranaho kubinyabiziga bikururwa nibinyabiziga birengeje imitende ibiri ibumoso no kugendera kumuvuduko urengeje 70 km/h**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Kunyuranaho kubinyabiziga bikururwa nibinyabiziga birengeje imitende ibiri ibumoso no kugendera kumuvuduko urengeje 70 km/h."
+    "lawTitle": "Ingingo ya 94: Ibyapa C13 na C14 - Ibibuzwa Byerekanywe ku Byapa",
+    "lawDetails": "Ibyapa bibiri byerekanywe bibuza: (1) kunyuranaho ku binyabiziga bifite imitende irenze ibiri (C13), no (2) kurenza umuvuduko wa 70 km/h (C14). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Kunyuranaho kubujijwe + Umuvuduko ntarengwa wa 70 km/h."
   },
   {
     "number": 402,
@@ -3397,9 +3397,9 @@
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "a",
     "correctText": "Birabujijwe guhindukira",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Birabujijwe guhindukira",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Birabujijwe guhindukira**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Birabujijwe guhindukira."
+    "lawTitle": "Ingingo ya 94: Icyapa C16 - Birabujijwe Guhindukira (Demi-tour interdit)",
+    "lawDetails": "Icyapa cy'uruziga rufite umuzenguruko utukura kirimo akambi gakora uruziga gahindukira gaciyemo umurongo utukura ucuramye gisobanura: BIRABUJIJWE GUHINDUKIRA (Demi-tour interdit). Igisubizo cy'ukuri ni A (Birabujijwe guhindukira).",
+    "memoryTip": "Akambi gahindukira gaciwemo umurongo utukura = Birabujijwe guhindukira."
   },
   {
     "number": 411,
@@ -3415,9 +3415,9 @@
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "b",
     "correctText": "Birabujijwe guhagara umwanya munini",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Birabujijwe guhagara umwanya munini",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Birabujijwe guhagara umwanya munini**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Birabujijwe guhagara umwanya munini."
+    "lawTitle": "Ingingo ya 94: Icyapa C18 - Birabujijwe Guhagarara Umwanya Munini (Stationnement interdit)",
+    "lawDetails": "Icyapa cy'uruziga rufite umuzenguruko utukura n'ubuso bw'ubururu buciwemo umurongo umwe utukura ucuramye gisobanura: BIRABUJIJWE GUHAGARARA UMWANYA MUNINI (Stationnement interdit). Guhagarara akanya gato gusa nibyo byemewe. Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Umurongo umwe utukura ucuramye = Guhagarara akanya kanini birabujijwe."
   },
   {
     "number": 413,
@@ -3451,36 +3451,36 @@
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "d",
     "correctText": "Ukugendera mu muhanda ubisikanirwamo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Ukugendera mu muhanda ubisikanirwamo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. Ukugendera mu muhanda ubisikanirwamo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Ukugendera mu muhanda ubisikanirwamo."
+    "lawTitle": "Ingingo ya 90: Icyapa A24 - Ukugendera mu Muhanda Ubisikanirwamo",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo utwambi tubiri dutandukanye mu cyerekezo kimenyesha: UKUGENDERA MU MUHANDA UBISIKANIRWAMO (Circulation dans les deux sens). Igisubizo cy'ukuri ni D.",
+    "memoryTip": "Utwambi tubiri dutandukanye muri mpandeshatu = Umuhanda ubisikanirwamo."
   },
   {
     "number": 417,
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "b",
     "correctText": "Akamanuko gashobora gutera ibyago",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Akamanuko gashobora gutera ibyago",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Akamanuko gashobora gutera ibyago**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Akamanuko gashobora gutera ibyago."
+    "lawTitle": "Ingingo ya 90: Icyapa A13 - Akamanuko Gashobora Gutera Ibyago (Descente)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo imodoka imanuka cyangwa ikimenyetso cy'ijana (10%) kimenyesha: AKAMANUKO GASHOBORA GUTERA IBYAGO (Descente dangereuse). Igisubizo cy'ukuri ni B.",
+    "memoryTip": "Imodoka imanuka = Akamanuko gashobora gutera ibyago."
   },
   {
     "number": 418,
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "a",
     "correctText": "Akazamuko gashinze cyane",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Akazamuko gashinze cyane",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Akazamuko gashinze cyane**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Akazamuko gashinze cyane."
+    "lawTitle": "Ingingo ya 90: Icyapa A14 - Akazamuko Gashinze Cyane (Montée à forte inclinaison)",
+    "lawDetails": "Icyapa cya mpandeshatu kirimo imodoka izamuka umusozi gihanitse kimenyesha: AKAZAMUKO GASHINZE CYANE (Montée à forte pente). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Imodoka izamuka = Akazamuko gashinze cyane."
   },
   {
     "number": 419,
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "d",
     "correctText": "Umuhanda unyerera",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Umuhanda unyerera",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. Umuhanda unyerera**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Umuhanda unyerera."
+    "lawTitle": "Ingingo ya 90: Icyapa A6 - Umuhanda Unyerera (Chaussée glissante)",
+    "lawDetails": "Icyapa cya mpandeshatu y'umweru ifite umuzenguruko utukura kirimo imodoka itakaza uburinganire inyerera gisobanura: UMUHANDA UNYERERA (Chaussée glissante). Igisubizo cy'ukuri ni D.",
+    "memoryTip": "Imodoka inyerera muri mpandeshatu = Umuhanda unyerera."
   },
   {
     "number": 420,
@@ -3496,18 +3496,18 @@
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "d",
     "correctText": "Akayira k'amatungo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Akayira k'amatungo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. Akayira k'amatungo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Akayira k'amatungo."
+    "lawTitle": "Ingingo ya 90: Icyapa A15 - Akayira k'Amatungo (Passage d'animaux domestiques)",
+    "lawDetails": "Icyapa cya mpandeshatu ifite umuzenguruko utukura kirimo ishusho y'inka y'umukara kimenyesha: AKAYIRA K'AMATUNGO cyangwa ahegereye amatungo yambukiranya umuhanda. Igisubizo cy'ukuri ni D (Akayira k'amatungo).",
+    "memoryTip": "Ishusho y'inka muri mpandeshatu = Akayira k'amatungo."
   },
   {
     "number": 422,
     "matchText": "Mu byapa bikurikira , ni ikihe cyerekana umuhanda udakomeza:",
     "correctKey": "b",
     "correctText": "Icyapa E14",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Icyapa E14",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **B. Icyapa E14**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Icyapa E14."
+    "lawTitle": "Ingingo ya 102: Icyapa E14 - Umuhanda Udakomeza (Impasse)",
+    "lawDetails": "Mu byapa byo mu muhanda, icyapa kigaragaza umuhanda udakomeza (impasse) ni ICYAPA E14, kirangwa n'urukiramende rw'ubururu rurimo umurongo w'umweru ufite agasanduku gatukura hejuru. Igisubizo cy'ukuri ni B (Icyapa E14).",
+    "memoryTip": "Icyapa E14 = Umuhanda udakomeza (Impasse)."
   },
   {
     "number": 423,
@@ -3523,9 +3523,9 @@
     "matchText": "Muri ibi byapa bikurikira ni ikihe cyerekana ko umuyobozi ukibonye yemerewe gutambuka mbere y'abaturutse aho agana mu nzira ifunganye:",
     "correctKey": "a",
     "correctText": "Icyapa B6",
-    "lawTitle": "Ingingo y'Amategeko y'Umuhanda mu Rwanda - Icyapa B6",
-    "lawDetails": "Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **A. Icyapa B6**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.",
-    "memoryTip": "Igisubizo cy'ukuri: Icyapa B6."
+    "lawTitle": "Ingingo ya 92: Icyapa B6 - Gutambuka Mbere ku Binyabiziga Biturutse Imbere",
+    "lawDetails": "Icyapa cyerekana ko umuyobozi ukibonye afite uburenganzira bwo gutambuka mbere y'abaturutse aho agana mu nzira ifunganye ni ICYAPA B6 (urukiramende rw'ubururu rurimo akambi k'umweru gakomeza n'akambi gatukura gato kagasatira). Igisubizo cy'ukuri ni A (Icyapa B6).",
+    "memoryTip": "Icyapa B6 (akambi kera gakomeza) = Ufite uburenganzira bwo gutambuka mbere."
   },
   {
     "number": 425,
@@ -3550,27 +3550,27 @@
     "matchText": "Ni ikihe icyapa gisobanura umuhanda w'icyerekezo kimwe:",
     "correctKey": "b",
     "correctText": "Icyapa E13a",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Icyapa E13a",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **B. Icyapa E13a**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Icyapa E13a."
+    "lawTitle": "Ingingo ya 102: Icyapa E13a - Umuhanda w'Icyerekezo Kimwe (Sens unique)",
+    "lawDetails": "Icyapa cyerekana umuhanda w'icyerekezo kimwe ni ICYAPA E13a (ishusho y'urukiramende cyangwa kare y'ubururu irimo akambi kinini k'umweru kareba hejuru). Igisubizo cy'ukuri ni B (Icyapa E13a).",
+    "memoryTip": "Icyapa E13a (akambi kera kareba hejuru ku buso bw'ubururu) = Umuhanda w'icyerekezo kimwe."
   },
   {
     "number": 428,
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "d",
     "correctText": "Nta gisubizo kirimo",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Nta gisubizo kirimo",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **D. Nta gisubizo kirimo**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Nta gisubizo kirimo."
+    "lawTitle": "Ingingo ya 90: Ibyapa byo mu Muhanda",
+    "lawDetails": "Iki cyapa kirangwa n'amabwiriza yihariye y'amategeko y'umuhanda. Kubera ko nta mahitamo muri A, B, na C agaragaza ibisobanuro by'ukuri by'iki cyapa, igisubizo cy'ukuri ni D (Nta gisubizo kirimo).",
+    "memoryTip": "Iyo ibisobanuro by'icyapa bitari mu mahitamo yabanje, igisubizo kiba D."
   },
   {
     "number": 429,
     "matchText": "Iki cyapa gisobanura iki ?",
     "correctKey": "a",
     "correctText": "Iherezo ry' umuhanda urombeje w'ibice byinshi",
-    "lawTitle": "Ingingo ya 89-105: Icyapa cyo mu Muhanda - Iherezo ry' umuhanda urombeje w'ibice byinshi",
-    "lawDetails": "Hakurikijwe Iteka rya Perezida No 85/01 rigenga amategeko y'umuhanda mu Rwanda, iki cyapa gisobanura neza ko: **A. Iherezo ry' umuhanda urombeje w'ibice byinshi**. Iri tegeko ritegetswe kubahirizwa n'umuyobozi wese ugeze muri ako gace mu rwego rwo kwirinda impanuka no kurengera umutekano w'abagenda mu muhanda.",
-    "memoryTip": "Iki cyapa kigaragaza: Iherezo ry' umuhanda urombeje w'ibice byinshi."
+    "lawTitle": "Ingingo ya 101: Icyapa F6 - Iherezo ry'Umuhanda Urombeje",
+    "lawDetails": "Icyapa cy'urukiramende rw'ubururu ruriho ikimenyetso cy'umuhanda urombeje w'ibice byinshi giciyemo umurongo utukura ucuramye gisobanura: IHEREZO RY'UMUHANDA UROMBEJE W'IBICE BYINSHI (Fin de route pour automobiles / autoroute). Igisubizo cy'ukuri ni A.",
+    "memoryTip": "Umurongo utukura uciye ku cyapa cy'umuhanda urombeje = Iherezo ryawo."
   },
   {
     "number": 430,

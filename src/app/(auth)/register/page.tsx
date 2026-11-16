@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { ProgressRing, SecurityStatus, NextStep, fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { BackButton } from "@/components/layout/BackButton";
+import { Eye, EyeOff, UserPlus } from "lucide-react";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -67,7 +68,7 @@ export default function RegisterPage() {
         <div className="mb-7 text-center">
           <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Kwiyandikisha (Register)</h1>
           <p className="mx-auto mt-2 max-w-md text-sm text-cyan-100/65">
-            Uzuza imyirondoro yawe hasi aha kugira ngo ufungure konti kandi utangire amasomo yawe advance.
+            Uzuza imyirondoro yawe hasi aha kugira ngo ufungure konti kandi utangire kwiga amategeko y&apos;umuhanda mu buryo bugezweho.
           </p>
         </div>
 
@@ -98,19 +99,20 @@ export default function RegisterPage() {
               {form.formState.errors.email && <p className="text-xs text-red-400">{form.formState.errors.email.message}</p>}
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="password" className="text-cyan-100/80">Ijambo banga (Password)</Label>
+              <Label htmlFor="password" className="text-cyan-100/80">Ijambo ry&apos;Ibanga (Password)</Label>
               <div className="relative">
                 {fieldIcon("lock")}
-                <Input id="password" type={showPw ? "text" : "password"} placeholder="Ijambo banga (Password)" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" {...form.register("password")} />
+                <Input id="password" type={showPw ? "text" : "password"} placeholder="Ijambo ry'ibanga..." className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" {...form.register("password")} />
                 <button type="button" onClick={() => setShowPw((s) => !s)} className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-100/50 hover:text-cyan-200" aria-label="toggle password">
-                  {showPw ? "🙈" : "👁"}
+                  {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
               {form.formState.errors.password && <p className="text-xs text-red-400">{form.formState.errors.password.message}</p>}
             </div>
             {error && <p className="rounded-md border border-red-500/30 bg-red-500/10 p-2.5 text-xs text-red-300" role="alert">{error}</p>}
-            <Button type="submit" disabled={isLoading} className="glow-btn h-11 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-              {isLoading ? "Tegereza..." : "⚡ Iyandikishe ubu"}
+            <Button type="submit" disabled={isLoading} className="glow-btn flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+              <UserPlus className="h-4 w-4" />
+              <span>{isLoading ? "Tegereza..." : "Iyandikishe Ubu"}</span>
             </Button>
 
             <div className="relative my-3">

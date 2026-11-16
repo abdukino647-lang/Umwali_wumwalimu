@@ -7,6 +7,7 @@ import { getCourses, getModules } from "@/lib/catalog";
 import { Button } from "@/components/ui/button";
 import { ProgressRing } from "@/components/layout/AuthChrome";
 import { BackButton } from "@/components/layout/BackButton";
+import { CheckCircle2, ArrowRight, Play, Timer } from "lucide-react";
 
 const categories = [
   {
@@ -106,14 +107,23 @@ export default async function CoursesPage() {
 
               <div className="mb-5 flex items-center gap-4">
                 <ProgressRing value={pct} size={72} />
-                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${pct >= 100 ? "bg-emerald-400/20 text-emerald-200" : "bg-cyan-400/15 text-cyan-200"}`}>
-                  {pct >= 100 ? "Byarangiye ✓" : pct > 0 ? "Birakomeza" : "Active"}
+                <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${pct >= 100 ? "bg-emerald-400/20 text-emerald-200" : "bg-cyan-400/15 text-cyan-200"}`}>
+                  {pct >= 100 ? (
+                    <>
+                      <CheckCircle2 className="h-3.5 w-3.5" /> Byarangiye
+                    </>
+                  ) : pct > 0 ? (
+                    "Birakomeza"
+                  ) : (
+                    "Active"
+                  )}
                 </span>
               </div>
 
               <Link href={c.href} className="mt-auto block">
-                <Button className="glow-btn h-10 w-full rounded-xl bg-gradient-to-r from-cyan-500/90 to-sky-600/90 font-semibold text-white hover:from-cyan-400 hover:to-sky-500">
-                  Komeza Kwiga ⏵
+                <Button className="glow-btn flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500/90 to-sky-600/90 font-semibold text-white hover:from-cyan-400 hover:to-sky-500">
+                  <span>Komeza Kwiga</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -126,18 +136,15 @@ export default async function CoursesPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl glass-soft text-cyan-300">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="13" r="8" />
-                <path d="M12 9v4l2.5 2.5M9 2h6M12 5V2" />
-              </svg>
+              <Timer className="h-6 w-6" />
             </div>
             <div>
               <h3 className="font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h3>
               <p className="text-xs text-cyan-100/60">Ibibazo 20 bivanze mu byiciro byose: A (5), B (5), C (5), D (1) n&apos;imyitwarire (4).</p>
             </div>
           </div>
-          <span className="glow-btn inline-flex h-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white">
-            Tangira ⏱
+          <span className="glow-btn inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white">
+            <Play className="h-4 w-4" /> Tangira
           </span>
         </div>
       </Link>

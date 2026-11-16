@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { NextStep, fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { BackButton } from "@/components/layout/BackButton";
+import { Eye, EyeOff, LogIn } from "lucide-react";
 
 function IntegrityBar({ label }: { label: string }) {
   return (
@@ -48,7 +49,7 @@ export default function LoginPage() {
         redirect: false,
       });
       if (result?.error) {
-        setError("Email cyangwa ijambo banga sibyo. (Invalid email or password.)");
+        setError("Email cyangwa ijambo ry'ibanga sibyo. (Invalid email or password.)");
       } else if (result?.ok) {
         router.push("/dashboard");
         router.refresh();
@@ -101,22 +102,23 @@ export default function LoginPage() {
               {form.formState.errors.email && <p className="text-xs text-red-400">{form.formState.errors.email.message}</p>}
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="password" className="text-cyan-100/80">Ijambo banga (Password)</Label>
+              <Label htmlFor="password" className="text-cyan-100/80">Ijambo ry&apos;Ibanga (Password)</Label>
               <div className="relative">
                 {fieldIcon("lock")}
-                <Input id="password" type={showPw ? "text" : "password"} placeholder="Ijambo banga (Password)" className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" {...form.register("password")} />
+                <Input id="password" type={showPw ? "text" : "password"} placeholder="Ijambo ry'ibanga..." className="h-11 border-cyan-400/20 bg-white/5 px-10 text-white placeholder:text-cyan-100/40 focus-visible:border-cyan-400/60" {...form.register("password")} />
                 <button type="button" onClick={() => setShowPw((s) => !s)} className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-100/50 hover:text-cyan-200" aria-label="toggle password">
-                  {showPw ? "🙈" : "👁"}
+                  {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
               {form.formState.errors.password && <p className="text-xs text-red-400">{form.formState.errors.password.message}</p>}
             </div>
             <div className="flex justify-end">
-              <Link href="/forgot-password" className="text-xs text-cyan-300 hover:underline">Forgot Password?</Link>
+              <Link href="/forgot-password" className="text-xs text-cyan-300 hover:underline">Wibagiwe ijambo ry&apos;ibanga?</Link>
             </div>
             {error && <p className="rounded-md border border-red-500/30 bg-red-500/10 p-2.5 text-xs text-red-300" role="alert">{error}</p>}
-            <Button type="submit" disabled={isLoading} className="glow-btn h-11 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-              {isLoading ? "Tegereza..." : "⊙ Injira"}
+            <Button type="submit" disabled={isLoading} className="glow-btn flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+              <LogIn className="h-4 w-4" />
+              <span>{isLoading ? "Tegereza..." : "Injira"}</span>
             </Button>
           </form>
 

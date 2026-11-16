@@ -6,6 +6,7 @@ import { db } from "@/db";
 import { modules, courses, quizAttempts, generatedExams } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
 import { getCourses, getModules } from "@/lib/catalog";
+import { Play, Timer, CheckCircle2, ArrowRight } from "lucide-react";
 
 const categories = [
   {
@@ -138,29 +139,26 @@ export default async function DashboardPage() {
                 </svg>
               </div>
               <div>
-                <span className="rounded-full bg-emerald-400/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">Ikizamini ry&apos;Uyu Munsi</span>
+                <span className="rounded-full bg-emerald-400/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">Ikizamini cy&apos;Uyu Munsi</span>
                 <h3 className="mt-1.5 text-lg font-bold text-white">{dailyExam.title}</h3>
                 <p className="mt-1 text-sm text-cyan-100/65">
                   Ibibazo {Array.isArray(dailyExam.questionIds) ? (dailyExam.questionIds as string[]).length : 0} • byatoranyijwe hakurikijwe ibizamini bya buri munsi.
                 </p>
               </div>
             </div>
-            <span className="glow-btn inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-6 font-semibold text-white">
-              Tangira ⏱
+            <span className="glow-btn inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-6 font-semibold text-white">
+              <Play className="h-4 w-4" /> Tangira
             </span>
           </div>
         </Link>
       )}
 
-      {/* Timed mock exam: 20 random questions mixed across A, B & C in 20 min */}
+      {/* Timed mock exam: 20 random questions mixed across all categories in 20 min */}
       <Link href="/exam" className="hud glass is-interactive relative block overflow-hidden rounded-2xl p-6 transition-all">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl glass-soft text-cyan-300">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="13" r="8" />
-                <path d="M12 9v4l2.5 2.5M9 2h6M12 5V2" />
-              </svg>
+              <Timer className="h-6 w-6" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h3>
@@ -168,14 +166,16 @@ export default async function DashboardPage() {
                 Ibibazo 20 bivanze mu byiciro byose: A (5), B (5), C (5), D (1) n&apos;imyitwarire y&apos;umuhanda (4) — bikorwa mu kizunguruko (loop) kitasubiramo ibibazo.
               </p>
               <div className="mt-2 flex flex-wrap gap-2 text-[11px] font-medium">
-                <span className="rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">⏱ Iminota 20</span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">
+                  <Timer className="h-3 w-3" /> Iminota 20
+                </span>
                 <span className="rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">Ibibazo 20</span>
                 <span className="rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">A · B · C · D · Scenarios</span>
               </div>
             </div>
           </div>
-          <span className="glow-btn inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 font-semibold text-white">
-            Tangira Ikizamini ⏱
+          <span className="glow-btn inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 font-semibold text-white">
+            <Play className="h-4 w-4" /> Tangira Ikizamini
           </span>
         </div>
       </Link>
@@ -199,14 +199,23 @@ export default async function DashboardPage() {
 
             <div className="mb-5 flex items-center gap-4">
               <ProgressRing value={pct} size={72} />
-              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${pct >= 100 ? "bg-emerald-400/20 text-emerald-200" : "bg-cyan-400/15 text-cyan-200"}`}>
-                {pct >= 100 ? "Byarangiye ✓" : pct > 0 ? "Birakomeza" : "Active"}
+              <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${pct >= 100 ? "bg-emerald-400/20 text-emerald-200" : "bg-cyan-400/15 text-cyan-200"}`}>
+                {pct >= 100 ? (
+                  <>
+                    <CheckCircle2 className="h-3.5 w-3.5" /> Byarangiye
+                  </>
+                ) : pct > 0 ? (
+                  "Birakomeza"
+                ) : (
+                  "Active"
+                )}
               </span>
             </div>
 
             <Link href={c.href} className="mt-auto block">
-              <Button className="glow-btn h-10 w-full rounded-xl bg-gradient-to-r from-cyan-500/90 to-sky-600/90 font-semibold text-white hover:from-cyan-400 hover:to-sky-500">
-                Komeza Kwiga ⏵
+              <Button className="glow-btn flex h-10 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500/90 to-sky-600/90 font-semibold text-white hover:from-cyan-400 hover:to-sky-500">
+                <span>Komeza Kwiga</span>
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -226,7 +235,7 @@ export default async function DashboardPage() {
             const pct = Math.round(Number(r.score) || 0);
             const label =
               r.kind === "exam" || !r.moduleTitle
-                ? "Ikizamini Rusange (A · B · C)"
+                ? "Ikizamini Rusange (A · B · C · D · Scenarios)"
                 : `${r.courseTitle ?? "Amasomo"} — ${r.moduleTitle}`;
             const when = r.attemptedAt ? new Date(r.attemptedAt).toLocaleDateString("en-GB") : "";
             return (
@@ -240,8 +249,14 @@ export default async function DashboardPage() {
                     <p className="text-xs text-cyan-100/55">{when}</p>
                   </div>
                 </div>
-                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${r.passed ? "bg-emerald-400/15 text-emerald-300" : "bg-red-400/15 text-red-300"}`}>
-                  {r.passed ? "Watsinze ✓" : "Ntiwatsinze"}
+                <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${r.passed ? "bg-emerald-400/15 text-emerald-300" : "bg-red-400/15 text-red-300"}`}>
+                  {r.passed ? (
+                    <>
+                      <CheckCircle2 className="h-3.5 w-3.5" /> Watsinze
+                    </>
+                  ) : (
+                    "Ntiwatsinze"
+                  )}
                 </span>
               </div>
             );

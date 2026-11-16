@@ -2,39 +2,30 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { LayoutDashboard, BookOpen, Award, Shield } from "lucide-react";
 
 const items = [
   {
     href: "/dashboard",
     label: "Ahabanza (Dashboard)",
-    icon: <path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z" />,
+    icon: LayoutDashboard,
   },
   {
     href: "/courses",
     label: "Amasomo (Courses)",
-    icon: <path d="M4 5a2 2 0 012-2h12v16H6a2 2 0 00-2 2zM18 3v18" />,
+    icon: BookOpen,
   },
   {
     href: "/certificates",
     label: "Ibyemezo (Certificates)",
-    icon: (
-      <>
-        <circle cx="12" cy="9" r="5" />
-        <path d="M9 13l-1 7 4-2 4 2-1-7" />
-      </>
-    ),
+    icon: Award,
   },
 ];
 
 const adminItem = {
   href: "/admin",
   label: "Admin (Abakoresha)",
-  icon: (
-    <>
-      <path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />
-      <path d="M9.5 12l1.8 1.8L15 10" />
-    </>
-  ),
+  icon: Shield,
 };
 
 export function DashboardNav({ isAdmin = false }: { isAdmin?: boolean }) {
@@ -43,6 +34,7 @@ export function DashboardNav({ isAdmin = false }: { isAdmin?: boolean }) {
   return (
     <nav className="flex flex-col gap-1.5">
       {navItems.map((it) => {
+        const Icon = it.icon;
         const active = pathname === it.href || (it.href !== "/dashboard" && pathname.startsWith(it.href));
         return (
           <Link
@@ -55,9 +47,7 @@ export function DashboardNav({ isAdmin = false }: { isAdmin?: boolean }) {
                 : "text-cyan-100/60 hover:bg-white/5 hover:text-white"
             )}
           >
-            <svg viewBox="0 0 24 24" className={cn("h-5 w-5", active ? "text-cyan-300" : "text-cyan-100/50")} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              {it.icon}
-            </svg>
+            <Icon className={cn("h-5 w-5", active ? "text-cyan-300" : "text-cyan-100/50")} />
             {it.label}
           </Link>
         );

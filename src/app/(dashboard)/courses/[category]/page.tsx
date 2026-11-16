@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BackButton } from "@/components/layout/BackButton";
 import { notFound } from "next/navigation";
 import { getCourses, getModules } from "@/lib/catalog";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const p = await params;
@@ -18,7 +19,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   const newLawsModule = {
     id: "amategeko-mashya",
-    title: "✨ Ibyapa Bishya n'Amategeko Mashya (2024)",
+    title: "Ibyapa Bishya n'Amategeko Mashya (2024)",
     content: "Camera z'umuvuduko, 10% tolerance margin, BUS ONLY, Speed governors, n'ibyapa bishya",
   };
 
@@ -52,7 +53,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-lg text-sm font-bold ${
                   isHighlight ? "bg-cyan-400/20 text-cyan-200" : "glass-soft text-cyan-300"
                 }`}>
-                  {isHighlight ? "★" : index + 1}
+                  {isHighlight ? <Sparkles className="h-4 w-4" /> : index + 1}
                 </span>
                 <div>
                   <h3 className="font-semibold text-white">{mod.title}</h3>
@@ -60,8 +61,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 </div>
               </div>
               <Link href={`/courses/${p.category}/${mod.id}/quiz`} className="shrink-0">
-                <Button className="glow-btn h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-                  Kora Ikizamini ⏵
+                <Button className="glow-btn flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
+                  <span>Kora Ikizamini</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>

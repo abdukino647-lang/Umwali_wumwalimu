@@ -3,6 +3,7 @@ import { generatedExams, appSettings } from "@/db/schema";
 import { desc, eq } from "drizzle-orm";
 import Link from "next/link";
 import { generateExamAction, deleteExamAction, setYoutubeSourceAction, runDailyNowAction } from "./actions";
+import { RotateCw, Sparkles, Youtube, CheckCircle2 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -42,8 +43,9 @@ export default async function AdminExamsPage() {
           <button type="submit" className="h-10 rounded-lg border border-cyan-400/25 bg-white/5 px-4 text-sm font-semibold text-cyan-100 hover:bg-white/10">Bika channel</button>
         </form>
         <form action={runDailyNowAction}>
-          <button type="submit" className="glow-btn h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-5 text-sm font-semibold text-white">
-            ⟳ Kora ubu (video iheruka)
+          <button type="submit" className="glow-btn inline-flex h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 px-5 text-sm font-semibold text-white">
+            <RotateCw className="h-4 w-4" />
+            <span>Kora ubu (video iheruka)</span>
           </button>
         </form>
         {lastRunAt && (
@@ -60,7 +62,7 @@ export default async function AdminExamsPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-1.5">
             <label className="text-xs font-medium text-cyan-100/70">Izina ry&apos;ikizamini (bitegetswe)</label>
-            <input name="title" placeholder="Ikizamini ry'uyu munsi" className="h-10 w-full rounded-lg border border-cyan-400/20 bg-white/5 px-3 text-sm text-white outline-none focus:border-cyan-400/60" />
+            <input name="title" placeholder="Ikizamini cy'uyu munsi" className="h-10 w-full rounded-lg border border-cyan-400/20 bg-white/5 px-3 text-sm text-white outline-none focus:border-cyan-400/60" />
           </div>
           <div className="space-y-1.5">
             <label className="text-xs font-medium text-cyan-100/70">Umubare w&apos;ibibazo</label>
@@ -82,8 +84,9 @@ export default async function AdminExamsPage() {
           <label className="text-xs font-medium text-cyan-100/70">Cyangwa insanganyamatsiko gusa (iyo utanditse ibibazo)</label>
           <textarea name="text" rows={2} placeholder="ibyapa, umuvuduko ntarengwa, amatara, kunyuranaho, gutambuka mbere..." className="w-full rounded-lg border border-cyan-400/20 bg-white/5 px-3 py-2 text-sm text-white outline-none focus:border-cyan-400/60" />
         </div>
-        <button type="submit" className="glow-btn h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 text-sm font-semibold text-white">
-          ⚙ Kora Ikizamini
+        <button type="submit" className="glow-btn inline-flex h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 text-sm font-semibold text-white">
+          <Sparkles className="h-4 w-4" />
+          <span>Kora Ikizamini</span>
         </button>
       </form>
 
