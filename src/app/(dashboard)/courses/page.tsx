@@ -44,6 +44,17 @@ const categories = [
       </>
     ),
   },
+  {
+    cat: "new" as const,
+    tag: "Category D: Ibyapa n'Amategeko Mashya",
+    desc: "Camera, 10% tolerance, Bus lane",
+    href: "/courses/ibyapa/amategeko-mashya/quiz",
+    icon: (
+      <>
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      </>
+    ),
+  },
 ];
 
 export default async function CoursesPage() {
@@ -59,6 +70,9 @@ export default async function CoursesPage() {
   ]);
   const doneModules = new Set(userAttempts.map((a) => a.moduleId));
   const pctFor = (cat: string) => {
+    if (cat === "new") {
+      return doneModules.has("amategeko-mashya") ? 100 : 0;
+    }
     const course = allCourses.find((c) => c.category === cat);
     if (!course) return 0;
     const mods = allModules.filter((m) => m.courseId === course.id);
@@ -75,29 +89,7 @@ export default async function CoursesPage() {
         <p className="mt-2 text-sm text-cyan-100/65">Hitamo icyiciro wige kandi ukoremo ibizamini (Ibizamini).</p>
       </div>
 
-      {/* Modern 2024 New Traffic Signs & Rules Featured Banner */}
-      <div className="relative overflow-hidden rounded-2xl border border-cyan-400/35 bg-gradient-to-r from-cyan-950/70 via-slate-900/80 to-sky-950/70 p-6 shadow-xl backdrop-blur-md">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-semibold text-cyan-200">
-              ✨ Amavugurura Mashya (2024 Updates)
-            </span>
-            <h2 className="mt-2 text-lg font-bold text-white sm:text-xl">
-              Ibyapa Bishya n&apos;Amategeko Mashya y&apos;Umuhanda mu Rwanda
-            </h2>
-            <p className="mt-1 text-xs leading-relaxed text-cyan-100/70 sm:text-sm">
-              Kamera z&apos;umuvuduko n&apos;amatara (Speed enforcement cameras), margin ya 10% tolerance, BUS ONLY, Smart speed governors (60 km/h), umutekano wa moto, n&apos;ibyapa bishya bikoreshwa mu kizamini cya Polisi.
-            </p>
-          </div>
-          <Link href="/courses/ibyapa/amategeko-mashya/quiz" className="shrink-0">
-            <Button className="glow-btn h-11 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 font-semibold text-white hover:from-cyan-400 hover:to-sky-400">
-              Iga Ibyapa Bishya ⏵
-            </Button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((c) => {
           const pct = pctFor(c.cat);
           return (
