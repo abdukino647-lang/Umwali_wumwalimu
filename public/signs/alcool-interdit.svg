@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <circle cx="100" cy="100" r="94" fill="#ffffff" stroke="#dc2626" stroke-width="16"/>
-  <!-- Wine/Cocktail glass -->
-  <path d="M80,65 L120,65 L103,98 L103,130 L115,130 L115,138 L85,138 L85,130 L97,130 L97,98 Z" fill="#1e293b"/>
-  <line x1="42" y1="42" x2="158" y2="158" stroke="#dc2626" stroke-width="16" stroke-linecap="round"/>
-</svg>

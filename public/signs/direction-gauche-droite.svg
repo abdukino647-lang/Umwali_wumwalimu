@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <circle cx="100" cy="100" r="94" fill="#1d4ed8" stroke="#ffffff" stroke-width="4"/>
-  <!-- Left arrow -->
-  <path d="M100,150 Q100,100 65,100" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
-  <polygon points="50,100 70,82 70,118" fill="#ffffff"/>
-  <!-- Right arrow -->
-  <path d="M100,150 Q100,100 135,100" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
-  <polygon points="150,100 130,82 130,118" fill="#ffffff"/>
-</svg>
