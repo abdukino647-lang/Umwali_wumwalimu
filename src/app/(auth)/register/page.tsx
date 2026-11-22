@@ -10,7 +10,7 @@ import { registerSchema } from "@/lib/validations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ProgressRing, SecurityStatus, NextStep, fieldIcon } from "@/components/layout/AuthChrome";
+import { fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { BackButton } from "@/components/layout/BackButton";
 import { Eye, EyeOff, UserPlus, Loader2 } from "lucide-react";
@@ -64,28 +64,15 @@ export default function RegisterPage() {
       </header>
 
       <main className="relative z-10 flex flex-1 items-center justify-center px-4 py-6 sm:py-10">
-        <div className="hud glass relative z-10 w-full max-w-4xl rounded-3xl p-6 md:p-8">
-          <div className="mx-auto mb-6 w-fit rounded-full glass-soft px-5 py-1.5 text-xs font-semibold tracking-wide text-cyan-200">
-            Advanced Profile and Training Portal
+        <div className="hud glass relative z-10 w-full max-w-lg rounded-3xl p-7 sm:p-9">
+          <div className="mb-6 text-center">
+            <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Kwiyandikisha (Register)</h1>
+            <p className="mt-2 text-sm text-cyan-100/65">
+              Uzuza imyirondoro yawe hasi aha kugira ngo ufungure konti kandi utangire kwiga amategeko y&apos;umuhanda mu buryo bugezweho.
+            </p>
           </div>
 
-        <div className="mb-7 text-center">
-          <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Kwiyandikisha (Register)</h1>
-          <p className="mx-auto mt-2 max-w-md text-sm text-cyan-100/65">
-            Uzuza imyirondoro yawe hasi aha kugira ngo ufungure konti kandi utangire kwiga amategeko y&apos;umuhanda mu buryo bugezweho.
-          </p>
-        </div>
-
-        <div className="grid items-start gap-6 md:grid-cols-[160px_1fr_180px]">
-          {/* Left: training progress */}
-          <div className="order-2 rounded-2xl glass-soft p-4 text-center md:order-1">
-            <p className="mb-3 text-xs font-medium text-cyan-100/70">Training Progress</p>
-            <ProgressRing value={15} />
-            <p className="mt-3 text-[11px] text-cyan-100/60">Core Modules: 15% complete</p>
-          </div>
-
-          {/* Center: form */}
-          <form onSubmit={form.handleSubmit(onSubmit)} className="order-1 space-y-4 md:order-2">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <div className="space-y-1.5">
               <Label htmlFor="name" className="text-cyan-100/80">Amazina</Label>
               <div className="relative">
@@ -158,27 +145,12 @@ export default function RegisterPage() {
             </Button>
           </form>
 
-          {/* Right: security status */}
-          <div className="order-3 rounded-2xl glass-soft p-4">
-            <p className="mb-3 text-center text-xs font-medium text-cyan-100/70">System Security Status</p>
-            <SecurityStatus />
-          </div>
+          <p className="mt-5 text-center text-sm text-cyan-100/60">
+            Usanzwe ufite konti?{" "}
+            <Link href="/login" className="font-medium text-cyan-300 hover:underline">Injira hano</Link>
+          </p>
         </div>
-
-        <div className="mt-7 rounded-2xl glass-soft p-4">
-          <p className="mb-3 text-center text-xs font-semibold tracking-wide text-cyan-200">Recommended Next Steps</p>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <NextStep title="Take a Skill Assessment" />
-            <NextStep title="View Advanced Signage Library" />
-          </div>
-        </div>
-
-        <p className="mt-6 text-center text-sm text-cyan-100/60">
-          Usanzwe ufite konti?{" "}
-          <Link href="/login" className="font-medium text-cyan-300 hover:underline">Injira hano</Link>
-        </p>
-      </div>
-    </main>
+      </main>
   </div>
 );
 }
