@@ -4856,16 +4856,24 @@
     "options": [
       {
         "key": "a",
-        "text": "b)"
+        "text": "Icyapa cyerekana inzira y'abanyamaguru"
+      },
+      {
+        "key": "b",
+        "text": "Icyapa cyerekana inzira y'ikinyamitende (tram)"
       },
       {
         "key": "c",
-        "text": "d)"
+        "text": "Icyapa cyerekana guhagarara mbere y'inzira y'ikinyamitende"
+      },
+      {
+        "key": "d",
+        "text": "Icyapa cyerekana uburenganzira bwo gutambuka mbere"
       }
     ],
     "correctKey": "c",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni C akurikijwe n'amategeko."
+    "explanation": "Ugomba kwiga icyapa cyerekana inzira y'ikinyamitende kugirango uhagarare bigihe kandi utishyire mu kaga."
   },
   {
     "number": 227,
@@ -5102,16 +5110,24 @@
     "options": [
       {
         "key": "a",
-        "text": "b)"
+        "text": "Urukiramende (rectangle)"
+      },
+      {
+        "key": "b",
+        "text": "Mpandeshatu (triangle)"
       },
       {
         "key": "c",
-        "text": "d)"
+        "text": "Uruziga (circle)"
+      },
+      {
+        "key": "d",
+        "text": "Inshongore (diamond)"
       }
     ],
     "correctKey": "c",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni C akurikijwe n'amategeko."
+    "explanation": "Ibyapa bitegeka (prohibitory signs) bikozwe mu shusho yuruziga rufite umurongo w uburengerazuba."
   },
   {
     "number": 236,
@@ -5119,16 +5135,24 @@
     "options": [
       {
         "key": "a",
-        "text": "(b)"
+        "text": "Uburenganzira bwo gutambuka mbere"
+      },
+      {
+        "key": "b",
+        "text": "Nta kinyabiziga kigendeshwa na moteri (gifite moteri) cyemerewe kuhanyura"
       },
       {
         "key": "c",
-        "text": "d)"
+        "text": "Ibyerekezo bibiri by'umuhanda"
+      },
+      {
+        "key": "d",
+        "text": "Birabujijwe kunyuranaho"
       }
     ],
-    "correctKey": "a",
+    "correctKey": "b",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni A akurikijwe n'amategeko."
+    "explanation": "Icyapa cyerekana ko nta kinyabiziga gifite moteri cyemerewe kuhanyura ni icyapa cy uruziga rufite umurongo w uburengerazuba nishusho y ikinyabiziga."
   },
   {
     "number": 237,
@@ -5448,16 +5472,24 @@
     "options": [
       {
         "key": "a",
-        "text": "b)"
+        "text": "Mpandeshatu (triangle)"
+      },
+      {
+        "key": "b",
+        "text": "Uruziga (circle)"
       },
       {
         "key": "c",
-        "text": "(d)"
+        "text": "Urukiramende (rectangle)"
+      },
+      {
+        "key": "d",
+        "text": "Inshongore (diamond/square rotated 45 degrees)"
       }
     ],
-    "correctKey": "a",
+    "correctKey": "d",
     "category": "ibyapa",
-    "explanation": "Igisubizo cy'ukuri ni A akurikijwe n'amategeko."
+    "explanation": "Icyapa gitanga uburenganzira bwo gutambuka mbere (priority sign) kigira ishusho y inshongore (diamond) y umweru n umuhondo."
   },
   {
     "number": 250,
