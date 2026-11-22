@@ -10698,5 +10698,380 @@
     "correctKey": "b",
     "category": "text",
     "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire)."
+  },
+  {
+    "number": 454,
+    "text": "Icyapa cy'ubururu gifite ishusho y'igare (vélo) ryera gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ahantu hagenewe gusungira amagare gusa"
+      },
+      {
+        "key": "b",
+        "text": "Inzira itegetswe amagare — ibindi binyabiziga bifite moteri bibujijwe kuyikoresha"
+      },
+      {
+        "key": "c",
+        "text": "Amagare yemerewe gutwara abagenzi babiri"
+      },
+      {
+        "key": "d",
+        "text": "Inzira yagenewe amagare n'amapikipiki uko basangiye"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Icyapa cy'ubururu gifite ishusho y'igare (Piste cyclable) ni itegeko: Inzira itegetswe amagare gusa. Imodoka n'amapikipiki bifite moteri bibujijwe burundu."
+  },
+  {
+    "number": 455,
+    "text": "Icyapa gifite ishusho y'abantu bubatse (ouvriers/travaux) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe kwegera abantu b'inzira"
+      },
+      {
+        "key": "b",
+        "text": "Imbere hari imirimo y'umuhanda — gabanya umuvuduko kandi witondere"
+      },
+      {
+        "key": "c",
+        "text": "Ahantu ho guhagarara abakozi"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Icyapa cy'ouvriers/travaux cyerekana ko imbere hari imirimo y'umuhanda. Ugomba kugabanya umuvuduko no kwitonda kubera akaga k'abakozi bari hafi."
+  },
+  {
+    "number": 456,
+    "text": "Icyapa cy'umwambi munini w'ubururu (flèche bleue) werekana icyerekezo kimwe gisa na ci 'Sens unique' gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Umuhanda ufungura mu cyerekezo cyerekanywe gusa — inzira y'icyerekezo kimwe (Sens unique)"
+      },
+      {
+        "key": "b",
+        "text": "Umuhanda ufite ibyerekezo bibiri"
+      },
+      {
+        "key": "c",
+        "text": "Ugomba gusubira inyuma"
+      },
+      {
+        "key": "d",
+        "text": "Cyerekana aho guparika"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe (Sens unique). Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe."
+  },
+  {
+    "number": 457,
+    "text": "Icyapa cy'uruziga rufite umurongo umwe utukura urambura hagati (barré) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe gukora serivisi ya moto"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe gutwara ibintu"
+      },
+      {
+        "key": "c",
+        "text": "Birabujijwe guhagarara no guparika ku ruhande rw'umuhanda (No Stopping / No Waiting)"
+      },
+      {
+        "key": "d",
+        "text": "Birabujijwe gukoresha amatara"
+      }
+    ],
+    "correctKey": "c",
+    "category": "ibyapa",
+    "explanation": "Uruziga rufite umurongo umwe utukura urambura (/) cyangwa umucyo utukura bisobanura 'No Stopping' (Birabujijwe guhagarara). Uruziga rufite imirongo ibiri itukura (X) bisobanura 'No Parking' (Birabujijwe guparika)."
+  },
+  {
+    "number": 458,
+    "text": "Icyapa gifite inyuguti 'P' n'umurongo utukura urambura (P barré) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ahantu hemerewe guparika buri gihe"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe guparika aho hantu (No Parking)"
+      },
+      {
+        "key": "c",
+        "text": "Guparika byemewe igihe gito gusa"
+      },
+      {
+        "key": "d",
+        "text": "Ahantu hagenewe imodoka za Polisi"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Inyuguti 'P' ifite umurongo utukura urambura (/P) cyangwa uruziga rutukura rifite inyuguti P imbere bisobanura 'No Parking' — Birabujijwe guparika aho hantu."
+  },
+  {
+    "number": 459,
+    "text": "Icyapa cy'umucyo utukura mu mburungushu (octogone) gifite ijambo 'STOP' gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Gabanya umuvuduko kugeza 30 km/h"
+      },
+      {
+        "key": "b",
+        "text": "Hagarara burundu kugeza ibinyabiziga biganisha birangira nyuma ubahe inzira"
+      },
+      {
+        "key": "c",
+        "text": "Hagarara akanya gato hanyuma ukomeze"
+      },
+      {
+        "key": "d",
+        "text": "Cyerekana aho kugura mafuta"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Icyapa cy'octogone (mburungushu) yera n'itukura rifite 'STOP' kitegeka guhagarara BURUNDU (tires zose zigomba guhagarara ku murongo) no guha inzira ibinyabiziga biganisha binyuraho, maze ukomeze uje ubonye ko nta kinyabiziga giturutse."
+  },
+  {
+    "number": 460,
+    "text": "Icyapa cy'umucyo utukura w'uruziga gifite ishusho y'abantu babiri bataganye bagana (deux silhouettes) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe gutwara abagenzi benshi"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe kunyuranaho ku binyabiziga byose (Interdiction de dépasser pour tous)"
+      },
+      {
+        "key": "c",
+        "text": "Inzira yagenewe abantu babiri"
+      },
+      {
+        "key": "d",
+        "text": "Birabujijwe gutwara abana"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Uruziga rutukura rufite ishusho y'ibinyabiziga bibiri bitaganye ni 'Interdiction de dépasser' — Birabujijwe kunyuranaho ku binyabiziga byose (ntabwo ari amakamyo gusa). Icyapa gifite ibinyabiziga bibiri cy'amabara atandukanye ni icyaba kibuza amakamyo gusa kunyuranaho."
+  },
+  {
+    "number": 461,
+    "text": "Icyapa cy'umwambi w'ubururu werekana hejuru (flèche bleue vers le haut) ushyizwe kuri poteau gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ugomba gusubira inyuma"
+      },
+      {
+        "key": "b",
+        "text": "Ugomba gukomeza imbere gusa — ntushobora gukata"
+      },
+      {
+        "key": "c",
+        "text": "Umuvuduko urashobora kwiyongera"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Umwambi munini w'ubururu werekana imbere (hejuru) ni itegeko: Ugomba gukomeza imbere gusa kuri uwo muhanda. Kukata iburyo cyangwa ibumoso birabujijwe aho hantu."
+  },
+  {
+    "number": 462,
+    "text": "Icyapa cy'uruziga rw'ubururu gifite imyambi ibiri yerekana iburyo n'ibumoso bisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Umuhanda ufite ibyerekezo bibiri bimaze gufunguka"
+      },
+      {
+        "key": "b",
+        "text": "Itegeko: Ugomba gukata iburyo cyangwa ibumoso — ntushobora gukomeza imbere"
+      },
+      {
+        "key": "c",
+        "text": "Birabujijwe gukata"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Uruziga rw'ubururu rufite imyambi ibiri (iburyo+ibumoso) ni itegeko: Ugomba gukata iburyo cyangwa ibumoso. Birabujijwe gukomeza imbere aho hantu."
+  },
+  {
+    "number": 463,
+    "text": "Icyapa gifite uruziga rutukura rugaragaza ishusho y'amakamyo n'imodoka nto bigana bisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Birabujijwe kunyuranaho ku binyabiziga by'ubucuruzi (amakamyo) gusa"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe kwinjira imodoka"
+      },
+      {
+        "key": "c",
+        "text": "Inzira yagenewe amakamyo gusa"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Uruziga rutukura rugaragaza ishusho y'amakamyo ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto zishobora kunyuranaho."
+  },
+  {
+    "number": 464,
+    "text": "Icyapa kiburira (mpandeshatu yera ifite umuzenguruko utukura) gifite ishusho y'izuba risa nk'ibyuma (neige/verglas) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Imbere hari izuba rishe"
+      },
+      {
+        "key": "b",
+        "text": "Imbere hari urubura cyangwa umuhanda woroheje (route glissante) — itonda, gabanya umuvuduko"
+      },
+      {
+        "key": "c",
+        "text": "Imbere hari ahantu h'igikonoshwa"
+      },
+      {
+        "key": "d",
+        "text": "Birabujijwe gutwara mu gihe cy'imvura"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Icyapa kiburira gifite ishusho yerekana urubura/ubushyuhe bufi (snowflake/ice) cyangwa imiraba ireremba kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko kandi ugakoresha precaution."
+  },
+  {
+    "number": 465,
+    "text": "Mu Rwanda, icyapa cy'uruziga rufite ishusho y'inzoga (verre à boisson) ufite umurongo utukura urambura gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ahantu hemerewe kunywa inzoga"
+      },
+      {
+        "key": "b",
+        "text": "Birabujijwe gutwara umuyobozi wasinze — inzoga ku muyobozi zirabujijwe"
+      },
+      {
+        "key": "c",
+        "text": "Ahantu h'ibigaruriro"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Uruziga rufite ishusho y'inzoga (verre) ufite umurongo utukura bisobanura ko birabujijwe gutwara nyuma yo kunywa inzoga. Igipimo ntarengwa cy'inzoga mu maraso y'umuyobozi ni 0.8 g/l mu Rwanda."
+  },
+  {
+    "number": 466,
+    "text": "Icyapa cy'umucyo w'icyatsi gifite umwambi werekana iburyo (flèche verte à droite) gisobanura iki mu bimenyetso bimurika?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ugomba gukatira iburyo bakunzwe"
+      },
+      {
+        "key": "b",
+        "text": "Wemerewe gukatira iburyo ndetse n'aho itara ritukura rimurika, ariko ugaha inzira abanyamaguru bambuka"
+      },
+      {
+        "key": "c",
+        "text": "Byemewe gucomera itara ku cyerekezo cyose"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "b",
+    "category": "ibyapa",
+    "explanation": "Umwambi w'icyatsi werekana iburyo (flèche verte conditionnelle) usobanura ko wemerewe gukatira iburyo ndetse n'aho itara ritukura rimurika — ariko ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo."
+  },
+  {
+    "number": 467,
+    "text": "Icyapa cy'ubururu gifite iságo (maison/shelter) cyangwa umwambi werekana aho abagenzi basitara (arrêt de bus) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ahantu hagenewe guhagararwamo n'amabisi no kuzamuramo abagenzi"
+      },
+      {
+        "key": "b",
+        "text": "Ahantu hemerewe imodoka zose guhagarara"
+      },
+      {
+        "key": "c",
+        "text": "Ahantu h'inzu"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Icyapa cy'arrêt de bus (ahantu abagenzi basitara) cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira kuko bihutisha abagenzi."
+  },
+  {
+    "number": 468,
+    "text": "Icyapa kiburira gifite ishusho y'abantu babiri (umugabo n'umugore cyangwa umuntu mukuru n'umwana) gisobanura iki?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Imbere hari amashuri cyangwa inzira y'abana — gabanya umuvuduko cyane"
+      },
+      {
+        "key": "b",
+        "text": "Inzira yagenewe abantu b'imyaka mirongo"
+      },
+      {
+        "key": "c",
+        "text": "Birabujijwe kwambuka aho hantu"
+      },
+      {
+        "key": "d",
+        "text": "Nta gisubizo cy'ukuri kirimo"
+      }
+    ],
+    "correctKey": "a",
+    "category": "ibyapa",
+    "explanation": "Icyapa kiburira gifite ishusho y'abana cyangwa abantu babiri gisobanura ko imbere hari amashuri, inzira y'abana, cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko kandi witondere."
   }
 ]

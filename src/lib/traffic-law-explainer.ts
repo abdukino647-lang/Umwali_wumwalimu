@@ -131,11 +131,59 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "Amatara yo guhagarara (stop) ni amutuku akabona kure ya metero 100 ku zuba.";
       memoryTip = "Phare = 100m. Code = 40m. Stop = itara ritukura ribonwa kuri 100m ku zuba.";
     } else if (lowerQ.includes("icyapa") || lowerQ.includes("ibyapa") || lowerQ.includes("kimenyetso")) {
-      lawTitle = "Ingingo ya 89-105: Ibyapa n'Ibimenyetso byo mu Muhanda";
-      lawDetails =
-        "Ibyapa biburira ibyago bifite ishusho ya mpandeshatu ifite umugongo utukura. " +
-        "Ibyapa bibuza bifite ishusho y'uruziga rufite umuzenguruko utukura. Ibyapa bitegeka bifite ishusho y'uruziga rw'ubururu.";
-      memoryTip = "Mpandeshatu = Ibyago. Uruziga rutukura = Kubuza. Uruziga rw'ubururu = Gutegeka.";
+      // Specific sign knowledge for new Category D ibyapa questions (Q454-Q468)
+      if (lowerQ.includes("piste") || (lowerQ.includes("igare") && lowerQ.includes("ubururu"))) {
+        lawTitle = "Icyapa cy'Inzira y'Amagare (Piste Cyclable)";
+        lawDetails = "Icyapa cy'ubururu gifite igare (Piste cyclable) ni itegeko: Inzira yagenewe amagare gusa. Imodoka, amapikipiki, n'ibindi binyabiziga bifite moteri birabujijwe kuyikoresha.";
+        memoryTip = "Ubururu + igare = Piste cyclable. Imodoka n'amapikipiki birabujijwe!";
+      } else if (lowerQ.includes("travaux") || lowerQ.includes("ouvrier") || lowerQ.includes("bubatse")) {
+        lawTitle = "Icyapa cy'Imirimo y'Umuhanda (Travaux)";
+        lawDetails = "Icyapa cy'ouvriers/travaux kikuburira ko imbere hari abakozi bakoraho umuhanda. Ugomba kugabanya umuvuduko, kwitondereza ibimenyetso by'agateganyo, no kubahiriza amabwiriza y'umuyobozi w'imirimo (signaleur).";
+        memoryTip = "Ouvriers = Imirimo. Gabanya umuvuduko, witondere abakozi bari hafi!";
+      } else if (lowerQ.includes("stop") || lowerQ.includes("octogone") || lowerQ.includes("mburungushu")) {
+        lawTitle = "Icyapa cya STOP (Mburungushu y'Itukura)";
+        lawDetails = "Icyapa cya STOP (octogone itukura) kitegeka guhagarara BURUNDU (tires zose zigomba gusimba ku murongo wera), no guha inzira ibinyabiziga byose biganisha (mu cyerekezo cyose). Ntukore ko uhagaze barungu — ugomba kugaragaza ko wahagaraye neza.";
+        memoryTip = "STOP = Hagarara BURUNDU. Bahe inzira bose mbere yo gukomeza!";
+      } else if (lowerQ.includes("sens unique") || lowerQ.includes("umwambi munini") || lowerQ.includes("flèche bleue") || lowerQ.includes("icyerekezo kimwe")) {
+        lawTitle = "Inzira y'Icyerekezo Kimwe (Sens Unique)";
+        lawDetails = "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe gusa. Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe. Birabujijwe burundu gutera imbere mu rundi ruhande.";
+        memoryTip = "Umwambi munini w'ubururu = Sens unique. Icyerekezo kimwe gusa!";
+      } else if (lowerQ.includes("no stopping") || lowerQ.includes("no waiting") || (lowerQ.includes("uruziga") && lowerQ.includes("umurongo umwe"))) {
+        lawTitle = "Icyapa kibuza Guhagarara (No Stopping / No Parking)";
+        lawDetails = "Uruziga rufite umurongo umwe utukura (/) = 'No Stopping' — Birabujijwe guhagarara na gato. Uruziga rufite imirongo ibiri itukura (XX) = 'No Parking' — Birabujijwe guparika, ariko guhagarara akanya gato byemewe gufuta abagenzi. Inyuguti P ufite umurongo utukura = No Parking.";
+        memoryTip = "Umurongo umwe (/) = No Stopping. Imirongo ibiri (XX) = No Parking. P + umurongo = No Parking.";
+      } else if (lowerQ.includes("flèche verte") || lowerQ.includes("umwambi w'icyatsi") || lowerQ.includes("umwambi werekana iburyo")) {
+        lawTitle = "Umwambi w'Icyatsi (Flèche Verte Conditionnelle)";
+        lawDetails = "Umwambi w'icyatsi ushyizwe hasi y'itara ritukura usobanura ko wemerewe gukatira mu cyerekezo cwerekanywe ndetse n'aho itara ritukura rimurika. Ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo.";
+        memoryTip = "Umwambi w'icyatsi = Kata nyuma yo guha inzira abanyamaguru. Ntiwirengagize abanyamaguru!";
+      } else if (lowerQ.includes("arrêt") || lowerQ.includes("sitara") || lowerQ.includes("bisi") || lowerQ.includes("bus")) {
+        lawTitle = "Icyapa cy'Ahantu Amabisi Ahagarara (Arrêt de Bus)";
+        lawDetails = "Icyapa cy'arrêt de bus cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira bibuza bisi kuhagera.";
+        memoryTip = "Arrêt de bus = Bisi gusa ihagarara. Izindi modoka birababujijwe!";
+      } else if (lowerQ.includes("abana") || lowerQ.includes("ishuri") || lowerQ.includes("umwana")) {
+        lawTitle = "Icyapa kiburira Ahegereye Amashuri n'Inzira y'Abana";
+        lawDetails = "Icyapa kiburira gifite ishusho y'abantu babiri (umuntu mukuru n'umwana) kisobanura ko imbere hari amashuri, inzira y'abana cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko (akenshi kugeza 30 km/h cyangwa munsi).";
+        memoryTip = "Umuntu mukuru + umwana = Amashuri. Gabanya umuvuduko cyane, witondere abana!";
+      } else if (lowerQ.includes("glissante") || lowerQ.includes("verglas") || lowerQ.includes("urubura") || lowerQ.includes("woroheje")) {
+        lawTitle = "Icyapa kiburira Umuhanda Woroheje (Route Glissante)";
+        lawDetails = "Icyapa kiburira gifite ishusho yerekana urubura/ubushyuhe bufi (snowflake/ice) kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko, kwirinda kwamamara cyane, no kwitegereza intera yo kuhagarara.";
+        memoryTip = "Urubura/ibyuma = Umuhanda woroheje. Gabanya umuvuduko!";
+      } else if (lowerQ.includes("kunyuranaho") && (lowerQ.includes("amakamyo") || lowerQ.includes("poids"))) {
+        lawTitle = "Icyapa kibuza Amakamyo Kunyuranaho (Poids-Lourds)";
+        lawDetails = "Uruziga rutukura rugaragaza amakamyo (camion) ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto (légères) zishobora gukomeza kunyuranaho.";
+        memoryTip = "Amakamyo + imodoka nto bigana = Amakamyo nta kunyuranaho. Imodoka nto ziryemerewe!";
+      } else {
+        lawTitle = "Ingingo ya 89-105: Ibyapa n'Ibimenyetso byo mu Muhanda";
+        lawDetails =
+          "**Amabara n'Amategeko yabyo:** " +
+          "🔺 Mpandeshatu + Umuzenguruko Utukura = Ibyapa Biburira (Warning). " +
+          "🔴 Uruziga + Umuzenguruko Utukura = Ibyapa Bibuza (Prohibitory). " +
+          "🔵 Uruziga rw'Ubururu = Ibyapa Bitegeka (Mandatory). " +
+          "🟦 Urukiramende/Kare rw'Ubururu = Ibyapa by'Amakuru (Information). " +
+          "🛑 Mburungushu (Octogone) Itukura = STOP (Hagarara Burundu). " +
+          "🔺 Mpandeshatu Yiburiwe hasi = Give Way / Tanga Inzira.";
+        memoryTip = "Mpandeshatu = Ibyago. Uruziga rutukura = Kubuza. Uruziga rw'ubururu = Gutegeka. Mburungushu = STOP.";
+      }
     } else if (lowerQ.includes("gutambuka") || lowerQ.includes("amasangano") || lowerQ.includes("priorite")) {
       lawTitle = "Ingingo ya 15-17: Uburenganzira bwo Gutambuka Mbere";
       lawDetails =
@@ -294,7 +342,20 @@ IBYAHINDUTSE MU AMATEGEKO YA 2024 (Fata neza ibi ubivuge mu bisobanuro):
 - Inzoga: Igipimo ntarengwa = 0.8 g/l mu maraso; Amande = 150,000 Frw + gufungwa iminsi 5
 - Camera: Tolerance = 10% hejuru y'umuvuduko ugaragazwa n'icyapa; Kwishyura mu minsi 30 kuri Irembo
 - Kurenga itara ritukura: Amande = 25,000–50,000 Frw (reba amakuru mashya)
-- Bluetooth/Hands-free: Byemewe; Telefoni mu ntoki: Bibujijwe burundu haba ku muvuduko uwo ariwose`;
+- Bluetooth/Hands-free: Byemewe; Telefoni mu ntoki: Bibujijwe burundu haba ku muvuduko uwo ariwose
+
+IBYAPA BISHYA BIRI MU KIZAMINI (Q454-Q468 — New Signs Category D):
+- Piste cyclable (Ubururu + igare): Inzira itegetswe amagare gusa
+- Travaux/Ouvriers: Imbere hari imirimo y'umuhanda — gabanya umuvuduko
+- Sens unique (Umwambi munini w'ubururu): Icyerekezo kimwe gusa
+- No Stopping (Uruziga / umurongo umwe): Birabujijwe guhagarara
+- No Parking (P barré / uruziga imirongo ibiri): Birabujijwe guparika
+- STOP (Mburungushu itukura): Hagarara burundu, ha inzira bose
+- Flèche verte conditionnelle: Kata iburyo n'aho itara ritukura, ha inzira abanyamaguru
+- Arrêt de bus: Bisi gusa ihagarara aho
+- Abana/Amashuri: Gabanya umuvuduko cyane
+- Route glissante (urubura/verglas): Umuhanda woroheje — gabanya umuvuduko
+- Amakamyo kunyuranaho (poids-lourds): Amakamyo gusa nta kunyuranaho, imodoka nto byemerewe`;
 
   const userPrompt = `IKIZAMINI CY'AMATEGEKO Y'UMUHANDA:
 Ikibazo: ${req.questionText}
