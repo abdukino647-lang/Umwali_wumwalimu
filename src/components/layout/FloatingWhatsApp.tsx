@@ -29,13 +29,15 @@ export function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Tuvugishe kuri WhatsApp"
-        className="group relative flex items-center justify-center rounded-full shadow-2xl shadow-black/60 transition-transform duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-4 focus:ring-emerald-400/40"
+        className="group relative flex items-center justify-center rounded-full transition-transform duration-200 hover:scale-105 active:scale-95 focus:outline-none"
       >
-        {/* Real official WhatsApp logo */}
-        <WhatsAppIcon className="h-14 w-14 sm:h-16 sm:w-16 drop-shadow-lg" />
-
-        {/* Subtle breathing glow */}
-        <span className="absolute -inset-1 -z-10 animate-ping rounded-full bg-[#25D366]/25 opacity-75 duration-1000 group-hover:hidden" />
+        {/* Soft translucent green outer aura ring (matches official widget) */}
+        <div className="flex items-center justify-center rounded-full bg-[#25D366]/20 p-2 sm:p-2.5 transition-colors group-hover:bg-[#25D366]/30">
+          {/* Solid vibrant green WhatsApp circle button */}
+          <div className="flex h-13 w-13 sm:h-15 sm:w-15 items-center justify-center rounded-full bg-[#25D366] shadow-xl shadow-black/50 transition-colors group-hover:bg-[#20ba59] p-3 sm:p-3.5">
+            <WhatsAppIcon className="h-7 w-7 sm:h-8 sm:w-8" />
+          </div>
+        </div>
 
         {/* Hover label for desktop */}
         <span className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-xl bg-slate-900/95 px-3 py-1.5 text-xs font-semibold text-white shadow-xl border border-cyan-400/20 backdrop-blur-md opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:inline-block">
