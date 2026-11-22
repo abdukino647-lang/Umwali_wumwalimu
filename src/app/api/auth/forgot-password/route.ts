@@ -4,17 +4,17 @@ import { users, passwordResetTokens } from "@/db/schema";
 import { ilike, eq } from "drizzle-orm";
 import { randomBytes } from "crypto";
 
-const GENERIC = "Niba iyi email ifite konti, ubutumwa bwo gusubiramo ijambo ry'ibanga bwashyizweho.";
-
 export async function POST(req: Request) {
   let email = "";
   try {
     ({ email } = await req.json());
   } catch {
-    return NextResponse.json({ message: "Ubusabe ntibwemewe." }, { status: 400 });
+    return NextResponse.json({ success: false, message: "Ubusabe ntibwemewe." }, { status: 400 });
   }
   email = String(email || "").trim().toLowerCase();
-  if (!email) return NextResponse.json({ message: GENERIC });
+  if (!email) {
+    return NextResponse.json({ success: false, message: "Shyiramo email yawe." }, { status: 400 });
+  }
 
   // Use case-insensitive email lookup
   const user = (
@@ -25,25 +25,26 @@ export async function POST(req: Request) {
       .limit(1)
   )[0];
 
-  // If user does not exist, return generic message for security
+  // Informative feedback so the user knows in real-time if the email wasn't found
   if (!user) {
     return NextResponse.json({
-      success: true,
-      message: GENERIC,
-    });
+      success: false,
+      notFound: true,
+      message: `Nta konti ifite iyi email twabonye (${email}). Reba neza ko wayanditse neza cyangwa ubanze wiyandikishe.`,
+    }, { status: 404 });
   }
 
   // One active reset token per user at a time
   await db.delete(passwordResetTokens).where(eq(passwordResetTokens.userId, user.id));
   const token = randomBytes(32).toString("hex");
-  const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+  const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour validity
   await db.insert(passwordResetTokens).values({ token, userId: user.id, expires });
 
-  const base =
-    process.env.APP_URL ||
-    process.env.NEXT_PUBLIC_APP_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : new URL(req.url).origin);
+  // Compute exact origin from the request to guarantee valid link across any domain
+  const origin = new URL(req.url).origin;
+  const base = process.env.APP_URL || process.env.NEXT_PUBLIC_APP_URL || origin;
   const link = `${base}/reset-password?token=${token}`;
+  const relativeLink = `/reset-password?token=${token}`;
 
   const key =
     process.env.RESEND_API_KEY ||
@@ -57,7 +58,12 @@ export async function POST(req: Request) {
     try {
       const { Resend } = await import("resend");
       const resend = new Resend(key);
-      const from = process.env.RESEND_FROM || "Amategeko <onboarding@resend.dev>";
+
+      // Protect against unverified domain error: Resend rejects sending from .vercel.app
+      let from = process.env.RESEND_FROM || "Amategeko <onboarding@resend.dev>";
+      if (from.includes("vercel.app") || from.includes("example.com")) {
+        from = "Amategeko <onboarding@resend.dev>";
+      }
       const recipient = user.email || email;
 
       const result = await resend.emails.send({
@@ -95,21 +101,14 @@ export async function POST(req: Request) {
     }`
   );
 
-  // If email was not successfully dispatched by Resend, return the direct link and error
-  // so the user/admin is NEVER stuck and can immediately reset their password.
-  if (!emailed) {
-    return NextResponse.json({
-      success: false,
-      message:
-        "Twakiriye ubusabe bwawe. Icyakora email ntiyabashije koherezwa binyuze muri Resend. Koresha link iri hasi uhite uhindura ijambo ry'ibanga:",
-      emailError,
-      devResetLink: link,
-    });
-  }
-
   return NextResponse.json({
     success: true,
-    message:
-      "Twoherereje link yo guhindura ijambo ry'ibanga kuri email yawe. Reba muri Inbox cyangwa muri Spam/Junk folder yawe.",
+    emailed,
+    emailError,
+    resetLink: link,
+    relativeResetLink: relativeLink,
+    message: emailed
+      ? `Twoherereje link yo guhindura ijambo ry'ibanga kuri email yawe (${email}). Kandi ushobora no gukanda buto iri hasi uhite uyihindura ako kanya mu gihe nyacyo!`
+      : `Twakiriye ubusabe bwawe. Koresha iyi buto iri hasi uhite ushyiraho ijambo ry'ibanga rishya ako kanya utarindiriye:`,
   });
 }
