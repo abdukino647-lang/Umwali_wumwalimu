@@ -10,23 +10,10 @@ import { loginSchema } from "@/lib/validations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { NextStep, fieldIcon } from "@/components/layout/AuthChrome";
+import { fieldIcon } from "@/components/layout/AuthChrome";
 import { TechBackground } from "@/components/layout/TechBackground";
 import { BackButton } from "@/components/layout/BackButton";
 import { Eye, EyeOff, LogIn, Loader2 } from "lucide-react";
-
-function IntegrityBar({ label }: { label: string }) {
-  return (
-    <div>
-      <div className="mb-1 flex items-center justify-between text-[11px] text-cyan-100/70">
-        <span>{label}</span>
-      </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-        <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-cyan-400 to-amber-300" />
-      </div>
-    </div>
-  );
-}
 
 function LoginFormContent() {
   const router = useRouter();
@@ -107,27 +94,8 @@ function LoginFormContent() {
       </header>
 
       <main className="relative z-10 flex flex-1 items-center justify-center px-4 py-6 sm:py-10">
-        <div className="grid w-full max-w-5xl items-center gap-5 md:grid-cols-[220px_1fr_220px]">
-          {/* Left: integrity */}
-          <div className="order-2 rounded-2xl glass-soft p-4 md:order-1">
-            <div className="mb-3 flex items-center gap-2 text-cyan-200">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
-                <path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />
-              </svg>
-              <span className="text-xs font-semibold">System Security Integrity</span>
-            </div>
-            <div className="space-y-3">
-              <IntegrityBar label="Multi-Factor Auth" />
-              <IntegrityBar label="Data Encryption" />
-            </div>
-            <p className="mt-3 text-[11px] text-cyan-100/60">
-              Status: <span className="font-semibold text-emerald-300">Active</span>
-            </p>
-          </div>
-
-          {/* Center: login card */}
-          <div className="hud glass order-1 rounded-3xl p-7 md:order-2 md:p-9">
-            <div className="mb-6 text-center">
+        <div className="hud glass w-full max-w-lg rounded-3xl p-7 sm:p-9">
+          <div className="mb-6 text-center">
               <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Injira (Login)</h1>
               <p className="mt-2 text-sm text-cyan-100/65">Shyiramo imyirondoro yawe kugira ngo ukomeze amasomo.</p>
             </div>
@@ -248,20 +216,10 @@ function LoginFormContent() {
               )}
             </Button>
 
-            <p className="mt-5 text-center text-sm text-cyan-100/60">
-              Nta konti ufite?{" "}
-              <Link href="/register" className="font-medium text-cyan-300 hover:underline">Iyandikishe hano</Link>
-            </p>
-          </div>
-
-          {/* Right: recommended content */}
-          <div className="order-3 rounded-2xl glass-soft p-4">
-            <p className="mb-3 text-xs font-semibold text-cyan-200">Recommended Advanced Content</p>
-            <div className="space-y-3">
-              <NextStep title="Module 3.1: Traffic Light Logic" />
-              <NextStep title="Assessment: Advanced Right of Way" />
-            </div>
-          </div>
+          <p className="mt-5 text-center text-sm text-cyan-100/60">
+            Nta konti ufite?{" "}
+            <Link href="/register" className="font-medium text-cyan-300 hover:underline">Iyandikishe hano</Link>
+          </p>
         </div>
       </main>
     </div>
