@@ -142,6 +142,77 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "Mu masangano asanzwe adafite ibyapa, ikinyabiziga giturutse iburyo nicyo gitambuka mbere (priorité à droite). " +
         "Muri rond-point, ibinyabiziga biri imbere mu masangano azunguruka nibyo bifite uburenganzira mbere y'ibigiye kwinjiramo.";
       memoryTip = "Amasangano asanzwe = Iburyo buratambuka. Rond-point = Uwurimo atambuka mbere.";
+
+    // -----------------------------------------------------------------------
+    // 2024 LAW UPDATES — Ibihindutse mu amategeko ya 2023/2024
+    // -----------------------------------------------------------------------
+    } else if (lowerQ.includes("moto") && (lowerQ.includes("umwana") || lowerQ.includes("imyaka") || lowerQ.includes("umugenzi"))) {
+      lawTitle = "Amategeko y'Umutekano wo Gutwara Moto — Imyaka y'Umwana (Ivugururwa rya 2024)";
+      lawDetails =
+        "Hakurikijwe amategeko y'u Rwanda ya 2024 (police.gov.rw), **birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto**. " +
+        "Ingingo z'ingenzi: (1) Umushoferi n'umugenzi bagomba kwambara ingofero ifunze neza (casque) — nibura, nta harihariwe; " +
+        "(2) Birabujijwe gutwara abagenzi barenze umwe; " +
+        "(3) Abana bari munsi y'imyaka 12 ntibemerewe gutwara kuri moto kubera impamvu z'umutekano wabo — ingofero zisanzwe ntizibakira neza. " +
+        "⚠️ Gitabo gya kera kivuga 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' — iki AMAKOSA mu mategeko mashya.";
+      memoryTip = "Moto: Munsi y'imyaka 12 bibujijwe. Casque ni ngombwa buri gihe. Umugenzi umwe gusa.";
+
+    } else if (lowerQ.includes("inzoga") || lowerQ.includes("sinze") || lowerQ.includes("bac") || lowerQ.includes("g/l") || lowerQ.includes("maraso")) {
+      lawTitle = "Igipimo cy'Inzoga mu Maraso — BAC (Blood Alcohol Concentration)";
+      lawDetails =
+        "Mu Rwanda, igipimo ntarengwa cy'inzoga cyemewe mu maraso y'umuyobozi ni **0.8 g/l** (garama 0.8 kuri litiro y'amaraso) " +
+        "cyangwa **0.4 mg/l** mu mwuka w'uguhumeka. Kurenza iki gipimo bihanishwa: " +
+        "amande ya 150,000 Frw, gufungwa iminsi 5, no gufatirwa ikinyabiziga. " +
+        "Kubuza gupimwa nayo byahanishwa nk'ikosa rikomeye. " +
+        "⚠️ Polisi y'u Rwanda yifuza zero tolerance — ntiwumve ngo 'gato gato birakwiriye'.";
+      memoryTip = "BAC ntarengwa = 0.8 g/l. Amande = 150,000 Frw. Ntukunde gutwara wasinze!";
+
+    } else if (lowerQ.includes("camera") || lowerQ.includes("amande") || lowerQ.includes("ihazabu") || lowerQ.includes("fines")) {
+      lawTitle = "Amande n'Ibihano bya Camera yo mu Muhanda (Ivugururwa rya 2024)";
+      lawDetails =
+        "Camera zikoreshwa na Polisi y'u Rwanda zigenzura umuvuduko n'amatara: " +
+        "(1) **Camera zihoraho** (Fixed cameras) — ziherereye ku nkingi ku mihanda; " +
+        "(2) **Camera zimurwa** (Mobile cameras) — ku modoka za Polisi; " +
+        "(3) **Camera zo ku matara** (Red-light cameras) — ku masangano. " +
+        "Camera zigira **tolerance ya 10%** hejuru y'umuvuduko ugaragazwa n'icyapa mbere yo kwandika amande. " +
+        "Nk'urugero: umuhanda wa 60 km/h, camera itangira kwandika amande ku 66 km/h. " +
+        "Amande yoherezwa kuri SMS, ikishyurwa mu minsi 30 (kuri fines.police.gov.rw cyangwa Irembo *909#). " +
+        "Kurenga itara ritukura: amande y'amafaranga 25,000–50,000 Frw (reba amakuru mashya kuri police.gov.rw).";
+      memoryTip = "Camera tolerance = 10%. Kwishyura mu minsi 30 kuri Irembo. Itara ritukura = amande nini!";
+
+    } else if (lowerQ.includes("telefoni") || lowerQ.includes("bluetooth") || lowerQ.includes("hands-free") || lowerQ.includes("sms")) {
+      lawTitle = "Amategeko yo Gukoresha Telefoni mu Gihe Utwaye (2023/2024)";
+      lawDetails =
+        "Amategeko y'umuhanda mu Rwanda **abuza burundu** gufata cyangwa gukoresha telefoni igendanwa mu ntoki igihe utwaye ikinyabiziga. " +
+        "**Byemewe gusa:** Gukoresha uburyo bwa Bluetooth / Hands-free budasaba gufata telefoni mu ntoki. " +
+        "**Bibujijwe:** Gufata telefoni, kwandika SMS, kuyitegera, haba ku muvuduko uwo ariwose (n'igihe uhagaze ku tara!). " +
+        "Amande y'ikosa iri = igihano gikomeye + gufatirwa ikinyabiziga mu bihe bimwe.";
+      memoryTip = "Telefoni mu ntoki = Bibujijwe burundu. Bluetooth/Hands-free gusa ni byemewe.";
+
+    } else if (lowerQ.includes("speed governor") || lowerQ.includes("akuma") || lowerQ.includes("kagabanya umuvuduko")) {
+      lawTitle = "Iteka rya Minisitiri ku Twuma Tugabanya Umuvuduko (Speed Governors)";
+      lawDetails =
+        "Ibinyabiziga byose bitwara abagenzi muri rusange (bisi, coaster, twegerane) n'ibitwara imizigo bifite uburemere burenga toni 3.5 " +
+        "bitegetswe kugira **akuma kagabanya umuvuduko (Speed Governor)** gatuma bidashobora kurenza **60 km/h** aho byaba bigenda hose. " +
+        "Polisi y'u Rwanda igenzura ibi buri gihe mu mirimo yo mu muhanda. Kutubahiriza bihanishwa amande ndetse n'iguhagarika ry'uruhushya.";
+      memoryTip = "Speed Governor: Abagenzi + Amakamyo >3.5t = Max 60 km/h. Polisi igenzura buri gihe.";
+
+    } else if (lowerQ.includes("boulevard") || lowerQ.includes("dual carriageway") || lowerQ.includes("sonatubes") || lowerQ.includes("kigali")) {
+      lawTitle = "Umuvuduko Ntarengwa mu Mujyi wa Kigali — Imihanda Migari (2024)";
+      lawDetails =
+        "Mu Mujyi wa Kigali: umuvuduko rusange mu nsisiro ni **40 km/h**. " +
+        "Imihanda migari (Boulevards / Dual Carriageways) ifite ibyapa byemera **60 km/h** ku binyabiziga bito. " +
+        "Imihanda y'igihugu isohoka mu mujyi ishobora kwemerera kugeza kuri **80 km/h** bitewe n'ibyapa. " +
+        "Camera nyinshi zishyizweho ku mihanda ya Kigali — buri gihe ubahirize ibyapa.";
+      memoryTip = "Kigali: Insisiro = 40 km/h. Boulevard = 60 km/h. Hanze y'umujyi = 80 km/h.";
+
+    } else if (lowerQ.includes("abanyamagaru") || lowerQ.includes("piste cyclable") || lowerQ.includes("amagare")) {
+      lawTitle = "Itegeko Rigenga Inzira y'Amagare (Piste Cyclable)";
+      lawDetails =
+        "Inzira yagenewe abanyamagare (piste cyclable) igomba gukoreshwa n'amagare gusa. " +
+        "Ibindi binyabiziga byose bigendeshwa na moteri **birabujijwe** kuyigenderamo cyangwa kuyihagararamo. " +
+        "Abanyamagare bagomba kuyikoresha ntibabangamire abanyamaguru.";
+      memoryTip = "Piste cyclable = Inzira itegetswe amagare; imodoka na moto ntibyemerewe.";
+
     } else {
       lawTitle = `Ingingo y'Amategeko y'Umuhanda mu Rwanda - ${cText}`;
       lawDetails = `Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **${cKey}. ${cText}**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.`;
@@ -202,14 +273,28 @@ async function tryAiExplanation(req: ExplanationRequest): Promise<string | null>
   const systemPrompt = `Uri Mwarimu w'inzobere mu mategeko y'umuhanda mu Rwanda (Certified Rwanda Traffic Law & Police Driving Test Instructor).
 Urasabwa gusobanura ikibazo mu Kinyarwanda cy'umwimerere, kiboneye, kandi gisobanutse neza nta makosa y'imyandikire (100% flawless Rwandan Kinyarwanda).
 
+ISHINGIRO RY'AMATEGEKO:
+- Iteka rya Perezida No 85/01 ryo ku wa 02/09/2002 (rishingiro rya mbere)
+- Iteka rya Perezida No 066/01 ryo ku wa 19/07/2024 (ivugururwa rishya)
+- Law nº 042/2023 of 02/08/2023 (gutwara abantu n'ibintu mu Rwanda)
+- Amabwiriza ya Polisi y'u Rwanda ya 2024 (police.gov.rw)
+
 AMABWIRIZA Y'UBUSOBANURO:
 1. Tangira uvuga igisubizo cy'ukuri neza.
-2. Sobanura neza itegeko ry'umuhanda rigenga iyo ngingo (Iteka rya Perezida No 85/01 ryo ku wa 02/09/2002 rigenga amategeko y'umuhanda mu Rwanda).
+2. Sobanura neza itegeko ry'umuhanda rigenga iyo ngingo, ukandika n'ingingo yavuguruwe niba ihari.
 3. Niba umunyeshuri yaratoranyije igisubizo kitari cyo, musobanurire impamvu icyo yatoranyije kitari cyo n'aho yibeshye.
 4. Niba igisubizo ari "Nta gisubizo cy'ukuri kirimo", sobanura neza impamvu amahitamo yandi yose ari ibinyoma.
 5. Niba igisubizo ari "Ibisubizo byose nibyo", sobanura impamvu buri ngingo yavuzwe ari ukuri.
-6. Soza n'inama y'ingirakamaro (akamenyetso / memory tip) izamufasha kwibuka iki kibazo mu kizamini cya Polisi.
-7. Koresha uburyo bwa Markdown (imitwe y'amagambo, utudomo, amagambo y'ingenzi ashimangiye).`;
+6. Niba hari itandukaniro hagati y'igitabo gya kera n'amategeko mashya ya 2024, tangaza ubwo butandukaniro.
+7. Soza n'inama y'ingirakamaro (akamenyetso / memory tip) izamufasha kwibuka iki kibazo mu kizamini cya Polisi.
+8. Koresha uburyo bwa Markdown (imitwe y'amagambo, utudomo, amagambo y'ingenzi ashimangiye).
+
+IBYAHINDUTSE MU AMATEGEKO YA 2024 (Fata neza ibi ubivuge mu bisobanuro):
+- Moto + Abana: Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto (gitabo gya kera cyibeshye)
+- Inzoga: Igipimo ntarengwa = 0.8 g/l mu maraso; Amande = 150,000 Frw + gufungwa iminsi 5
+- Camera: Tolerance = 10% hejuru y'umuvuduko ugaragazwa n'icyapa; Kwishyura mu minsi 30 kuri Irembo
+- Kurenga itara ritukura: Amande = 25,000–50,000 Frw (reba amakuru mashya)
+- Bluetooth/Hands-free: Byemewe; Telefoni mu ntoki: Bibujijwe burundu haba ku muvuduko uwo ariwose`;
 
   const userPrompt = `IKIZAMINI CY'AMATEGEKO Y'UMUHANDA:
 Ikibazo: ${req.questionText}

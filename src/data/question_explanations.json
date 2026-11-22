@@ -3692,11 +3692,11 @@
   {
     "number": 441,
     "matchText": "Ku bijyanye n'umutekano wo gutwara moto mu Rwanda, ni iyihe ngingo muri izi ikurikira itubahirije amategeko?",
-    "correctKey": "c",
-    "correctText": "Biremewe gutwara umwana w'imyaka 7 ku ntebe y'inyuma ya moto nta nkomyi",
-    "lawTitle": "Amategeko y'Umutekano wo Gutwara Moto n'Abagenzi",
-    "lawDetails": "Mu Rwanda birabujijwe gutwara abana bari munsi y'imyaka 12 kuri moto kubera impamvu z'umutekano wabo. Bityo, igitekerezo kivuga ko 'biremewe gutwara umwana w'imyaka 7' nticyubahirije amategeko. Indi miburo (kwambara casque ifunze neza no kutarenza umugenzi umwe) yo ni amategeko agomba kubahirizwa.",
-    "memoryTip": "Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto."
+    "correctKey": "d",
+    "correctText": "Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto",
+    "lawTitle": "Amategeko y'Umutekano wo Gutwara Moto — Imyaka y'Umwana (2024)",
+    "lawDetails": "Hakurikijwe amategeko y'u Rwanda ya 2024 (police.gov.rw), birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto. Kandi: (1) Umushoferi n'umugenzi bagomba kwambara ingofero ifunze neza (casque); (2) Birabujijwe gutwara abagenzi barenze umwe; (3) Icyapa 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' ni amakosa — ntabwo cyubahirije amategeko kuko abana badafite imyaka 12 babujijwe kandi nkomyi/casque ni ngombwa buri gihe.",
+    "memoryTip": "Moto: Munsi y'imyaka 12 bibujijwe. Casque ni ngombwa buri gihe. Umugenzi umwe gusa."
   },
   {
     "number": 442,
@@ -3740,8 +3740,8 @@
     "correctKey": "c",
     "correctText": "25,000 Frw",
     "lawTitle": "Ibihano by'Amande ku Kurenga ku Tara Ritukura",
-    "lawDetails": "Kurenga ku matara amurika yo mu muhanda (cyane cyane itara ritukura) cyangwa kutubahiriza amabwiriza y'umupolisi uyobora umuhanda ni ikosa rikomeye ry'amande angana n'amafaranga y'u Rwanda ibihumbi makumyabiri na bitanu (25,000 Frw) ndetse n'ibindi bihano bishobora gukurikiraho habaye impanuka.",
-    "memoryTip": "Kurenga ku tara ritukura = Amande ya 25,000 Frw."
+    "lawDetails": "Kurenga ku matara amurika yo mu muhanda (cyane cyane itara ritukura) cyangwa kutubahiriza amabwiriza y'umupolisi uyobora umuhanda ni ikosa rikomeye. Hakurikijwe amategeko ya 2024, amande yo kurenga itara ritukura ishobora kuba yahishuwe kugera kuri 50,000 Frw (kwemezwa kuri fines.police.gov.rw). Gitabo gya kera kivuga 25,000 Frw. Buri gihe ubaha amategeko kugira ngo wirinde ihazabu no gufatirwa ikinyabiziga.",
+    "memoryTip": "Kurenga ku tara ritukura = Amande nini (25,000–50,000 Frw). Buri gihe hagarara ku tara ritukura!"
   },
   {
     "number": 447,
