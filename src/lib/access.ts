@@ -2,11 +2,7 @@ import { db } from "@/db";
 import { appSettings } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-// Phone number a student contacts to renew/extend access.
-export const SUPPORT_PHONE = "0783399816";
-
-// Direct WhatsApp link (+250 785 155 151) without showing the raw number on UI
-export const WHATSAPP_URL = "https://wa.me/250785155151";
+export { SUPPORT_PHONE, WHATSAPP_URL } from "./contact";
 
 const DEFAULT_TRIAL_FALLBACK = 2;
 

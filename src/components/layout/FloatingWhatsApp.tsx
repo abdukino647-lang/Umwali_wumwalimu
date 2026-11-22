@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { WHATSAPP_URL } from "@/lib/access";
+import { WHATSAPP_URL } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function FloatingWhatsApp() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TechBackground } from "@/components/layout/TechBackground";
-import { WHATSAPP_URL } from "@/lib/access";
+import { WHATSAPP_URL } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { UserPlus, BookOpen, Award, ArrowRight } from "lucide-react";
 
