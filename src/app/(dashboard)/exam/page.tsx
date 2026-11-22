@@ -31,8 +31,8 @@ export default async function ExamPage() {
       </div>
       <div className="mb-8 text-center">
         <h1 className="text-glow text-2xl font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h1>
-        <p className="text-cyan-100/65">
-          Ibibazo 20 bivanze mu byiciro byose: A (5) • B (5) • C (5) • D (1) • Imyitwarire n&apos;Ibitego (4) • Iminota 20
+        <p className="mt-1 text-sm text-cyan-100/65">
+          Ibibazo 20 • Iminota 20
         </p>
       </div>
       <QuizEngine

@@ -162,15 +162,11 @@ export default async function DashboardPage() {
             </div>
             <div>
               <h3 className="text-lg font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h3>
-              <p className="mt-1 text-sm text-cyan-100/65">
-                Ibibazo 20 bivanze mu byiciro byose: A (5), B (5), C (5), D (1) n&apos;imyitwarire y&apos;umuhanda (4) — bikorwa mu kizunguruko (loop) kitasubiramo ibibazo.
-              </p>
               <div className="mt-2 flex flex-wrap gap-2 text-[11px] font-medium">
                 <span className="inline-flex items-center gap-1 rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">
                   <Timer className="h-3 w-3" /> Iminota 20
                 </span>
                 <span className="rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">Ibibazo 20</span>
-                <span className="rounded-full bg-cyan-400/15 px-2.5 py-0.5 text-cyan-200">A · B · C · D · Scenarios</span>
               </div>
             </div>
           </div>

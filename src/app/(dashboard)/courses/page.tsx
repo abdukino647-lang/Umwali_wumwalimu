@@ -140,7 +140,12 @@ export default async function CoursesPage() {
             </div>
             <div>
               <h3 className="font-bold text-white">Ikizamini Rusange cy&apos;Iminota 20</h3>
-              <p className="text-xs text-cyan-100/60">Ibibazo 20 bivanze mu byiciro byose: A (5), B (5), C (5), D (1) n&apos;imyitwarire (4).</p>
+              <div className="mt-1 flex flex-wrap gap-2 text-[11px] font-medium">
+                <span className="inline-flex items-center gap-1 rounded-full bg-cyan-400/15 px-2 py-0.5 text-cyan-200">
+                  <Timer className="h-3 w-3" /> Iminota 20
+                </span>
+                <span className="rounded-full bg-cyan-400/15 px-2 py-0.5 text-cyan-200">Ibibazo 20</span>
+              </div>
             </div>
           </div>
           <span className="glow-btn inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-5 font-semibold text-white">
