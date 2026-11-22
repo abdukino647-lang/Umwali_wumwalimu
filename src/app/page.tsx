@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TechBackground } from "@/components/layout/TechBackground";
+import { WHATSAPP_URL } from "@/lib/access";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { UserPlus, BookOpen, Award, ArrowRight } from "lucide-react";
 
 export default function Home() {
@@ -93,7 +95,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 flex flex-col items-center gap-2 border-t border-cyan-400/10 px-6 py-5 sm:flex-row">
         <p className="text-xs text-cyan-100/50">© 2026 Amategeko y&apos;Umuhanda Platform. Uburenganzira bwose burabitswe.</p>
-        <nav className="sm:ml-auto flex gap-5">
+        <nav className="sm:ml-auto flex items-center gap-5">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-[#25D366] transition-colors hover:text-white"
+            title="Tuvugishe kuri WhatsApp"
+          >
+            <WhatsAppIcon className="h-4 w-4" colored />
+            <span>WhatsApp</span>
+          </a>
           <Link href="/login" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Kwinjira</Link>
           <Link href="/register" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Kwiyandikisha</Link>
         </nav>

@@ -7,8 +7,9 @@ import { eq, ilike } from "drizzle-orm";
 import { DashboardNav } from "@/components/layout/DashboardNav";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { TechBackground } from "@/components/layout/TechBackground";
-import { accessActive, daysRemaining, SUPPORT_PHONE } from "@/lib/access";
+import { accessActive, daysRemaining, SUPPORT_PHONE, WHATSAPP_URL } from "@/lib/access";
 import { isConfiguredAdminEmail } from "@/lib/admin-list";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Clock, Phone, LogOut, Shield } from "lucide-react";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -76,9 +77,23 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <p className="mt-3 text-sm text-cyan-100/70">
             Igihe cyo kwiga cyararangiye. Kugira ngo ukomeze ukoreshe sisitemu, hamagara cyangwa wandikire kuri:
           </p>
-          <a href={`tel:${SUPPORT_PHONE}`} className="mt-4 inline-flex items-center gap-2 rounded-xl glass-soft px-5 py-2.5 text-lg font-bold text-cyan-200">
-            <Phone className="h-5 w-5 text-cyan-300" /> {SUPPORT_PHONE}
-          </a>
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={`tel:${SUPPORT_PHONE}`}
+              className="inline-flex items-center gap-2 rounded-xl glass-soft px-5 py-2.5 text-base font-bold text-cyan-200 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <Phone className="h-5 w-5 text-cyan-300" /> {SUPPORT_PHONE}
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-base font-bold text-white shadow-lg shadow-[#25D366]/20 transition-all hover:bg-[#20ba59]"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
           <p className="mt-3 text-xs text-cyan-100/55">Umuyobozi azakongerera iminsi / ibyumweru / amezi nyuma yo kumvikana.</p>
           <form action={signOutAction} className="mt-6">
             <button type="submit" className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-cyan-400/25 bg-white/5 px-4 text-sm text-cyan-100/85 transition-colors hover:bg-white/10 hover:text-white">
@@ -149,6 +164,19 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <footer className="relative z-10 hidden border-t border-cyan-400/10 px-6 py-4 text-center md:block">
         <p className="text-xs text-cyan-100/45">© 2026 Amategeko y&apos;Umuhanda Advanced Platform. All rights reserved.</p>
       </footer>
+
+      {/* Floating WhatsApp Quick Contact */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full bg-[#25D366] p-3 text-white shadow-lg shadow-black/40 transition-all hover:scale-105 hover:bg-[#20ba59] md:bottom-6 md:right-6"
+        title="Tuvugishe kuri WhatsApp"
+        aria-label="WhatsApp Support"
+      >
+        <WhatsAppIcon className="h-6 w-6" colored />
+        <span className="hidden pr-1 text-sm font-semibold sm:inline">WhatsApp</span>
+      </a>
     </div>
   );
 }

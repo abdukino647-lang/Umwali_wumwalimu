@@ -1,9 +1,10 @@
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { desc } from "drizzle-orm";
-import { daysRemaining, getDefaultTrialDays, SUPPORT_PHONE } from "@/lib/access";
+import { daysRemaining, getDefaultTrialDays, SUPPORT_PHONE, WHATSAPP_URL } from "@/lib/access";
 import { setUserActive, addUserDays, addUserDaysForm, setDefaultTrialForm } from "./actions";
 import { AutoRefresh } from "@/components/layout/AutoRefresh";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export const dynamic = "force-dynamic";
 
@@ -41,8 +42,18 @@ export default async function AdminUsersPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-glow text-2xl font-extrabold text-white md:text-3xl">Abakoresha (Users)</h1>
-          <p className="mt-1 text-sm text-cyan-100/65">
-            Genzura konti z&apos;abanyeshuri — gufungura/guhagarika no kongera iminsi. Telefoni y&apos;ubufasha: {SUPPORT_PHONE}
+          <p className="mt-1 text-sm text-cyan-100/65 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>Genzura konti z&apos;abanyeshuri — gufungura/guhagarika no kongera iminsi. Telefoni: {SUPPORT_PHONE}</span>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 px-2.5 py-0.5 text-xs font-semibold text-[#25D366] hover:bg-[#25D366]/25 transition-colors"
+              title="Kwandikira kuri WhatsApp"
+            >
+              <WhatsAppIcon className="h-3.5 w-3.5" colored />
+              <span>WhatsApp</span>
+            </a>
           </p>
         </div>
         <div className="grid grid-cols-3 gap-2 text-center text-sm sm:flex sm:gap-3">
