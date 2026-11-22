@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <polygon points="100,10 195,175 5,175" fill="#ffffff" stroke="#dc2626" stroke-width="16" stroke-linejoin="round"/>
+  <!-- Adult silhouette -->
+  <circle cx="82" cy="78" r="10" fill="#1e293b"/>
+  <path d="M74,92 L90,92 L94,130 L88,155 M88,125 L80,155 M74,98 L64,120 M90,98 L105,115" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Child silhouette -->
+  <circle cx="120" cy="96" r="8" fill="#1e293b"/>
+  <path d="M114,108 L126,108 L128,135 L124,155 M124,132 L116,155 M114,112 L105,115" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

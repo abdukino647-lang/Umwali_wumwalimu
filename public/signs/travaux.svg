@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <polygon points="100,10 195,175 5,175" fill="#ffffff" stroke="#dc2626" stroke-width="16" stroke-linejoin="round"/>
+  <!-- Worker silhouette digging -->
+  <circle cx="90" cy="85" r="10" fill="#1e293b"/>
+  <path d="M88,96 L108,125 L100,155 M108,125 L120,155 M85,102 L70,118 L85,130" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="85" y1="120" x2="128" y2="150" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="124,146 138,156 128,160" fill="#1e293b"/>
+  <path d="M135,162 Q145,150 155,162 Z" fill="#1e293b"/>
+</svg>

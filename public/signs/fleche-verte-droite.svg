@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect x="30" y="15" width="140" height="170" rx="20" fill="#0f172a" stroke="#334155" stroke-width="6"/>
+  <circle cx="100" cy="100" r="55" fill="#022c22" stroke="#065f46" stroke-width="4"/>
+  <!-- Glowing green arrow right -->
+  <line x1="65" y1="100" x2="125" y2="100" stroke="#10b981" stroke-width="14" stroke-linecap="round"/>
+  <polygon points="140,100 115,80 115,120" fill="#10b981"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <polygon points="100,10 195,175 5,175" fill="#ffffff" stroke="#dc2626" stroke-width="16" stroke-linejoin="round"/>
+  <!-- Car with skid marks -->
+  <rect x="80" y="95" width="42" height="22" rx="5" fill="#1e293b"/>
+  <circle cx="88" cy="120" r="5" fill="#1e293b"/>
+  <circle cx="114" cy="120" r="5" fill="#1e293b"/>
+  <path d="M70,140 Q85,128 75,120 Q65,115 80,105" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M110,140 Q125,128 115,120 Q105,115 120,105" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+</svg>

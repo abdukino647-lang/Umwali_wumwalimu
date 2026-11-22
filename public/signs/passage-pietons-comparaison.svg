@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="320" height="180">
+  <!-- Left: Warning Triangle (Danger) -->
+  <g transform="translate(10, 5)">
+    <polygon points="70,8 135,140 5,140" fill="#ffffff" stroke="#dc2626" stroke-width="12" stroke-linejoin="round"/>
+    <circle cx="70" cy="58" r="7" fill="#1e293b"/>
+    <path d="M70,67 L70,102 M70,80 L58,95 M70,80 L82,95 M70,102 L60,125 M70,102 L80,125" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+    <!-- Zebra bars below -->
+    <line x1="45" y1="128" x2="95" y2="128" stroke="#1e293b" stroke-width="3" stroke-dasharray="6,4"/>
+    <text x="70" y="162" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444" text-anchor="middle">Icyapa Kiburira</text>
+  </g>
+  <!-- Right: Blue Square (Indication) -->
+  <g transform="translate(170, 5)">
+    <rect x="10" y="10" width="130" height="130" rx="16" fill="#1d4ed8" stroke="#ffffff" stroke-width="3"/>
+    <!-- White triangle inside square -->
+    <polygon points="75,20 128,125 22,125" fill="#ffffff"/>
+    <circle cx="75" cy="56" r="7" fill="#1d4ed8"/>
+    <path d="M75,65 L75,100 M75,76 L63,90 M75,76 L87,90 M75,100 L65,118 M75,100 L85,118" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round"/>
+    <!-- Zebra bars -->
+    <line x1="45" y1="120" x2="105" y2="120" stroke="#1d4ed8" stroke-width="3" stroke-dasharray="6,4"/>
+    <text x="75" y="162" font-family="Arial" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">Icyapa Cyerekana</text>
+  </g>
+</svg>

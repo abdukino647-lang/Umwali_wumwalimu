@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="94" fill="#1d4ed8" stroke="#ffffff" stroke-width="4"/>
+  <!-- bicycle wheels -->
+  <circle cx="60" cy="125" r="24" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <circle cx="140" cy="125" r="24" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <!-- frame -->
+  <polyline points="60,125 90,125 125,95 85,95 60,125" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+  <line x1="90" y1="125" x2="105" y2="80" stroke="#ffffff" stroke-width="6"/>
+  <line x1="95" y1="80" x2="115" y2="80" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <line x1="140" y1="125" x2="120" y2="75" stroke="#ffffff" stroke-width="6"/>
+  <polyline points="110,75 125,75 130,85" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

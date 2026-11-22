@@ -10222,7 +10222,9 @@
     ],
     "correctKey": "b",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni B. Ibyapa bya camera biburira abashoferi kubahiriza umuvuduko ntarengwa wagenwe n'amatara yo mu muhanda kugira ngo bakumire impanuka."
+    "explanation": "Igisubizo cy'ukuri ni B. Ibyapa bya camera biburira abashoferi kubahiriza umuvuduko ntarengwa wagenwe n'amatara yo mu muhanda kugira ngo bakumire impanuka.",
+    "signImageUrl": "/signs/speed-camera.svg",
+    "image": "/signs/speed-camera.svg"
   },
   {
     "number": 435,
@@ -10322,7 +10324,9 @@
     ],
     "correctKey": "b",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni B. 'BUS ONLY' isobanura igisate cy'umuhanda cyahariwe amabisi y'abagenzi gusa; ibindi binyabiziga bibujijwe kukigenderamo."
+    "explanation": "Igisubizo cy'ukuri ni B. 'BUS ONLY' isobanura igisate cy'umuhanda cyahariwe amabisi y'abagenzi gusa; ibindi binyabiziga bibujijwe kukigenderamo.",
+    "signImageUrl": "/signs/bus-only.svg",
+    "image": "/signs/bus-only.svg"
   },
   {
     "number": 439,
@@ -10347,7 +10351,9 @@
     ],
     "correctKey": "c",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni C. Inzira y'amagare (piste cyclable) itegetswe abanyamagare, ibindi binyabiziga byose bifite moteri bibujijwe kuyikoresha."
+    "explanation": "Igisubizo cy'ukuri ni C. Inzira y'amagare (piste cyclable) itegetswe abanyamagare, ibindi binyabiziga byose bifite moteri bibujijwe kuyikoresha.",
+    "signImageUrl": "/signs/piste-cyclable.svg",
+    "image": "/signs/piste-cyclable.svg"
   },
   {
     "number": 440,
@@ -10572,7 +10578,9 @@
     ],
     "correctKey": "a",
     "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni A. Mpandeshatu iburira ko uhegereye aho abanyamaguru bambukira, naho kare y'ubururu yerekana aho inzira iherereye nyirizina."
+    "explanation": "Igisubizo cy'ukuri ni A. Mpandeshatu iburira ko uhegereye aho abanyamaguru bambukira, naho kare y'ubururu yerekana aho inzira iherereye nyirizina.",
+    "signImageUrl": "/signs/passage-pietons-comparaison.svg",
+    "image": "/signs/passage-pietons-comparaison.svg"
   },
   {
     "number": 449,
@@ -10596,8 +10604,10 @@
       }
     ],
     "correctKey": "b",
-    "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni B. Icyapa kibuza amakamyo n'ibinyabiziga bitwara imizigo > 3.5t kunyuranaho mu muhanda."
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa kibuza amakamyo n'ibinyabiziga bitwara imizigo > 3.5t kunyuranaho mu muhanda.",
+    "signImageUrl": "/signs/interdiction-depasser-camion.svg",
+    "image": "/signs/interdiction-depasser-camion.svg"
   },
   {
     "number": 450,
@@ -10671,8 +10681,10 @@
       }
     ],
     "correctKey": "b",
-    "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni B. 'P' mu rukiramende rw'ubururu ni icyapa cyerekana ahantu hemerewe guparika (Parking)."
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. 'P' mu rukiramende rw'ubururu ni icyapa cyerekana ahantu hemerewe guparika (Parking).",
+    "signImageUrl": "/signs/parking.svg",
+    "image": "/signs/parking.svg"
   },
   {
     "number": 453,
@@ -10696,8 +10708,10 @@
       }
     ],
     "correctKey": "b",
-    "category": "text",
-    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire)."
+    "category": "ibyapa",
+    "explanation": "Igisubizo cy'ukuri ni B. Icyapa cy'uruziga rutukura kirimo umurongo wera utambitse gisobanura 'Sens Interdit' (Ntuhinjire).",
+    "signImageUrl": "/signs/sens-interdit.svg",
+    "image": "/signs/sens-interdit.svg"
   },
   {
     "number": 454,
@@ -10722,7 +10736,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Icyapa cy'ubururu gifite ishusho y'igare (Piste cyclable) ni itegeko: Inzira itegetswe amagare gusa. Imodoka n'amapikipiki bifite moteri bibujijwe burundu."
+    "explanation": "Icyapa cy'ubururu gifite ishusho y'igare (Piste cyclable) ni itegeko: Inzira itegetswe amagare gusa. Imodoka n'amapikipiki bifite moteri bibujijwe burundu.",
+    "signImageUrl": "/signs/piste-cyclable.svg",
+    "image": "/signs/piste-cyclable.svg"
   },
   {
     "number": 455,
@@ -10747,7 +10763,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Icyapa cy'ouvriers/travaux cyerekana ko imbere hari imirimo y'umuhanda. Ugomba kugabanya umuvuduko no kwitonda kubera akaga k'abakozi bari hafi."
+    "explanation": "Icyapa cy'ouvriers/travaux cyerekana ko imbere hari imirimo y'umuhanda. Ugomba kugabanya umuvuduko no kwitonda kubera akaga k'abakozi bari hafi.",
+    "signImageUrl": "/signs/travaux.svg",
+    "image": "/signs/travaux.svg"
   },
   {
     "number": 456,
@@ -10772,7 +10790,9 @@
     ],
     "correctKey": "a",
     "category": "ibyapa",
-    "explanation": "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe (Sens unique). Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe."
+    "explanation": "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe (Sens unique). Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe.",
+    "signImageUrl": "/signs/sens-unique.svg",
+    "image": "/signs/sens-unique.svg"
   },
   {
     "number": 457,
@@ -10797,7 +10817,9 @@
     ],
     "correctKey": "c",
     "category": "ibyapa",
-    "explanation": "Uruziga rufite umurongo umwe utukura urambura (/) cyangwa umucyo utukura bisobanura 'No Stopping' (Birabujijwe guhagarara). Uruziga rufite imirongo ibiri itukura (X) bisobanura 'No Parking' (Birabujijwe guparika)."
+    "explanation": "Uruziga rufite umurongo umwe utukura urambura (/) cyangwa umucyo utukura bisobanura 'No Stopping' (Birabujijwe guhagarara). Uruziga rufite imirongo ibiri itukura (X) bisobanura 'No Parking' (Birabujijwe guparika).",
+    "signImageUrl": "/signs/stationnement-interdit.svg",
+    "image": "/signs/stationnement-interdit.svg"
   },
   {
     "number": 458,
@@ -10822,7 +10844,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Inyuguti 'P' ifite umurongo utukura urambura (/P) cyangwa uruziga rutukura rifite inyuguti P imbere bisobanura 'No Parking' — Birabujijwe guparika aho hantu."
+    "explanation": "Inyuguti 'P' ifite umurongo utukura urambura (/P) cyangwa uruziga rutukura rifite inyuguti P imbere bisobanura 'No Parking' — Birabujijwe guparika aho hantu.",
+    "signImageUrl": "/signs/p-barre.svg",
+    "image": "/signs/p-barre.svg"
   },
   {
     "number": 459,
@@ -10847,7 +10871,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Icyapa cy'octogone (mburungushu) yera n'itukura rifite 'STOP' kitegeka guhagarara BURUNDU (tires zose zigomba guhagarara ku murongo) no guha inzira ibinyabiziga biganisha binyuraho, maze ukomeze uje ubonye ko nta kinyabiziga giturutse."
+    "explanation": "Icyapa cy'octogone (mburungushu) yera n'itukura rifite 'STOP' kitegeka guhagarara BURUNDU (tires zose zigomba guhagarara ku murongo) no guha inzira ibinyabiziga biganisha binyuraho, maze ukomeze uje ubonye ko nta kinyabiziga giturutse.",
+    "signImageUrl": "/signs/stop.svg",
+    "image": "/signs/stop.svg"
   },
   {
     "number": 460,
@@ -10872,7 +10898,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Uruziga rutukura rufite ishusho y'ibinyabiziga bibiri bitaganye ni 'Interdiction de dépasser' — Birabujijwe kunyuranaho ku binyabiziga byose (ntabwo ari amakamyo gusa). Icyapa gifite ibinyabiziga bibiri cy'amabara atandukanye ni icyaba kibuza amakamyo gusa kunyuranaho."
+    "explanation": "Uruziga rutukura rufite ishusho y'ibinyabiziga bibiri bitaganye ni 'Interdiction de dépasser' — Birabujijwe kunyuranaho ku binyabiziga byose (ntabwo ari amakamyo gusa). Icyapa gifite ibinyabiziga bibiri cy'amabara atandukanye ni icyaba kibuza amakamyo gusa kunyuranaho.",
+    "signImageUrl": "/signs/interdiction-depasser.svg",
+    "image": "/signs/interdiction-depasser.svg"
   },
   {
     "number": 461,
@@ -10897,7 +10925,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Umwambi munini w'ubururu werekana imbere (hejuru) ni itegeko: Ugomba gukomeza imbere gusa kuri uwo muhanda. Kukata iburyo cyangwa ibumoso birabujijwe aho hantu."
+    "explanation": "Umwambi munini w'ubururu werekana imbere (hejuru) ni itegeko: Ugomba gukomeza imbere gusa kuri uwo muhanda. Kukata iburyo cyangwa ibumoso birabujijwe aho hantu.",
+    "signImageUrl": "/signs/direction-tout-droit.svg",
+    "image": "/signs/direction-tout-droit.svg"
   },
   {
     "number": 462,
@@ -10922,7 +10952,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Uruziga rw'ubururu rufite imyambi ibiri (iburyo+ibumoso) ni itegeko: Ugomba gukata iburyo cyangwa ibumoso. Birabujijwe gukomeza imbere aho hantu."
+    "explanation": "Uruziga rw'ubururu rufite imyambi ibiri (iburyo+ibumoso) ni itegeko: Ugomba gukata iburyo cyangwa ibumoso. Birabujijwe gukomeza imbere aho hantu.",
+    "signImageUrl": "/signs/direction-gauche-droite.svg",
+    "image": "/signs/direction-gauche-droite.svg"
   },
   {
     "number": 463,
@@ -10947,7 +10979,9 @@
     ],
     "correctKey": "a",
     "category": "ibyapa",
-    "explanation": "Uruziga rutukura rugaragaza ishusho y'amakamyo ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto zishobora kunyuranaho."
+    "explanation": "Uruziga rutukura rugaragaza ishusho y'amakamyo ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto zishobora kunyuranaho.",
+    "signImageUrl": "/signs/interdiction-depasser-camion.svg",
+    "image": "/signs/interdiction-depasser-camion.svg"
   },
   {
     "number": 464,
@@ -10972,7 +11006,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Icyapa kiburira gifite ishusho yerekana urubura/ubushyuhe bufi (snowflake/ice) cyangwa imiraba ireremba kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko kandi ugakoresha precaution."
+    "explanation": "Icyapa kiburira gifite ishusho yerekana urubura/ubushyuhe bufi (snowflake/ice) cyangwa imiraba ireremba kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko kandi ugakoresha precaution.",
+    "signImageUrl": "/signs/route-glissante.svg",
+    "image": "/signs/route-glissante.svg"
   },
   {
     "number": 465,
@@ -10997,7 +11033,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Uruziga rufite ishusho y'inzoga (verre) ufite umurongo utukura bisobanura ko birabujijwe gutwara nyuma yo kunywa inzoga. Igipimo ntarengwa cy'inzoga mu maraso y'umuyobozi ni 0.8 g/l mu Rwanda."
+    "explanation": "Uruziga rufite ishusho y'inzoga (verre) ufite umurongo utukura bisobanura ko birabujijwe gutwara nyuma yo kunywa inzoga. Igipimo ntarengwa cy'inzoga mu maraso y'umuyobozi ni 0.8 g/l mu Rwanda.",
+    "signImageUrl": "/signs/alcool-interdit.svg",
+    "image": "/signs/alcool-interdit.svg"
   },
   {
     "number": 466,
@@ -11022,7 +11060,9 @@
     ],
     "correctKey": "b",
     "category": "ibyapa",
-    "explanation": "Umwambi w'icyatsi werekana iburyo (flèche verte conditionnelle) usobanura ko wemerewe gukatira iburyo ndetse n'aho itara ritukura rimurika — ariko ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo."
+    "explanation": "Umwambi w'icyatsi werekana iburyo (flèche verte conditionnelle) usobanura ko wemerewe gukatira iburyo ndetse n'aho itara ritukura rimurika — ariko ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo.",
+    "signImageUrl": "/signs/fleche-verte-droite.svg",
+    "image": "/signs/fleche-verte-droite.svg"
   },
   {
     "number": 467,
@@ -11047,7 +11087,9 @@
     ],
     "correctKey": "a",
     "category": "ibyapa",
-    "explanation": "Icyapa cy'arrêt de bus (ahantu abagenzi basitara) cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira kuko bihutisha abagenzi."
+    "explanation": "Icyapa cy'arrêt de bus (ahantu abagenzi basitara) cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira kuko bihutisha abagenzi.",
+    "signImageUrl": "/signs/arret-bus.svg",
+    "image": "/signs/arret-bus.svg"
   },
   {
     "number": 468,
@@ -11072,6 +11114,8 @@
     ],
     "correctKey": "a",
     "category": "ibyapa",
-    "explanation": "Icyapa kiburira gifite ishusho y'abana cyangwa abantu babiri gisobanura ko imbere hari amashuri, inzira y'abana, cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko kandi witondere."
+    "explanation": "Icyapa kiburira gifite ishusho y'abana cyangwa abantu babiri gisobanura ko imbere hari amashuri, inzira y'abana, cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko kandi witondere.",
+    "signImageUrl": "/signs/passage-enfants.svg",
+    "image": "/signs/passage-enfants.svg"
   }
 ]
