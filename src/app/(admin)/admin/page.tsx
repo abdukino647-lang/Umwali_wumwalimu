@@ -51,7 +51,7 @@ export default async function AdminUsersPage() {
               className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 px-2.5 py-0.5 text-xs font-semibold text-[#25D366] hover:bg-[#25D366]/25 transition-colors"
               title="Kwandikira kuri WhatsApp"
             >
-              <WhatsAppIcon className="h-3.5 w-3.5" colored />
+              <WhatsAppIcon className="h-3.5 w-3.5" />
               <span>WhatsApp</span>
             </a>
           </p>

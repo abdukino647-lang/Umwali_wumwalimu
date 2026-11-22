@@ -164,19 +164,6 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <footer className="relative z-10 hidden border-t border-cyan-400/10 px-6 py-4 text-center md:block">
         <p className="text-xs text-cyan-100/45">© 2026 Amategeko y&apos;Umuhanda Advanced Platform. All rights reserved.</p>
       </footer>
-
-      {/* Floating WhatsApp Quick Contact */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full bg-[#25D366] p-3 text-white shadow-lg shadow-black/40 transition-all hover:scale-105 hover:bg-[#20ba59] md:bottom-6 md:right-6"
-        title="Tuvugishe kuri WhatsApp"
-        aria-label="WhatsApp Support"
-      >
-        <WhatsAppIcon className="h-6 w-6" colored />
-        <span className="hidden pr-1 text-sm font-semibold sm:inline">WhatsApp</span>
-      </a>
     </div>
   );
 }

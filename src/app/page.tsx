@@ -103,7 +103,7 @@ export default function Home() {
             className="inline-flex items-center gap-1.5 text-xs text-[#25D366] transition-colors hover:text-white"
             title="Tuvugishe kuri WhatsApp"
           >
-            <WhatsAppIcon className="h-4 w-4" colored />
+            <WhatsAppIcon className="h-4 w-4" />
             <span>WhatsApp</span>
           </a>
           <Link href="/login" className="text-xs text-cyan-100/50 transition-colors hover:text-white">Kwinjira</Link>
