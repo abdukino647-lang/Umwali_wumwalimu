@@ -3807,42 +3807,6 @@
     "memoryTip": "Uruziga rutukura rurimo umurongo w'umweru utambitse = Sens interdit (Ntuhinjire)."
   },
   {
-    "number": 454,
-    "matchText": "Icyapa cy'ubururu gifite ishusho y'igare (vélo) ryera gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Inzira itegetswe amagare — ibindi binyabiziga bifite moteri bibujijwe kuyikoresha",
-    "lawTitle": "Itegeko rigenga Piste Cyclable — Inzira y'Amagare",
-    "lawDetails": "Icyapa cy'ubururu gifite igare (Piste cyclable) ni itegeko ryatanzwe n'amabwiriza y'umuhanda. Inzira yagenewe amagare gusa — imodoka, amapikipiki, n'ibindi binyabiziga bifite moteri birabujijwe kuyikoresha. Abanyamagare ni bo bonyine bemerewe kuyikoresha.",
-    "memoryTip": "Ubururu + igare = Piste cyclable. Imodoka n'amapikipiki birabujijwe!"
-  },
-  {
-    "number": 455,
-    "matchText": "Icyapa gifite ishusho y'abantu bubatse (ouvriers/travaux) gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Imbere hari imirimo y'umuhanda — gabanya umuvuduko kandi witondere",
-    "lawTitle": "Icyapa cy'Imirimo y'Umuhanda (Travaux)",
-    "lawDetails": "Icyapa cy'ouvriers/travaux (imirimo y'umuhanda) kikuburira ko imbere hari abakozi bakoraho umuhanda. Ugomba kugabanya umuvuduko, kwitondereza ibimenyetso by'agateganyo, no kubahiriza amabwiriza y'umuyobozi w'imirimo (signaleur).",
-    "memoryTip": "Ouvriers = Imirimo. Gabanya umuvuduko, witondere abakozi bari hafi!"
-  },
-  {
-    "number": 456,
-    "matchText": "Icyapa cy'umwambi munini w'ubururu (flèche bleue) werekana icyerekezo kimwe gisa na ci 'Sens unique' gisobanura iki?",
-    "correctKey": "a",
-    "correctText": "Umuhanda ufungura mu cyerekezo cyerekanywe gusa — inzira y'icyerekezo kimwe (Sens unique)",
-    "lawTitle": "Inzira y'Icyerekezo Kimwe (Sens Unique)",
-    "lawDetails": "Umwambi munini w'ubururu ni icyapa cy'amakuru (panneaux de signalisation d'information) cyerekana inzira y'icyerekezo kimwe gusa. Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe. Birabujijwe burundu gutera imbere mu rundi ruhande.",
-    "memoryTip": "Umwambi munini w'ubururu = Sens unique. Icyerekezo kimwe gusa!"
-  },
-  {
-    "number": 457,
-    "matchText": "Icyapa cy'uruziga rufite umurongo umwe utukura urambura hagati (barré) gisobanura iki?",
-    "correctKey": "c",
-    "correctText": "Birabujijwe guhagarara no guparika ku ruhande rw'umuhanda (No Stopping / No Waiting)",
-    "lawTitle": "Icyapa kibuza Guhagarara (No Stopping)",
-    "lawDetails": "Uruziga rufite umurongo umwe utukura (/) bisobanura 'No Stopping' — Birabujijwe guhagarara na gato aho hantu (haba guparika, gusitama, cyangwa gutegereza). Uruziga rufite imirongo ibiri itukura (XX) bisobanura 'No Parking' (Birabujijwe guparika, ariko guhagarara akanya gato byemewe gufuta abagenzi).",
-    "memoryTip": "Umurongo umwe (/) = No Stopping. Imirongo ibiri (XX) = No Parking."
-  },
-  {
     "number": 458,
     "matchText": "Icyapa gifite inyuguti 'P' n'umurongo utukura urambura (P barré) gisobanura iki?",
     "correctKey": "b",
@@ -3861,15 +3825,6 @@
     "memoryTip": "STOP = Hagarara BURUNDU (tires zose). Bahe inzira bose mbere yo gukomeza!"
   },
   {
-    "number": 460,
-    "matchText": "Icyapa cy'uruziga rw'umucyo utukura gifite ishusho y'abantu babiri bataganye bagana (deux silhouettes) gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Birabujijwe kunyuranaho ku binyabiziga byose (Interdiction de dépasser pour tous)",
-    "lawTitle": "Icyapa kibuza Kunyuranaho ku Binyabiziga Byose",
-    "lawDetails": "Uruziga rutukura rufite ibinyabiziga bibiri bitaganye ni 'Interdiction de dépasser pour tous les véhicules' — Birabujijwe kunyuranaho ku binyabiziga byose. Icyapa gifite imodoka nto n'amakamyo bitaganye cyabuza gusa amakamyo kunyuranaho.",
-    "memoryTip": "Ibinyabiziga bibiri bitaganye = Nta kunyuranaho rwose. Imodoka n'amakamyo bitaganye = Amakamyo gusa."
-  },
-  {
     "number": 461,
     "matchText": "Icyapa cy'umwambi w'ubururu werekana hejuru (flèche bleue vers le haut) ushyizwe kuri poteau gisobanura iki?",
     "correctKey": "b",
@@ -3877,60 +3832,6 @@
     "lawTitle": "Itegeko: Gukomeza Imbere Gusa (Tout Droit Obligatoire)",
     "lawDetails": "Umwambi munini w'ubururu werekana imbere (hejuru) ushyizwe kuri poteau (panneaux) ni itegeko — Ugomba gukomeza imbere gusa. Kukata iburyo cyangwa ibumoso birabujijwe aho hantu. Ibi bisanzwe bishyirwa mu masangano.",
     "memoryTip": "Umwambi imbere (↑) = Gukomeza imbere gusa. Nta gukata!"
-  },
-  {
-    "number": 462,
-    "matchText": "Icyapa cy'uruziga rw'ubururu gifite imyambi ibiri yerekana iburyo n'ibumoso bisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Itegeko: Ugomba gukata iburyo cyangwa ibumoso — ntushobora gukomeza imbere",
-    "lawTitle": "Itegeko: Gukata Iburyo cyangwa Ibumoso (Virage Obligatoire)",
-    "lawDetails": "Uruziga rw'ubururu rufite imyambi ibiri (iburyo+ibumoso) ni itegeko ryatanzwe — Ugomba gukata iburyo cyangwa ibumoso. Birabujijwe gukomeza imbere aho hantu. Ibi bisanzwe bishinzwe aho umuhanda uhinduranya cyangwa mu masangano.",
-    "memoryTip": "Imyambi ibiri = Kata (iburyo cyangwa ibumoso). Ntushobora gukomeza imbere!"
-  },
-  {
-    "number": 463,
-    "matchText": "Icyapa gifite uruziga rutukura rugaragaza ishusho y'amakamyo n'imodoka nto bigana bisobanura iki?",
-    "correctKey": "a",
-    "correctText": "Birabujijwe kunyuranaho ku binyabiziga by'ubucuruzi (amakamyo) gusa",
-    "lawTitle": "Icyapa kibuza Amakamyo Kunyuranaho",
-    "lawDetails": "Uruziga rutukura rugaragaza amakamyo (camion) ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto (légères) zishobora gukomeza kunyuranaho.",
-    "memoryTip": "Amakamyo + imodoka nto bigana = Amakamyo nta kunyuranaho. Imodoka nto ziryemerewe!"
-  },
-  {
-    "number": 464,
-    "matchText": "Icyapa kiburira (mpandeshatu yera ifite umuzenguruko utukura) gifite ishusho y'izuba risa nk'ibyuma (neige/verglas) gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Imbere hari urubura cyangwa umuhanda woroheje (route glissante) — itonda, gabanya umuvuduko",
-    "lawTitle": "Icyapa kiburira Umuhanda Woroheje (Route Glissante / Verglas)",
-    "lawDetails": "Icyapa kiburira gifite ishusho yerekana urubura cyangwa imiraba ireremba (snowflake / ice crystals) kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko, kwirinda kwamamara cyane, no kwitegereza intera yo kuhagarara kuko irekura kugabanya umuvuduko mwangu bidashoboka.",
-    "memoryTip": "Izuba risa nk'ibyuma/urubura = Umuhanda woroheje. Gabanya umuvuduko!"
-  },
-  {
-    "number": 465,
-    "matchText": "Mu Rwanda, icyapa cy'uruziga rufite ishusho y'inzoga (verre à boisson) ufite umurongo utukura urambura gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Birabujijwe gutwara umuyobozi wasinze — inzoga ku muyobozi zirabujijwe",
-    "lawTitle": "Icyapa kibuza Gutwara Wasinze (Alcool au Volant Interdit)",
-    "lawDetails": "Uruziga rutukura rufite ishusho y'inzoga bisobanura ko gutwara wasinze birabujijwe aho hantu (akenshi bushyirwa imbere y'aho amabisi cyangwa abagenzi benshi baga). Mu Rwanda, igipimo ntarengwa ni 0.8 g/l mu maraso. Kurengera bihanishwa amande ya 150,000 Frw + gufungwa iminsi 5.",
-    "memoryTip": "Inzoga + umurongo utukura = Birabujijwe gutwara wasinze. BAC ntarengwa = 0.8 g/l!"
-  },
-  {
-    "number": 466,
-    "matchText": "Icyapa cy'umucyo w'icyatsi gifite umwambi werekana iburyo (flèche verte à droite) gisobanura iki mu bimenyetso bimurika?",
-    "correctKey": "b",
-    "correctText": "Wemerewe gukatira iburyo ndetse n'aho itara ritukura rimurika, ariko ugaha inzira abanyamaguru bambuka",
-    "lawTitle": "Umwambi w'Icyatsi (Flèche Verte Conditionnelle) ku Bimenyetso Bimurika",
-    "lawDetails": "Umwambi w'icyatsi (flèche verte/green arrow) ushyizwe hasi y'itara ritukura usobanura ko wemerewe gukatira mu cyerekezo cwerekanywe ndetse n'aho itara ritukura rimurika. Ariko: Ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo. Bitari ibyo, utegereze itara ry'icyatsi.",
-    "memoryTip": "Umwambi w'icyatsi = Kata nyuma yo guha inzira abanyamaguru. Ntiwirengagize abanyamaguru!"
-  },
-  {
-    "number": 467,
-    "matchText": "Icyapa cy'ubururu gifite iságo (maison/shelter) cyangwa umwambi werekana aho abagenzi basitara (arrêt de bus) gisobanura iki?",
-    "correctKey": "a",
-    "correctText": "Ahantu hagenewe guhagararwamo n'amabisi no kuzamuramo abagenzi",
-    "lawTitle": "Icyapa cy'Ahantu Amabisi Ahagarara (Arrêt de Bus)",
-    "lawDetails": "Icyapa cy'arrêt de bus cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira bibuza bisi kuhagera. Abagenzi basitara aho bagomba gutegereza mu mutwe inyuma y'umurongo w'umutekano.",
-    "memoryTip": "Arrêt de bus = Bisi gusa ihagarara. Izindi modoka birababujijwe!"
   },
   {
     "number": 468,
