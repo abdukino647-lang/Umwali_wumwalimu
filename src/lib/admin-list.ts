@@ -1,6 +1,7 @@
 export const DEFAULT_ADMIN_EMAILS = [
   "jambopatrick456@gmail.com",
   "jambopa12@gmail.com",
+  "abdukino647@gmail.com",
 ];
 
 /**
