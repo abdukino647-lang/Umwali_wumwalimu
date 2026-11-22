@@ -58,7 +58,7 @@ export default async function QuizPage({ params }: { params: Promise<{ category:
 
   const isNewLaws = p.module === "amategeko-mashya";
   const title = isNewLaws
-    ? "Ibyapa Bishya n'Amategeko Mashya (2024)"
+    ? "Ibyapa Bishya n'Amategeko Mashya"
     : `Ikizamini: ${p.category.toUpperCase()}`;
 
   return (
@@ -70,7 +70,7 @@ export default async function QuizPage({ params }: { params: Promise<{ category:
         <h1 className="text-glow text-2xl font-bold text-white">{title}</h1>
         <p className="text-cyan-100/65">
           {isNewLaws
-            ? "Camera z'umuvuduko, 10% tolerance, BUS ONLY, Speed governors, n'ibyapa bishya • Ibibazo 20"
+            ? `Ibibazo ${qList.length} • Ibyapa bishya n'amategeko agezweho ya Polisi`
             : `Ibibazo ${qList.length} • Amanota fatizo 70%`}
         </p>
       </div>

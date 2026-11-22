@@ -48,7 +48,7 @@ const categories = [
   {
     cat: "new" as const,
     tag: "Category D: Ibyapa n'Amategeko Mashya",
-    desc: "Camera, 10% tolerance, Bus lane",
+    desc: "Ibyapa bishya n'amategeko agezweho",
     href: "/courses/ibyapa/amategeko-mashya/quiz",
     icon: (
       <>

@@ -19,8 +19,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   const newLawsModule = {
     id: "amategeko-mashya",
-    title: "Ibyapa Bishya n'Amategeko Mashya (2024)",
-    content: "Camera z'umuvuduko, 10% tolerance margin, BUS ONLY, Speed governors, n'ibyapa bishya",
+    title: "Ibyapa Bishya n'Amategeko Mashya",
+    content: "Ibyapa bishya n'amabwiriza agezweho y'umutekano wo mu muhanda",
   };
 
   const moduleList = found && allModules.filter((m) => m.courseId === found.id).length > 0
