@@ -177,7 +177,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         lawDetails =
           "**Amabara n'Amategeko yabyo:** " +
           "🔺 Mpandeshatu + Umuzenguruko Utukura = Ibyapa Biburira (Warning). " +
-          "🔴 Uruziga + Umuzenguruko Utukura = Ibyapa Bibuza (Prohibitory). " +
+          "[INFO] Uruziga + Umuzenguruko Utukura = Ibyapa Bibuza (Prohibitory). " +
           "🔵 Uruziga rw'Ubururu = Ibyapa Bitegeka (Mandatory). " +
           "🟦 Urukiramende/Kare rw'Ubururu = Ibyapa by'Amakuru (Information). " +
           "🛑 Mburungushu (Octogone) Itukura = STOP (Hagarara Burundu). " +
@@ -201,7 +201,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "Ingingo z'ingenzi: (1) Umushoferi n'umugenzi bagomba kwambara ingofero ifunze neza (casque) — nibura, nta harihariwe; " +
         "(2) Birabujijwe gutwara abagenzi barenze umwe; " +
         "(3) Abana bari munsi y'imyaka 12 ntibemerewe gutwara kuri moto kubera impamvu z'umutekano wabo — ingofero zisanzwe ntizibakira neza. " +
-        "⚠️ Gitabo gya kera kivuga 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' — iki AMAKOSA mu mategeko mashya.";
+        "[WARN] Gitabo gya kera kivuga 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' — iki AMAKOSA mu mategeko mashya.";
       memoryTip = "Moto: Munsi y'imyaka 12 bibujijwe. Casque ni ngombwa buri gihe. Umugenzi umwe gusa.";
 
     } else if (lowerQ.includes("inzoga") || lowerQ.includes("sinze") || lowerQ.includes("bac") || lowerQ.includes("g/l") || lowerQ.includes("maraso")) {
@@ -211,7 +211,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "cyangwa **0.4 mg/l** mu mwuka w'uguhumeka. Kurenza iki gipimo bihanishwa: " +
         "amande ya 150,000 Frw, gufungwa iminsi 5, no gufatirwa ikinyabiziga. " +
         "Kubuza gupimwa nayo byahanishwa nk'ikosa rikomeye. " +
-        "⚠️ Polisi y'u Rwanda yifuza zero tolerance — ntiwumve ngo 'gato gato birakwiriye'.";
+        "[WARN] Polisi y'u Rwanda yifuza zero tolerance — ntiwumve ngo 'gato gato birakwiriye'.";
       memoryTip = "BAC ntarengwa = 0.8 g/l. Amande = 150,000 Frw. Ntukunde gutwara wasinze!";
 
     } else if (lowerQ.includes("camera") || lowerQ.includes("amande") || lowerQ.includes("ihazabu") || lowerQ.includes("fines")) {
@@ -272,36 +272,36 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
   // STRUCTURED RESPONSE BUILDER
   // -----------------------------------------------------------------------
 
-  let explanation = `### 🎯 Igisubizo cy'ukuri: ${cKey}. ${cText}\n\n`;
-  explanation += `#### ⚖️ Impamvu n'Itegeko ry'Umuhanda (${lawTitle}):\n${lawDetails}\n\n`;
+  let explanation = `### [TARGET] Igisubizo cy'ukuri: ${cKey}. ${cText}\n\n`;
+  explanation += `#### [LAW] Impamvu n'Itegeko ry'Umuhanda (${lawTitle}):\n${lawDetails}\n\n`;
 
   // Specific user choice breakdown
   if (!isCorrect && uKey) {
     if (cText.toLowerCase().includes("nta gisubizo cy’ukuri") || cText.toLowerCase().includes("nta gisubizo cy'ukuri")) {
       explanation +=
-        `#### ❌ Kuki amahitamo wakoze (${uKey}) atari yo?\n` +
+        `#### [WRONG] Kuki amahitamo wakoze (${uKey}) atari yo?\n` +
         `Watoranyije **${uKey}. ${uText || ""}**.\n` +
         `Iri hitamo ntabwo ryubahirije ibipimo cyangwa amategeko abigenga. Kubera ko amahitamo A, B, na C yose arimo amakosa cyangwa ibipimo bitari byo, ` +
         `nta na rimwe ry'ukuri ririmo. Ni yo mpamvu igisubizo nyacyo kiba **${cKey} (${cText})**.\n\n`;
     } else if (cText.toLowerCase().includes("ibisubizo byose nibyo") || cText.toLowerCase().includes("byose ni byo")) {
       explanation +=
-        `#### ❌ Kuki amahitamo wakoze (${uKey}) yari igice gusa?\n` +
+        `#### [WRONG] Kuki amahitamo wakoze (${uKey}) yari igice gusa?\n` +
         `Watoranyije **${uKey}. ${uText || ""}**.\n` +
         `Ni byo, ingingo ya ${uKey} na yo irakurikizwa mu mategeko, ariko ntabwo ari yo yonyine! ` +
         `Kubera ko n'ayandi mahitamo yavuzwe yose ari ukuri, igisubizo cyuzuye kiba **${cKey} (${cText})**.\n\n`;
     } else {
       explanation +=
-        `#### ❌ Kuki amahitamo wakoze (${uKey}) atari yo?\n` +
+        `#### [WRONG] Kuki amahitamo wakoze (${uKey}) atari yo?\n` +
         `Watoranyije **${uKey}. ${uText || ""}**.\n` +
         `Iri hitamo ntabwo ari ryo kuko itegeko rigena ko igisubizo cy'ukuri kandi cyujuje amabwiriza ari **${cKey}. ${cText}**.\n\n`;
     }
   } else if (isCorrect) {
     explanation +=
-      `#### ✅ Watsinze iki kibazo!\n` +
+      `#### [CORRECT] Watsinze iki kibazo!\n` +
       `Wahisemo neza igisubizo cy'ukuri **${cKey}**. Ibisobanuro by'amategeko hejuru bigufasha kurushaho gusobanukirwa no kubitsinda mu kizamini cya Polisi.\n\n`;
   }
 
-  explanation += `💡 **Inama yo gufata mu mutwe mu kizamini:** ${memoryTip}`;
+  explanation += `[TIP] **Inama yo gufata mu mutwe mu kizamini:** ${memoryTip}`;
 
   return explanation;
 }

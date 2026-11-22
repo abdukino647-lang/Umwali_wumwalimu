@@ -13,6 +13,11 @@ import {
   RotateCcw,
   ArrowLeft,
   ArrowRight,
+  Target,
+  Scale,
+  AlertCircle,
+  Info,
+  AlertTriangle,
 } from "lucide-react";
 
 function renderFormattedText(text: string) {
@@ -29,6 +34,53 @@ function renderFormattedText(text: string) {
   });
 }
 
+const MARKER_CONFIG: Record<string, { icon: React.ReactNode; color: string; bg: string }> = {
+  "[TARGET]": {
+    icon: <Target className="h-4 w-4 shrink-0" />,
+    color: "text-amber-300",
+    bg: "",
+  },
+  "[LAW]": {
+    icon: <Scale className="h-4 w-4 shrink-0" />,
+    color: "text-cyan-200",
+    bg: "",
+  },
+  "[WRONG]": {
+    icon: <XCircle className="h-4 w-4 shrink-0" />,
+    color: "text-red-300",
+    bg: "",
+  },
+  "[CORRECT]": {
+    icon: <CheckCircle2 className="h-4 w-4 shrink-0" />,
+    color: "text-emerald-300",
+    bg: "",
+  },
+  "[TIP]": {
+    icon: <Lightbulb className="h-4 w-4 shrink-0" />,
+    color: "text-yellow-200",
+    bg: "rounded-lg border border-yellow-400/20 bg-yellow-500/10 px-3 py-2",
+  },
+  "[WARN]": {
+    icon: <AlertTriangle className="h-4 w-4 shrink-0" />,
+    color: "text-orange-300",
+    bg: "",
+  },
+  "[INFO]": {
+    icon: <Info className="h-4 w-4 shrink-0" />,
+    color: "text-blue-300",
+    bg: "",
+  },
+};
+
+function stripMarker(text: string): string {
+  return text.replace(/^\[(TARGET|LAW|WRONG|CORRECT|TIP|WARN|INFO)\]\s*/, "");
+}
+
+function getMarker(text: string): string | null {
+  const m = text.match(/^\[(TARGET|LAW|WRONG|CORRECT|TIP|WARN|INFO)\]/);
+  return m ? m[0] : null;
+}
+
 function FormattedExplanation({ text }: { text: string }) {
   const lines = text.split("\n");
   return (
@@ -38,17 +90,41 @@ function FormattedExplanation({ text }: { text: string }) {
         if (!trimmed) return <div key={i} className="h-1" />;
 
         if (trimmed.startsWith("### ")) {
+          const inner = trimmed.replace("### ", "");
+          const marker = getMarker(inner);
+          const cfg = marker ? MARKER_CONFIG[marker] : null;
+          const label = cfg ? stripMarker(inner) : inner;
           return (
-            <h4 key={i} className="text-base font-bold text-amber-300">
-              {trimmed.replace("### ", "")}
-            </h4>
+            <div key={i} className={`flex items-center gap-2 ${cfg?.color ?? "text-amber-300"}`}>
+              {cfg?.icon}
+              <h4 className="text-base font-bold">{label}</h4>
+            </div>
           );
         }
+
         if (trimmed.startsWith("#### ")) {
+          const inner = trimmed.replace("#### ", "");
+          const marker = getMarker(inner);
+          const cfg = marker ? MARKER_CONFIG[marker] : null;
+          const label = cfg ? stripMarker(inner) : inner;
           return (
-            <h5 key={i} className="mt-2 text-sm font-semibold text-cyan-200">
-              {trimmed.replace("#### ", "")}
-            </h5>
+            <div key={i} className={`mt-2 flex items-center gap-2 ${cfg?.color ?? "text-cyan-200"}`}>
+              {cfg?.icon}
+              <h5 className="text-sm font-semibold">{label}</h5>
+            </div>
+          );
+        }
+
+        // Standalone tip / info line (not a heading)
+        const marker = getMarker(trimmed);
+        const cfg = marker ? MARKER_CONFIG[marker] : null;
+        if (cfg) {
+          const label = stripMarker(trimmed);
+          return (
+            <div key={i} className={`flex items-start gap-2 ${cfg.color} ${cfg.bg}`}>
+              <span className="mt-0.5 shrink-0">{cfg.icon}</span>
+              <div>{renderFormattedText(label)}</div>
+            </div>
           );
         }
 

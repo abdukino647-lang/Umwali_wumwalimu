@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         explanation:
-          "### ⚠️ Ibisobanuro by'Itegeko\n\nNtabwo byashobotse kubona ubusobanuro muri aka kanya. Ongera ugerageze mukanya.",
+          "### [WARN] Ibisobanuro by'Itegeko\n\nNtabwo byashobotse kubona ubusobanuro muri aka kanya. Ongera ugerageze mukanya.",
       },
       { status: 200 }
     );
