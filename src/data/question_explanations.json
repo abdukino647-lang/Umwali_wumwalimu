@@ -3787,59 +3787,5 @@
     "lawTitle": "Ingingo ya 28: Ibihe Byihariye Byemewe Kunyuranaho Iburyo",
     "lawDetails": "Ihame rusange rivuga ko kunyuranaho bikorerwa ibumoso. Icyakora, kunyuranaho iburyo byemewe gusa mu bihe bibiri: (1) Iyo umuyobozi w'imbere yatanze ikimenyetso cy'uko agiye gukatira ibumoso kandi agafata igisate cy'ibumoso; (2) Ku kinyabiziga kigendera ku njanji (nk'imodoka y'ishyamba cyangwa tramway) kinyura hagati mu muhanda iyo hari umwanya uhagije iburyo bwayo.",
     "memoryTip": "Kunyuranaho iburyo byemewe gusa: iyo uw'imbere agiye gukata ibumoso, cyangwa ku kinyabiziga cy'injanji hagati mu muhanda."
-  },
-  {
-    "number": 452,
-    "matchText": "Icyapa kigaragaza inyuguti 'P' mu muhanda kiba kimenyesha iki abagenzi n'abayobozi b'ibinyabiziga?",
-    "correctKey": "b",
-    "correctText": "Ahantu hemerewe guparika ibinyabiziga (Parking)",
-    "lawTitle": "Icyapa Cyerekana Aho Guparika (Signaux de Stationnement / Parking)",
-    "lawDetails": "Icyapa cy'urukiramende cyangwa kare y'ubururu kirimo inyuguti nkuru 'P' y'umweru ni icyapa kiyobora cyerekana ahantu hagenewe guparika ibinyabiziga mu buryo bwemewe n'amategeko (Parking).",
-    "memoryTip": "P mu rukiramende rw'ubururu = Parking yemewe."
-  },
-  {
-    "number": 453,
-    "matchText": "Icyapa kibuza kwinjira mu muhanda (Sens Interdit) gisobanura iki ku muyobozi w'ikinyabiziga?",
-    "correctKey": "b",
-    "correctText": "Birabujijwe burundu kwinjira muri uwo muhanda ku binyabiziga byose biturutse muri icyo cyerekezo",
-    "lawTitle": "Icyapa Cy'Uruziga Rutukura n'Umurongo Wera (Sens Interdit)",
-    "lawDetails": "Icyapa cy'uruziga rutukura rufite umurongo wera uciye hagati (Sens Interdit / No Entry) kibuza burundu ikinyabiziga icyo ari cyo cyose kwinjira muri uwo muhanda giturutse muri icyo cyerekezo kuko uwo muhanda uba uva mu rundi ruhande (icyerekezo kimwe).",
-    "memoryTip": "Uruziga rutukura rurimo umurongo w'umweru utambitse = Sens interdit (Ntuhinjire)."
-  },
-  {
-    "number": 458,
-    "matchText": "Icyapa gifite inyuguti 'P' n'umurongo utukura urambura (P barré) gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Birabujijwe guparika aho hantu (No Parking)",
-    "lawTitle": "Icyapa kibuza Guparika (No Parking)",
-    "lawDetails": "Inyuguti 'P' ifite umurongo utukura urambura (cyangwa uruziga rutukura rufite P imbere) bisobanura 'No Parking' — Birabujijwe guparika aho hantu. Icyapa kinini cy'inyuguti P (P gusa nta murongo) cyerekana ahantu hemerewe guparika.",
-    "memoryTip": "P nta murongo = Parking. P ufite umurongo utukura = No Parking!"
-  },
-  {
-    "number": 459,
-    "matchText": "Icyapa cy'umucyo utukura mu mburungushu (octogone) gifite ijambo 'STOP' gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Hagarara burundu kugeza ibinyabiziga biganisha birangira nyuma ubahe inzira",
-    "lawTitle": "Icyapa cya STOP (Mburungushu y'Itukura)",
-    "lawDetails": "Icyapa cya STOP (octogone itukura) ni kimwe mu byapa bikomeye cyane mu muhanda. Kitegeka guhagarara BURUNDU (tires zose zigomba gusimba ku murongo wera), no guha inzira ibinyabiziga byose biganisha (mu cyerekezo cyose). Ntukore ko uhagaze barungu — ugomba kugaragaza ko wahagaraye neza.",
-    "memoryTip": "STOP = Hagarara BURUNDU (tires zose). Bahe inzira bose mbere yo gukomeza!"
-  },
-  {
-    "number": 461,
-    "matchText": "Icyapa cy'umwambi w'ubururu werekana hejuru (flèche bleue vers le haut) ushyizwe kuri poteau gisobanura iki?",
-    "correctKey": "b",
-    "correctText": "Ugomba gukomeza imbere gusa — ntushobora gukata",
-    "lawTitle": "Itegeko: Gukomeza Imbere Gusa (Tout Droit Obligatoire)",
-    "lawDetails": "Umwambi munini w'ubururu werekana imbere (hejuru) ushyizwe kuri poteau (panneaux) ni itegeko — Ugomba gukomeza imbere gusa. Kukata iburyo cyangwa ibumoso birabujijwe aho hantu. Ibi bisanzwe bishyirwa mu masangano.",
-    "memoryTip": "Umwambi imbere (↑) = Gukomeza imbere gusa. Nta gukata!"
-  },
-  {
-    "number": 468,
-    "matchText": "Icyapa kiburira gifite ishusho y'abantu babiri (umugabo n'umugore cyangwa umuntu mukuru n'umwana) gisobanura iki?",
-    "correctKey": "a",
-    "correctText": "Imbere hari amashuri cyangwa inzira y'abana — gabanya umuvuduko cyane",
-    "lawTitle": "Icyapa kiburira Ahegereye Amashuri n'Inzira y'Abana",
-    "lawDetails": "Icyapa kiburira gifite ishusho y'abantu babiri (umuntu mukuru n'umwana) kisobanura ko imbere hari amashuri, inzira y'abana cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko (akenshi kugeza 30 km/h cyangwa munsi), kandi ugakurikira amabwiriza y'abakozi b'amashuri mu gihe cy'amasaha yo kwinjira no gusohoka.",
-    "memoryTip": "Umuntu mukuru + umwana = Amashuri/Abana. Gabanya umuvuduko cyane, witondere!"
   }
 ]
