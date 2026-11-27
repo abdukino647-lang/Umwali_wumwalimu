@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { QuizQuestion, calculateScore, getCorrectKey } from "@/lib/quiz-engine";
+import { useSpeaker } from "@/hooks/useSpeaker";
 import {
   CheckCircle2,
   XCircle,
@@ -18,6 +19,9 @@ import {
   AlertCircle,
   Info,
   AlertTriangle,
+  Volume2,
+  VolumeX,
+  Loader2,
 } from "lucide-react";
 
 function renderFormattedText(text: string) {
@@ -175,10 +179,26 @@ export default function QuizEngine({
   const [loadingNextExam, setLoadingNextExam] = useState(false);
   const [remaining, setRemaining] = useState(timeLimitSec ?? 0);
 
+  // ── Text-to-Speech speaker ──────────────────────────────────────────────────
+  const speaker = useSpeaker();
+
   useEffect(() => {
     setActiveQuestions(questions);
     setRemaining(timeLimitSec ?? 0);
   }, [questions, timeLimitSec]);
+
+  // Auto-read each question aloud when speaker is enabled and question changes.
+  useEffect(() => {
+    if (!speaker.enabled || !q || showResult) return;
+    speaker.read({ text: q.text, options: q.options });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIdx, speaker.enabled, showResult]);
+
+  // Stop speech when exam finishes.
+  useEffect(() => {
+    if (showResult) speaker.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showResult]);
 
   const fetchExplanation = async (quizQ: QuizQuestion, correctAnswerKey: string, userAnswer?: string) => {
     const qId = quizQ.id;
@@ -291,6 +311,8 @@ export default function QuizEngine({
   const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   const handleSelect = (key: string) => {
+    // Stop reading as soon as user picks — they've heard enough.
+    speaker.stop();
     setAnswers((currentAnswers) => ({ ...currentAnswers, [q.id]: key }));
   };
 
@@ -520,18 +542,42 @@ export default function QuizEngine({
     <div className="mx-auto max-w-2xl space-y-6 text-cyan-50">
       <div className="flex items-center justify-between text-sm font-medium text-cyan-100/65">
         <span>Ikibazo {currentIdx + 1} kuri {activeQuestions.length}</span>
-        {timeLimitSec ? (
-          <span
-            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-semibold tabular-nums ${
-              remaining <= 60 ? "bg-red-500/20 text-red-200 animate-pulse-glow" : "bg-cyan-400/15 text-cyan-200"
-            }`}
-          >
-            <Timer className="h-3.5 w-3.5" />
-            <span>{mmss(remaining)}</span>
-          </span>
-        ) : (
-          <span>Amanota yawe y&apos;agateganyo</span>
-        )}
+        <div className="flex items-center gap-2">
+          {/* Speaker toggle button */}
+          {speaker.supported && (
+            <button
+              type="button"
+              onClick={speaker.toggle}
+              title={speaker.enabled ? "Tangira gusoma (Vuga)" : "Hagarika ijwi"}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                speaker.enabled
+                  ? "bg-cyan-500/25 text-cyan-200 ring-1 ring-cyan-400/50 hover:bg-cyan-500/35"
+                  : "bg-white/5 text-cyan-100/50 hover:bg-white/10 hover:text-cyan-200"
+              }`}
+            >
+              {speaker.speaking ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : speaker.enabled ? (
+                <Volume2 className="h-3.5 w-3.5" />
+              ) : (
+                <VolumeX className="h-3.5 w-3.5" />
+              )}
+              <span>{speaker.enabled ? "Ijwi: Reka" : "Ijwi: Fungura"}</span>
+            </button>
+          )}
+          {timeLimitSec ? (
+            <span
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-semibold tabular-nums ${
+                remaining <= 60 ? "bg-red-500/20 text-red-200 animate-pulse-glow" : "bg-cyan-400/15 text-cyan-200"
+              }`}
+            >
+              <Timer className="h-3.5 w-3.5" />
+              <span>{mmss(remaining)}</span>
+            </span>
+          ) : (
+            <span>Amanota yawe y&apos;agateganyo</span>
+          )}
+        </div>
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
         <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-all" style={{ width: `${(currentIdx / activeQuestions.length) * 100}%` }} />
@@ -544,9 +590,26 @@ export default function QuizEngine({
           </div>
         )}
 
-        <h2 className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
-          {q.category === "numeric" ? highlightNumbers(q.text) : q.text}
-        </h2>
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
+            {q.category === "numeric" ? highlightNumbers(q.text) : q.text}
+          </h2>
+          {/* Replay button — re-reads this question on demand */}
+          {speaker.supported && speaker.enabled && (
+            <button
+              type="button"
+              onClick={() => speaker.read({ text: q.text, options: q.options })}
+              title="Subiramo gusoma iki kibazo"
+              className="mt-1 shrink-0 inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 p-2 text-cyan-300 hover:bg-cyan-500/25 hover:text-white transition-colors"
+            >
+              {speaker.speaking ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Volume2 className="h-4 w-4" />
+              )}
+            </button>
+          )}
+        </div>
 
         <div className="mt-8 space-y-3">
           {q.options.map((opt) => {
