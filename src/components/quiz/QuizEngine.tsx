@@ -187,18 +187,31 @@ export default function QuizEngine({
     setRemaining(timeLimitSec ?? 0);
   }, [questions, timeLimitSec]);
 
-  // Auto-read each question aloud when speaker is enabled and question changes.
+  // Auto-read each question aloud when speaker is enabled and question changes,
+  // and silently prefetch the upcoming question so advancing plays immediately.
   useEffect(() => {
-    if (!speaker.enabled || !q || showResult) return;
-    speaker.read({ text: q.text, options: q.options });
+    const currentQ = activeQuestions[currentIdx];
+    if (!speaker.enabled || !currentQ || showResult) return;
+    const upcomingQ = activeQuestions[currentIdx + 1];
+    speaker.read(
+      { text: currentQ.text, options: currentQ.options },
+      upcomingQ ? { text: upcomingQ.text, options: upcomingQ.options } : undefined
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIdx, speaker.enabled, showResult]);
+  }, [currentIdx, activeQuestions, speaker.enabled, showResult]);
 
-  // Stop speech when exam finishes.
+  // Stop speech when exam finishes or component unmounts.
   useEffect(() => {
     if (showResult) speaker.stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showResult]);
+
+  useEffect(() => {
+    return () => {
+      speaker.stop();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchExplanation = async (quizQ: QuizQuestion, correctAnswerKey: string, userAnswer?: string) => {
     const qId = quizQ.id;
@@ -317,10 +330,12 @@ export default function QuizEngine({
   };
 
   const handlePrev = () => {
+    speaker.unlock();
     setCurrentIdx((i) => Math.max(0, i - 1));
   };
 
   const handleNext = () => {
+    speaker.unlock();
     if (currentIdx < activeQuestions.length - 1) {
       setCurrentIdx(currentIdx + 1);
     } else {
@@ -548,21 +563,37 @@ export default function QuizEngine({
             <button
               type="button"
               onClick={speaker.toggle}
-              title={speaker.enabled ? "Tangira gusoma (Vuga)" : "Hagarika ijwi"}
+              title={
+                speaker.enabled
+                  ? "Hagarika ijwi risoma ibibazo"
+                  : "Fungura umusomyi w'Ikinyarwanda"
+              }
               className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 speaker.enabled
                   ? "bg-cyan-500/25 text-cyan-200 ring-1 ring-cyan-400/50 hover:bg-cyan-500/35"
-                  : "bg-white/5 text-cyan-100/50 hover:bg-white/10 hover:text-cyan-200"
+                  : "bg-white/5 text-cyan-100/60 hover:bg-white/10 hover:text-cyan-200"
               }`}
             >
-              {speaker.speaking ? (
+              {speaker.loading ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
               ) : speaker.enabled ? (
-                <Volume2 className="h-3.5 w-3.5" />
+                <Volume2
+                  className={`h-3.5 w-3.5 ${
+                    speaker.speaking ? "animate-pulse text-cyan-300" : ""
+                  }`}
+                />
               ) : (
                 <VolumeX className="h-3.5 w-3.5" />
               )}
-              <span>{speaker.enabled ? "Ijwi: Reka" : "Ijwi: Fungura"}</span>
+              <span>
+                {!speaker.enabled
+                  ? "Ijwi: Fungura"
+                  : speaker.loading
+                  ? "Biri gutegurwa..."
+                  : speaker.speaking
+                  ? "Ririmo gusoma..."
+                  : "Ijwi: Ririho"}
+              </span>
             </button>
           )}
           {timeLimitSec ? (
@@ -598,18 +629,30 @@ export default function QuizEngine({
           {speaker.supported && speaker.enabled && (
             <button
               type="button"
-              onClick={() => speaker.read({ text: q.text, options: q.options })}
+              onClick={() => {
+                speaker.unlock();
+                const upcomingQ = activeQuestions[currentIdx + 1];
+                speaker.read(
+                  { text: q.text, options: q.options },
+                  upcomingQ ? { text: upcomingQ.text, options: upcomingQ.options } : undefined
+                );
+              }}
               title="Subiramo gusoma iki kibazo"
               className="mt-1 shrink-0 inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 p-2 text-cyan-300 hover:bg-cyan-500/25 hover:text-white transition-colors"
             >
-              {speaker.speaking ? (
+              {speaker.loading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <Volume2 className="h-4 w-4" />
+                <Volume2
+                  className={`h-4 w-4 ${speaker.speaking ? "animate-pulse" : ""}`}
+                />
               )}
             </button>
           )}
         </div>
+        {speaker.enabled && speaker.error && (
+          <p className="mt-2 text-xs text-amber-300/90">{speaker.error}</p>
+        )}
 
         <div className="mt-8 space-y-3">
           {q.options.map((opt) => {

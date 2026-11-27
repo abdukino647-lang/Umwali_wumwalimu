@@ -13,6 +13,14 @@ const withPWA = withPWAInit({
       handler: "CacheFirst",
       options: { cacheName: "signs", expiration: { maxAgeSeconds: 86400 * 30 } } 
     },
+    {
+      urlPattern: /\/api\/tts/,
+      handler: "CacheFirst",
+      options: {
+        cacheName: "kinyarwanda-tts",
+        expiration: { maxEntries: 1000, maxAgeSeconds: 86400 * 30 },
+      },
+    },
   ],
 });
 
