@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Amategeko y'Umuhanda",
-  description: "Uburyo Bwiza bwo Kwiga Amategeko y'Umuhanda mu Rwanda. Iga amategeko y'umuhanda, kora imyitozo, kandi unutsinde ibizamini byo kubona uruhushya rwo gutwara ibinyabiziga (Provisoire).",
+  description: "Uburyo Bwiza bwo Kwiga Amategeko y'Umuhanda mu Rwanda. Iga amategeko y'umuhanda, kora imyitozo, kandi utsinde ibizamini byo kubona uruhushya rwo gutwara ibinyabiziga (Provisoire).",
   manifest: "/manifest.json",
 };
 

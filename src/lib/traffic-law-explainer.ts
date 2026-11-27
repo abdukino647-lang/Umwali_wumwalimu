@@ -4,7 +4,7 @@
  * Provides comprehensive, educational explanations in formal, grammatically correct Kinyarwanda
  * based directly on Iteka rya Perezida No 85/01 ryo ku wa 02/09/2002 rigenga amategeko y'umuhanda.
  *
- * Covers 100% of all 403 questions in the national exam book (dreamz.txt / questions_grouped.json).
+ * Covers 100% of all 421 questions in the national exam book (dreamz.txt / questions_grouped.json).
  * 100% Free & Zero-Failure: Requires no paid API keys. Works offline and in production instantly.
  * Optionally connects to Google Gemini (free tier) if GEMINI_API_KEY is provided.
  */
@@ -80,7 +80,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
   const nText = norm(qText);
   const nCorr = norm(cText);
 
-  // 1. Match directly against the 403-question verified database
+  // 1. Match directly against the 421-question verified database
   const matched =
     exactKeyMap.get(`${nText}___${nCorr}`) ||
     textAndKeyMap.get(`${nText}___${cKey.toLowerCase()}`) ||
@@ -97,7 +97,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
     lawDetails = matched.lawDetails;
     memoryTip = matched.memoryTip;
   } else {
-    // Safety net for custom / dynamic questions outside the 403 official questions
+    // Safety net for custom / dynamic questions outside the 421 official questions
     const lowerQ = qText.toLowerCase();
 
     if (lowerQ.includes("isuzumwa") || lowerQ.includes("kugenzurwa") || lowerQ.includes("control technique")) {
@@ -131,57 +131,57 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "Amatara yo guhagarara (stop) ni amutuku akabona kure ya metero 100 ku zuba.";
       memoryTip = "Phare = 100m. Code = 40m. Stop = itara ritukura ribonwa kuri 100m ku zuba.";
     } else if (lowerQ.includes("icyapa") || lowerQ.includes("ibyapa") || lowerQ.includes("kimenyetso")) {
-      // Specific sign knowledge for new Category D ibyapa questions (Q454-Q468)
+      // General sign knowledge fallback
       if (lowerQ.includes("piste") || (lowerQ.includes("igare") && lowerQ.includes("ubururu"))) {
         lawTitle = "Icyapa cy'Inzira y'Amagare (Piste Cyclable)";
         lawDetails = "Icyapa cy'ubururu gifite igare (Piste cyclable) ni itegeko: Inzira yagenewe amagare gusa. Imodoka, amapikipiki, n'ibindi binyabiziga bifite moteri birabujijwe kuyikoresha.";
         memoryTip = "Ubururu + igare = Piste cyclable. Imodoka n'amapikipiki birabujijwe!";
       } else if (lowerQ.includes("travaux") || lowerQ.includes("ouvrier") || lowerQ.includes("bubatse")) {
         lawTitle = "Icyapa cy'Imirimo y'Umuhanda (Travaux)";
-        lawDetails = "Icyapa cy'ouvriers/travaux kikuburira ko imbere hari abakozi bakoraho umuhanda. Ugomba kugabanya umuvuduko, kwitondereza ibimenyetso by'agateganyo, no kubahiriza amabwiriza y'umuyobozi w'imirimo (signaleur).";
+        lawDetails = "Icyapa cy'ouvriers/travaux kikuburira ko imbere hari abakozi bakoraho umuhanda. Ugomba kugabanya umuvuduko, kwitondera ibimenyetso by'agateganyo, no kubahiriza amabwiriza y'umuyobozi w'imirimo (signaleur).";
         memoryTip = "Ouvriers = Imirimo. Gabanya umuvuduko, witondere abakozi bari hafi!";
       } else if (lowerQ.includes("stop") || lowerQ.includes("octogone") || lowerQ.includes("mburungushu")) {
         lawTitle = "Icyapa cya STOP (Mburungushu y'Itukura)";
-        lawDetails = "Icyapa cya STOP (octogone itukura) kitegeka guhagarara BURUNDU (tires zose zigomba gusimba ku murongo wera), no guha inzira ibinyabiziga byose biganisha (mu cyerekezo cyose). Ntukore ko uhagaze barungu — ugomba kugaragaza ko wahagaraye neza.";
+        lawDetails = "Icyapa cya STOP (octogone itukura) kitegeka guhagarara BURUNDU (tires zose zigomba gusimba ku murongo wera), no guha inzira ibinyabiziga byose biganisha (mu cyerekezo cyose). Ntukore ko uhagaze akanwa gusa — ugomba kugaragaza ko wahagaraye burundu.";
         memoryTip = "STOP = Hagarara BURUNDU. Bahe inzira bose mbere yo gukomeza!";
       } else if (lowerQ.includes("sens unique") || lowerQ.includes("umwambi munini") || lowerQ.includes("flèche bleue") || lowerQ.includes("icyerekezo kimwe")) {
         lawTitle = "Inzira y'Icyerekezo Kimwe (Sens Unique)";
-        lawDetails = "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe gusa. Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cwerekanywe. Birabujijwe burundu gutera imbere mu rundi ruhande.";
+        lawDetails = "Umwambi munini w'ubururu ni icyapa cy'amakuru cyerekana inzira y'icyerekezo kimwe gusa. Ibinyabiziga byose bigenda mu cyerekezo kimwe gusa cyerekanywe. Birabujijwe burundu gutera imbere mu rundi ruhande.";
         memoryTip = "Umwambi munini w'ubururu = Sens unique. Icyerekezo kimwe gusa!";
       } else if (lowerQ.includes("no stopping") || lowerQ.includes("no waiting") || (lowerQ.includes("uruziga") && lowerQ.includes("umurongo umwe"))) {
         lawTitle = "Icyapa kibuza Guhagarara (No Stopping / No Parking)";
-        lawDetails = "Uruziga rufite umurongo umwe utukura (/) = 'No Stopping' — Birabujijwe guhagarara na gato. Uruziga rufite imirongo ibiri itukura (XX) = 'No Parking' — Birabujijwe guparika, ariko guhagarara akanya gato byemewe gufuta abagenzi. Inyuguti P ufite umurongo utukura = No Parking.";
+        lawDetails = "Uruziga rufite umurongo umwe utukura (/) = 'No Stopping' — Birabujijwe guhagarara na gato. Uruziga rufite imirongo ibiri itukura (XX) = 'No Parking' — Birabujijwe guparika, ariko guhagarara akanya gato kugira ngo abagenzi basohoke byemewe. Inyuguti P ufite umurongo utukura = No Parking.";
         memoryTip = "Umurongo umwe (/) = No Stopping. Imirongo ibiri (XX) = No Parking. P + umurongo = No Parking.";
       } else if (lowerQ.includes("flèche verte") || lowerQ.includes("umwambi w'icyatsi") || lowerQ.includes("umwambi werekana iburyo")) {
         lawTitle = "Umwambi w'Icyatsi (Flèche Verte Conditionnelle)";
-        lawDetails = "Umwambi w'icyatsi ushyizwe hasi y'itara ritukura usobanura ko wemerewe gukatira mu cyerekezo cwerekanywe ndetse n'aho itara ritukura rimurika. Ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo.";
+        lawDetails = "Umwambi w'icyatsi ushyizwe hasi y'itara ritukura usobanura ko wemerewe gukatira mu cyerekezo cyerekanywe ndetse n'aho itara ritukura rimurika. Ugomba guha inzira abanyamaguru bose bambuka no kubahiriza uburenganzira bwabo.";
         memoryTip = "Umwambi w'icyatsi = Kata nyuma yo guha inzira abanyamaguru. Ntiwirengagize abanyamaguru!";
       } else if (lowerQ.includes("arrêt") || lowerQ.includes("sitara") || lowerQ.includes("bisi") || lowerQ.includes("bus")) {
         lawTitle = "Icyapa cy'Ahantu Amabisi Ahagarara (Arrêt de Bus)";
-        lawDetails = "Icyapa cy'arrêt de bus cyerekana aho amabisi ahagarara kuzamura cyangwa kurukura abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira bibuza bisi kuhagera.";
-        memoryTip = "Arrêt de bus = Bisi gusa ihagarara. Izindi modoka birababujijwe!";
+        lawDetails = "Icyapa cy'arrêt de bus cyerekana aho amabisi ahagarara kugira ngo yazamure cyangwa yarukure abagenzi. Izindi modoka ntizemerewe guhagarara aho cyangwa kuhagira bibuza bisi kuhagera.";
+        memoryTip = "Arrêt de bus = Bisi gusa ihagarara. Izindi modoka birabizabujijwe!";
       } else if (lowerQ.includes("abana") || lowerQ.includes("ishuri") || lowerQ.includes("umwana")) {
         lawTitle = "Icyapa kiburira Ahegereye Amashuri n'Inzira y'Abana";
         lawDetails = "Icyapa kiburira gifite ishusho y'abantu babiri (umuntu mukuru n'umwana) kisobanura ko imbere hari amashuri, inzira y'abana cyangwa aho abana benshi bagendera. Ugomba kugabanya cyane umuvuduko (akenshi kugeza 30 km/h cyangwa munsi).";
         memoryTip = "Umuntu mukuru + umwana = Amashuri. Gabanya umuvuduko cyane, witondere abana!";
       } else if (lowerQ.includes("glissante") || lowerQ.includes("verglas") || lowerQ.includes("urubura") || lowerQ.includes("woroheje")) {
         lawTitle = "Icyapa kiburira Umuhanda Woroheje (Route Glissante)";
-        lawDetails = "Icyapa kiburira gifite ishusho yerekana urubura/ubushyuhe bufi (snowflake/ice) kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko, kwirinda kwamamara cyane, no kwitegereza intera yo kuhagarara.";
+        lawDetails = "Icyapa kiburira gifite ishusho yerekana urubura cyangwa ubushyuhe bufi (snowflake/ice) kisobanura 'Route glissante' — Umuhanda woroheje. Ugomba kugabanya umuvuduko cyane, kwirinda gutwara vuba, no gusiga intera ndenga kugira ngo uhagare ukomeye.";
         memoryTip = "Urubura/ibyuma = Umuhanda woroheje. Gabanya umuvuduko!";
       } else if (lowerQ.includes("kunyuranaho") && (lowerQ.includes("amakamyo") || lowerQ.includes("poids"))) {
         lawTitle = "Icyapa kibuza Amakamyo Kunyuranaho (Poids-Lourds)";
-        lawDetails = "Uruziga rutukura rugaragaza amakamyo (camion) ari imbere y'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto (légères) zishobora gukomeza kunyuranaho.";
-        memoryTip = "Amakamyo + imodoka nto bigana = Amakamyo nta kunyuranaho. Imodoka nto ziryemerewe!";
+        lawDetails = "Uruziga rutukura rugaragaza amakamyo (camion) ari ibumoso bw'imodoka nto bisobanura 'Interdiction de dépasser pour les poids-lourds' — Birabujijwe kunyuranaho ku binyabiziga bigari b'ubucuruzi (birengeje toni 3.5) gusa. Imodoka nto (légères) zishobora gukomeza kunyuranaho.";
+        memoryTip = "Amakamyo + imodoka nto bigana = Amakamyo nta kunyuranaho. Imodoka nto zibyemerewe!";
       } else {
         lawTitle = "Ingingo ya 89-105: Ibyapa n'Ibimenyetso byo mu Muhanda";
         lawDetails =
           "**Amabara n'Amategeko yabyo:** " +
-          "🔺 Mpandeshatu + Umuzenguruko Utukura = Ibyapa Biburira (Warning). " +
+          "[WARN] Mpandeshatu + Umuzenguruko Utukura = Ibyapa Biburira (Warning). " +
           "[INFO] Uruziga + Umuzenguruko Utukura = Ibyapa Bibuza (Prohibitory). " +
-          "🔵 Uruziga rw'Ubururu = Ibyapa Bitegeka (Mandatory). " +
-          "🟦 Urukiramende/Kare rw'Ubururu = Ibyapa by'Amakuru (Information). " +
-          "🛑 Mburungushu (Octogone) Itukura = STOP (Hagarara Burundu). " +
-          "🔺 Mpandeshatu Yiburiwe hasi = Give Way / Tanga Inzira.";
+          "[INFO] Uruziga rw'Ubururu = Ibyapa Bitegeka (Mandatory). " +
+          "[INFO] Urukiramende/Kare rw'Ubururu = Ibyapa by'Amakuru (Information). " +
+          "[WARN] Mburungushu (Octogone) Itukura = STOP (Hagarara Burundu). " +
+          "[WARN] Mpandeshatu Yiburiwe hasi = Give Way / Tanga Inzira.";
         memoryTip = "Mpandeshatu = Ibyago. Uruziga rutukura = Kubuza. Uruziga rw'ubururu = Gutegeka. Mburungushu = STOP.";
       }
     } else if (lowerQ.includes("gutambuka") || lowerQ.includes("amasangano") || lowerQ.includes("priorite")) {
@@ -198,10 +198,10 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
       lawTitle = "Amategeko y'Umutekano wo Gutwara Moto — Imyaka y'Umwana (Ivugururwa rya 2024)";
       lawDetails =
         "Hakurikijwe amategeko y'u Rwanda ya 2024 (police.gov.rw), **birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto**. " +
-        "Ingingo z'ingenzi: (1) Umushoferi n'umugenzi bagomba kwambara ingofero ifunze neza (casque) — nibura, nta harihariwe; " +
+        "Ingingo z'ingenzi: (1) Umushoferi n'umugenzi bagomba kwambara ingofero ifunze neza (casque) — ni ngombwa buri gihe, nta harihariwe; " +
         "(2) Birabujijwe gutwara abagenzi barenze umwe; " +
         "(3) Abana bari munsi y'imyaka 12 ntibemerewe gutwara kuri moto kubera impamvu z'umutekano wabo — ingofero zisanzwe ntizibakira neza. " +
-        "[WARN] Gitabo gya kera kivuga 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' — iki AMAKOSA mu mategeko mashya.";
+        "[WARN] Igitabo cya kera kivuga 'Biremewe gutwara umwana w'imyaka 7 nta nkomyi' — iki AMAKOSA mu mategeko mashya ya 2024.";
       memoryTip = "Moto: Munsi y'imyaka 12 bibujijwe. Casque ni ngombwa buri gihe. Umugenzi umwe gusa.";
 
     } else if (lowerQ.includes("inzoga") || lowerQ.includes("sinze") || lowerQ.includes("bac") || lowerQ.includes("g/l") || lowerQ.includes("maraso")) {
@@ -241,10 +241,10 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
       lawDetails =
         "Ibinyabiziga byose bitwara abagenzi muri rusange (bisi, coaster, twegerane) n'ibitwara imizigo bifite uburemere burenga toni 3.5 " +
         "bitegetswe kugira **akuma kagabanya umuvuduko (Speed Governor)** gatuma bidashobora kurenza **60 km/h** aho byaba bigenda hose. " +
-        "Polisi y'u Rwanda igenzura ibi buri gihe mu mirimo yo mu muhanda. Kutubahiriza bihanishwa amande ndetse n'iguhagarika ry'uruhushya.";
+        "Polisi y'u Rwanda igenzura ibi buri gihe mu mirimo yo mu muhanda. Kutubahiriza bihanishwa amande ndetse no gufatirwa uruhushya.";
       memoryTip = "Speed Governor: Abagenzi + Amakamyo >3.5t = Max 60 km/h. Polisi igenzura buri gihe.";
 
-    } else if (lowerQ.includes("boulevard") || lowerQ.includes("dual carriageway") || lowerQ.includes("sonatubes") || lowerQ.includes("kigali")) {
+    } else if (lowerQ.includes("boulevard") || lowerQ.includes("dual carriageway") || lowerQ.includes("sonatubes") || lowerQ.includes("umujyi wa kigali")) {
       lawTitle = "Umuvuduko Ntarengwa mu Mujyi wa Kigali — Imihanda Migari (2024)";
       lawDetails =
         "Mu Mujyi wa Kigali: umuvuduko rusange mu nsisiro ni **40 km/h**. " +
@@ -253,7 +253,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
         "Camera nyinshi zishyizweho ku mihanda ya Kigali — buri gihe ubahirize ibyapa.";
       memoryTip = "Kigali: Insisiro = 40 km/h. Boulevard = 60 km/h. Hanze y'umujyi = 80 km/h.";
 
-    } else if (lowerQ.includes("abanyamagaru") || lowerQ.includes("piste cyclable") || lowerQ.includes("amagare")) {
+    } else if (lowerQ.includes("abanyamagure") || lowerQ.includes("abanyamagaru") || lowerQ.includes("piste cyclable") || lowerQ.includes("amagare")) {
       lawTitle = "Itegeko Rigenga Inzira y'Amagare (Piste Cyclable)";
       lawDetails =
         "Inzira yagenewe abanyamagare (piste cyclable) igomba gukoreshwa n'amagare gusa. " +
@@ -263,7 +263,7 @@ export function buildExplanationFallback(req: ExplanationRequest): string {
 
     } else {
       lawTitle = `Ingingo y'Amategeko y'Umuhanda mu Rwanda - ${cText}`;
-      lawDetails = `Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **${cKey}. ${cText}**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendere myiza mu muhanda.`;
+      lawDetails = `Hakurikijwe amategeko agenga umutekano wo mu muhanda mu Rwanda (Iteka rya Perezida No 85/01), igisubizo cy'ukuri kandi cyujuje ibisabwa kuri iki kibazo ni: **${cKey}. ${cText}**. Iri tegeko rigamije gukumira impanuka no kubahiriza amabwiriza y'imigendekere myiza mu muhanda.`;
       memoryTip = `Igisubizo cy'ukuri: ${cText}.`;
     }
   }
@@ -338,7 +338,7 @@ AMABWIRIZA Y'UBUSOBANURO:
 8. Koresha uburyo bwa Markdown (imitwe y'amagambo, utudomo, amagambo y'ingenzi ashimangiye).
 
 IBYAHINDUTSE MU AMATEGEKO YA 2024 (Fata neza ibi ubivuge mu bisobanuro):
-- Moto + Abana: Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto (gitabo gya kera cyibeshye)
+- Moto + Abana: Birabujijwe gutwara umwana uri munsi y'imyaka 12 kuri moto (igitabo cya kera cyibeshye)
 - Inzoga: Igipimo ntarengwa = 0.8 g/l mu maraso; Amande = 150,000 Frw + gufungwa iminsi 5
 - Camera: Tolerance = 10% hejuru y'umuvuduko ugaragazwa n'icyapa; Kwishyura mu minsi 30 kuri Irembo
 - Kurenga itara ritukura: Amande = 25,000–50,000 Frw (reba amakuru mashya)

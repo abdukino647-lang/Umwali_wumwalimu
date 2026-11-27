@@ -33,7 +33,7 @@ const SCENARIO_TRIGGERS = [
   "uhuye n", "iyo uhuye", "ugeze", "ageze", "ubonye", "yegereye",
   "akurikiye", "ashaka gukatira", "aritegura", "ndashaka", "mfite uburenganzira",
   "ninde ufite uburenganzira", "gutambuka mbere", "gutambuka imbere",
-  "kugata ibumoso", "kugata iburyo", "gukatira ibumoso", "gukatira iburyo",
+  "kugata ibumoso", "kugata iburyo", "gukata ibumoso", "gukata iburyo", "gukatira ibumoso", "gukatira iburyo",
   "kunyuraho", "kunyuranaho", "guha inzira", "gutanga inzira"
 ];
 
