@@ -5,14 +5,33 @@
  * questions_grouped.json into the Neon database without wiping any
  * other columns (moduleId, examGroup, signImageUrl, etc.).
  *
- * Usage (run from project root with real DATABASE_URL in .env.local):
+ * Automatically reads DATABASE_URL from .env.local when present.
+ *
+ * Usage:
  *   npx tsx src/scripts/patch-question-texts.ts
  */
 
-import { db } from '../db';
-import { questions } from '../db/schema';
+import fs from 'fs';
+import path from 'path';
 import { eq } from 'drizzle-orm';
 import data from '../data/questions_grouped.json';
+
+function loadEnvLocalIfMissing() {
+  if (process.env.DATABASE_URL) return;
+  const envPath = path.resolve(process.cwd(), '.env.local');
+  if (!fs.existsSync(envPath)) return;
+  for (const rawLine of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+    const eqIdx = line.indexOf('=');
+    if (eqIdx <= 0) continue;
+    const key = line.slice(0, eqIdx).trim();
+    const val = line.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
+    if (key && !(key in process.env)) {
+      process.env[key] = val;
+    }
+  }
+}
 
 type SourceOption = { key: string; text: string; isCorrect?: boolean };
 type SourceQuestion = {
@@ -24,6 +43,11 @@ type SourceQuestion = {
 };
 
 async function patch() {
+  loadEnvLocalIfMissing();
+  const [{ db }, { questions }] = await Promise.all([
+    import('../db'),
+    import('../db/schema'),
+  ]);
   const rows = data as SourceQuestion[];
   let updated = 0;
   let skipped = 0;

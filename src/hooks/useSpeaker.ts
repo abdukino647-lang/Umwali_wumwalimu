@@ -1,7 +1,7 @@
 /**
  * useSpeaker — Single-voice Kinyarwanda Text-to-Speech hook for Amategeko y'Umuhanda.
  *
- * Uses `/api/tts?v=2` (exclusively backed by the single curated Pindo VoiceAI
+ * Uses `/api/tts?v=3` (exclusively backed by the single curated Pindo VoiceAI
  * Kinyarwanda speaker, with loudness normalization + Edge CDN & PWA caching).
  *
  * Key properties:
@@ -34,7 +34,7 @@ export type SpeakerStage = "idle" | "question" | "options" | "explanation";
 const STORAGE_KEY = "exam_speaker";
 const UPSTREAM_RATE = 1.0;
 const CLIENT_PLAYBACK_RATE = 1.0;
-const TTS_CACHE_VERSION = "2";
+const TTS_CACHE_VERSION = "3";
 const MAX_BLOB_CACHE = 140;
 
 const GAP_QUESTION_TO_OPTIONS_MS = 320;

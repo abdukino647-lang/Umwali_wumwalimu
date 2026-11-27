@@ -1,5 +1,5 @@
 /**
- * GET /api/tts?text=...&rate=1.0&v=2
+ * GET /api/tts?text=...&rate=1.0&v=3
  *
  * Original Kinyarwanda Text-to-Speech proxy — single Pindo VoiceAI voice ONLY.
  *
@@ -8,10 +8,11 @@
  *      English/French phonetics. Non-Kinyarwanda fallbacks (like Gemini Kore)
  *      also mispronounce Kinyarwanda and introduce inconsistent voices.
  *   2. Pindo VoiceAI (`/ai/tts/rw`) provides native Rwandan speech, and passing
- *      our curated reference clip (`RW_REFERENCE_VOICE_WAV_B64`) anchors all
- *      requests to one consistent, clear female Kinyarwanda speaker.
- *   3. Server-side PCM RMS/peak normalization keeps loudness uniform across all
- *      questions, options, and explanations.
+ *      our selected reference clip (`RW_REFERENCE_VOICE_WAV_B64`, F0 ~200 Hz
+ *      calm speaker from test_audio.wav) requests this single consistent voice.
+ *   3. Gentle server-side PCM RMS/peak normalization keeps loudness steady
+ *      across questions, options, and explanations without hardening the warm
+ *      vocal tone.
  *
  * Responses use `Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable`
  * so Vercel Edge CDN & client/PWA cache serve repeated segments in <50 ms.
@@ -25,7 +26,7 @@ export const maxDuration = 25;
 
 const MAX_CHARS = 320;
 const MEM_CACHE_MAX = 300;
-const TARGET_SPEECH_RMS = 5200;
+const TARGET_SPEECH_RMS = 4000;
 const PEAK_CEILING = 29500;
 
 const memoryAudioCache = new Map<string, Uint8Array>();
@@ -117,7 +118,7 @@ function normalizeWavLoudness(wavBytes: Uint8Array): Uint8Array {
   if (activeRms < 100) return wavBytes;
 
   let gain = TARGET_SPEECH_RMS / activeRms;
-  gain = Math.min(2.0, Math.max(0.65, gain));
+  gain = Math.min(1.4, Math.max(0.75, gain));
   if (maxAbs * gain > PEAK_CEILING) {
     gain = PEAK_CEILING / maxAbs;
   }
@@ -224,7 +225,7 @@ export async function GET(req: NextRequest) {
     ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v2|${rate}|${text}`;
+  const cacheKey = `v3|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     return new NextResponse(Buffer.from(cached), {
