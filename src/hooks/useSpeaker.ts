@@ -1,17 +1,22 @@
 /**
- * useSpeaker — Kinyarwanda Text-to-Speech hook for the exam engine.
+ * useSpeaker — Kinyarwanda-only Text-to-Speech hook for the exam engine.
  *
- * Uses the browser's built-in Web Speech API (SpeechSynthesis).
- * Prefers a Kinyarwanda voice (rw / rw-RW) if the device has one,
- * otherwise falls back to French (fr-FR) whose phonetics are very close to Kinyarwanda,
- * then to any available voice.
+ * Uses the browser Web Speech API (SpeechSynthesis).
+ *
+ * Language is ALWAYS set to "rw-RW" (Kinyarwanda).
+ * No French / English fallback — Kinyarwanda only.
+ *
+ * Voice selection:
+ *   1. Any voice whose lang starts with "rw"  (native Kinyarwanda voice on Android/Google TTS)
+ *   2. No explicit voice — let the browser use whatever engine it has,
+ *      but the utterance lang="rw-RW" tells it to pronounce in Kinyarwanda.
  *
  * Reading order per question:
  *   1. Question text
- *   2. "A: <option a>"  "B: <option b>"  "C: <option c>"  "D: <option d>"
+ *   2. "A: <option a>", "B: <option b>", "C: <option c>", "D: <option d>"
  *
- * Speed is set fast (rate 1.35) so the full reading fits comfortably inside 30 s,
- * leaving the user maximum time to think before the 60-second timer expires.
+ * Rate 1.3× — fast enough to finish reading within ~25 s, leaving the user
+ * maximum thinking time inside the 60-second per-question timer.
  */
 
 "use client";
@@ -23,22 +28,33 @@ export interface SpeakerQuestion {
   options: { key: string; text: string }[];
 }
 
-/** Strips markdown-style bold markers (**…**) and bracket tags ([TAG]) from TTS text. */
+/** Remove markdown bold (**…**) and [MARKER] tags before speaking. */
 function cleanForSpeech(text: string): string {
   return text
-    .replace(/\*\*(.*?)\*\*/g, "$1")           // remove **bold**
-    .replace(/\[(?:TARGET|LAW|WRONG|CORRECT|TIP|WARN|INFO)\]\s*/g, "") // remove [MARKER]
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\[(?:TARGET|LAW|WRONG|CORRECT|TIP|WARN|INFO)\]\s*/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-/** Option key letter → Kinyarwanda letter name for natural reading. */
-const KEY_LABEL: Record<string, string> = {
-  a: "A",
-  b: "B",
-  c: "C",
-  d: "D",
-};
+/** Option letter labels as spoken in Kinyarwanda. */
+const KEY_LABEL: Record<string, string> = { a: "A", b: "B", c: "C", d: "D" };
+
+/** Build a Kinyarwanda utterance — lang is ALWAYS rw-RW, no fallback. */
+function makeUtterance(
+  text: string,
+  rwVoice: SpeechSynthesisVoice | null
+): SpeechSynthesisUtterance {
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = "rw-RW";           // Kinyarwanda — always, no exception
+  utt.rate = 1.3;
+  utt.pitch = 1.0;
+  utt.volume = 1.0;
+  // Only assign a voice object if we actually found a rw voice;
+  // otherwise leave it unset so the engine uses lang="rw-RW" to pick one.
+  if (rwVoice) utt.voice = rwVoice;
+  return utt;
+}
 
 export function useSpeaker() {
   const [enabled, setEnabled] = useState<boolean>(() => {
@@ -47,38 +63,31 @@ export function useSpeaker() {
   });
   const [speaking, setSpeaking] = useState(false);
   const [supported, setSupported] = useState(false);
-  const voiceRef = useRef<SpeechSynthesisVoice | null>(null);
+
+  /** Kinyarwanda voice if the device has one; null otherwise (lang tag still applied). */
+  const rwVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
 
-  // Detect support and pick the best voice.
+  /* ── Boot: detect support, find rw voice ───────────────────────────────── */
   useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     setSupported(true);
     synthRef.current = window.speechSynthesis;
 
-    const pickVoice = () => {
+    const pickRwVoice = () => {
       const voices = window.speechSynthesis.getVoices();
-      if (!voices.length) return;
-
-      // Priority 1: any voice whose lang starts with "rw"
-      let v = voices.find((v) => v.lang.toLowerCase().startsWith("rw"));
-      // Priority 2: French (closest phonetics for Kinyarwanda)
-      if (!v) v = voices.find((v) => v.lang.toLowerCase().startsWith("fr"));
-      // Priority 3: English fallback
-      if (!v) v = voices.find((v) => v.lang.toLowerCase().startsWith("en"));
-      // Priority 4: whatever exists
-      if (!v) v = voices[0];
-      voiceRef.current = v ?? null;
+      // Strictly prefer any voice tagged rw / rw-RW; don't fall back.
+      const rw = voices.find((v) => v.lang.toLowerCase().startsWith("rw"));
+      rwVoiceRef.current = rw ?? null;
     };
 
-    pickVoice();
-    window.speechSynthesis.addEventListener("voiceschanged", pickVoice);
-    return () => {
-      window.speechSynthesis.removeEventListener("voiceschanged", pickVoice);
-    };
+    pickRwVoice();
+    window.speechSynthesis.addEventListener("voiceschanged", pickRwVoice);
+    return () =>
+      window.speechSynthesis.removeEventListener("voiceschanged", pickRwVoice);
   }, []);
 
-  // Persist preference.
+  /* ── Toggle (persist to localStorage) ──────────────────────────────────── */
   const toggle = useCallback(() => {
     setEnabled((prev) => {
       const next = !prev;
@@ -93,85 +102,39 @@ export function useSpeaker() {
     });
   }, []);
 
-  /** Stop any ongoing speech immediately. */
+  /* ── Stop ───────────────────────────────────────────────────────────────── */
   const stop = useCallback(() => {
     synthRef.current?.cancel();
     setSpeaking(false);
   }, []);
 
-  /**
-   * Read a question aloud: question text, then each option.
-   * Existing speech is cancelled before starting.
-   */
+  /* ── Read a question (text + all options) in Kinyarwanda ───────────────── */
   const read = useCallback(
     (q: SpeakerQuestion) => {
       if (!enabled || !synthRef.current) return;
-      synthRef.current.cancel();
 
       const synth = synthRef.current;
+      synth.cancel(); // stop any previous reading
 
-      // Build utterance list: question + options.
-      const segments: string[] = [
+      // Build segments: question text first, then each option.
+      const segments = [
         cleanForSpeech(q.text),
         ...q.options.map(
-          (opt) => `${KEY_LABEL[opt.key] ?? opt.key.toUpperCase()}: ${cleanForSpeech(opt.text)}`
+          (opt) =>
+            `${KEY_LABEL[opt.key] ?? opt.key.toUpperCase()}: ${cleanForSpeech(opt.text)}`
         ),
       ];
 
-      let segIdx = 0;
-
-      const speakNext = () => {
-        if (segIdx >= segments.length) {
-          setSpeaking(false);
-          return;
-        }
-        const utt = new SpeechSynthesisUtterance(segments[segIdx]);
-        utt.rate = 1.35;   // fast — leaves ample thinking time
-        utt.pitch = 1.0;
-        utt.volume = 1.0;
-        if (voiceRef.current) utt.voice = voiceRef.current;
-
-        // Kinyarwanda lang tag; browser falls back gracefully if unsupported.
-        utt.lang = voiceRef.current?.lang ?? "rw-RW";
-
+      // Queue all utterances — the browser plays them one by one.
+      setSpeaking(true);
+      segments.forEach((text, i) => {
+        const utt = makeUtterance(text, rwVoiceRef.current);
         utt.onend = () => {
-          segIdx++;
-          speakNext();
+          if (i === segments.length - 1) setSpeaking(false);
         };
-        utt.onerror = () => {
-          setSpeaking(false);
-        };
-
+        utt.onerror = () => setSpeaking(false);
         synth.speak(utt);
-        if (segIdx === 0) setSpeaking(true);
-        segIdx++;
-        // speakNext will be triggered by onend — reset segIdx accounting.
-      };
-
-      // Fix: use onend chain properly.
-      const speakAll = () => {
-        setSpeaking(true);
-        const utterances = segments.map((text) => {
-          const utt = new SpeechSynthesisUtterance(text);
-          utt.rate = 1.35;
-          utt.pitch = 1.0;
-          utt.volume = 1.0;
-          if (voiceRef.current) utt.voice = voiceRef.current;
-          utt.lang = voiceRef.current?.lang ?? "rw-RW";
-          return utt;
-        });
-
-        utterances.forEach((utt, i) => {
-          utt.onend = () => {
-            if (i === utterances.length - 1) setSpeaking(false);
-          };
-          utt.onerror = () => setSpeaking(false);
-          synth.speak(utt);
-        });
-      };
-
-      speakAll();
-      void speakNext; // suppress unused warning
+      });
     },
     [enabled]
   );
