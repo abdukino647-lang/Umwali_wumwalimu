@@ -22,6 +22,9 @@ import {
   Volume2,
   VolumeX,
   Loader2,
+  Pause,
+  Play,
+  RotateCcw as ReplayIcon,
 } from "lucide-react";
 
 function renderFormattedText(text: string) {
@@ -401,13 +404,45 @@ export default function QuizEngine({
                   <p className="font-semibold text-white">
                     {idx + 1}. {quizQ.category === "numeric" ? highlightNumbers(quizQ.text) : quizQ.text}
                   </p>
-                  <span className="shrink-0 pt-0.5">
-                    {userCorrect ? (
-                      <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                    ) : (
-                      <XCircle className="h-5 w-5 text-red-400" />
+                  <div className="flex shrink-0 items-center gap-2 pt-0.5">
+                    {speaker.supported && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const revId = `rev-${quizQ.id}`;
+                          if (speaker.activeId === revId && (speaker.speaking || speaker.paused)) {
+                            speaker.togglePause();
+                          } else {
+                            const corrText = quizQ.options.find((o) => o.key === correctAnswerKey)?.text || "";
+                            const corrLetter = correctAnswerKey.toUpperCase();
+                            speaker.readExplanation(
+                              `${quizQ.text} Igisubizo cy'ukuri ni ${corrLetter}, ${corrText}.`,
+                              revId
+                            );
+                          }
+                        }}
+                        title="Umva ikibazo n'igisubizo cy'ukuri mu Kinyarwanda"
+                        className="inline-flex items-center justify-center rounded-full border border-cyan-400/25 bg-cyan-500/10 p-1.5 text-cyan-300 hover:bg-cyan-500/25 hover:text-white transition-colors"
+                      >
+                        {speaker.activeId === `rev-${quizQ.id}` && speaker.loading ? (
+                          <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                        ) : speaker.activeId === `rev-${quizQ.id}` && speaker.speaking ? (
+                          <Pause className="h-3.5 w-3.5" />
+                        ) : speaker.activeId === `rev-${quizQ.id}` && speaker.paused ? (
+                          <Play className="h-3.5 w-3.5" />
+                        ) : (
+                          <Volume2 className="h-3.5 w-3.5" />
+                        )}
+                      </button>
                     )}
-                  </span>
+                    <span>
+                      {userCorrect ? (
+                        <CheckCircle2 className="h-5 w-5 text-emerald-400" />
+                      ) : (
+                        <XCircle className="h-5 w-5 text-red-400" />
+                      )}
+                    </span>
+                  </div>
                 </div>
 
                 {quizQ.signImageUrl && (
@@ -435,19 +470,60 @@ export default function QuizEngine({
 
                 {isOpened && (
                   <div className="mt-3 rounded-2xl border border-cyan-400/30 bg-slate-900/95 p-4 text-sm shadow-xl backdrop-blur-md">
-                    <div className="mb-3 flex items-center justify-between border-b border-cyan-400/20 pb-2">
+                    <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-cyan-400/20 pb-2">
                       <div className="flex items-center gap-2">
                         <Bot className="h-4 w-4 text-cyan-300" />
                         <strong className="font-semibold text-cyan-200">Mwarimu w&apos;Amategeko (AI)</strong>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => fetchExplanation(quizQ, correctAnswerKey, userAnswer)}
-                        className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs text-cyan-300/70 hover:bg-white/10 hover:text-white"
-                      >
-                        <X className="h-3.5 w-3.5" />
-                        <span>Funga</span>
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        {speaker.supported && explanationContent && !isThisLoading && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const expId = `exp-${quizQ.id}`;
+                              if (speaker.activeId === expId && (speaker.speaking || speaker.paused)) {
+                                speaker.togglePause();
+                              } else {
+                                speaker.readExplanation(explanationContent, expId);
+                              }
+                            }}
+                            className="inline-flex items-center gap-1 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-0.5 text-xs font-medium text-cyan-200 hover:bg-cyan-500/25 hover:text-white transition-colors"
+                          >
+                            {speaker.activeId === `exp-${quizQ.id}` && speaker.loading ? (
+                              <>
+                                <Loader2 className="h-3 w-3 animate-spin" />
+                                <span>Biri gutegurwa...</span>
+                              </>
+                            ) : speaker.activeId === `exp-${quizQ.id}` && speaker.speaking ? (
+                              <>
+                                <Pause className="h-3 w-3" />
+                                <span>Hagarika gato</span>
+                              </>
+                            ) : speaker.activeId === `exp-${quizQ.id}` && speaker.paused ? (
+                              <>
+                                <Play className="h-3 w-3" />
+                                <span>Komeza wumve</span>
+                              </>
+                            ) : (
+                              <>
+                                <Volume2 className="h-3 w-3" />
+                                <span>Umva ubusobanuro</span>
+                              </>
+                            )}
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (speaker.activeId === `exp-${quizQ.id}`) speaker.stop();
+                            fetchExplanation(quizQ, correctAnswerKey, userAnswer);
+                          }}
+                          className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs text-cyan-300/70 hover:bg-white/10 hover:text-white"
+                        >
+                          <X className="h-3.5 w-3.5" />
+                          <span>Funga</span>
+                        </button>
+                      </div>
                     </div>
 
                     {isThisLoading ? (
@@ -590,8 +666,10 @@ export default function QuizEngine({
                   ? "Ijwi: Fungura"
                   : speaker.loading
                   ? "Biri gutegurwa..."
+                  : speaker.paused
+                  ? "Byahagaze gato"
                   : speaker.speaking
-                  ? "Ririmo gusoma..."
+                  ? "Arimo gusoma..."
                   : "Ijwi: Ririho"}
               </span>
             </button>
@@ -622,39 +700,78 @@ export default function QuizEngine({
         )}
 
         <div className="flex items-start justify-between gap-3">
-          <h2 className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
-            {q.category === "numeric" ? highlightNumbers(q.text) : q.text}
-          </h2>
-          {/* Replay button — re-reads this question on demand */}
+          <div className="space-y-1.5">
+            <h2 className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
+              {q.category === "numeric" ? highlightNumbers(q.text) : q.text}
+            </h2>
+            {speaker.enabled && speaker.stage === "question" && speaker.speaking && (
+              <p className="text-xs font-medium text-cyan-300/90 animate-pulse">
+                Arimo gusoma ikibazo...
+              </p>
+            )}
+            {speaker.enabled && speaker.paused && (
+              <p className="text-xs font-medium text-amber-200/90">
+                Ijwi rirahagaze gato — kanda &quot;Komeza wumve&quot; kugira ngo rikomeze
+              </p>
+            )}
+          </div>
+          {/* Pause/Resume & Replay controls */}
           {speaker.supported && speaker.enabled && (
-            <button
-              type="button"
-              onClick={() => {
-                speaker.unlock();
-                const upcomingQ = activeQuestions[currentIdx + 1];
-                speaker.read(
-                  { text: q.text, options: q.options },
-                  upcomingQ ? { text: upcomingQ.text, options: upcomingQ.options } : undefined
-                );
-              }}
-              title="Subiramo gusoma iki kibazo"
-              className="mt-1 shrink-0 inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 p-2 text-cyan-300 hover:bg-cyan-500/25 hover:text-white transition-colors"
-            >
-              {speaker.loading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <Volume2
-                  className={`h-4 w-4 ${speaker.speaking ? "animate-pulse" : ""}`}
-                />
+            <div className="mt-1 flex shrink-0 items-center gap-2">
+              {(speaker.speaking || speaker.paused) && (
+                <button
+                  type="button"
+                  onClick={speaker.togglePause}
+                  title={speaker.paused ? "Komeza wumve" : "Hagarika gato"}
+                  aria-label={speaker.paused ? "Komeza wumve" : "Hagarika gato"}
+                  className="inline-flex items-center justify-center rounded-full border border-cyan-400/35 bg-cyan-500/20 p-2 text-cyan-200 hover:bg-cyan-500/35 hover:text-white transition-colors"
+                >
+                  {speaker.paused ? (
+                    <Play className="h-4 w-4" />
+                  ) : (
+                    <Pause className="h-4 w-4" />
+                  )}
+                </button>
               )}
-            </button>
+              <button
+                type="button"
+                onClick={() => {
+                  speaker.unlock();
+                  const upcomingQ = activeQuestions[currentIdx + 1];
+                  speaker.read(
+                    { text: q.text, options: q.options },
+                    upcomingQ ? { text: upcomingQ.text, options: upcomingQ.options } : undefined
+                  );
+                }}
+                title="Subiramo gusoma iki kibazo"
+                aria-label="Subiramo gusoma iki kibazo"
+                className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 p-2 text-cyan-300 hover:bg-cyan-500/25 hover:text-white transition-colors"
+              >
+                {speaker.loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <ReplayIcon className="h-4 w-4" />
+                )}
+              </button>
+            </div>
           )}
         </div>
         {speaker.enabled && speaker.error && (
           <p className="mt-2 text-xs text-amber-300/90">{speaker.error}</p>
         )}
 
-        <div className="mt-8 space-y-3">
+        <div
+          className={`mt-8 space-y-3 rounded-2xl transition-all duration-300 ${
+            speaker.enabled && speaker.stage === "options" && speaker.speaking
+              ? "p-2 -mx-2 ring-1 ring-cyan-400/35 bg-cyan-500/[0.04]"
+              : ""
+          }`}
+        >
+          {speaker.enabled && speaker.stage === "options" && speaker.speaking && (
+            <p className="px-1 text-xs font-medium text-cyan-300/90 animate-pulse">
+              Arimo gusoma amahitamo...
+            </p>
+          )}
           {q.options.map((opt) => {
             const selected = answers[q.id] === opt.key;
             return (

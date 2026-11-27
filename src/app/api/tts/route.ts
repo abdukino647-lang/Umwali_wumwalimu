@@ -1,32 +1,33 @@
 /**
- * GET /api/tts?text=...&rate=1.25
+ * GET /api/tts?text=...&rate=1.0&v=2
  *
- * Original Kinyarwanda Text-to-Speech proxy.
+ * Original Kinyarwanda Text-to-Speech proxy — single Pindo VoiceAI voice ONLY.
  *
- * Why a server proxy instead of browser Web Speech API:
- *   Most desktop & mobile browsers lack a native Kinyarwanda (rw-RW) voice and
- *   quietly fall back to English or French phonetics. This endpoint routes text
- *   exclusively to genuine Kinyarwanda voice engines:
- *
- *     1. Pindo VoiceAI (rw — native Rwandan Kinyarwanda speaker)
- *        - Uses authenticated endpoint (PINDO_API_TOKEN) when set,
- *          otherwise falls back to Pindo's public rw endpoint.
- *     2. Optional Google Gemini Native Audio TTS fallback (ONLY if Pindo is
- *        rate-limited/unavailable AND GEMINI_API_KEY is configured).
+ * Why a single-voice server proxy:
+ *   1. Browsers lack a reliable Kinyarwanda (rw-RW) Web Speech voice and mix
+ *      English/French phonetics. Non-Kinyarwanda fallbacks (like Gemini Kore)
+ *      also mispronounce Kinyarwanda and introduce inconsistent voices.
+ *   2. Pindo VoiceAI (`/ai/tts/rw`) provides native Rwandan speech, and passing
+ *      our curated reference clip (`RW_REFERENCE_VOICE_WAV_B64`) anchors all
+ *      requests to one consistent, clear female Kinyarwanda speaker.
+ *   3. Server-side PCM RMS/peak normalization keeps loudness uniform across all
+ *      questions, options, and explanations.
  *
  * Responses use `Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable`
- * so Vercel Edge CDN & client/PWA cache serve repeated exam questions in <50 ms.
+ * so Vercel Edge CDN & client/PWA cache serve repeated segments in <50 ms.
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import { cleanForKinyarwandaSpeech } from "@/lib/kinyarwanda-tts-normalizer";
+import { RW_REFERENCE_VOICE_WAV_B64 } from "@/lib/rw-reference-voice";
 
-export const maxDuration = 15;
+export const maxDuration = 25;
 
 const MAX_CHARS = 320;
-const MEM_CACHE_MAX = 250;
+const MEM_CACHE_MAX = 300;
+const TARGET_SPEECH_RMS = 5200;
+const PEAK_CEILING = 29500;
 
-// Lightweight per-instance audio cache to speed up warm serverless hits
 const memoryAudioCache = new Map<string, Uint8Array>();
 
 function setMemoryCache(key: string, bytes: Uint8Array) {
@@ -43,36 +44,101 @@ const AUDIO_HEADERS = {
   "Accept-Ranges": "bytes",
 } as const;
 
-/** Wrap raw 24 kHz mono 16-bit PCM (from Gemini TTS) inside a standard 44-byte RIFF/WAV header. */
-function pcm16ToWav(pcm: Uint8Array, sampleRate = 24000): Uint8Array {
-  const header = new ArrayBuffer(44);
-  const view = new DataView(header);
-  const writeStr = (off: number, str: string) => {
-    for (let i = 0; i < str.length; i++) view.setUint8(off + i, str.charCodeAt(i));
-  };
+/**
+ * Normalize active-speech RMS loudness and prevent peak clipping across
+ * 16-bit PCM WAV files in <2 ms so every question, option, and explanation
+ * plays back at a steady, comfortable volume.
+ */
+function normalizeWavLoudness(wavBytes: Uint8Array): Uint8Array {
+  if (wavBytes.byteLength < 44) return wavBytes;
 
-  writeStr(0, "RIFF");
-  view.setUint32(4, 36 + pcm.byteLength, true);
-  writeStr(8, "WAVE");
-  writeStr(12, "fmt ");
-  view.setUint32(16, 16, true); // PCM chunk size
-  view.setUint16(20, 1, true); // PCM format
-  view.setUint16(22, 1, true); // mono
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * 2, true); // byte rate
-  view.setUint16(32, 2, true); // block align
-  view.setUint16(34, 16, true); // bits per sample
-  writeStr(36, "data");
-  view.setUint32(40, pcm.byteLength, true);
+  const view = new DataView(
+    wavBytes.buffer,
+    wavBytes.byteOffset,
+    wavBytes.byteLength
+  );
 
-  const out = new Uint8Array(44 + pcm.byteLength);
-  out.set(new Uint8Array(header), 0);
-  out.set(pcm, 44);
+  const readFourCC = (off: number) =>
+    String.fromCharCode(
+      wavBytes[off],
+      wavBytes[off + 1],
+      wavBytes[off + 2],
+      wavBytes[off + 3]
+    );
+
+  if (readFourCC(0) !== "RIFF" || readFourCC(8) !== "WAVE") {
+    return wavBytes;
+  }
+
+  let bitsPerSample = 0;
+  let dataOffset = -1;
+  let dataSize = 0;
+  let offset = 12;
+
+  while (offset + 8 <= wavBytes.byteLength) {
+    const chunkId = readFourCC(offset);
+    const chunkSize = view.getUint32(offset + 4, true);
+    const payloadStart = offset + 8;
+    const clampedSize = Math.min(chunkSize, wavBytes.byteLength - payloadStart);
+
+    if (chunkId === "fmt " && clampedSize >= 16) {
+      bitsPerSample = view.getUint16(payloadStart + 14, true);
+    } else if (chunkId === "data") {
+      dataOffset = payloadStart;
+      dataSize = clampedSize;
+      break;
+    }
+
+    offset = payloadStart + chunkSize + (chunkSize & 1);
+  }
+
+  if (bitsPerSample !== 16 || dataOffset < 0 || dataSize < 4) {
+    return wavBytes;
+  }
+
+  const sampleCount = Math.floor(dataSize / 2);
+  let activeSumSq = 0;
+  let activeCount = 0;
+  let maxAbs = 0;
+
+  for (let i = 0; i < sampleCount; i++) {
+    const s = view.getInt16(dataOffset + i * 2, true);
+    const abs = s < 0 ? -s : s;
+    if (abs > maxAbs) maxAbs = abs;
+    if (abs > 300) {
+      activeSumSq += s * s;
+      activeCount++;
+    }
+  }
+
+  if (activeCount < 80 || maxAbs === 0) return wavBytes;
+
+  const activeRms = Math.sqrt(activeSumSq / activeCount);
+  if (activeRms < 100) return wavBytes;
+
+  let gain = TARGET_SPEECH_RMS / activeRms;
+  gain = Math.min(2.0, Math.max(0.65, gain));
+  if (maxAbs * gain > PEAK_CEILING) {
+    gain = PEAK_CEILING / maxAbs;
+  }
+
+  if (Math.abs(gain - 1.0) < 0.05) return wavBytes;
+
+  const out = new Uint8Array(wavBytes);
+  const outView = new DataView(out.buffer, out.byteOffset, out.byteLength);
+  for (let i = 0; i < sampleCount; i++) {
+    const s = view.getInt16(dataOffset + i * 2, true);
+    const scaled = Math.max(-32768, Math.min(32767, Math.round(s * gain)));
+    outView.setInt16(dataOffset + i * 2, scaled, true);
+  }
   return out;
 }
 
-/** Synthesize via Pindo VoiceAI (native Rwandan Kinyarwanda). */
-async function synthesizeWithPindo(text: string, rate: number): Promise<Uint8Array | null> {
+/** Synthesize strictly via Pindo VoiceAI using the selected single Kinyarwanda voice. */
+async function synthesizeWithPindo(
+  text: string,
+  rate: number
+): Promise<Uint8Array | null> {
   const token = process.env.PINDO_API_TOKEN;
   const endpoint = token
     ? "https://api.pindo.io/ai/tts/rw"
@@ -83,24 +149,32 @@ async function synthesizeWithPindo(text: string, rate: number): Promise<Uint8Arr
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
 
-  const payload = JSON.stringify({
-    text,
-    ...(token ? { lang: "rw" } : {}),
-    speech_rate: rate,
-  });
+  let includeRefAudio = true;
 
-  // Allow 1 quick retry on transient upstream hiccup
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
+      const payload = JSON.stringify({
+        text,
+        ...(token ? { lang: "rw" } : {}),
+        speech_rate: rate,
+        ...(includeRefAudio ? { audio: RW_REFERENCE_VOICE_WAV_B64 } : {}),
+      });
+
       const res = await fetch(endpoint, {
         method: "POST",
         headers,
         body: payload,
-        signal: AbortSignal.timeout(8500),
+        signal: AbortSignal.timeout(11000),
       });
 
       if (!res.ok) {
-        if ((res.status >= 500 || res.status === 429) && attempt === 0) {
+        // If upstream rejects the optional `audio` field with 400, retry once cleanly without it
+        if (res.status === 400 && includeRefAudio && attempt === 0) {
+          includeRefAudio = false;
+          continue;
+        }
+        // Retry once on transient 5xx, but never hammer 429 rate limits
+        if (res.status >= 500 && attempt === 0) {
           await new Promise((r) => setTimeout(r, 250));
           continue;
         }
@@ -114,11 +188,14 @@ async function synthesizeWithPindo(text: string, rate: number): Promise<Uint8Arr
       const audioUrl = json?.data?.generated_audio_url;
       if (!audioUrl || !audioUrl.startsWith("https://")) return null;
 
-      const wavRes = await fetch(audioUrl, { signal: AbortSignal.timeout(8500) });
+      const wavRes = await fetch(audioUrl, {
+        signal: AbortSignal.timeout(10000),
+      });
       if (!wavRes.ok) return null;
 
       const bytes = new Uint8Array(await wavRes.arrayBuffer());
-      return bytes.byteLength > 44 ? bytes : null;
+      if (bytes.byteLength <= 44) return null;
+      return normalizeWavLoudness(bytes);
     } catch {
       if (attempt === 0) {
         await new Promise((r) => setTimeout(r, 250));
@@ -131,72 +208,23 @@ async function synthesizeWithPindo(text: string, rate: number): Promise<Uint8Arr
   return null;
 }
 
-/** Optional fallback via Gemini Native Audio TTS (if GEMINI_API_KEY is configured). */
-async function synthesizeWithGemini(text: string): Promise<Uint8Array | null> {
-  const geminiKey =
-    process.env.GEMINI_API_KEY ||
-    process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
-    process.env.GOOGLE_API_KEY;
-  if (!geminiKey) return null;
-
-  try {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${geminiKey}`;
-    const res = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(9500),
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              {
-                text: `Read quickly and clearly in native Rwandan Kinyarwanda pronunciation (rw-RW), with zero English or French accent: ${text}`,
-              },
-            ],
-          },
-        ],
-        generationConfig: {
-          responseModalities: ["AUDIO"],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: { voiceName: "Kore" },
-            },
-          },
-        },
-      }),
-    });
-
-    if (!res.ok) return null;
-    const data = await res.json();
-    const b64: string | undefined =
-      data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-    if (!b64) return null;
-
-    const pcm = Uint8Array.from(Buffer.from(b64, "base64"));
-    return pcm.byteLength > 0 ? pcm16ToWav(pcm, 24000) : null;
-  } catch {
-    return null;
-  }
-}
-
 export async function GET(req: NextRequest) {
   const rawText = req.nextUrl.searchParams.get("text") ?? "";
   if (!rawText.trim()) {
     return new NextResponse(null, { status: 204 });
   }
 
-  // Normalize so raw query strings still get pure Kinyarwanda pronunciation
   const text = cleanForKinyarwandaSpeech(rawText).slice(0, MAX_CHARS).trim();
   if (!text) {
     return new NextResponse(null, { status: 204 });
   }
 
-  const parsedRate = Number(req.nextUrl.searchParams.get("rate") ?? "1.2");
+  const parsedRate = Number(req.nextUrl.searchParams.get("rate") ?? "1.0");
   const rate = Number.isFinite(parsedRate)
-    ? Math.min(1.4, Math.max(0.85, Number(parsedRate.toFixed(2))))
-    : 1.2;
+    ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
+    : 1.0;
 
-  const cacheKey = `${rate}|${text}`;
+  const cacheKey = `v2|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     return new NextResponse(Buffer.from(cached), {
@@ -205,9 +233,7 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const audio =
-    (await synthesizeWithPindo(text, rate)) ??
-    (await synthesizeWithGemini(text));
+  const audio = await synthesizeWithPindo(text, rate);
 
   if (!audio) {
     return NextResponse.json(

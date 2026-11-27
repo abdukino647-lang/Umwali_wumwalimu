@@ -1,9 +1,9 @@
 /**
  * kinyarwanda-tts-normalizer.ts
  *
- * Normalizes Rwanda traffic-law exam text into pure, natural Kinyarwanda
- * tailored for Kinyarwanda TTS pronunciation, and splits questions + options
- * into fast, low-latency speech segments.
+ * Normalizes Rwanda traffic-law exam questions, answer options, and explanations
+ * into pure, natural Kinyarwanda tailored for single-voice TTS pronunciation,
+ * with clean sentence phrasing and natural pause punctuation.
  */
 
 export interface SpeechQuestion {
@@ -11,10 +11,16 @@ export interface SpeechQuestion {
   options: { key: string; text: string }[];
 }
 
+export interface SpeechSegmentsResult {
+  segments: string[];
+  /** Number of leading segments belonging to the question stem (before options begin). */
+  questionSegmentCount: number;
+}
+
 /**
  * Pure English/French glosses that appear in parentheses after a Kinyarwanda term
- * (e.g. "abanyamagare (Piste cyclable)") and cause mixed-language reading.
- * These are stripped ONLY for audio reading; UI display stays unchanged.
+ * (e.g. "abanyamagare (Piste cyclable)", "(Dépassement)") and cause mixed-language reading.
+ * Stripped ONLY for speech output; UI text stays unchanged.
  */
 const FOREIGN_PAREN_GLOSSES = new RegExp(
   "\\s*\\((" +
@@ -26,21 +32,49 @@ const FOREIGN_PAREN_GLOSSES = new RegExp(
       "tram",
       "casque",
       "Speed Enforcement Cameras",
-      "Fixed/Static cameras",
+      "Fixed(?:/Static)? cameras",
       "Mobile cameras",
-      "Red light cameras",
-      "Piste cyclable",
+      "Red[- ]light cameras",
+      "Piste [Cc]yclable",
       "Speed Governor",
       "Feux clignotants jaunes",
       "Zebra Crossing",
       "Rond-point",
       "Feu rouge",
+      "Contrôle Technique",
+      "Dépassement",
+      "Travaux",
+      "Sens Unique",
+      "No Stopping\\s*/\\s*No Parking",
+      "No Stopping",
+      "No Parking",
+      "Flèche Verte(?: Conditionnelle)?",
+      "Arrêt de Bus",
+      "Route [Gg]lissante",
+      "Poids-Lourds",
+      "Blood Alcohol Concentration",
+      "Warning",
+      "Prohibitory",
+      "Mandatory",
+      "Information",
+      "Octogone(?: itukura)?",
+      "priorité à droite",
+      "snowflake/ice",
+      "camion",
+      "légères",
+      "phares",
+      "code",
+      "stop",
+      "signaleur",
+      "verglas",
+      "Ambulance",
+      "police\\.gov\\.rw",
+      "fines\\.police\\.gov\\.rw[^)]*",
     ].join("|") +
     ")\\)",
   "gi"
 );
 
-/** Convert common integers (0..999) into natural Kinyarwanda words for decimals/units. */
 const ONES_CLASS9: Record<number, string> = {
   0: "zeru",
   1: "imwe",
@@ -67,6 +101,18 @@ const ONES_CLASS8: Record<number, string> = {
   9: "icyenda",
 };
 
+const HUNDREDS_WORDS: Record<number, string> = {
+  1: "ijana",
+  2: "magana abiri",
+  3: "magana atatu",
+  4: "magana ane",
+  5: "magana atanu",
+  6: "magana atandatu",
+  7: "magana arindwi",
+  8: "magana inani",
+  9: "magana cyenda",
+};
+
 const TENS: Record<number, string> = {
   10: "icumi",
   20: "makumyabiri",
@@ -79,7 +125,7 @@ const TENS: Record<number, string> = {
   90: "mirongo cyenda",
 };
 
-/** Speak a 0..99 integer in Kinyarwanda (Class 9 for metero/whole units, Class 8 for ibice/fractional parts). */
+/** Speak a 0..99 integer in Kinyarwanda (Class 9 for metero/whole units, Class 8 for ibice/ibihumbi). */
 function intUnder100ToRw(n: number, class9Agree = false): string {
   const ones = class9Agree ? ONES_CLASS9 : ONES_CLASS8;
   if (n < 10) return ones[n] ?? String(n);
@@ -96,9 +142,31 @@ function intUnder100ToRw(n: number, class9Agree = false): string {
   return `${tenWord} na ${ones[unit]}`;
 }
 
+/** Speak 0..999 integers in natural Kinyarwanda. */
+function intUnder1000ToRw(n: number, class9Agree = false): string {
+  if (n < 100) return intUnder100ToRw(n, class9Agree);
+  const h = Math.floor(n / 100);
+  const rem = n % 100;
+  const hWord = HUNDREDS_WORDS[h] ?? `${h} ijana`;
+  if (rem === 0) return hWord;
+  return `${hWord} na ${intUnder100ToRw(rem, class9Agree)}`;
+}
+
+/** Speak large integers (1,000 .. 999,999) in natural Kinyarwanda so Pindo never stumbles on 4-6 digit numbers. */
+function largeIntToRw(n: number): string {
+  if (!Number.isFinite(n) || n < 0 || n >= 1_000_000) return String(n);
+  if (n < 1000) return intUnder1000ToRw(n, false);
+  const k = Math.floor(n / 1000);
+  const rem = n % 1000;
+  const kPart =
+    k === 1 ? "igihumbi" : `ibihumbi ${intUnder1000ToRw(k, false)}`;
+  if (rem === 0) return kPart;
+  return `${kPart} na ${intUnder1000ToRw(rem, false)}`;
+}
+
 /**
  * Convert a decimal number like "2.50", "3.5", "0.8", "1.25", "0.30"
- * into clear Kinyarwanda words so the TTS engine never says "point" or pauses on the dot.
+ * into clear Kinyarwanda words so TTS never pauses on the decimal point.
  */
 function decimalToKinyarwanda(wholeStr: string, fracRaw: string): string {
   const whole = parseInt(wholeStr, 10);
@@ -109,7 +177,6 @@ function decimalToKinyarwanda(wholeStr: string, fracRaw: string): string {
     return whole === 0 ? "zeru n'igice" : `${wholeWord} n'igice`;
   }
 
-  // Strip trailing zero if 2-digit e.g. "30" -> keep numeric 30 vs "0.8" -> 8
   const fracNum = parseInt(fracRaw, 10);
   if (fracNum === 0) return wholeWord;
 
@@ -119,23 +186,28 @@ function decimalToKinyarwanda(wholeStr: string, fracRaw: string): string {
 }
 
 /**
- * Clean & normalize any Kinyarwanda exam string into pure pronounceable Kinyarwanda.
+ * Clean & normalize any Kinyarwanda exam or explanation string into pure,
+ * unambiguous, natural spoken Kinyarwanda.
  */
 export function cleanForKinyarwandaSpeech(raw: string): string {
   let s = raw
-    // Strip markdown bold and diagnostic markers
+    // Strip markdown headings, bold/italic markers, bullet prefixes, and diagnostic tags
+    .replace(/^#{1,6}\s+/gm, "")
     .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\*(.*?)\*/g, "$1")
+    .replace(/^\s*[-*]\s+/gm, "")
     .replace(/\[(?:TARGET|LAW|WRONG|CORRECT|TIP|WARN|INFO)\]\s*/g, "")
     // Specific mixed-language parenthetical phrases from the Rwanda traffic-law bank
     .replace(
-      /\(\s*Boulevards\s*\/\s*Dual Carriageway\s+nk'umuhanda\s+Sonatubes\s*-\s*Gahanga\s*\)/gi,
+      /\(\s*Boulevards\s*\/\s*Dual Carriageway[s]?(?:\s+nk'umuhanda\s+Sonatubes\s*-\s*Gahanga)?\s*\)/gi,
       ", nk'umuhanda wa Sonatubes kugera i Gahanga,"
     )
     .replace(/\(\s*tramway\s*\/\s*gari ya moshi\s*\)/gi, "")
+    .replace(/\(\s*\/?\s*\)/g, "")
     .replace(FOREIGN_PAREN_GLOSSES, "")
-    // Keep pure Kinyarwanda parentheticals cleanly without brackets
+    // Keep pure Kinyarwanda parentheticals cleanly with natural breath commas
     .replace(/\(([^)]+)\)/g, ", $1,")
-    // Harmonize foreign loan spellings into Rwandan Kinyarwanda phonetic forms
+    // Harmonize foreign loanwords / acronyms into natural Rwandan phonetics
     .replace(/'BUS ONLY'|"BUS ONLY"|\bBUS ONLY\b/gi, "bisi gusa")
     .replace(/\bpolice\b/gi, "polisi")
     .replace(/\btelephone\b/gi, "telefoni")
@@ -145,22 +217,47 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     .replace(/\bHands-free\b/gi, "udafata telefoni")
     .replace(/\bloud\s*speaker\b/gi, "sipika")
     .replace(/\bSMS\b/g, "esemese")
+    .replace(/\bSTOP\b/g, "sitopu")
+    .replace(/\bIBURYO\b/g, "iburyo")
+    .replace(/\bIBUMOSO\b/g, "ibumoso")
+    .replace(/\bSpeed Governor\b/gi, "akuma kagabanya umuvuduko")
+    .replace(/\bPiste\s+cyclable\b/gi, "inzira y'amagare")
+    .replace(/\brond-point\b/gi, "amasangano azunguruka")
+    .replace(/\bcasque\b/gi, "ingofero y'abamotari")
     // Speak standalone option references inside answers clearly ("A na B" -> "A na Be")
     .replace(/\bB\b/g, "Be")
     .replace(/\bC\b/g, "Se")
     .replace(/\bD\b/g, "De")
-    // Normalize curly quotes and dashes
-    .replace(/[“”"]/g, " ")
-    .replace(/[–—]/g, ", ")
-    .replace(/\s+-\s+/g, ", ");
+    // Normalize quotes
+    .replace(/[“”"]/g, " ");
 
-  // Remove thousands separators inside numbers: "25,000" -> "25000"
+  // Remove thousands separators inside numbers ("25,000" -> "25000", "1,000,000" -> "1000000")
   s = s.replace(/(\d),(\d{3})\b/g, "$1$2");
-  // Run twice for >= 1,000,000
   s = s.replace(/(\d),(\d{3})\b/g, "$1$2");
 
-  // Expand units placed BEFORE the number ("m 2.50", "m2.70", "m 200", "cm 30")
+  // Numeric ranges ("80–100 km/h", "25000–50000 Frw") -> "kugeza ku"
+  s = s.replace(/(\d+(?:\.\d+)?)\s*[–—-]\s*(\d+(?:\.\d+)?)/g, "$1 kugeza ku $2");
+
+  // Legal citations and dates ("No 85/01", "02/09/2002") -> pure Kinyarwanda
   s = s
+    .replace(/\bNo\.?\s*(\d+)/g, "nomero $1")
+    .replace(/\b(\d{2})\/(\d{2})\/(\d{4})\b/g, "$1 mu kwezi kwa $2 umwaka wa $3")
+    .replace(/\b(\d+)\/(\d+)\b/g, "$1 kuri $2");
+
+  // Normalize dashes to breath commas
+  s = s.replace(/[–—]/g, ", ").replace(/\s+-\s+/g, ", ");
+
+  // Comparison symbols before numbers
+  s = s
+    .replace(/>=\s*(\d+)/g, "guhera kuri $1")
+    .replace(/<=\s*(\d+)/g, "munsi cyangwa bingana na $1")
+    .replace(/>\s*(\d+)/g, "birenze $1")
+    .replace(/<\s*(\d+)/g, "munsi ya $1");
+
+  // Expand units placed BEFORE the number ("km 20", "kg 750", "m 2.50", "cm 30")
+  s = s
+    .replace(/\bkm\s*(\d+(?:\.\d+)?)\b/gi, "kilometero $1")
+    .replace(/\bkg\s*(\d+(?:\.\d+)?)\b/gi, "ibiro $1")
     .replace(/\bm\s*(\d+(?:\.\d+)?)\b/gi, "metero $1")
     .replace(/\bcm\s*(\d+(?:\.\d+)?)\b/gi, "santimetero $1")
     .replace(/\bmm\s*(\d+(?:\.\d+)?)\b/gi, "milimetero $1");
@@ -168,12 +265,14 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
   // Expand units placed AFTER the number
   s = s
     .replace(/(\d+(?:\.\d+)?)\s*km\/h\b/gi, "$1 kilometero ku isaha")
+    .replace(/(\d+(?:\.\d+)?)\s*mg\/l\b/gi, "miligarama $1 kuri litiro")
     .replace(/(\d+(?:\.\d+)?)\s*g\/l\b/gi, "garama $1 kuri litiro")
     .replace(/(\d+(?:\.\d+)?)\s*%/g, "$1 ku ijana")
     .replace(/(\d+(?:\.\d+)?)\s*Frw\b/gi, "amafaranga $1")
     .replace(/(\d+(?:\.\d+)?)\s*kg\b/gi, "ibiro $1")
     .replace(/(\d+(?:\.\d+)?)\s*cm\b/gi, "santimetero $1")
     .replace(/(\d+(?:\.\d+)?)\s*mm\b/gi, "milimetero $1")
+    .replace(/(\d+(?:\.\d+)?)\s*km\b/gi, "kilometero $1")
     .replace(/(\d+(?:\.\d+)?)\s*m\b/gi, "metero $1")
     .replace(/(\d+(?:\.\d+)?)\s*t\b/gi, "toni $1");
 
@@ -182,48 +281,63 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     decimalToKinyarwanda(whole, frac)
   );
 
-  // Remaining slashes between words (e.g. "a / b") -> "cyangwa"
+  // Convert large integers (1,000..999,999 e.g. 3500, 25000, 100000) to Kinyarwanda words
+  s = s.replace(/\b(\d{4,6})\b/g, (_, digits) =>
+    largeIntToRw(parseInt(digits, 10))
+  );
+
+  // Remaining slashes between words -> "cyangwa"
   s = s.replace(/\s*\/\s*/g, " cyangwa ");
 
-  // Collapse extra commas & whitespace
+  // Collapse extra commas, newlines & whitespace cleanly
   s = s
+    .replace(/\n+/g, ". ")
     .replace(/,\s*,+/g, ",")
+    .replace(/,\s*\./g, ".")
+    .replace(/\.\s*,/g, ".")
     .replace(/\s+([.,?!;:])/g, "$1")
+    .replace(/([.,?!;:])([^\s])/g, "$1 $2")
     .replace(/\s+/g, " ")
     .trim();
 
   return s;
 }
 
-/** Phonetically unambiguous Kinyarwanda letter names for option keys a, b, c, d. */
+/**
+ * Phonetically unambiguous Kinyarwanda option markers.
+ * Using "rya" (consonant r) separates "Hitamo" (-o) from "A" so Pindo never
+ * elides vowels or swallows the choice letter.
+ */
 const RW_OPTION_PREFIX: Record<string, string> = {
-  a: "Hitamo A",
-  b: "Hitamo Be",
-  c: "Hitamo Se",
-  d: "Hitamo De",
+  a: "Hitamo rya A",
+  b: "Hitamo rya Be",
+  c: "Hitamo rya Se",
+  d: "Hitamo rya De",
 };
 
-/** Split a long single text block into <= maxLen chunks cleanly along punctuation or spaces. */
-function splitLongChunk(text: string, maxLen = 210): string[] {
+/** Split a long text block into <= maxLen chunks cleanly along sentence/clause boundaries. */
+export function splitLongChunk(text: string, maxLen = 200): string[] {
   if (text.length <= maxLen) return [text];
   const parts: string[] = [];
   let rest = text;
 
   while (rest.length > maxLen) {
     const slice = rest.slice(0, maxLen);
-    // Prefer sentence or clause boundary past 40% of maxLen
     let cut = Math.max(
       slice.lastIndexOf(". "),
       slice.lastIndexOf("? "),
+      slice.lastIndexOf("! "),
       slice.lastIndexOf("; "),
+      slice.lastIndexOf(": "),
       slice.lastIndexOf(", ")
     );
-    if (cut < Math.floor(maxLen * 0.4)) {
+    if (cut < Math.floor(maxLen * 0.35)) {
       cut = slice.lastIndexOf(" ");
     }
     if (cut < 20) cut = maxLen;
-    else cut += 1; // keep punctuation/space cleanly before trimming
-    parts.push(rest.slice(0, cut).trim());
+    else cut += 1;
+    const head = rest.slice(0, cut).trim();
+    if (head) parts.push(head);
     rest = rest.slice(cut).trim();
   }
   if (rest) parts.push(rest);
@@ -231,34 +345,51 @@ function splitLongChunk(text: string, maxLen = 210): string[] {
 }
 
 /**
- * Turn a quiz question + its options into 2–5 short, crisp speech segments.
- * Keeping each segment ~80–210 chars gives fast ~2s TTFB on the first segment
- * while options fetch and buffer in parallel while the question is spoken.
+ * Turn a quiz question + its options into clean, natural speech segments
+ * plus the exact boundary index where the question ends and options begin.
  */
-export function buildQuestionSpeechSegments(q: SpeechQuestion): string[] {
+export function buildQuestionSpeechPlan(
+  q: SpeechQuestion
+): SpeechSegmentsResult {
   const cleanQ = cleanForKinyarwandaSpeech(q.text);
-  const qSegments = splitLongChunk(cleanQ, 210);
+  const qSegments = splitLongChunk(cleanQ, 200).filter(Boolean);
 
   const optionLines = q.options.map((opt) => {
     const k = opt.key.toLowerCase();
-    const prefix = RW_OPTION_PREFIX[k] ?? `Hitamo ${k.toUpperCase()}`;
+    const prefix = RW_OPTION_PREFIX[k] ?? `Hitamo rya ${k.toUpperCase()}`;
     const cleanOpt = cleanForKinyarwandaSpeech(opt.text).replace(/[.?]+$/, "");
     return `${prefix}, ${cleanOpt}.`;
   });
 
-  // Group options pairwise (A+B, C+D) when concise so we minimize API roundtrips;
-  // automatically split any oversized pair so each chunk stays <= 220 chars.
+  // Group concise options pairwise (A+B, C+D) so transitions inside pairs are
+  // seamless while keeping every chunk <= 215 chars for reliable Pindo synthesis.
   const optionSegments: string[] = [];
   for (let i = 0; i < optionLines.length; i += 2) {
     const first = optionLines[i];
     const second = optionLines[i + 1];
-    if (second && first.length + 1 + second.length <= 220) {
+    if (second && first.length + 1 + second.length <= 215) {
       optionSegments.push(`${first} ${second}`);
     } else {
-      optionSegments.push(...splitLongChunk(first, 220));
-      if (second) optionSegments.push(...splitLongChunk(second, 220));
+      optionSegments.push(...splitLongChunk(first, 210));
+      if (second) optionSegments.push(...splitLongChunk(second, 210));
     }
   }
 
-  return [...qSegments, ...optionSegments].filter(Boolean);
+  const cleanOptions = optionSegments.filter(Boolean);
+  return {
+    segments: [...qSegments, ...cleanOptions],
+    questionSegmentCount: qSegments.length,
+  };
+}
+
+/** Backward-compatible helper returning flat segment list for a question. */
+export function buildQuestionSpeechSegments(q: SpeechQuestion): string[] {
+  return buildQuestionSpeechPlan(q).segments;
+}
+
+/** Normalize an explanation/instruction markdown block into natural Kinyarwanda speech chunks. */
+export function buildExplanationSpeechSegments(text: string): string[] {
+  const clean = cleanForKinyarwandaSpeech(text);
+  if (!clean) return [];
+  return splitLongChunk(clean, 200).filter(Boolean);
 }
