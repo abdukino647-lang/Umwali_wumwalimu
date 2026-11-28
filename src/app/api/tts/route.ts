@@ -156,34 +156,59 @@ async function synthesizeWithHuggingFace(
   const hfToken = process.env.HF_API_TOKEN;
   if (!hfToken) return null;
 
-  try {
-    const res = await fetch(
-      "https://api-inference.huggingface.co/models/facebook/mms-tts-kin",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${hfToken}`,
-          "Content-Type": "application/json",
-          Accept: "audio/flac",
-        },
-        body: JSON.stringify({ inputs: text }),
-        signal: AbortSignal.timeout(20000),
+  // HuggingFace serverless inference cold-starts the model on first request,
+  // returning HTTP 503 with {"estimated_time": N} while loading.
+  // We retry up to 3 times with backoff (1s, 3s) to ride through cold starts.
+  const MAX_HF_ATTEMPTS = 3;
+  const HF_RETRY_DELAYS = [1000, 3000];
+
+  for (let attempt = 0; attempt < MAX_HF_ATTEMPTS; attempt++) {
+    try {
+      const res = await fetch(
+        "https://api-inference.huggingface.co/models/facebook/mms-tts-kin",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${hfToken}`,
+            "Content-Type": "application/json",
+            Accept: "audio/flac",
+          },
+          // wait_for_model=true tells HF to hold the request until model is ready
+          // instead of returning 503 — saves a round-trip on cold start.
+          body: JSON.stringify({ inputs: text, options: { wait_for_model: true } }),
+          signal: AbortSignal.timeout(25000),
+        }
+      );
+
+      // 503 = model loading; retry after the suggested delay
+      if (res.status === 503) {
+        if (attempt < MAX_HF_ATTEMPTS - 1) {
+          await new Promise((r) => setTimeout(r, HF_RETRY_DELAYS[attempt] ?? 2000));
+          continue;
+        }
+        return null;
       }
-    );
 
-    if (!res.ok) return null;
+      if (!res.ok) return null;
 
-    const contentType = res.headers.get("content-type") ?? "";
-    // HF returns audio/flac or audio/wav depending on model version
-    if (!contentType.includes("audio")) return null;
+      const contentType = res.headers.get("content-type") ?? "";
+      // HF returns audio/flac or audio/wav depending on model version
+      if (!contentType.includes("audio")) return null;
 
-    const bytes = new Uint8Array(await res.arrayBuffer());
-    // Minimum valid audio file size (larger than empty/error response)
-    if (bytes.byteLength < 100) return null;
-    return bytes;
-  } catch {
-    return null;
+      const bytes = new Uint8Array(await res.arrayBuffer());
+      // Minimum valid audio file size (larger than an empty/error response)
+      if (bytes.byteLength < 100) return null;
+      return bytes;
+    } catch {
+      if (attempt < MAX_HF_ATTEMPTS - 1) {
+        await new Promise((r) => setTimeout(r, HF_RETRY_DELAYS[attempt] ?? 1000));
+        continue;
+      }
+      return null;
+    }
   }
+
+  return null;
 }
 
 /**
