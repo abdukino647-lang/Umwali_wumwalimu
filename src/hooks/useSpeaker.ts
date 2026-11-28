@@ -345,16 +345,16 @@ export function useSpeaker() {
         const firstUrl = await segPromises[0];
         if (sessionIdRef.current !== mySession || !firstUrl) return;
 
-        // Warm upcoming question sequentially ONLY after current question's chunks finish downloading
+        // Pre-fetch next question's segments 600 ms after current question starts fetching —
+        // in PARALLEL so Q(n+1) is fully cached before the user advances (no inter-question gaps).
         if (nextQSegments && nextQSegments.length > 0) {
-          void Promise.allSettled(segPromises).then(async () => {
+          const warmTimer = setTimeout(() => {
+            if (sessionIdRef.current !== mySession) return;
             for (const nextSeg of nextQSegments) {
-              if (sessionIdRef.current !== mySession) return;
-              try {
-                await fetchSegmentUrl(nextSeg);
-              } catch {}
+              void fetchSegmentUrl(nextSeg).catch(() => {});
             }
-          });
+          }, 600);
+          timersRef.current.push(warmTimer);
         }
 
         await waitIfPaused(mySession);
@@ -421,6 +421,22 @@ export function useSpeaker() {
       }
     },
     [fetchSegmentUrl, playUrl, waitIfPaused, waitNaturalPause]
+  );
+
+  /**
+   * Pre-fetch all segments for a question without playing them.
+   * Call this on hover/focus of the "Next" button to warm the cache for Q(n+1)
+   * so it starts instantly when the user advances.
+   */
+  const warmup = useCallback(
+    (q: SpeechQuestion) => {
+      if (!enabledRef.current || !audioRef.current) return;
+      const { segments } = buildQuestionSpeechPlan(q);
+      for (const seg of segments) {
+        void fetchSegmentUrl(seg).catch(() => {});
+      }
+    },
+    [fetchSegmentUrl]
   );
 
   /** Reset audio element cleanly and start a fresh playback session. */
@@ -507,6 +523,7 @@ export function useSpeaker() {
     unlock,
     read,
     readExplanation,
+    warmup,
     pause,
     resume,
     togglePause,

@@ -1,5 +1,5 @@
 /**
- * GET /api/tts?text=...&rate=1.0&v=3
+ * GET /api/tts?text=...&rate=1.0&v=4
  *
  * Original Kinyarwanda Text-to-Speech proxy — single Pindo VoiceAI voice ONLY.
  *
@@ -9,7 +9,8 @@
  *      also mispronounce Kinyarwanda and introduce inconsistent voices.
  *   2. Pindo VoiceAI (`/ai/tts/rw`) provides native Rwandan speech, and passing
  *      our selected reference clip (`RW_REFERENCE_VOICE_WAV_B64`, F0 ~200 Hz
- *      calm speaker from test_audio.wav) requests this single consistent voice.
+ *      calm speaker from test_audio.wav) anchors ALL requests to this SINGLE
+ *      consistent voice — the reference audio is NEVER dropped or skipped.
  *   3. Gentle server-side PCM RMS/peak normalization keeps loudness steady
  *      across questions, options, and explanations without hardening the warm
  *      vocal tone.
@@ -137,7 +138,18 @@ function normalizeWavLoudness(wavBytes: Uint8Array): Uint8Array {
   return out;
 }
 
-/** Synthesize strictly via Pindo VoiceAI using the selected single Kinyarwanda voice. */
+/**
+ * Synthesize strictly via Pindo VoiceAI using the SINGLE selected Kinyarwanda voice.
+ *
+ * The reference audio (`RW_REFERENCE_VOICE_WAV_B64`) is ALWAYS included in every
+ * request — this is the ONLY mechanism that anchors the output to the chosen
+ * ~200 Hz calm female speaker (from test_audio.wav). Dropping it even once lets
+ * Pindo pick a random voice. We therefore:
+ *   - Build the payload with `audio` unconditionally before the retry loop.
+ *   - Never retry without the reference on HTTP 400 (treat 4xx as a text issue,
+ *     return null so the caller can skip/handle, not fall back to a random voice).
+ *   - Only retry once on transient 5xx server errors.
+ */
 async function synthesizeWithPindo(
   text: string,
   rate: number
@@ -152,33 +164,30 @@ async function synthesizeWithPindo(
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
 
-  let includeRefAudio = true;
+  // Reference audio ALWAYS included — the ONLY way to lock to the selected voice.
+  const payload = JSON.stringify({
+    text,
+    ...(token ? { lang: "rw" } : {}),
+    speech_rate: rate,
+    audio: RW_REFERENCE_VOICE_WAV_B64,
+  });
 
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const payload = JSON.stringify({
-        text,
-        ...(token ? { lang: "rw" } : {}),
-        speech_rate: rate,
-        ...(includeRefAudio ? { audio: RW_REFERENCE_VOICE_WAV_B64 } : {}),
-      });
-
       const res = await fetch(endpoint, {
         method: "POST",
         headers,
         body: payload,
-        signal: AbortSignal.timeout(11000),
+        signal: AbortSignal.timeout(12000),
       });
 
       if (!res.ok) {
-        // If upstream rejects the optional `audio` field with 400, retry once cleanly without it
-        if (res.status === 400 && includeRefAudio && attempt === 0) {
-          includeRefAudio = false;
-          continue;
-        }
-        // Retry once on transient 5xx, but never hammer 429 rate limits
-        if (res.status >= 500 && attempt === 0) {
-          await new Promise((r) => setTimeout(r, 250));
+        // Only retry transient 5xx once. Never retry 400/429 — they indicate a
+        // text or rate-limit problem, not a transient server issue. Crucially,
+        // we do NOT retry without the reference audio on 400 (old behaviour that
+        // caused voice randomization).
+        if (res.status >= 500 && res.status < 600 && attempt === 0) {
+          await new Promise((r) => setTimeout(r, 350));
           continue;
         }
         return null;
@@ -201,7 +210,7 @@ async function synthesizeWithPindo(
       return normalizeWavLoudness(bytes);
     } catch {
       if (attempt === 0) {
-        await new Promise((r) => setTimeout(r, 250));
+        await new Promise((r) => setTimeout(r, 350));
         continue;
       }
       return null;
