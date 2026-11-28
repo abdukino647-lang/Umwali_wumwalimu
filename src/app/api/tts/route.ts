@@ -24,7 +24,9 @@ import { RW_REFERENCE_VOICE_WAV_B64 } from "@/lib/rw-reference-voice";
 
 export const maxDuration = 25;
 
-const MAX_CHARS = 320;
+// Raised to 420 to accommodate the new combined-options segment format:
+// "Hitamo. A, [text]. Be, [text]. Se, [text]. De, [text]." can reach ~400 chars.
+const MAX_CHARS = 420;
 const MEM_CACHE_MAX = 300;
 const TARGET_SPEECH_RMS = 4000;
 const PEAK_CEILING = 29500;
@@ -225,7 +227,7 @@ export async function GET(req: NextRequest) {
     ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v3|${rate}|${text}`;
+  const cacheKey = `v4|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     return new NextResponse(Buffer.from(cached), {

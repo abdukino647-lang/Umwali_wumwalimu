@@ -1,7 +1,7 @@
 /**
  * useSpeaker — Single-voice Kinyarwanda Text-to-Speech hook for Amategeko y'Umuhanda.
  *
- * Uses `/api/tts?v=3` (exclusively backed by the single curated Pindo VoiceAI
+ * Uses `/api/tts?v=4` (exclusively backed by the single curated Pindo VoiceAI
  * Kinyarwanda speaker, with loudness normalization + Edge CDN & PWA caching).
  *
  * Key properties:
@@ -9,13 +9,14 @@
  *      explanations, and instructions — zero fallback to foreign voices.
  *   2. Natural, unhurried speaking pace (`speech_rate=1.0`, `playbackRate=1.0`)
  *      with brief human breath pauses (320ms after question, 180ms between
- *      answer pairs) for effortless comprehension.
- *   3. Zero network wait between Question and Options: current question's option
- *      chunks start fetching in staggered parallel (120ms/260ms) while the
- *      question stem is loading & playing, so options start right when the
- *      question finishes. Upcoming question prefetches gently afterwards.
- *   4. True Pause / Resume mid-playback without disrupting quiz progress.
- *   5. Strict session cancellation so rapid clicks/navigation never cause
+ *      option segments) for effortless comprehension.
+ *   3. Professional option reading: "Hitamo." is said ONCE after the question,
+ *      then all four options as "A, [text]. Be, [text]. Se, [text]. De, [text]."
+ *      — packed into one or two API calls (never four separate "Hitamo rya X" calls).
+ *   4. Zero network wait between Question and Options: options start fetching in
+ *      staggered parallel while the question stem loads & plays.
+ *   5. True Pause / Resume mid-playback without disrupting quiz progress.
+ *   6. Strict session cancellation so rapid clicks/navigation never cause
  *      overlapping, duplicated, or interrupted speech.
  */
 
@@ -34,7 +35,7 @@ export type SpeakerStage = "idle" | "question" | "options" | "explanation";
 const STORAGE_KEY = "exam_speaker";
 const UPSTREAM_RATE = 1.0;
 const CLIENT_PLAYBACK_RATE = 1.0;
-const TTS_CACHE_VERSION = "3";
+const TTS_CACHE_VERSION = "4";
 const MAX_BLOB_CACHE = 140;
 
 const GAP_QUESTION_TO_OPTIONS_MS = 320;

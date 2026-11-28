@@ -191,6 +191,12 @@ function decimalToKinyarwanda(wholeStr: string, fracRaw: string): string {
  */
 export function cleanForKinyarwandaSpeech(raw: string): string {
   let s = raw
+    // ── 1. Normalize smart/curly apostrophes → plain ASCII so Pindo never 500s ──
+    .replace(/[\u2018\u2019\u02BC\u02B9]/g, "'")
+    // ── 2. Normalize vulgar fractions that Pindo can't read ──
+    .replace(/½/g, "igice kimwe cya kabiri")
+    .replace(/¼/g, "igice kimwe cya kane")
+    .replace(/¾/g, "ibice bitatu cya kane")
     // Strip markdown headings, bold/italic markers, bullet prefixes, and diagnostic tags
     .replace(/^#{1,6}\s+/gm, "")
     .replace(/\*\*(.*?)\*\*/g, "$1")
@@ -304,15 +310,16 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
 }
 
 /**
- * Phonetically unambiguous Kinyarwanda option markers.
- * Using "rya" (consonant r) separates "Hitamo" (-o) from "A" so Pindo never
- * elides vowels or swallows the choice letter.
+ * Phonetically unambiguous Kinyarwanda option letters.
+ * "Hitamo." is spoken ONCE after the question, then each option is introduced
+ * with just its letter abbreviation: "A, [text]. Be, [text]. Se, [text]. De, [text]."
+ * This is the professional radio/announcer style and avoids repetitive "Hitamo rya".
  */
-const RW_OPTION_PREFIX: Record<string, string> = {
-  a: "Hitamo rya A",
-  b: "Hitamo rya Be",
-  c: "Hitamo rya Se",
-  d: "Hitamo rya De",
+const RW_OPTION_LETTERS: Record<string, string> = {
+  a: "A",
+  b: "Be",
+  c: "Se",
+  d: "De",
 };
 
 /** Split a long text block into <= maxLen chunks cleanly along sentence/clause boundaries. */
@@ -347,6 +354,13 @@ export function splitLongChunk(text: string, maxLen = 200): string[] {
 /**
  * Turn a quiz question + its options into clean, natural speech segments
  * plus the exact boundary index where the question ends and options begin.
+ *
+ * Option format (professional, concise):
+ *   "Hitamo. A, [text]. Be, [text]. Se, [text]. De, [text]."
+ * — "Hitamo." is spoken ONCE, then each letter+text in one flowing sentence.
+ * — All 4 options are packed into ONE Pindo API call when total ≤ 380 chars.
+ *   If longer, the first pair gets "Hitamo. A, ... Be, ..." and the second
+ *   pair "Se, ... De, ..." — still far fewer API calls than the old per-option format.
  */
 export function buildQuestionSpeechPlan(
   q: SpeechQuestion
@@ -354,24 +368,34 @@ export function buildQuestionSpeechPlan(
   const cleanQ = cleanForKinyarwandaSpeech(q.text);
   const qSegments = splitLongChunk(cleanQ, 200).filter(Boolean);
 
-  const optionLines = q.options.map((opt) => {
+  // Build each option line as "Letter, text."
+  const optLines = q.options.map((opt) => {
     const k = opt.key.toLowerCase();
-    const prefix = RW_OPTION_PREFIX[k] ?? `Hitamo rya ${k.toUpperCase()}`;
+    const letter = RW_OPTION_LETTERS[k] ?? k.toUpperCase();
     const cleanOpt = cleanForKinyarwandaSpeech(opt.text).replace(/[.?]+$/, "");
-    return `${prefix}, ${cleanOpt}.`;
+    return `${letter}, ${cleanOpt}.`;
   });
 
-  // Group concise options pairwise (A+B, C+D) so transitions inside pairs are
-  // seamless while keeping every chunk <= 215 chars for reliable Pindo synthesis.
-  const optionSegments: string[] = [];
-  for (let i = 0; i < optionLines.length; i += 2) {
-    const first = optionLines[i];
-    const second = optionLines[i + 1];
-    if (second && first.length + 1 + second.length <= 215) {
-      optionSegments.push(`${first} ${second}`);
+  // Try packing all 4 options into ONE segment with a single "Hitamo." intro.
+  const allOptsText = `Hitamo. ${optLines.join(" ")}`;
+  let optionSegments: string[];
+
+  if (allOptsText.length <= 380) {
+    // Best case: entire options block is one seamless API call.
+    optionSegments = [allOptsText];
+  } else {
+    // Split: first segment = "Hitamo. A, ... Be, ..."
+    //        second segment = "Se, ... De, ..."
+    const ab = `Hitamo. ${optLines.slice(0, 2).join(" ")}`;
+    const cd = optLines.slice(2).join(" ");
+    if (ab.length <= 380 && cd.length <= 380) {
+      optionSegments = [ab, cd];
     } else {
-      optionSegments.push(...splitLongChunk(first, 210));
-      if (second) optionSegments.push(...splitLongChunk(second, 210));
+      // Edge case: individual option text is extremely long — split further.
+      optionSegments = [
+        ...splitLongChunk(ab, 380),
+        ...splitLongChunk(cd, 380),
+      ];
     }
   }
 
