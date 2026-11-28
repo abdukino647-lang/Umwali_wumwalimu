@@ -236,7 +236,7 @@ export async function GET(req: NextRequest) {
     ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v4|${rate}|${text}`;
+  const cacheKey = `v5|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     return new NextResponse(Buffer.from(cached), {

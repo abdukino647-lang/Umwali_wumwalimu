@@ -230,6 +230,13 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     .replace(/\bPiste\s+cyclable\b/gi, "inzira y'amagare")
     .replace(/\brond-point\b/gi, "amasangano azunguruka")
     .replace(/\bcasque\b/gi, "ingofero y'abamotari")
+    // Expand traffic/law acronyms Pindo cannot pronounce
+    .replace(/\bBAC\b/g, "umubare w'inzoga mu maraso")
+    .replace(/\bPWD\b/gi, "abantu bafite ubumuga")
+    .replace(/\bPKT\b/gi, "intambike")
+    .replace(/\bRNP\b/gi, "polisi y'igihugu")
+    .replace(/\bRIB\b/gi, "ubiro bushinzwe iperereza")
+    .replace(/\bRMB\b/gi, "ubuyobozi bw'imihanda")
     // Speak standalone option references inside answers clearly ("A na B" -> "A na Be")
     .replace(/\bB\b/g, "Be")
     .replace(/\bC\b/g, "Se")
@@ -268,11 +275,14 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     .replace(/\bcm\s*(\d+(?:\.\d+)?)\b/gi, "santimetero $1")
     .replace(/\bmm\s*(\d+(?:\.\d+)?)\b/gi, "milimetero $1");
 
-  // Expand units placed AFTER the number
+  // Expand units placed AFTER the number (also bare km/h, mg/l without leading digit)
   s = s
     .replace(/(\d+(?:\.\d+)?)\s*km\/h\b/gi, "$1 kilometero ku isaha")
+    .replace(/\bkm\/h\b/gi, "kilometero ku isaha")
     .replace(/(\d+(?:\.\d+)?)\s*mg\/l\b/gi, "miligarama $1 kuri litiro")
+    .replace(/\bmg\/l\b/gi, "miligarama ku litiro")
     .replace(/(\d+(?:\.\d+)?)\s*g\/l\b/gi, "garama $1 kuri litiro")
+    .replace(/\bg\/l\b/gi, "garama ku litiro")
     .replace(/(\d+(?:\.\d+)?)\s*%/g, "$1 ku ijana")
     .replace(/(\d+(?:\.\d+)?)\s*Frw\b/gi, "amafaranga $1")
     .replace(/(\d+(?:\.\d+)?)\s*kg\b/gi, "ibiro $1")
@@ -287,10 +297,17 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     decimalToKinyarwanda(whole, frac)
   );
 
-  // Convert large integers (1,000..999,999 e.g. 3500, 25000, 100000) to Kinyarwanda words
-  s = s.replace(/\b(\d{4,6})\b/g, (_, digits) =>
-    largeIntToRw(parseInt(digits, 10))
-  );
+  // Convert ALL remaining standalone integers to Kinyarwanda words so Pindo never
+  // stumbles on bare digits. 1-digit: class-9 agreement (metero imwe, toni imwe…).
+  // 2-3 digit: intUnder1000ToRw. 4-6 digit: largeIntToRw.
+  // Must run AFTER unit expansion so "metero 2" → "metero ebiri" (not "metero 2").
+  s = s.replace(/\b(\d+)\b/g, (_, digits) => {
+    const n = parseInt(digits, 10);
+    if (!Number.isFinite(n) || n < 0) return digits;
+    if (n < 10) return intUnder100ToRw(n, true);   // class-9: imwe, ebiri, eshatu…
+    if (n < 1000) return intUnder1000ToRw(n, false);
+    return largeIntToRw(n);
+  });
 
   // Remaining slashes between words -> "cyangwa"
   s = s.replace(/\s*\/\s*/g, " cyangwa ");
