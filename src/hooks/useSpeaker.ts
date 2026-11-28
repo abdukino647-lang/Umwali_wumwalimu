@@ -34,19 +34,19 @@ export type SpeakerStage = "idle" | "question" | "options" | "explanation";
 
 const STORAGE_KEY = "exam_speaker";
 // ── Speech pacing constants ──────────────────────────────────────────────────
-// UPSTREAM_RATE  : controls how fast Pindo synthesises the audio at the server.
-//   0.85 = natural, unhurried Kinyarwanda. Lower = slower synthesis (not stretching).
-// CLIENT_PLAYBACK_RATE : ALWAYS 1.0 — playing audio slower via the browser
-//   stretches waveforms and distorts vowels (unnatural prolonging). We control
-//   pace ONLY at the synthesis stage, never by stretching the playback.
-const UPSTREAM_RATE = 0.85;        // Natural, moderate pace — synthesised correctly
+// UPSTREAM_RATE  : Pindo synthesis rate. 0.90 = natural unhurried human pace.
+//   Too low (< 0.85) → syllables get stretched at the synthesis stage.
+//   Too high (> 0.95) → feels rushed. 0.90 is the natural sweet spot.
+// CLIENT_PLAYBACK_RATE : ALWAYS 1.0 — slowing audio in the browser stretches
+//   waveforms and distorts vowels (kurandaga amagambo). Never change this.
+const UPSTREAM_RATE = 0.90;        // Natural human pace — synthesised correctly by Pindo
 const CLIENT_PLAYBACK_RATE = 1.0;  // No stretching — audio plays exactly as generated
-const TTS_CACHE_VERSION = "8";     // bumped: rate 0.82→0.85 + playback 0.88→1.0
+const TTS_CACHE_VERSION = "9";     // bumped: Pindo primary + rate 0.85→0.90
 const MAX_BLOB_CACHE = 140;
 
-const GAP_QUESTION_TO_OPTIONS_MS = 420;  // Natural breath before "Hitamo" — not too long
-const GAP_BETWEEN_SEGMENTS_MS    = 220;  // Brief, smooth pause between option pairs
-const OPTION_PREFETCH_STAGGER_MS = 130;
+const GAP_QUESTION_TO_OPTIONS_MS = 380;  // Brief breath before "Hitamo" — natural, not long
+const GAP_BETWEEN_SEGMENTS_MS    = 180;  // Smooth, quick gap between option pairs
+const OPTION_PREFETCH_STAGGER_MS = 120;
 
 // Tiny 44-byte valid silent mono WAV to unlock HTMLAudioElement inside user clicks
 const SILENT_WAV_DATA_URI =

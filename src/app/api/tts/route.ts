@@ -309,7 +309,7 @@ export async function GET(req: NextRequest) {
     ? Math.min(1.25, Math.max(0.75, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v8|${rate}|${text}`;
+  const cacheKey = `v9|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     // We store [1 isFlac byte, ...audio bytes] to remember content type
@@ -321,18 +321,24 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  // Try HuggingFace MMS-TTS first (single-speaker = guaranteed consistent voice).
-  // Fall back to Pindo when HF_API_TOKEN is absent or HF is unreachable.
+  // ── Voice priority ─────────────────────────────────────────────────────────
+  // 1. Pindo VoiceAI + reference audio — the most natural, human-sounding
+  //    Kinyarwanda voice. Reference clip anchors it to our chosen calm speaker.
+  //    This is the voice the user knows sounds best.
+  // 2. HuggingFace MMS-TTS — single-speaker fallback when Pindo is unavailable
+  //    (rate-limited, 5xx). Consistent but more synthetic-sounding.
+  // ──────────────────────────────────────────────────────────────────────────
   let audio: Uint8Array | null = null;
   let isFlac = false;
 
-  const hfAudio = await synthesizeWithHuggingFace(text);
-  if (hfAudio) {
-    audio = hfAudio;
-    isFlac = true;
-  } else {
-    audio = await synthesizeWithPindo(text, rate);
-    isFlac = false;
+  audio = await synthesizeWithPindo(text, rate);
+  if (!audio) {
+    // Pindo failed — try HF as fallback for uninterrupted reading
+    const hfAudio = await synthesizeWithHuggingFace(text);
+    if (hfAudio) {
+      audio = hfAudio;
+      isFlac = true;
+    }
   }
 
   if (!audio) {
