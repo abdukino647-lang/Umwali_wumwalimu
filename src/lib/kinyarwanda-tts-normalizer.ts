@@ -400,6 +400,25 @@ export function buildQuestionSpeechPlan(
   }
 
   const cleanOptions = optionSegments.filter(Boolean);
+
+  // When the stem is too short (<45 chars), Pindo voice-conditioning ignores the reference
+  // audio clip — not enough phonetic content to anchor the voice (outputs F0 ~250 Hz instead
+  // of the target ~200 Hz). Fix: fuse the stem into the first options segment so the combined
+  // text is long enough to condition the voice properly. Affects all "Iki cyapa kivuga:" etc.
+  const SHORT_STEM_THRESHOLD = 45;
+  if (
+    qSegments.length === 1 &&
+    cleanQ.length < SHORT_STEM_THRESHOLD &&
+    cleanOptions.length > 0
+  ) {
+    const fusedStem = cleanQ.replace(/:$/, ".");
+    cleanOptions[0] = `${fusedStem} ${cleanOptions[0]}`;
+    return {
+      segments: cleanOptions,
+      questionSegmentCount: 0,
+    };
+  }
+
   return {
     segments: [...qSegments, ...cleanOptions],
     questionSegmentCount: qSegments.length,

@@ -157,32 +157,37 @@ export function useSpeaker() {
     const existing = segmentCacheRef.current.get(segmentText);
     if (existing) return existing;
 
-    const promise = (async () => {
+    async function attemptFetch(): Promise<string> {
       const params = new URLSearchParams({
         text: segmentText,
         rate: String(UPSTREAM_RATE),
         v: TTS_CACHE_VERSION,
       });
       const res = await fetch(`/api/tts?${params.toString()}`);
-      if (!res.ok) {
-        throw new Error(`TTS HTTP ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`TTS HTTP ${res.status}`);
       const blob = await res.blob();
-      if (blob.size <= 44) {
-        throw new Error("Empty audio");
-      }
+      if (blob.size <= 44) throw new Error("Empty audio");
       const objectUrl = URL.createObjectURL(blob);
       resolvedUrlsRef.current.push(objectUrl);
-
       while (resolvedUrlsRef.current.length > MAX_BLOB_CACHE) {
         const oldest = resolvedUrlsRef.current.shift();
         if (oldest) URL.revokeObjectURL(oldest);
       }
       return objectUrl;
-    })().catch((err) => {
-      segmentCacheRef.current.delete(segmentText);
-      throw err;
-    });
+    }
+
+    // Auto-retry once after 1.5 s on any transient Pindo error (HTTP 500, empty audio, etc.)
+    // so the user never sees the error banner on the first hiccup.
+    const promise = attemptFetch()
+      .catch(async () => {
+        segmentCacheRef.current.delete(segmentText);
+        await new Promise<void>((r) => setTimeout(r, 1500));
+        return attemptFetch();
+      })
+      .catch((err: unknown) => {
+        segmentCacheRef.current.delete(segmentText);
+        throw err;
+      });
 
     if (segmentCacheRef.current.size >= MAX_BLOB_CACHE) {
       const oldestKey = segmentCacheRef.current.keys().next().value;
