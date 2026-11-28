@@ -281,10 +281,10 @@ export async function GET(req: NextRequest) {
 
   const parsedRate = Number(req.nextUrl.searchParams.get("rate") ?? "1.0");
   const rate = Number.isFinite(parsedRate)
-    ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
+    ? Math.min(1.25, Math.max(0.75, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v6|${rate}|${text}`;
+  const cacheKey = `v7|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
     // We store [1 isFlac byte, ...audio bytes] to remember content type

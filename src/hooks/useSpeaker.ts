@@ -33,14 +33,14 @@ export type { SpeechQuestion as SpeakerQuestion };
 export type SpeakerStage = "idle" | "question" | "options" | "explanation";
 
 const STORAGE_KEY = "exam_speaker";
-const UPSTREAM_RATE = 0.88; // Slightly slower than Pindo default for clear, natural Kinyarwanda
-const CLIENT_PLAYBACK_RATE = 1.0;
-const TTS_CACHE_VERSION = "6"; // bumped: HF MMS-TTS primary + normalization fixes (metero50, sign codes)
+const UPSTREAM_RATE = 0.82;         // Slower Pindo speech rate for calm, clear Kinyarwanda
+const CLIENT_PLAYBACK_RATE = 0.88;  // Browser slows audio further — every word clearly audible
+const TTS_CACHE_VERSION = "7";      // bumped: slower rate — bust cached audio
 const MAX_BLOB_CACHE = 140;
 
-const GAP_QUESTION_TO_OPTIONS_MS = 320;
-const GAP_BETWEEN_SEGMENTS_MS = 180;
-const OPTION_PREFETCH_STAGGER_MS = 130;
+const GAP_QUESTION_TO_OPTIONS_MS = 550;   // Longer breath pause between question and "Hitamo"
+const GAP_BETWEEN_SEGMENTS_MS    = 320;   // Bigger pause between option pairs
+const OPTION_PREFETCH_STAGGER_MS = 150;
 
 // Tiny 44-byte valid silent mono WAV to unlock HTMLAudioElement inside user clicks
 const SILENT_WAV_DATA_URI =
