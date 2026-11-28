@@ -297,6 +297,23 @@ export function cleanForKinyarwandaSpeech(raw: string): string {
     decimalToKinyarwanda(whole, frac)
   );
 
+  // Fix unit-words directly concatenated with digits (e.g., "metero50" → "metero 50",
+  // "Metero100" → "Metero 100"). Since both letters and digits are \w chars, \b won't
+  // fire between them — so we use a letter→digit transition lookahead instead.
+  s = s.replace(
+    /(metero|kilometero|santimetero|milimetero|ibiro|toni|amafaranga|miligarama|garama|litiro)(\d)/gi,
+    "$1 $2"
+  );
+
+  // Fix sign-code alphanumeric clusters like "A19", "Be5", "Se22a", "De1a" that survive
+  // the letter-substitution step. After B→Be/C→Se the word boundary \b won't match
+  // between the vowel and the digit, so we insert a space here before the integer
+  // converter runs.  "Be5" → "Be 5", "A19" → "A 19", "Se22a" → "Se 22 a".
+  s = s.replace(/\b([A-Za-z]{1,4})(\d+)([a-z]?)\b/g, (_, alpha, num, suffix) =>
+    suffix ? `${alpha} ${num} ${suffix}` : `${alpha} ${num}`
+  );
+  s = s.replace(/\s+/g, " ");
+
   // Convert ALL remaining standalone integers to Kinyarwanda words so Pindo never
   // stumbles on bare digits. 1-digit: class-9 agreement (metero imwe, toni imwe…).
   // 2-3 digit: intUnder1000ToRw. 4-6 digit: largeIntToRw.

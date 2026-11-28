@@ -35,7 +35,7 @@ export type SpeakerStage = "idle" | "question" | "options" | "explanation";
 const STORAGE_KEY = "exam_speaker";
 const UPSTREAM_RATE = 0.88; // Slightly slower than Pindo default for clear, natural Kinyarwanda
 const CLIENT_PLAYBACK_RATE = 1.0;
-const TTS_CACHE_VERSION = "5"; // bumped: speech_rate 1.0→0.88 + full integer TTS expansion
+const TTS_CACHE_VERSION = "6"; // bumped: HF MMS-TTS primary + normalization fixes (metero50, sign codes)
 const MAX_BLOB_CACHE = 140;
 
 const GAP_QUESTION_TO_OPTIONS_MS = 320;

@@ -1,19 +1,18 @@
 /**
- * GET /api/tts?text=...&rate=1.0&v=4
+ * GET /api/tts?text=...&rate=1.0&v=6
  *
- * Original Kinyarwanda Text-to-Speech proxy — single Pindo VoiceAI voice ONLY.
+ * Kinyarwanda Text-to-Speech proxy.
  *
- * Why a single-voice server proxy:
- *   1. Browsers lack a reliable Kinyarwanda (rw-RW) Web Speech voice and mix
- *      English/French phonetics. Non-Kinyarwanda fallbacks (like Gemini Kore)
- *      also mispronounce Kinyarwanda and introduce inconsistent voices.
- *   2. Pindo VoiceAI (`/ai/tts/rw`) provides native Rwandan speech, and passing
- *      our selected reference clip (`RW_REFERENCE_VOICE_WAV_B64`, F0 ~200 Hz
- *      calm speaker from test_audio.wav) anchors ALL requests to this SINGLE
- *      consistent voice — the reference audio is NEVER dropped or skipped.
- *   3. Gentle server-side PCM RMS/peak normalization keeps loudness steady
- *      across questions, options, and explanations without hardening the warm
- *      vocal tone.
+ * Voice strategy (priority order):
+ *   1. HuggingFace `facebook/mms-tts-kin` — SINGLE-SPEAKER model, voice NEVER
+ *      changes. Requires HF_API_TOKEN env var (free HuggingFace account).
+ *      Returns audio/flac which all modern browsers can play natively.
+ *   2. Pindo VoiceAI (`/ai/tts/rw`) — multi-speaker pool but reference-audio
+ *      anchoring keeps it mostly consistent. Used when HF is unavailable or
+ *      times out. PINDO_API_TOKEN env var optional (falls back to public endpoint).
+ *
+ * Gentle server-side PCM RMS/peak normalization keeps loudness steady across
+ * questions, options, and explanations without hardening the warm vocal tone.
  *
  * Responses use `Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable`
  * so Vercel Edge CDN & client/PWA cache serve repeated segments in <50 ms.
@@ -23,7 +22,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { cleanForKinyarwandaSpeech } from "@/lib/kinyarwanda-tts-normalizer";
 import { RW_REFERENCE_VOICE_WAV_B64 } from "@/lib/rw-reference-voice";
 
-export const maxDuration = 25;
+export const maxDuration = 30;
 
 // Raised to 420 to accommodate the new combined-options segment format:
 // "Hitamo. A, [text]. Be, [text]. Se, [text]. De, [text]." can reach ~400 chars.
@@ -42,8 +41,14 @@ function setMemoryCache(key: string, bytes: Uint8Array) {
   memoryAudioCache.set(key, bytes);
 }
 
-const AUDIO_HEADERS = {
+const AUDIO_HEADERS_WAV = {
   "Content-Type": "audio/wav",
+  "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable",
+  "Accept-Ranges": "bytes",
+} as const;
+
+const AUDIO_HEADERS_FLAC = {
+  "Content-Type": "audio/flac",
   "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable",
   "Accept-Ranges": "bytes",
 } as const;
@@ -136,6 +141,49 @@ function normalizeWavLoudness(wavBytes: Uint8Array): Uint8Array {
     outView.setInt16(dataOffset + i * 2, scaled, true);
   }
   return out;
+}
+
+/**
+ * Synthesize via HuggingFace `facebook/mms-tts-kin` — a SINGLE-SPEAKER VITS model.
+ * This guarantees one consistent voice every time, unlike Pindo's speaker pool.
+ *
+ * Returns raw audio bytes (audio/flac) on success, null on failure.
+ * Requires HF_API_TOKEN env var (free HuggingFace account at huggingface.co).
+ */
+async function synthesizeWithHuggingFace(
+  text: string
+): Promise<Uint8Array | null> {
+  const hfToken = process.env.HF_API_TOKEN;
+  if (!hfToken) return null;
+
+  try {
+    const res = await fetch(
+      "https://api-inference.huggingface.co/models/facebook/mms-tts-kin",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${hfToken}`,
+          "Content-Type": "application/json",
+          Accept: "audio/flac",
+        },
+        body: JSON.stringify({ inputs: text }),
+        signal: AbortSignal.timeout(20000),
+      }
+    );
+
+    if (!res.ok) return null;
+
+    const contentType = res.headers.get("content-type") ?? "";
+    // HF returns audio/flac or audio/wav depending on model version
+    if (!contentType.includes("audio")) return null;
+
+    const bytes = new Uint8Array(await res.arrayBuffer());
+    // Minimum valid audio file size (larger than empty/error response)
+    if (bytes.byteLength < 100) return null;
+    return bytes;
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -236,16 +284,31 @@ export async function GET(req: NextRequest) {
     ? Math.min(1.25, Math.max(0.85, Number(parsedRate.toFixed(2))))
     : 1.0;
 
-  const cacheKey = `v5|${rate}|${text}`;
+  const cacheKey = `v6|${rate}|${text}`;
   const cached = memoryAudioCache.get(cacheKey);
   if (cached) {
-    return new NextResponse(Buffer.from(cached), {
+    // We store [1 isFlac byte, ...audio bytes] to remember content type
+    const isFlac = cached[0] === 1;
+    const audioBytes = cached.slice(1);
+    return new NextResponse(Buffer.from(audioBytes), {
       status: 200,
-      headers: AUDIO_HEADERS,
+      headers: isFlac ? AUDIO_HEADERS_FLAC : AUDIO_HEADERS_WAV,
     });
   }
 
-  const audio = await synthesizeWithPindo(text, rate);
+  // Try HuggingFace MMS-TTS first (single-speaker = guaranteed consistent voice).
+  // Fall back to Pindo when HF_API_TOKEN is absent or HF is unreachable.
+  let audio: Uint8Array | null = null;
+  let isFlac = false;
+
+  const hfAudio = await synthesizeWithHuggingFace(text);
+  if (hfAudio) {
+    audio = hfAudio;
+    isFlac = true;
+  } else {
+    audio = await synthesizeWithPindo(text, rate);
+    isFlac = false;
+  }
 
   if (!audio) {
     return NextResponse.json(
@@ -254,10 +317,14 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  setMemoryCache(cacheKey, audio);
+  // Prepend a 1-byte flag so the cache knows the content type on retrieval.
+  const flagged = new Uint8Array(1 + audio.byteLength);
+  flagged[0] = isFlac ? 1 : 0;
+  flagged.set(audio, 1);
+  setMemoryCache(cacheKey, flagged);
 
   return new NextResponse(Buffer.from(audio), {
     status: 200,
-    headers: AUDIO_HEADERS,
+    headers: isFlac ? AUDIO_HEADERS_FLAC : AUDIO_HEADERS_WAV,
   });
 }
